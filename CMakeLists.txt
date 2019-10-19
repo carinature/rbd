@@ -9,10 +9,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project(try
 		LANGUAGES CXX)
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall")
 
 find_package(helib 1.0.0 EXACT REQUIRED)
 
 add_executable(play HEcmp.h ex1.cpp Contextor.cpp)
 
 target_link_libraries(play helib)
-

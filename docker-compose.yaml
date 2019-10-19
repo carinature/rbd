@@ -14,7 +14,7 @@ services:
     ports:
       - "7776:22"
       - "7777:7777"
-    volumes:
-      - .:/home/debugger/rbd_helib_with_remote_debugger/
-    working_dir:  /home/debugger/rbd_helib_with_remote_debugger/
+#    volumes:
+#      - .:/home/debugger/rbd_helib_with_remote_debugger/
+#    working_dir:  /home/debugger/rbd_helib_with_remote_debugger/
     hostname: debug
