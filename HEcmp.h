@@ -22,7 +22,7 @@ using namespace std;
 //        {  2 ,  600,  1023, 10, 11, 93,  0,   838,   584,    0,  10,  6,   0, 25, 2},
 //        {  2,  2304,  4641, 24,  7,  3,221,  3979,  3095, 3760,   6,  2,  -8, 25, 3},
 //        {  2, 15004, 15709, 22, 23,683,  0,  4099, 13663,    0,  22, 31,   0, 25, 3},
-//        {  2, 27000, 32767, 15, 31,  7, 151, 11628, 28087,25824, 30,  6, -10, 28, 4}
+//        {  2, 27000, 32767, 15, 31,b  7, 151, 11628, 28087,25824, 30,  6, -10, 28, 4}
 //};
 bool bootstrap = false;
 
@@ -37,14 +37,24 @@ public:
 //        FHEcontext context = secKey.getContext();
 
     HEcmp(FHEcontext context) : secKey(context){
+//    HEcmp(FHEcontext &context) {
+        cout << "is anybody there? ----------HEcmp C'tor" << endl;
 //        secKey.getContext();
+        std::ostream& str(cout);
+//                                    cout << "---------=========HEcmp=========----------" << endl;
+//                                    str << context;
+//                                    cout << "-------------------" << endl;
+//        secKey = secKey(context);
+//        std::ostream& str1(cout);
         secKey.GenSecKey();
         addSome1DMatrices(secKey); // compute key-switching matrices
         addFrbMatrices(secKey);
         if (bootstrap) secKey.genRecryptData();
 //        if (verbose) cout << " done\n";
         activeContext = &context; // make things a little easier sometimes
-
+//                                            cout << "---------=========HEcmp secKeysecKeysecKey=========----------" << endl;
+//                                            str << secKey.getContext();
+//                                            cout << "-------------------" << endl;
         cout << "NO Way!" << endl;
     }
     ~HEcmp() = default;
@@ -53,33 +63,27 @@ public:
 
 
     Vec<Ctxt> encryptNumber(long pa, long bitSize) {
-        cout << " ------1------- " << endl;
-        const FHEcontext &context = secKey.getContext();
-        cout << " ------2------- " << endl;
-        const EncryptedArray &ea = *(context.ea);
-        cout << " ------3------- " << endl;
+        cout << " ------    encryptNumber   ------- " << endl;
+        cout << " ------    encryptNumber   ------- " << endl;
+        cout << " ------    encryptNumber   ------- " << endl;
+        const FHEcontext context = secKey.getContext();
 
-        // Encrypt the individual bits
+//        std::ostream& str(cout);
+        cout << "---------=========encryptNumber=========----------" << endl;
+//        str << context;
+//        cout << "-------------------" << endl;
+//        cout << context.ea << endl;
+
         NTL::Vec<Ctxt> eMax, eMin, enca, encb;
         vector<long> slotsMin, slotsMax, slotsMu, slotsNi;
-        cout << " ------4------- " << endl;
 
         Ctxt mu(secKey), ni(secKey);
         cout << " ------5------- " << endl;
         resize(enca, bitSize, mu);
         cout << "size: " << enca[0] << endl;
-        cout << "size: " << enca[1] << endl;
-        cout << "size: " << enca[2] << endl;
-        cout << "size: " << enca[3] << endl;
-        cout << "size: " << enca[4] << endl;
-        cout << "size: " << enca[5] << endl;
-        cout << "size: " << enca[6] << endl;
+//        cout << "size: " << enca[6] << endl;
         cout << "bla: " << ZZX((pa >> 0) & 1) << endl;
-        cout << "bla: " << ZZX((pa >> 1) & 1) << endl;
-        cout << "bla: " << ZZX((pa >> 2) & 1) << endl;
-        cout << "bla: " << ZZX((pa >> 3) & 1) << endl;
-        cout << "bla: " << ZZX((pa >> 4) & 1) << endl;
-        cout << "bla: " << ZZX((pa >> 5) & 1) << endl;
+//        cout << "bla: " << ZZX((pa >> 5) & 1) << endl;
         secKey.Encrypt(enca[0], ZZX((pa >> 0) & 1));
 //        cout << "size: " << enca.size() << endl;
         cout << " ------6------- " << endl;
@@ -97,6 +101,8 @@ public:
 //            }
 
         } // end of bitSize for
+
+
         return enca;
     }
 /*

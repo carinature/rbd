@@ -61,4 +61,9 @@ RUN cd ~ && \
 ########################################################
 
 CMD ["/usr/sbin/sshd", "-D"]
+
+RUN apt-get update &&\
+    apt-get install python3.6  # &&\
+    apt-get install python3-tk
+
 #/DangerZone

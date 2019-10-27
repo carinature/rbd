@@ -26,7 +26,7 @@ static long mValues[][15] = {
 class Contextor {
 
 public:
-    static FHEcontext getContextAndKey() {
+    static FHEcontext  getContextAndKey() {
 //    static FHEcontext getContextAndKey() {
         long prm = 1;             // "prm", prm, "parameter size (0-tiny,...,4-huge)");
         long bitSize = 5;       // "bitSize", bitSize, "bitSize of input integers (<=32)");
@@ -97,8 +97,35 @@ public:
         if (verbose) cout << " done\n";
 
         activeContext = &context; // make things a little easier sometimes
+//        std::ostream& str(cout);
+//        cout << "---------==================----------" << endl;
+//    str << context;
+//    cout << "-------------------" << endl;
 
-//        return secKey;
+        //#############################################################################################################
+
+//        long pa = 3l;
+//        secKey.GenSecKey();
+//        addSome1DMatrices(secKey); // compute key-switching matrices
+//        addFrbMatrices(secKey);
+//        if (bootstrap) secKey.genRecryptData();
+//
+//        NTL::Vec<Ctxt> eMax, eMin, enca, encb;
+//        vector<long> slotsMin, slotsMax, slotsMu, slotsNi;
+//
+//        Ctxt mu(secKey), ni(secKey);
+//        cout << " ------5------- " << endl;
+//        resize(enca, bitSize, mu);
+//        cout << "size: " << enca[0] << endl;
+////        cout << "size: " << enca[6] << endl;
+//        cout << "bla: " << ZZX((pa >> 0) & 1) << endl;
+////        cout << "bla: " << ZZX((pa >> 5) & 1) << endl;
+//        secKey.Encrypt(enca[0], ZZX((pa >> 0) & 1));
+////        cout << "size: " << enca.size() << endl;
+//        cout << " ------6------- " << endl;
+////        resize(encb, bitSize + 1, ni);
+////        cout << " ------------- " << endl;
+
         return context;
 
 
