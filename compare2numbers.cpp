@@ -1,98 +1,35 @@
 //
-// Created by rbd on 15.10.2019.
+// Created by rbd on 14.10.2019.
 //
 
-#include <iostream>
-#include <string>
-#include <fstream>
-#include <sstream>
-#include <algorithm>
-#include <assert.h>
+#include <cassert>
+#include <cmath>
 
-#include "HEcmp.h"
-#include "Contextor.cpp"
+#include <helib/FHE.h>
+#include <helib/EncryptedArray.h>
 
-
+#include <helib/intraSlot.h>
+//#include <helib/binaryArith.h>
+#include <helib/binaryCompare.h>
 #include <helib/ArgMap.h>
 
+#include <NTL/BasicThreadPool.h>
+NTL_CLIENT
+
+static std::vector<zzX> unpackSlotEncoding; // a global variable
+
 using namespace std;
-//using String = std::string;
 
-#define DIM 2
-#define EPS 2
+int main(int argc, char * argv[]){
+    cout << "\n     ----    This time it's gonna work   ----" << endl;
 
+    bool verbose=true;
 
-bool cmp(vector<double> a, vector<double> b){
-    return a[DIM-1]>b[DIM-1];
-}
-
-
-int main3(int argc, char *argv[]){
-    cout << "CommonCommon!" << endl;
-
-    ifstream inputFileStream("points");
-    int count;  //  #points
-    inputFileStream>>count;
-    cout << "count: " << count << endl;
-    inputFileStream.ignore(1, '\n');
-
-    string line, pa0, pa1;
-    vector<vector<double> > points;
-    std::vector<double> xVec, yVec;
-
-    for(int i = 0; i < count; ++i) {
-        getline(inputFileStream, line);
-        istringstream lineStream(line);
-
-        getline(lineStream, pa0, ',');
-        getline(lineStream, pa1, ',');
-
-        points.push_back({stod(pa0), stod(pa1)});
-    }
-
-//    for (int i=0; i<count; ++i) {
-//        for (int j = 0; j < DIM; ++j) {
-//            cout << "points[" << i << "][0]: " << points[i][j] << "\t\t"; // << endl;
-//        }
-//        cout << endl;
-//    }
-    nth_element(points.begin(), points.begin() + points.size()/ 2, points.end(), cmp);
-    cout << "The median is " << points[points.size()/ 2] << '\n';
-//    for (int i=0; i<count; ++i) {
-//        for (int j = 0; j < DIM; ++j) {
-//            cout << "points[" << i << "][0]: " << points[i][j] << "\t\t"; // << endl;
-//        }
-//        cout << endl;
-//    }
-
-
-
-
-//    ****************************************************************************************
-//    ****************************************************************************************
-//    ****************************************************************************************
-//    ****************************************************************************************
-//    ****************************************************************************************
-//    ****************************************************************************************
-//    ****************************************************************************************
-//    ****************************************************************************************
-//    ****************************************************************************************
-//    ****************************************************************************************
-//    ****************************************************************************************
-//    ****************************************************************************************
-//    ****************************************************************************************
-//    ****************************************************************************************
-
-//    FHEcontext context = ;
-//    HEcmp h = HEcmp(Contextor::getContextAndKey());
-//    cout << "lalalallalalalala" << endl;
-//    h.encryptNumber(5, 7);
-
-    static std::vector<zzX> unpackSlotEncoding; // a global variable
-    long mValues[][15] = {
+    static long mValues[][15] = {
 // { p, phi(m),   m,   d, m1, m2, m3,    g1,   g2,   g3, ord1,ord2,ord3, B,c}
-            {  2,    48,   105, 12,  3, 35,  0,    71,    76,    0,   2,  2,   0, 25, 2}
-//            {  2 ,  600,  1023, 10, 11, 93,  0,   838,   584,    0,  10,  6,   0, 25, 2},
+            {  2,    48,   105, 12,  3, 35,  0,    71,    76,    0,   2,  2,   0, 25, 2},
+            {  2 ,  600,  1023, 10, 11, 93,  0,   838,   584,    0,  10,  6,   0, 25, 2},
+            {  2,  2304,  4641, 24,  7,  3,221,  3979,  3095, 3760,   6,  2,  -8, 25, 3}
 //            {  2,  2304,  4641, 24,  7,  3,221,  3979,  3095, 3760,   6,  2,  -8, 25, 3},
 //            {  2, 15004, 15709, 22, 23,683,  0,  4099, 13663,    0,  22, 31,   0, 25, 3},
 //            {  2, 27000, 32767, 15, 31,  7, 151, 11628, 28087,25824, 30,  6, -10, 28, 4}
@@ -113,8 +50,8 @@ int main3(int argc, char *argv[]){
     amap.arg("seed", seed, "PRG seed");
     long nthreads=1;
     amap.arg("nthreads", nthreads, "number of threads");
-    bool verbose = true;
-    amap.arg("verbose", verbose = true, "print more information");
+    amap.arg("verbose", verbose, "print more information");
+
     amap.parse(argc, argv);
     assert(prm >= 0 && prm < 5);
     if (seed) NTL::SetSeed(ZZ(seed));
@@ -151,7 +88,7 @@ int main3(int argc, char *argv[]){
     if (bootstrap) L = 900; // that should be enough
     else           L = 30*(7+ NTL::NumBits(bitSize+2));
 
-    if (verbose = true) {
+    if (verbose) {
         cout <<"input bitSize="<<bitSize
              <<", running "<<nTests<<" tests for each function\n";
         if (nthreads>1) cout << "  using "<<NTL::AvailableThreads()<<" threads\n";
@@ -163,7 +100,7 @@ int main3(int argc, char *argv[]){
         context.makeBootstrappable(mvec, /*t=*/0);
     }
     buildUnpackSlotEncoding(unpackSlotEncoding, *context.ea);
-    if (verbose = true) {
+    if (verbose) {
         cout << " done.\n";
         context.zMStar.printout();
         cout << " L="<<L<<", B="<<B<<endl;
@@ -174,16 +111,9 @@ int main3(int argc, char *argv[]){
     addSome1DMatrices(secKey); // compute key-switching matrices
     addFrbMatrices(secKey);
     if (bootstrap) secKey.genRecryptData();
-    if (verbose = true) cout << " done\n";
+    if (verbose) cout << " done\n";
 
     activeContext = &context; // make things a little easier sometimes
-
-//----------------------------------------------------------------------------------
-//-------------------------     so far creating context and key --------------------
-//----------------------------------------------------------------------------------
-
-
-
 
     for (long i=0; i<nTests; i++) {
 //        testCompare(secKey, bitSize, bootstrap);
@@ -197,8 +127,8 @@ int main3(int argc, char *argv[]){
 //        long pb = RandomBits_long(bitSize + 1);
 
         int intSize = pow(2, bitSize) - 1;
-        long pa = rand() % intSize; //RandomBits_long(bitSize + 1);
-        long pb = rand() % intSize + 1; //RandomBits_long(bitSize + 1);
+        long pa = rand() % intSize ; //RandomBits_long(bitSize + 1);
+        long pb = rand() % intSize + 1 ; //RandomBits_long(bitSize + 1);
         cout << "pa (random num 1): " << pa << "\npb (random num 2): " << pb << endl;
         long pMax = std::max(pa, pb);
         long pMin = std::min(pa, pb);
@@ -208,7 +138,6 @@ int main3(int argc, char *argv[]){
         // Encrypt the individual bits
         NTL::Vec<Ctxt> eMax, eMin, enca, encb;
 
-// ---------------------------------- encrypting the numbers
         Ctxt mu(secKey), ni(secKey);
         resize(enca, bitSize, mu);
         resize(encb, bitSize + 1, ni);
@@ -220,6 +149,9 @@ int main3(int argc, char *argv[]){
                 encb[i].bringToSet(context.getCtxtPrimes(5));
             }
         }
+//#ifdef DEBUG_PRINTOUT
+//        decryptAndPrint((cout<<" before comparison: "), encb[0], secKey, ea,0);
+//#endif
 
         vector<long> slotsMin, slotsMax, slotsMu, slotsNi;
 
@@ -238,32 +170,50 @@ int main3(int argc, char *argv[]){
             cout << "Comparison (without min max) succeeded: ";
             cout << '(' << pa << ',' << pb << ")=> mu=" << slotsMu[0] << ", ni=" << slotsNi[0] << endl;
         }
+
+        /*
+        {
+            CtPtrs_VecCt wMin(eMin), wMax(eMax); // A wrappers around output vectors
+
+            //cmp with max and min
+            compareTwoNumbers(wMax, wMin, mu, ni,
+                              CtPtrs_VecCt(enca), CtPtrs_VecCt(encb),
+                              &unpackSlotEncoding);
+            decryptBinaryNums(slotsMax, wMax, secKey, ea);
+            decryptBinaryNums(slotsMin, wMin, secKey, ea);
+        } // get rid of the wrapper
+        ea.decrypt(mu, secKey, slotsMu);
+        ea.decrypt(ni, secKey, slotsNi);
+
+        if (slotsMax[0] != pMax || slotsMin[0] != pMin
+            || slotsMu[0] != pMu || slotsNi[0] != pNi) {
+            cout << "BAD\n";
+            if (verbose)
+                cout << "Comparison (with min max) error: a=" << pa << ", b=" << pb
+                     << ", but min=" << slotsMin[0] << ", max=" << slotsMax[0]
+                     << ", mu=" << slotsMu[0] << ", ni=" << slotsNi[0] << endl;
+            exit(0);
+        } else if (verbose) {
+            cout << "Comparison (with min max) succeeded: ";
+            cout << '(' << pa << ',' << pb << ")=>(" << slotsMin[0] << ',' << slotsMax[0]
+                 << "), mu=" << slotsMu[0] << ", ni=" << slotsNi[0] << endl;
+        }
+
+         */
     }
 
+        //todo  <-- end of insertion
+
+//    cout << "GOOD\n";
+//
+//    if (verbose) printAllTimers(cout);
+
+    cout << "\nDone!" << endl;
     return 0;
+
+
+
+
+
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
- * insert all the points into array
- * cut the array into equal pieces
- * find median in each piece (which meansfinding the median of each piece)
- *      make an algorithm for randomly choosing the "median"
- *      make an algorithm for finding the median
- * ---->this is the way to choose the repesentatives
- *
- * note the points should be encrypted
- *
- */

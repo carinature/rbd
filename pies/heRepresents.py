@@ -8,48 +8,6 @@ from pies.quickSelect import median
 # from pies.quick_select import median
 
 
-# # Cluster data structure consisting of a list of points and a center/mean,
-# # 	which might not be up to date. Use cluster.updateCenter() for that purpose.
-# # 	(for efficiency, the cluster does not update the center every time a point
-# # 	is added. In a general case should be accurate enough)
-# class Cluster:
-# 	center = 0
-# 	pointsList = []
-# 	# num_ofPoints = 0
-# 	def __init__(self, center, pointsList): # todo maybe no need for empty C'tor and thus 'self' arg
-# 		self.center = center
-# 		self.pointsList = pointsList
-# 	def __repr__(self):
-# 		return "Cluster()\t == center: " + str(self.center) 			\
-# 		 + " == \n\t\tnum_ofPoints: --" + str(len(self.pointsList)) 		\
-# 		 + "-- \n\t\tpoints: " + str(self.pointsList)
-# 	def __str__(self):
-# 		return "Cluster()\t == center: " + str(self.center) 			\
-# 		 + " ==\n\t\tnum_ofPoints: --" + str(len(self.pointsList)) 		\
-# 		 + "-- \n\t\tpoints: " + str(self.pointsList)
-#
-# 	# Calculates and updates the center of the current cluster
-# 	def updateCenter(self):
-# 		sumPoints = [0,0]
-# 		for p in self.pointsList:
-# 			sumPoints[0]+=p[0]
-# 			sumPoints[1]+=p[1]
-# 		self.center = (round(sumPoints[0]/len(self.pointsList),2), 		\
-# 		               round(sumPoints[1]/len(self.pointsList),2)) 
-# 						T_oD_o - use median instead of mean. in that case need to sort by Y as well as X (in 2D)
-# 		return self.center
-#
-# 	def addPoint(self,point):
-# 		self.pointsList.append(point)
-# 		# num_ofPoints+=1
-# 		return
-#
-# 	def removePoint(self,point):
-# 		self.pointsList.pop(self.pointsList.index(point))
-# 		# num_ofPoints-=1
-# 		return
-
-
 # ------------------------------------------------------------------------
 # 	The following functions - createList, create_rand_segment, isPointIn_seg, test - 
 # 	are mainly for testing purposes 
@@ -76,14 +34,7 @@ def createList(list_size, d=2):  # todo remove; temporary list creation
 # 				k - (int) number of representatives/clusters
 # --returns: 	(List) k chosen representatives
 def get_repPerCell(list_org, k=1):
-    temp = median(list_org)
-    # print("===============")
-    # print(list_org)
-    # print(temp)
-    # print(list_org)
-    # print("===============")
-    return temp
-    # return median(list_org)
+    return median(list_org)
 
 
 # Implantation of of what I think is the problem given by Danny
@@ -106,7 +57,7 @@ def get_representatives(points_list, eps):
         strips.append(curr_strip)
         section_begin = section_end  # <--	for plot purposes only
         section_end = strips[-1][-1][0]  # <--	for plot purposes only
-        # plt.axvline(x=section_end, color='grey', linestyle='--', linewidth=1)  # <--	for plot purposes only
+        plt.axvline(x=section_end, color='grey', linestyle='--', linewidth=1)  # <--	for plot purposes only
         strips[-1].sort(key=lambda x: x[1])
         cells = []
         # cut each strip into "cells"
@@ -114,14 +65,10 @@ def get_representatives(points_list, eps):
             currCell = strips[-1][j * cell_size:(j + 1) * cell_size - 1]
             if ([] != currCell):
                 # choose a representative from each section and add to
-                # print("---------")
                 reps.append(get_repPerCell(currCell)[0])
-                # print(reps[-1])
-                # print(currCell[-1][1])
-                # print(currCell)
                 cells.append(currCell)
-                # plt.hlines(currCell[-1][1], section_begin, section_end,
-                #            colors='grey', linestyle='--', linewidth=1)  # <--	for plot purposes only
+                plt.hlines(currCell[-1][1], section_begin, section_end,
+                           colors='grey', linestyle='--', linewidth=1)  # <--	for plot purposes only
     plt.scatter(*zip(*reps), label='_by _sections', c='black', s=10)  # <--	for plot purposes only
     # for i_x, i_y in reps:
     #     plt.text(i_x, i_y, '({}, {})'.format(i_x, i_y)) # <--	for plot purposes only, print the coor's

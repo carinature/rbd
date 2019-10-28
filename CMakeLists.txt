@@ -13,6 +13,6 @@ set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall")
 
 find_package(helib 1.0.0 EXACT REQUIRED)
 
-add_executable(play HEcmp.h ex1.cpp Contextor.cpp)
+add_executable(play HEcmp.h ex1.cpp Contextor.cpp compare2numbers.cpp)
 
 target_link_libraries(play helib)
