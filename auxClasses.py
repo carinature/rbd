@@ -1,75 +1,88 @@
 #!/use/bin/env python3
 from collections import defaultdict
 
-
+# TODO
 # Binary Multiplication Counter (Bin*Bin)
-# global_bin_mul_counter = 0
+global_counter_dict = {'bitbit': 0, 'bitbin': 0, 'binbin': 0, 'add': 0, 'cmp': 0}
 
 
 class KmeansObj:
     def __init__(self, value):
         self.value = value
         self.add_counter = 0
-        # self.mul_counter = 0
-        # self.mul_counter_bit = 0
-        # self.mul_counter_binary = 0
-        # self.mul_counter_point = 0
-        self.counter_dict = {Bit: 0, Binary: 0, Point: 0}
+        self.cmp_counter = 0
+        self.mul_counter_dict = {Bit: 0, Binary: 0, Point: 0}
 
     def __repr__(self):
         return self.__class__.__name__ + '(' + str(self.value) + ')'
 
     def __str__(self):
         return self.__repr__() \
-                   + '\t' + str({key.__name__: value for key, value in self.counter_dict.items()})
+               + '\t' + str({key.__name__: value for key, value in self.mul_counter_dict.items()})
 
     def increase_mul_counter(self, other):
-        self.counter_dict[other.__class__] += 1
-        other.counter_dict[self.__class__] += 1  # todo might be bad practice changing a parameter of a function
+        self.mul_counter_dict[other.__class__] += 1
+        other.mul_counter_dict[self.__class__] += 1  # todo might be bad practice changing a parameter of a function
 
 
 class KMeansException(Exception):
+    # todo add custom messages
     pass
 
 
 class Bit(KmeansObj):
     def __add__(self, other):
+        # if type(other) is Binary:
+        #     raise KMeansException(" Addition of bin and bit")
+        #     return other + self
         if not isinstance(other, Bit):
-            raise KMeansException('No multiplication other than bit * Bin/bit is allowed')
-        print('bit + bit')
+            raise KMeansException('Only addition between bit and bit/Bin is allowed')
         self.add_counter += 1
         other.add_counter += 1
         new_val = self.value or other.value
+        # this is to overcome the fact that the "prod" sometimes returns 2 instead of 1
+        #   you can look at it as the next function: f(0) = 0; f(1) = 1 = f(2)
+        # def zero_or_one(param):
+        #     return Bit((3 * param - param * param) // 2)
         # new_val = (3 * param - param * param) // 2
         return Bit(new_val)
+
+    def __sub__(self, other):
+        # todo - ideally we should find another way to give the opposite / the answer to 1-bit or !bit or not bit
+        return Bit(self.value - other.value)
 
     def __mul__(self, other):
         if not issubclass(other.__class__, KmeansObj):  # todo is this redundant?
             raise KMeansException('No multiplication other than bit * Bin/bit is allowed')
         if isinstance(other, Bit):
-            print("bit * bit")
             self.increase_mul_counter(other)
             return Bit(self.value * other.value)
         return other * self  # behavior defined in class Point and Bin
-        # self.increase_mul_counter(other)
-        # ctor = other.__class__
-        # return ctor(new_val)
-        # todo
-        #  consider if you want to changing current point's value, but maintaining the value of the counters
-        #  or return a NEW point, with all counters equal zero, but you dont change the previous point
-        #  or maybe adding a c'tor with counter values
 
 
 class Binary(KmeansObj):
+    # def __init__(self, conversion_arg):
+    #     if type(conversion_arg) is Bit:
+    #         super().__init__(conversion_arg.value)
+    #     elif type(conversion_arg) is float:
+    #         super().__init__(conversion_arg.value)
+    #         print(conversion_arg)
+    #     else:
+    #         raise KMeansException("Can only convert Bit into Binary")
+
     def __add__(self, other):
-        if not isinstance(other, Binary):
+        if not isinstance(other, Binary) and type(other) is not Bit:
             raise KMeansException('No addition other than Bin + Bin is allowed')
         self.add_counter += 1
-        # other.add_counter += 1
+        other.add_counter += 1
         new_val = self.value + other.value
-        # new_val = self.value or other.value
-        # new_val = (3 * param - param * param) // 2
         return Binary(new_val)
+        # new_val = self.value or other.value
+        # this is to overcome the fact that the "prod" sometimes returns 2 instead of 1
+        #   you can look at it as the next function: f(0) = 0; f(1) = 1 = f(2)
+        # def zero_or_one(param):
+        #     return Bit((3 * param - param * param) // 2)
+        # new_val = (3 * param - param * param) // 2
 
     def __mul__(self, other):
         if not issubclass(other.__class__, KmeansObj):
@@ -77,11 +90,25 @@ class Binary(KmeansObj):
         if isinstance(other, Point):
             return other * self  # behavior defined in class Point
         self.increase_mul_counter(other)
-        return Binary(self.value * other.value)
-        # todo
-        #  consider if you want to changing current point's value, but maintaining the value of the counters  
-        #  or return a NEW point, with all counters equal zero, but you dont change the previous point 
-        #  or maybe adding a c'tor with counter values
+        global global_counter_dict
+        global_counter_dict['binbin'] += 1
+        return Binary(round(self.value * other.value, 2))
+
+    def __gt__(self, other):  # todo consider moving this to the Point class (and then changing the kmeans.compare(a,b)
+        if type(other) is not Binary:
+            print('self', self)
+            print('other', other)
+            raise KMeansException("Comparison only between two Binaries")
+        self.cmp_counter += 1
+        other.cmp_counter += 1
+        global global_counter_dict
+        global_counter_dict['cmp'] += 1
+        # if self.value > other.value: # todo this answer yields empty groups -> group_size=0 -> division by zero
+        # todo consult danny/adi
+        if self.value >= other.value:
+            return Bit(1)
+        else:
+            return Bit(0)
 
 
 class Point(KmeansObj):
@@ -91,7 +118,7 @@ class Point(KmeansObj):
         coor_vector = [arg1] if arg1 is not None and isinstance(arg1, Binary) else [-1]
         for arg in args:
             if not isinstance(arg, Binary):
-                print(arg)
+                # print(arg)
                 raise KMeansException("Coordinate must be binary (encrypted)")
             coor_vector.append(arg)
         self.cmp_counter = 0
@@ -104,25 +131,30 @@ class Point(KmeansObj):
     def __str__(self):
         return self.__repr__() \
                + '\tDim: ' + str(len(self)) \
-               + '\t' + str({key.__name__: value for key, value in self.counter_dict.items()})
+               + '\t' + str({key.__name__: value for key, value in self.mul_counter_dict.items()})
 
     def __getitem__(self, key):
         return self.coor_vector[key]
 
-    def __set_mul_counter(self, counter_dict):
-        self.counter_dict = counter_dict
+    def __set_mul_counter(self, mul_counter_dict):
+        self.mul_counter_dict = mul_counter_dict
 
     def __get_mul_counter(self):
         # return self.mul_counter, self.mul_counter_bit, self.mul_counter_binary, self.mul_counter_point
-        return self.counter_dict
+        return self.mul_counter_dict
 
     counter = property(__get_mul_counter, __set_mul_counter)
+
+    def __add__(self, other):
+        sum_point = self.value
+        for d in range(len(self)):
+            sum_point[d] += other[d]
+        return Point(*sum_point)
 
     def __mul__(self, other):
         if not issubclass(other.__class__, KmeansObj):
             raise KMeansException('No multiplication other than Point * Bin/bit is allowed')
         if type(other) is Point:
-            # if isinstance(other, Point):  # todo consider allowing Point X Point multiplication, for dist function?
             raise KMeansException('No Point * Point multiplication is allowed')
         args = tuple()
         for arg in self.coor_vector:
@@ -134,10 +166,29 @@ class Point(KmeansObj):
         # global_bin_mul_counter += 1
         # print('------------ ', global_bin_mul_counter)
         return new_point
-        # todo 
-        #  consider if you want to changing current point's value, but maintaining the value of the counters  
-        #  or return a NEW point, with all counters equal zero, but you dont change the previous point 
-        #  or maybe adding a c'tor with counter values
+
+        #   gt, or operator '>' returns Bit(0) if point_b is smaller than point_a, Bit(0) otherwise
+        #       (use case:  point_a*cmp(point_a, point_b) returns point_a only if it is "bigger" than point_a.
+        #       otherwise it's point zero)
+
+    def __gt__(self, other, current_dim=2):
+        # receives 2 Binaries and returns a Bit: 1 if a>=b, 0 otherwise
+        def helib_compare(aa, bb):  # PLACEHOLDER
+            return aa > bb  # defined in Binary class
+
+        # for d in range(1, len(other)):
+        #     a_is_bigger = helib_compare(self[d], other[d])
+        #     b_is_bigger = helib_compare(other[d], self[d])
+        d = current_dim - 1
+        self.cmp_counter += 1
+        other.cmp_counter += 1
+        return helib_compare(self[d], other[d])
+
+
+# Receives a list of encrypted points, and the size of the list (since we don't know which points are "real")
+#   and returns an encrypted point, which is the representative
+def point_zero(dim):
+    return Point(*[Binary(0) for _ in range(dim)])
 
 
 # class counter:
@@ -152,7 +203,6 @@ class Point(KmeansObj):
 
 
 if '__main__' == __name__:
-
     b0 = Bit(0)
     b1 = Bit(1)
     b2 = Bit(2)
@@ -228,7 +278,7 @@ if '__main__' == __name__:
     print(point)
     print('x: ', x)
     print('y: ', y)
-    x*x
+    x * x
     print('x*x')
     print('x: ', x)
     print('y: ', y)
@@ -244,28 +294,31 @@ if '__main__' == __name__:
     print(bin)
     print(point)
     print('-----bit*bin------')
-    bit*bin
+    bit * bin
     print(bit)
     print(bin)
     print(point)
     print('------bit*point-----')
-    bit*point
+    bit * point
     print(bit)
     print(bin)
     print(point)
     print('-----bin*point------')
-    bin*point
+    bin * point
     print(bit)
     print(bin)
     print(point)
     print('------bit*bin*point-----')
-    bit*bin*point
+    bit * bin * point
     print(bit)
     print(bin)
     print(point)
     print('-----bit*bin*point------')
-    bit*bin*point
+    bit * bin * point
     print(bit)
     print(bin)
     print(point)
     print('-----------')
+
+    # bin_from_bit = Binary(Bit(1))
+    # print(bin_from_bit)
