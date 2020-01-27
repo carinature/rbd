@@ -6,25 +6,28 @@
 #define TRY_POINT_H
 
 #include "Binary.h"
+#include <vector>
 
+//#include "Bit.h" //todo add
+using Bit = bool; //todo remove
+using namespace std;
 class Point {
-//    Binary coordinate[];
-//    Binary coordinates[];
-//    Binary * coordinates;
-//    Binary coordinates[DIM];
-    std::vector<Binary> coordinates;
+    vector<Binary> coordinates;
 
 public:
     Point();
-    Point(int);
-    Point(std::vector<Binary>);
-
-    Binary getCoordinate(int) const;
-    std::vector<Binary> getCoordinates();
-
+//    Point(int);
+    explicit Point(vector<Binary>);
+    vector<Binary> getCoordinates() const;
+    Binary& operator [] (int idx) { return coordinates[idx]; }
+    const Binary& operator [] (int idx) const { return coordinates[idx]; }
+    friend std::ostream& operator << (std::ostream& os, const Point& p);
     friend Point operator + (Point &, Point &);
-    friend std::ostream& operator<<(std::ostream& os, const Point& p);
+    friend Point operator * (const Point &, const Bit &);
+    friend Point operator / (const Point &p, const int &i);
+    friend Bit operator >= (const Point &p1, const Point &p2);
 
+    static Point zeroPoint();
 };
 
 

@@ -7,54 +7,60 @@
 #include "Bit.h"
 #include "aux.h"
 
-using namespace std;
+//using namespace std;
 
 //  TODO
 //    consider using std::array for 'coordinates' (template < class T, size_t N > class array;)
 
 Point::Point(){
 }
-//Point::Point(int numOfCoordinate){
-//    coordinate = Binary(0);
-//    coordinate = {}(Binary(0));
-//    cout << "Point this -> coordinate: " << this->coordinate.decryptVal() << endl;
-//}
 
-//Point::Point(Binary coordinates[]){
-//    for (int i=0; i<DIM; ++i){
-//        this->coordinates[i] = coordinates[i];
-//    }
-////    cout << "Point this -> coordinate: " << this->coordinates[0].decryptVal() << endl;
-//}
-
-Point::Point(std::vector<Binary> coordinates){
-    tag("Point");
-
-    this->coordinates = coordinates;
-    tag("end Point");
-//    for (int i=0; i<DIM; ++i){
-//        this->coordinates[i] = coordinates[i];
-//    }
-//    cout << "Point this -> coordinate: " << this->coordinates[0].decryptVal() << endl;
+Point Point::zeroPoint(){
+    const vector<Binary> &zeroVector = vector<Binary>(DIM, 0);
+    return Point(zeroVector);
 }
 
-Binary Point::getCoordinate(int i) const {
-    return coordinates[i];
+Point::Point(std::vector<Binary> coordinates) : coordinates(coordinates) {}
+
+//Binary Point::getCoordinate(int i) const {
+//    return coordinates[i];
+//}
+//std::vector<Binary> Point::getCoordinates() const {
+//    return coordinates;
+//}
+
+std::vector<Binary> Point::getCoordinates() const { return coordinates; }
+
+std::ostream& operator << (std::ostream& os, const Point& p){
+    os << " ep(" << p[0];
+    for (size_t i=1; i<p.coordinates.size(); ++i) os << ", " << p[i];
+    os << ") ";
+    return os;
 }
-std::vector<Binary> Point::getCoordinates() {
-    return coordinates;
+
+Point operator * (const Point & p, const Bit & b) {
+//todo consider std::transform(myv1.begin(), myv1.end(), myv1.begin(),std::bind1st(std::multiplies<T>(), 3));
+    vector<Binary> temp;
+    for (Binary & coor : p.getCoordinates()) temp.push_back(coor * b);
+    Point pointOrNot = Point(temp);
+    return pointOrNot;
 }
 
 Point operator + (Point & p1, Point & p2){
     std::vector<Binary> temp;
-    for (int i; i<p1.coordinates.size(); ++i) temp[i] = p1.getCoordinate(i)+p2.getCoordinate(i);
+    for (size_t i=0; i < p1.coordinates.size(); ++i) temp.push_back(p1[i] + p2[i]);
     return Point(temp);
 }
 
-std::ostream& operator<<(std::ostream& os, const Point& p){
-    os << "(" << p.getCoordinate(0);
-    for (int i; i<p.coordinates.size(); ++i) os << ", " << p.getCoordinate(i);
-    os << ")";
-    return os;
+Point operator / (const Point &p, const int &i) {
+    //todo consider std::transform(myv1.begin(), myv1.end(), myv1.begin(),std::bind1st(std::multiplies<T>(), 3));
+    vector<Binary> coorVector;
+    for (Binary & coor : p.getCoordinates()){
+        coorVector.push_back(coor / i);
+    }
+    Point avgPoint = Point(coorVector);
+    return avgPoint;
 }
+
+Bit operator >= (const Point &p1, const Point &p2) { return p1[DIM-1] >= p2[DIM-1]; }
 
