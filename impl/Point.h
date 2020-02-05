@@ -11,6 +11,7 @@
 //#include "Bit.h" //todo add
 using Bit = bool; //todo remove
 using namespace std;
+
 class Point {
     vector<Binary> coordinates;
 
@@ -23,11 +24,19 @@ public:
     const Binary& operator [] (int idx) const { return coordinates[idx]; }
     friend std::ostream& operator << (std::ostream& os, const Point& p);
     friend Point operator + (Point &, Point &);
+    friend Point operator += (Point &, Point &);
+    friend Point operator - (const Point &, const Point &);
+    friend Point operator -= (Point &, const Point &);
     friend Point operator * (const Point &, const Bit &);
-    friend Point operator / (const Point &p, const int &i);
+    friend Point operator / (const Point &p, const Binary &i);
     friend Bit operator >= (const Point &p1, const Point &p2);
 
-    static Point zeroPoint();
+    static Point dummyPoint();
+    //TODO consider using the function below instead of getDistFromClosestMeanByClient in aux.h
+    //friend double getDistFromClosestMean(vector<DecryptedPoint>); {
+    //    return 0;
+    //}
+
 };
 
 

@@ -9,8 +9,13 @@
 using Bit = bool; // todo remove
 
 class Binary {
-    double value;
 
+protected:
+public:
+    void setValue(double newValue);
+
+protected:
+    double value{};
 public:
     Binary();
 //    Binary(int);
@@ -18,13 +23,18 @@ public:
     Binary(double);
 
     friend Binary operator + (const Binary& b1, const Binary& b2);
+    friend Binary operator += (Binary &b1, const Binary &b2);
+    friend Binary operator - (const Binary& b1, const Binary& b2);
+    friend Binary operator -= (Binary &b1, const Binary &b2);
     friend Binary operator * (const Binary& b1, const Bit& b2);
-    friend Binary operator / (const Binary& b1, const int b2);
+    friend Binary operator / (const Binary& b1, const Binary& b2);
     friend Bit operator >= (const Binary &b1, const Binary &b2);
     friend std::ostream& operator << (std::ostream& os, const Binary& b);
 
 //// -------------------------- for DBG --------------------------
-    double decryptVal() const;
+    double getDecValue() const;
+
+
 };
 
 
