@@ -8,7 +8,6 @@
 //#include "aux.h"
 #include "Point.h"
 
-//#include <iostream>
 #include <NTL/BasicThreadPool.h>
 NTL_CLIENT
 
@@ -21,7 +20,7 @@ static std::vector<zzX> unpackSlotEncoding; // a global variable
 
 using DecryptedPoint =  vector<double>;
 
-class SKeys {
+class Skeys {
     //// todo put here the CA functions , as STATIC
     //      maybe later consider:
     //  1. having a CA/Skeys object
@@ -42,12 +41,14 @@ class SKeys {
     FHESecKey * secKey;
 
 public:
-    SKeys(int argc, char *argv[]);
-    Point calculateAvgPointByCA(const Point &point, Binary amount);
-    Binary calculateThresholdByCA(vector<Binary> distSum, int amount);
+    FHEPubKey * pubKey;
+    Skeys();
+//    Skeys(int argc, char *argv[]);
+    Point calculateAvgPointByCA(const Point &point, int amount);
     DecryptedPoint decryptPointByCA(const Point& p);
+    FHEPubKey * getPubKey();
     vector<DecryptedPoint> decryptPointsByCA(const vector<Point> &reps); //todo consider static, and writing enc info to file
-
+    NTL::Vec<Ctxt> encryptDouble(const double value);
 };
 
 #endif //TRY_SKEYS_H

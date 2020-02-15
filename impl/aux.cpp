@@ -2,30 +2,27 @@
 // Created by rbd on 13.1.2020.
 //
 
-#include "imp1_kmeans.h"
-#include <unistd.h>
-#include <numeric>
-#include <NTL/BasicThreadPool.h>
-#include <helib/ArgMap.h>
-#include <helib/binaryCompare.h>
-#include <helib/binaryArith.h>
-#include <helib/intraSlot.h>
-#include <helib/EncryptedArray.h>
-#include <helib/FHE.h>
-#include <cassert>
-#include <string>
-#include <iostream>
-#include <cmath>
-#include <algorithm>
+//#include <unistd.h>
+//#include <numeric>
+//#include <NTL/BasicThreadPool.h>
+//#include <helib/ArgMap.h>
+//#include <helib/binaryCompare.h>
+//#include <helib/binaryArith.h>
+//#include <helib/intraSlot.h>
+//#include <helib/EncryptedArray.h>
+//#include <helib/FHE.h>
+//#include <cassert>
+//#include <string>
+//#include <iostream>
+//#include <cmath>
+//#include <algorithm>
 #include "aux.h"
 
-vector<Binary> encryptVec(const vector<double>& vector);
-
-Binary encryptDouble(double d);
+#include <iostream>
 
 
 using namespace std;
-
+/*
 void tag() {
     cout << "\n---------" << endl;
 }
@@ -53,7 +50,7 @@ template<typename T> void tag(vector<vector<T> > vector) {
     }
     cout << "] " << endl;
 }
-
+*/
 Bit cmp(const Point &a, const Point &b) {
     //todo cmp should return bit
     //todo override Point's operator<
@@ -65,11 +62,6 @@ Bit cmp(const Point &a, const Point &b) {
 
 // Calculates Euclidean distance
 double dist(const DecryptedPoint &a, const DecryptedPoint &b) {
-//    tag("dist");
-//    cout << "a: ";
-//    tag(a);
-//    cout << "b: ";
-//    tag(b);
     //  for i : m.size  :  sqr += m[i]^2 - p[i]^2
     double sqr = 0;
     for (int i = 0; i < DIM; ++i) {
@@ -79,8 +71,9 @@ double dist(const DecryptedPoint &a, const DecryptedPoint &b) {
 
 }
 
-void writeToFile(const vector<Point> &vec, const string& filename) {
-    vector<DecryptedPoint> points = SKeys::decryptPointsByCA(vec);
+void writeToFile(const vector<Point> &vec, const string &filename, Skeys &sk) {
+    vector<DecryptedPoint> points = sk.decryptPointsByCA(vec);
+//    vector<DecryptedPoint> points = Skeys::decryptPointsByCA(vec);
     ofstream outputFileStream(filename);
     for (const DecryptedPoint& p : points){
         for (double coor : p){
@@ -117,7 +110,7 @@ vector<DecryptedPoint> getPointsFromFile() {
 }
 
 //todo consider moving part of this to aux (at least the part that encrypts the points)
-vector<Point> getEncryptedPointsFromFile() {
+vector<Point> getEncryptedPointsFromFile(Skeys &sk) {
     vector<vector<double> > points = getPointsFromFile();
 
     vector<Point> encPoints;
@@ -127,13 +120,13 @@ vector<Point> getEncryptedPointsFromFile() {
         for (int coor = 0; coor < DIM; ++coor) {
             coorVec.emplace_back(p[coor]);
         }
-        encPoints.emplace_back(coorVec);
+        encPoints.emplace_back(sk, coorVec);
     }
     return encPoints;
 }
 
 Binary encryptDouble(double d) {
-    return {d};
+    return Binary(d);
 }
 
 vector<Binary> encryptVec(const vector<double>& vector) {
@@ -147,12 +140,13 @@ vector<Binary> encryptVec(const vector<double>& vector) {
  * Candidates for a MOVE
  */
 vector<Binary> getDistFromClosestMeanByClient
-        (const vector<DecryptedPoint> & reps, const vector<Point> &pointsForDBG) {
+        (const vector<DecryptedPoint> &reps, const vector<Point> &pointsForDBG, Skeys &sk) {
     // init distance vector
     vector<double> distance;
     // each point ( from points for DBG)
     for (const Point &p : pointsForDBG) {
-        DecryptedPoint point = SKeys::decryptPointByCA(p);
+        DecryptedPoint point = sk.decryptPointByCA(p);
+//        DecryptedPoint point = Skeys::decryptPointByCA(p);
         if (isNullPoint) distance.push_back(-1);
         else {
             //  calculates the distance from the reps
@@ -165,10 +159,6 @@ vector<Binary> getDistFromClosestMeanByClient
             distance.push_back(min);
         }
     }
-//    tag("pointsForDBG");
-//    tag(pointsForDBG);
-//    tag("distance");
-//    tag(distance);
     // return the distance vector
     return encryptVec(distance);
 }
@@ -177,7 +167,7 @@ vector<Binary> getDistFromClosestMeanByClient
 /*
  * Deprecated
  */
-vector<vector<double> > getReps(vector<vector<double> > points) {
+/*vector<vector<double> > getReps(vector<vector<double> > points) {
     vector<vector<double> > representatives;
     int numOfStrips = 1 / EPSILON;
 //    int numOfCells = 1 / pow(EPSILON,2);
@@ -200,8 +190,9 @@ vector<vector<double> > getReps(vector<vector<double> > points) {
     cout << "\n # representatives:  " << representatives.size() << endl;
     cout << "The representatives are:  " << representatives << endl << endl;
     return representatives;
-}
+}*/
 
+/*
 vector<Point> getRepFromClient(const Point &encMean, const vector<Point> &encCell, Binary encCellSize) { //todo add #points in cell?
     cout << endl ;
     tag("getRepFromClient");
@@ -214,7 +205,7 @@ vector<Point> getRepFromClient(const Point &encMean, const vector<Point> &encCel
     DecryptedPoint mean;  // decrypt mean
     for (Binary c : encMean.getCoordinates()) mean.push_back(c.getDecValue());
     vector<DecryptedPoint> cell;  // decrypt cell
-    for (const Point& p : encCell) {
+    for (const Point &p : encCell) {
         DecryptedPoint decrypted;
         for (Binary c : p.getCoordinates()) decrypted.push_back(c.getDecValue());
         cell.push_back(decrypted);
@@ -255,9 +246,10 @@ vector<Point> getRepFromClient(const Point &encMean, const vector<Point> &encCel
     for (const DecryptedPoint& p : cell) {
         vector<Binary> encBinVec;
         for (double c : p) encBinVec.emplace_back(c);
-        encReps.emplace_back(encBinVec);
+        encReps.emplace_back(encBinVec,encMean.sk);
     }
     cout << "encReps: " ;
     tag(encReps);
     return encReps;
 }
+*/
