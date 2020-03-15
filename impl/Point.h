@@ -1,17 +1,6 @@
-//
-// Created by rbd on 24.12.2019.
-//
-
+// Created by rbd on 15.3.2020.
 #ifndef TRY_POINT_H
 #define TRY_POINT_H
-
-//#include "Skeys.h"
-
-//using Binary = double;
-using Binary = long;
-//#include "Binary.h"
-#include <vector>
-//#include <iostream>
 
 //helib
 #include <helib/FHE.h>
@@ -28,55 +17,42 @@ using Binary = long;
 NTL_CLIENT
 //static std::vector<zzX> unpackSlotEncoding; // a global variable
 
+//mine
+#include <vector>
+#include "KeysServer.h"
 
-class Skeys;
-//#include "Bit.h" //todo add
-using Bit = bool; //todo remove
 using namespace std;
 
 class Point {
-    vector<Binary> coordinates;
-//    Skeys          &sk; // = (Skeys &) NULL; //TODO should be private. and public key
-    Skeys          *sk; // = (Skeys &) NULL; //TODO should be private. and public key
-    
+    /** params **/
+    KeysServer * keysServer; //not needed since can get it from pubKey
+    FHEPubKey * pubKey;
+    vector<long> deCoor; // for DBG
 public:
-    vector<NTL::Vec<Ctxt>> encCoordinates;
-    Point(Skeys * sk, const vector<Binary>& coordinates);
-    Point(Skeys * sk, const vector<Vec<Ctxt> >& encCoordinates);
-    //    explicit Point(Skeys &sk, vector<Binary>   coordinates);
-    Point(const Point &p);
-    ~Point();
-    vector<Binary> getCoordinates() const;
-    Vec<Ctxt> operator [] (int idx) { return encCoordinates[idx]; }
-    Vec<Ctxt> operator [] (int idx) const { return encCoordinates[idx]; }
-    friend std::ostream& operator << (std::ostream& os, const Point& p);
-//    friend Point operator + (const Point &, const Point &);
-    Point operator + (const Point &);
-    friend Point operator += (Point &, Point &);
-    friend Point operator - (const Point &, const Point &);
-    friend Point operator -= (Point &, const Point &);
-    friend Point operator * (const Point &, const Bit &);
-    friend Point operator / (const Point &p, const Binary &i);
-    friend Bit operator > (const Point &p1, const Point &p2);
-    friend Bit operator >= (const Point &p1, const Point &p2); //TODO
-    Point & operator = (const Point &p1); //todo consider returning  Point&
-//    Point & operator = ( Point p1); //todo consider returning  Point&
-//    static Point dummyPoint(Skeys &sk);
-
-    //TODO consider using the function below instead of getDistFromClosestMeanByClient in aux.h
-    //friend double getDistFromClosestMean(vector<DecryptedPoint>); {
-    //    return 0;
-    //}
-
-
-//// -------------------------- for DBG --------------------------
-    friend class Point_test;
+    vector<Vec<Ctxt> > eCoordinates;
     
-    
-
-    
+    /** methods **/
+private:
+    //other kind of ctor?
+public:
+    Point(KeysServer * keysServer, vector<Vec<Ctxt> > eCoordinates);
+    Point operator+(const Point &) const;
+    Vec <Ctxt> operator[](int idx) { return eCoordinates[idx]; }
+    Vec <Ctxt> operator[](int idx) const { return eCoordinates[idx]; }
+    /** for DBG **/
+    friend std::ostream & operator<<(std::ostream & os, const Point & p);
+protected:
+    virtual void print(ostream & os) const;
     
 };
 
+class PointExtended : public Point{
+protected:
+    vector<long> coordinates;
+public:
+    PointExtended(KeysServer * keysServer1, const vector<long>& eCoordinates1);
+    /** for DBG **/
+    void print(ostream & os) const override;
+};
 
 #endif //TRY_POINT_H

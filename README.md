@@ -1,4 +1,4 @@
-first run:
+first run the command:
 ```bash
 docker-compose up -d
 ```

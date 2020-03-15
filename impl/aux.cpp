@@ -51,6 +51,7 @@ template<typename T> void tag(vector<vector<T> > vector) {
     cout << "] " << endl;
 }
 */
+
 Bit cmp(const Point &a, const Point &b) {
     //todo cmp should return bit
     //todo override Point's operator<

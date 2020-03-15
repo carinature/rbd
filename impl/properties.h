@@ -6,6 +6,7 @@
 #define TRY_PROPERTIES_H
 
 #include <cmath>
+#include <vector>
 
 #define DIM 2
 #define EPSILON 0.2
@@ -14,9 +15,11 @@
 #define BIT_SIZE 5
 #define N_THreads 1
 
-using DecryptedPoint =  vector<long>;  // moved to prop file
+using DecryptedPoint = std::vector<long>;
+using Bit = bool;
+//using Binary = Vec<Ctxt>; //todo remove?
 
-static bool verbose=false;
+static bool verbose = false;
 
 
 #endif //TRY_PROPERTIES_H

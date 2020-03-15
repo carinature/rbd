@@ -15,3 +15,5 @@ venv
 .clion.source.upload.marker
 tmp
 pies/__pycache__/
+play
+try.cbp

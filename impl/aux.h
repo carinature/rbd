@@ -27,7 +27,7 @@
 
 
 //#define isNullPoint point == vector<double>(DIM, 0)
-
+/*
 using DecryptedPoint =  vector<long>;
 
 void tag();
@@ -50,18 +50,17 @@ vector<DecryptedPoint> getPointsFromFile();
 vector<Point> getEncryptedPointsFromFile(Skeys &sk);
 
 
-vector<Binary> encryptVec(const vector<double>& vector);
+vector<long> encryptVec(const vector<double>& vector);
 
-Binary encryptDouble(double d);
+long encryptDouble(double d);
 
-
+*/
 /*
  * Candidates for a MOVE
  */
 //TODO consider using function in point insted
 //  double getDistFromClosestMean(vector<DecryptedPoint>)
-vector<Binary>
-getDistFromClosestMeanByClient(const vector<DecryptedPoint> &reps, const vector<Point> &pointsForDBG, Skeys &sk);
+//vector<long> getDistFromClosestMeanByClient(const vector<DecryptedPoint> &reps, const vector<Point> &pointsForDBG, Skeys &sk);
 
 
 #endif //TRY_AUX_H

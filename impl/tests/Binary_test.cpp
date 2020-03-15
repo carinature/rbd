@@ -1,7 +1,7 @@
 //
 // Created by rbd on 15.2.2020.
 //
-
+/*
 #include "Binary_test.h"
 #include "../Skeys.h"
 #include <iostream>
@@ -39,3 +39,4 @@ void Binary_test::mini_test() {
     cout << "value2: " << value2 << endl;
     cout << "value34: " << value34 << endl;
 }
+ */

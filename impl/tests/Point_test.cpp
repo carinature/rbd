@@ -3,7 +3,7 @@
 //
 
 #include "Point_test.h"
-#include "../Skeys.h"
+#include "../KeysServer.h"
 #include "../aux.h"
 #include <iostream>
 #include <cassert>
@@ -11,32 +11,39 @@
 using namespace std;
 
 
-void Point_test::mini_test() {
-    cout << " --------- mini_test --------- "   << endl;
-    Skeys * sk = new Skeys();
-    cout << "getEncryptedPointsFromFile" << endl;
-    getEncryptedPointsFromFile(*sk);
-    
-    vector<long> v1 = {1, 2l};
-    vector<long> v2 = {2, 3l};
-    vector<long> v3 = {3, 3l};
-    Point p1(sk, v1);
-    Point p2(sk, v2);
-    Point p3(sk, v3);
-}
-
-void Point_test::point_test_ctor() {
-    cout << " --------- point_test_ctor --------- "   << endl;
-    Skeys * sk    = new Skeys();
+void Point_test::test_ctor() {
+    cout << " --------- test_ctor --------- " << endl;
+    KeysServer * ks = new KeysServer();
     vector<long> v1 = {1, 2l};
     vector<long> v2 = {2, 3l};
     vector<long> v3 = {3, 4l};
-    Point p1(sk, v1);
-    Point p2(sk, v2);
-    Point p3(sk, v3);
-    delete(sk);
+    
+    PointExtended pe1(ks, v1);
+    PointExtended pe2(ks, v2);
+    PointExtended pe3(ks, v3);
+    pe1.eCoordinates;
+    cout << "pe1: " << pe1 << endl;
+    cout << "pe2: " << pe2 << endl;
+    cout << "pe3: " << pe3 << endl;
+    
+    Point pp = pe1;
+    PointExtended ppe = pe1;
+    pp.eCoordinates;
+    cout << "pp: " << pp << endl;
+    cout << "ppe: " << ppe << endl;
+    
+    Point p1(ks, pe1.eCoordinates);
+    Point p2(ks, pe2.eCoordinates);
+    Point p3(ks, pe3.eCoordinates);
+    cout << "p1: " << p1 << endl;
+    cout << "p2: " << p2 << endl;
+    cout << "p3: " << p3 << endl;
+    
+    Point kaka = p1 + p2;
+    cout << "kaka: " << kaka << endl;
+    delete (ks);
 }
-
+/*
 
 void Point_test::point_test_dtor() {
     cout << " --------- point_test_dtor --------- "   << endl;
@@ -133,3 +140,19 @@ void Point_test::point_test_ge_cmp() {
     delete(sk);
 }
 
+void Point_test::mini_test() {
+    cout << " --------- mini_test --------- "   << endl;
+    Skeys * sk = new Skeys();
+    cout << "getEncryptedPointsFromFile" << endl;
+    getEncryptedPointsFromFile(*sk);
+    
+    vector<long> v1 = {1, 2l};
+    vector<long> v2 = {2, 3l};
+    vector<long> v3 = {3, 3l};
+    Point p1(sk, v1);
+    Point p2(sk, v2);
+    Point p3(sk, v3);
+}
+
+
+*/
