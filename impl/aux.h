@@ -26,8 +26,9 @@
 //using Binary = long;
 
 
-#define isNullPoint point == vector<double>(DIM, 0)
-using DecryptedPoint =  vector<double>;
+//#define isNullPoint point == vector<double>(DIM, 0)
+
+using DecryptedPoint =  vector<long>;
 
 void tag();
 

@@ -31,23 +31,28 @@ int main(int argc, char *argv[]) {
     bool verbose = true;
     
     static long mValues[][15] = {
-// { p, phi(m),   m,   d, m1, m2, m3,    g1,   g2,   g3, ord1,ord2,ord3, B,c}
-            {2, 48,   105,  12, 3,  35, 0,   71,   76,   0,    2,  2, 0,  25, 2},
-            {2, 600,  1023, 10, 11, 93, 0,   838,  584,  0,    10, 6, 0,  25, 2},
-            {2, 2304, 4641, 24, 7,  3,  221, 3979, 3095, 3760, 6,  2, -8, 25, 3}
-//            {  2,  2304,  4641, 24,  7,  3,221,  3979,  3095, 3760,   6,  2,  -8, 25, 3},
-//            {  2, 15004, 15709, 22, 23,683,  0,  4099, 13663,    0,  22, 31,   0, 25, 3},
-//            {  2, 27000, 32767, 15, 31,  7, 151, 11628, 28087,25824, 30,  6, -10, 28, 4}
+            // { p, phi(m), m,   d, m1, m2, m3,    g1,   g2,   g3,    ord1,ord2,ord3, B,c}
+//            {  11,    12096,   13949, 0,  0, 0,  0,    4099,    13663,    0,   0,  0,   0, 25, 2},  //   <------
+//            {  11,    12096,   13949, 12,  3, 35,  0,    71,    76,    0,   0,  0,   0, 25, 2},  //   <------
+//            {  11,    10657,   10656, 12,  0, 0,  0,    4099,    13663,    0,   0,  0,   0, 25, 3},
+//            {  11,    10656,   10657, 12,  3, 35,  0,    71,    76,    0,   444,  0,   0, 25, 3},
+            {  2,    48,   105, 12,  3, 35,  0,    71,    76,    0,   2,  2,   0, 25, 2},
+            {  2 ,  600,  1023, 10, 11, 93,  0,   838,   584,    0,  10,  6,   0, 25, 2},
+            {  2,  2304,  4641, 24,  7,  3,221,  3979,  3095, 3760,   6,  2,  -8, 25, 3},
+            {  2, 15004, 15709, 22, 23,683,  0,  4099, 13663,    0,  22, 31,   0, 25, 3},
+            {  2, 27000, 32767, 15, 31,  7, 151, 11628, 28087,25824, 30,  6, -10, 28, 4}
+//            choosing m=13949, phi(m)=12096
     };
     
     
     ArgMap amap;
-    long   prm                = 1;
+//    long   prm                = 1;    //TODO try this - does it help?
+    long   prm                = 0;
     amap.arg("prm", prm, "parameter size (0-tiny,...,4-huge)");
     long bitSize = 5;
     amap.arg("bitSize", bitSize, "bitSize of input integers (<=32)");
-//    long nTests = 3;
-    long nTests = 4;
+    long nTests = 3;
+//    long nTests = 4;
     amap.arg("nTests", nTests, "number of tests to run");
     bool bootstrap = false;
     amap.arg("bootstrap", bootstrap, "test comparison with bootstrapping");
@@ -131,11 +136,12 @@ int main(int argc, char *argv[]) {
 //        long pa = RandomBits_long(bitSize);
 //        long pb = RandomBits_long(bitSize + 1);
         
-        int  intSize = pow(2, bitSize) - 1;
+//        int  intSize = pow(2, bitSize) - 1;
 //        long pa = rand() % intSize ; //RandomBits_long(bitSize + 1);
 //        long pa = rand() % (intSize - 2) ; //RandomBits_long(bitSize + 1);
-        long pa      = i; //RandomBits_long(bitSize + 1);
-        long pb      = rand() % intSize + 1; //RandomBits_long(bitSize + 1);
+        long pa      = i+2; //RandomBits_long(bitSize + 1);
+//        long pb      = rand() % intSize + 1; //RandomBits_long(bitSize + 1);
+        long pb      = 3 ; //RandomBits_long(bitSize + 1);
         cout << "pa (random num 1): " << pa << "\npb (random num 2): " << pb << endl;
         long pMax = std::max(pa, pb);
         long pMin = std::min(pa, pb);
@@ -156,17 +162,26 @@ int main(int argc, char *argv[]) {
                 encb[i].bringToSet(context.getCtxtPrimes(5));
             }
         }
-        
+        context.
         int deca = dec2int(secKey, ea, enca);
         cout << "deca0: " << deca << endl;
         cout << "CHECK-CHECK";
         NTL::Vec<Ctxt> kaka, pipi;
         
-        for(Ctxt &a : enca) {
-            a.addCtxt(a);
-            pipi.append(a);
+//        for(Ctxt &a : enca) {
+//            a.addCtxt(a);
+//            pipi.append(a);
+//        }
+    
+        for(int j = 0; j < bitSize; ++j) {
+//            enca[j] += encb[j];
+            pipi.append(enca[j]);
         }
-        cout << "------pipi";
+        int k = 0;
+        for (Ctxt ct : enca) cout << " -~~~= "<<  ct <<  "at index: "  << k++ " =~~~- " ;
+        cout << enca << " and size : "  << enca.length() << "------" <<endl;
+        
+        cout << "------pipi" << endl;
         cout << endl;
         
         deca = dec2int(secKey, ea, pipi);
@@ -175,16 +190,16 @@ int main(int argc, char *argv[]) {
         deca = dec2int(secKey, ea, enca);
         cout << "deca1: " << deca << endl;
 
-        for (Ctxt& a : enca){
-            a += a;
-            kaka.append(a+=a);
-        } cout << "------"; cout << endl;
-
-        deca = dec2int(secKey, ea, kaka);
-        cout << "deca2: " << deca << endl;
-        
-        deca = dec2int(secKey, ea, enca);
-        cout << "deca1: " << deca << endl;
+//        for (Ctxt& a : enca){
+//            a += a;
+//            kaka.append(a+=a);
+//        } cout << "------"; cout << endl;
+//
+//        deca = dec2int(secKey, ea, kaka);
+//        cout << "deca2: " << deca << endl;
+//
+//        deca = dec2int(secKey, ea, enca);
+//        cout << "deca1: " << deca << endl;
 
 
 //#ifdef DEBUG_PRINTOUT
@@ -194,15 +209,25 @@ int main(int argc, char *argv[]) {
         vector<long> slotsMin, slotsMax, slotsMu, slotsNi;
         
         //cmp only
-        compareTwoNumbers(mu, ni, CtPtrs_VecCt(enca), CtPtrs_VecCt(encb),
-                          &unpackSlotEncoding);
+//        compareTwoNumbers(mu, ni, CtPtrs_VecCt(enca), CtPtrs_VecCt(encb), &unpackSlotEncoding);
+        compareTwoNumbers(mu, ni, CtPtrs_VecCt(encb), CtPtrs_VecCt(enca), &unpackSlotEncoding);
+        NTL::Vec<Ctxt> mumu;
+        mumu.append(mu);
+        NTL::Vec<Ctxt> nini;
+        nini.append(ni);
+        int aa = dec2int(secKey, ea, mumu);
+        int bb = dec2int(secKey, ea, nini);
+        cout << "mumu: " << aa << endl;
+        cout << "nini: " << bb << endl;
+        
         ea.decrypt(mu, secKey, slotsMu);
         ea.decrypt(ni, secKey, slotsNi);
         if(slotsMu[0] != pMu || slotsNi[0] != pNi) {
             cout << "BAD\n";
             if(verbose)
                 cout << "Comparison (without min max) error: a=" << pa << ", b=" << pb
-                     << ", mu=" << slotsMu[0] << ", ni=" << slotsNi[0] << endl;
+//                     << ", mu=" << slotsMu[0] << ", ni=" << slotsNi[0] << endl;
+                     << ", mu=" << slotsMu << ", ni=" << slotsNi << endl;
 //            exit(0);
         } else if(verbose) {
             cout << "Comparison (without min max) succeeded: ";
@@ -255,11 +280,12 @@ int dec2int(const FHESecKey &secKey, const EncryptedArray &ea, const Vec <Ctxt> 
     vector<long>   decaBit, vec;
     for(const Ctxt &a : enca) {
         ea.decrypt(a, secKey, decaBit);
-        cout << "LAGOON " << decaBit << endl;
+//        cout << decaBit.size() << "LAGOON " << decaBit << endl;
+        cout << decaBit[0];// << endl;
 //        vec.insert(vec.begin(),decaBit[0]);
         vec.push_back(decaBit[0]);
     }
-//    cout << endl;
+    cout << endl;
     return bin2int(vec);
 }
 

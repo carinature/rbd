@@ -35,11 +35,11 @@ int main(int argc, char *argv[]) {
     Skeys         sk        = Skeys();
     vector<Point> encPoints = getEncryptedPointsFromFile(sk);
     cout << "encPoints : " << encPoints << " END encPoints" << endl;
-    vector<Point> encMeans = getEncryptedKMeans(encPoints, sk);
-    vector<vector<Point> > leftoverPoints = getLeftoverPoints(encPoints, encMeans, sk); //TODO SEGFAULT
-    writeToFile(encMeans, "means", sk);
-    writeToFile(leftoverPoints[0], "chosen", sk);
-    writeToFile(leftoverPoints[1], "leftover", sk);
+//    vector<Point> encMeans = getEncryptedKMeans(encPoints, sk);
+//    vector<vector<Point> > leftoverPoints = getLeftoverPoints(encPoints, encMeans, sk); //TODO SEGFAULT
+//    writeToFile(encMeans, "means", sk);
+//    writeToFile(leftoverPoints[0], "chosen", sk);
+//    writeToFile(leftoverPoints[1], "leftover", sk);
 }
 
 vector<Point> getEncryptedKMeans(vector<Point> points, Skeys &sk) {

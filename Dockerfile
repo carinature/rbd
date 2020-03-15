@@ -66,4 +66,5 @@ RUN apt-get update &&\
     apt-get install python3.6  # &&\
     apt-get install python3-tk
 
+VOLUME ["/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger"]
 #/DangerZone

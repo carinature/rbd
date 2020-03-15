@@ -13,7 +13,27 @@ set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall")
 
 find_package(helib 1.0.0 EXACT REQUIRED)
 
-add_executable(play HEcmp.h imp1_kmeans.cpp  Binary.cpp Point.cpp aux.h aux.cpp)
-#add_executable(play HEcmp.h imp1_kmeans.cpp Bit.cpp Binary.cpp Point.cpp aux.h aux.cpp)
+#add_executable(run impl/imp1_kmeans.cpp
+#		impl/Binary.cpp impl/Point.cpp impl/aux.cpp impl/Skeys.cpp impl/Skeys.h)
+#target_link_libraries(run helib)
 
-target_link_libraries(play helib)
+#add_executable(run old/HEcmp.h  old/compare2numbers.cpp  old/Contextor.cpp )
+#add_executable(run old/scratch.cpp)
+add_executable(testing
+		impl/Point.cpp
+        impl/Skeys.cpp
+
+		impl/tests/run_tests.cpp
+		impl/tests/Point_test.cpp
+		impl/tests/Skeys_test.cpp
+		impl/aux.cpp)
+target_link_libraries(testing helib )
+
+# DangerZone
+# Makes cmake add a file to the "real" directory in the "real" world (not on docker).
+# 	without this CMake only copies files on reload, not build
+#add_custom_target(copy_res_directory ALL
+#		COMMAND ${CMAKE_COMMAND} -E copy_directory
+#		"${CMAKE_SOURCE_DIR}" "${CMAKE_BINARY_DIR}"
+#		COMMENT "Copy res directory to build tree"
+#		VERBATIM)

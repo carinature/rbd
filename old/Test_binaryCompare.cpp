@@ -34,7 +34,7 @@ NTL_CLIENT
 //        decryptAndCompare(ctxt, sk, ea, pa);
 
 static std::vector<zzX> unpackSlotEncoding; // a global variable
-static bool verbose=false;
+//static bool verbose=false;
 
 static long mValues[][15] = { 
 // { p, phi(m),   m,   d, m1, m2, m3,    g1,   g2,   g3, ord1,ord2,ord3, B,c}

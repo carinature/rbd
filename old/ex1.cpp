@@ -183,8 +183,6 @@ int main3(int argc, char *argv[]){
 //----------------------------------------------------------------------------------
 
 
-
-
     for (long i=0; i<nTests; i++) {
 //        testCompare(secKey, bitSize, bootstrap);
         //todo  <-- inserted tempCompare here
@@ -220,7 +218,7 @@ int main3(int argc, char *argv[]){
                 encb[i].bringToSet(context.getCtxtPrimes(5));
             }
         }
-
+    
         vector<long> slotsMin, slotsMax, slotsMu, slotsNi;
 
         //cmp only

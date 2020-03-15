@@ -7,8 +7,9 @@
 
 //#include "Skeys.h"
 
-//using Binary = long;
-#include "Binary.h"
+//using Binary = double;
+using Binary = long;
+//#include "Binary.h"
 #include <vector>
 //#include <iostream>
 
@@ -34,25 +35,30 @@ using Bit = bool; //todo remove
 using namespace std;
 
 class Point {
-    vector<NTL::Vec<Ctxt>> encCoordinates;
     vector<Binary> coordinates;
-    Skeys          &sk; // = (Skeys &) NULL; //TODO should be private. and public key
+//    Skeys          &sk; // = (Skeys &) NULL; //TODO should be private. and public key
+    Skeys          *sk; // = (Skeys &) NULL; //TODO should be private. and public key
     
 public:
-    explicit Point(Skeys &sk, vector<Binary>  coordinates);
+    vector<NTL::Vec<Ctxt>> encCoordinates;
+    Point(Skeys * sk, const vector<Binary>& coordinates);
+    Point(Skeys * sk, const vector<Vec<Ctxt> >& encCoordinates);
+    //    explicit Point(Skeys &sk, vector<Binary>   coordinates);
     Point(const Point &p);
-//    Point();
+    ~Point();
     vector<Binary> getCoordinates() const;
-    Binary& operator [] (int idx) { return coordinates[idx]; }
-    const Binary& operator [] (int idx) const { return coordinates[idx]; }
+    Vec<Ctxt> operator [] (int idx) { return encCoordinates[idx]; }
+    Vec<Ctxt> operator [] (int idx) const { return encCoordinates[idx]; }
     friend std::ostream& operator << (std::ostream& os, const Point& p);
-    friend Point operator + (Point &, Point &);
+//    friend Point operator + (const Point &, const Point &);
+    Point operator + (const Point &);
     friend Point operator += (Point &, Point &);
     friend Point operator - (const Point &, const Point &);
     friend Point operator -= (Point &, const Point &);
     friend Point operator * (const Point &, const Bit &);
     friend Point operator / (const Point &p, const Binary &i);
-    friend Bit operator >= (const Point &p1, const Point &p2);
+    friend Bit operator > (const Point &p1, const Point &p2);
+    friend Bit operator >= (const Point &p1, const Point &p2); //TODO
     Point & operator = (const Point &p1); //todo consider returning  Point&
 //    Point & operator = ( Point p1); //todo consider returning  Point&
 //    static Point dummyPoint(Skeys &sk);
@@ -65,6 +71,11 @@ public:
 
 //// -------------------------- for DBG --------------------------
     friend class Point_test;
+    
+    
+
+    
+    
 };
 
 

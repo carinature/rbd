@@ -56,7 +56,8 @@ Bit cmp(const Point &a, const Point &b) {
     //todo override Point's operator<
     //todo use helib cmp
     //todo consider <= over < (the later neve allows any points) and how to implement it with helib
-    return a >= b;
+//    return a >= b;
+    return a > b;
 //    return a[1] <= b[1];
 }
 
@@ -93,16 +94,17 @@ vector<DecryptedPoint> getPointsFromFile() {
 //    inputFileStream >> count;
 //    inputFileStream.ignore(1, '\n');
 
-    vector<vector<double> > points;
+    vector<DecryptedPoint> points;
 //    for (int i = 0; i < count; ++i) {
-    getline(inputFileStream, line);
+//    getline(inputFileStream, line);
     while(getline(inputFileStream, line)){
         istringstream lineStream(line);
-        vector<double> point;
+        DecryptedPoint point;
         for (auto & coor : pa) {
 //            getline(lineStream, coor, ',');
             getline(lineStream, coor, ' ');
-            point.push_back(stod(coor));
+//            point.push_back(stod(coor));
+            point.push_back(FACTOR*stod(coor));
         }
         points.push_back(point);
     }
@@ -111,16 +113,20 @@ vector<DecryptedPoint> getPointsFromFile() {
 
 //todo consider moving part of this to aux (at least the part that encrypts the points)
 vector<Point> getEncryptedPointsFromFile(Skeys &sk) {
-    vector<vector<double> > points = getPointsFromFile();
+    vector<DecryptedPoint> points = getPointsFromFile();
 
     vector<Point> encPoints;
 //    for (int i=0; i<points.size(); ++i){
-    for (vector<double> p : points) {
+    for (DecryptedPoint p : points) {
         vector<Binary> coorVec; // = vector<Binary>();
         for (int coor = 0; coor < DIM; ++coor) {
             coorVec.emplace_back(p[coor]);
         }
-        encPoints.emplace_back(sk, coorVec);
+//        cout << "coorVec" << coorVec << endl;
+//        Point * newp = new Point(sk, coorVec);
+//        encPoints.emplace_back(*newp);
+        Point newp = Point(&sk, coorVec);
+        encPoints.emplace_back(newp);
     }
     return encPoints;
 }
@@ -139,29 +145,29 @@ vector<Binary> encryptVec(const vector<double>& vector) {
 /*
  * Candidates for a MOVE
  */
-vector<Binary> getDistFromClosestMeanByClient
-        (const vector<DecryptedPoint> &reps, const vector<Point> &pointsForDBG, Skeys &sk) {
-    // init distance vector
-    vector<double> distance;
-    // each point ( from points for DBG)
-    for (const Point &p : pointsForDBG) {
-        DecryptedPoint point = sk.decryptPointByCA(p);
-//        DecryptedPoint point = Skeys::decryptPointByCA(p);
-        if (isNullPoint) distance.push_back(-1);
-        else {
-            //  calculates the distance from the reps
-            double min = dist(point, reps[0]);
-            for (const DecryptedPoint& rep : reps) {
-                double currDist = dist(point, rep);
-                if (currDist < min) min = currDist;
-            }
-            //  chooses the smallest distance and adds to the distance vector
-            distance.push_back(min);
-        }
-    }
-    // return the distance vector
-    return encryptVec(distance);
-}
+//vector<Binary> getDistFromClosestMeanByClient
+//        (const vector<DecryptedPoint> &reps, const vector<Point> &pointsForDBG, Skeys &sk) {
+//    // init distance vector
+//    vector<double> distance;
+//    // each point ( from points for DBG)
+//    for (const Point &p : pointsForDBG) {
+//        DecryptedPoint point = sk.decryptPointByCA(p);
+////        DecryptedPoint point = Skeys::decryptPointByCA(p);
+//        if (isNullPoint) distance.push_back(-1);
+//        else {
+//            //  calculates the distance from the reps
+//            double min = dist(point, reps[0]);
+//            for (const DecryptedPoint& rep : reps) {
+//                double currDist = dist(point, rep);
+//                if (currDist < min) min = currDist;
+//            }
+//            //  chooses the smallest distance and adds to the distance vector
+//            distance.push_back(min);
+//        }
+//    }
+//    // return the distance vector
+//    return encryptVec(distance);
+//}
 
 
 /*
