@@ -7,7 +7,9 @@
 
 
 class aux_test {
-
+    
+    static void getEncryptedPointsFromFile_test();
+    
 };
 
 

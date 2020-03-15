@@ -3,3 +3,5 @@
 //
 
 #include "aux_test.h"
+
+void getEncryptedPointsFromFile_test();
