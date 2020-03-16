@@ -6,8 +6,8 @@
 #define TRY_POINTEXTENDED_OLD_H
 
 //mine
-#include "properties.h"
-#include "Point.h"
+#include "../impl/properties.h"
+#include "../impl/Point.h"
 #include <vector>
 
 using namespace std;

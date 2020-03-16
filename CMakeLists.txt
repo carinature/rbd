@@ -24,14 +24,14 @@ add_executable(testing
 #		impl/aux.cpp
 		impl/KeysServer.cpp
 		impl/Point.cpp
-		impl/PointExtended_old.cpp
+		old/PointExtended_old.cpp
 
 		#test
 		impl/tests/run_tests.cpp
 		impl/tests/Point_test.cpp
 		impl/tests/KeysServer_test.cpp
 
-		impl/KeysServer.h  impl/tests/KeysServer_test.h impl/PointExtended_old.h)
+		impl/KeysServer.h  impl/tests/KeysServer_test.h old/PointExtended_old.h)
 target_link_libraries(testing helib)
 
 # DangerZone

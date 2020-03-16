@@ -6,7 +6,7 @@
 #define TRY_SKEYS_H
 
 //#include "aux.h"
-#include "Point_old.h"
+#include "../old/Point_old.h"
 #include "Point.h"
 
 #include <NTL/BasicThreadPool.h>
@@ -19,16 +19,10 @@ NTL_CLIENT
 
 //static std::vector<zzX> unpackSlotEncoding; // a global variable
 
-using DecryptedPoint =  vector<long>;  // todo move to prop file
+using DecryptedPoint =  vector<long>;  //  move to prop file
 
 class Skeys {
-/*
-    //// todo put here the CA functions , as STATIC
-    //      maybe later consider:
-    //  1. having a CA/Skeys object
-    //  2. using Skeys server - all communication will be user-server -
-    //      this way you don't have to init helib parameters every time
-*/
+
     long mValue[15] =
 // { p, phi(m),   m,   d, m1, m2, m3,    g1,   g2,   g3, ord1,ord2,ord3, B,c}
     {2, 48,    105,   12, 3,  35,  0,   71,    76,    0,     2,  2,  0,   25, 2};
@@ -56,7 +50,7 @@ public:
 //protected:
 private:
     DecryptedPoint decryptPointByCA(const Point& p);
-    vector<DecryptedPoint> decryptPointsByCA(const vector<Point> &reps); //todo consider static, and writing enc info to file
+    vector<DecryptedPoint> decryptPointsByCA(const vector<Point> &reps);
     
     
   

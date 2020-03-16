@@ -40,7 +40,7 @@ Skeys::Skeys() {
     long nthreads = 1;
     amap.arg("nthreads", nthreads, "number of threads");
     amap.arg("verbose", verbose, "print more information");
-//    amap.parse(argc, argv); //todo find a way to remove this so that Skeys can be c'tores without argc, argv arguments
+//    amap.parse(argc, argv); //don't remove
     assert(prm >= 0 && prm < 5);
     if(seed) NTL::SetSeed(ZZ(seed));
     if(nthreads > 1) NTL::SetNumThreads(nthreads);
@@ -97,9 +97,9 @@ Skeys::Skeys() {
     
     activeContext = context; // make things a little easier sometimes
     this->context = context;
-    this->pubKey = new FHESecKey(secKey);  // todo notice that pubKey is a ptr and not value, so the trick from max's lecture might not work
+    this->pubKey = new FHESecKey(secKey);  //  notice that pubKey is a ptr and not value, so the trick from max's lecture might not work
 //    this->secKey = new FHESecKey(secKey);  // FHESecKey inherits from FHEPubKey
-    this->secKey = (FHESecKey *) this->pubKey;  // todo notice that pubKey is a ptr and not value, so the trick from max's lecture might not work
+    this->secKey = (FHESecKey *) this->pubKey;  //  notice that pubKey is a ptr and not value, so the trick from max's lecture might not work
 }
 
 
@@ -157,6 +157,6 @@ Point Skeys::calculateAvgPointByCA(const Point & point, int amount) {
     }
     catch(...) {
         return Point(this, {Binary(0), Binary(0)}); ///TODO
-//        return Point(*this, {Binary(0), Binary(0)}); ///TODO
+//        return Point(*this, {Binary(0), Binary(0)});
     }
 }

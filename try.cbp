@@ -100,12 +100,6 @@
 		<Unit filename="/tmp/tmp.hR0i9xBjaK/impl/Point.h">
 			<Option target="testing"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.hR0i9xBjaK/impl/PointExtended_old.cpp">
-			<Option target="testing"/>
-		</Unit>
-		<Unit filename="/tmp/tmp.hR0i9xBjaK/impl/PointExtended_old.h">
-			<Option target="testing"/>
-		</Unit>
 		<Unit filename="/tmp/tmp.hR0i9xBjaK/impl/tests/KeysServer_test.cpp">
 			<Option target="testing"/>
 		</Unit>
@@ -122,6 +116,12 @@
 			<Option target="testing"/>
 		</Unit>
 		<Unit filename="/tmp/tmp.hR0i9xBjaK/impl/tests/run_tests.h">
+			<Option target="testing"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.hR0i9xBjaK/old/PointExtended_old.cpp">
+			<Option target="testing"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.hR0i9xBjaK/old/PointExtended_old.h">
 			<Option target="testing"/>
 		</Unit>
 		<Unit filename="/tmp/tmp.hR0i9xBjaK/CMakeLists.txt">
