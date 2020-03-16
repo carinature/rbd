@@ -19,7 +19,7 @@ class KeysServer {
 public:
     /** params **/
     FHEcontext * context;
-FHESecKey * secKey;
+    FHESecKey * secKey; //todo move to private!!
 
 protected:
     long mValues[8][15] = {
@@ -40,8 +40,6 @@ public:
 
 /** methods **/
     KeysServer();
-    
-    
 };
 
 #endif //TRY_KEYSSERVER_H

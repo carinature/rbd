@@ -52,7 +52,10 @@ public:
     //! @brief _Encrypted_ addition of coordinates
     Point operator+(const Point &) const;
     //! @brief _Encrypted_ multiplication of coordinates
-    Point operator*(const Ctxt & b);
+    Point operator*(const Ctxt & bit);
+    
+    //! @brief compare 2 points
+    Ctxt operator>(const Point &p);
     
     //! @brief The encrypted coordiante
     Vec<Ctxt> operator[](int idx) { return eCoordinates[idx]; }
@@ -86,6 +89,8 @@ public:
 };
 
 
+// Encryption and decryption are done by the friends FHE[Pub|Sec]Key
+
 // TODO
 //  cmp
 //  substruction
@@ -95,6 +100,7 @@ public:
 //  copy c'tor
 //  copy c'tor from and/or to  PointExtended
 //  assignment
+//  Encryption and decryption are done by the friends FHE[Pub|Sec]Key
 
 
 #endif //TRY_PointH

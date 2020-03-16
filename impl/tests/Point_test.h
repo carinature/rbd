@@ -13,7 +13,7 @@ public:
     static void test_mult();
     static void test_sum();
     static void test_decrypt();
-//    static void test_g_cmp();
+    static void test_g_cmp();
 //    static void test_ge_cmp();
 //    static void mini_test();
 

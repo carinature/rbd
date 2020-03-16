@@ -29,7 +29,7 @@ Point Point::operator+(const Point & p) const {
         /** for DBG #1  - todo - remove **/
         vector<long> slots;
         decryptBinaryNums(slots, eep, *(keysServer->secKey), *(keysServer->pubKey->getContext().ea));
-        cout << "score! " << slots[0] << endl;
+//        cout << "score! " << slots[0] << endl;
         /** END for DBG #1**/
     }
     Point sumPoint = Point(keysServer, sum);
@@ -47,29 +47,24 @@ Point Point::operator+(const Point & p) const {
     return sumPoint; //TODO should return the point with the encCoor
 }
 
-Point Point::operator*(const Ctxt & b) {
+Point Point::operator*(const Ctxt & bit) {
     vector<Vec<Ctxt>> prodPoint;
     for(size_t i = 0; i < eCoordinates.size(); ++i) {
-        Vec<Ctxt> c = eCoordinates[i], eProduct;
-//        CtPtrs_VecCt eep(eProduct);
+        Vec<Ctxt> c = eCoordinates[i];
 //        int nBits = (outSize>0 && outSize<2*BIT_SIZE)? outSize : (2*BIT_SIZE);
         //fixme - high potensial for BUG, prodPoint.bitsize can be bigger than BIT_SIZE
-//        addTwoNumbers(eep, CtPtrs_VecCt(c1), CtPtrs_VecCt(c2), BIT_SIZE, &unpackSlotEncoding);
-        for (auto & ct : c){
-            ct.multiplyBy(b);
-        }
+        for (auto & ct : c) ct.multiplyBy(bit);  // multiplies each bit of the coordinate
         prodPoint.push_back(c);
-//        prodPoint.push_back(eProduct);
         /** for DBG #1  - todo - remove **/
         vector<long> slots;
         decryptBinaryNums(slots, CtPtrs_VecCt(c), *(keysServer->secKey), *(keysServer->pubKey->getContext().ea));
-        cout << "score! " << slots[0] << endl;
+//        cout << "score! " << slots[0] << endl;
         /** END for DBG #1**/
     }
     Point sumPoint = Point(keysServer, prodPoint);
     /** for DBG #2 - todo - remove **/
     cout << "The dec prodPoint Point is: ( ";
-    for(auto c : sumPoint.eCoordinates) {
+    for(Vec<Ctxt> c : sumPoint.eCoordinates) {
 //        Vec<Ctxt> eSum;
         CtPtrs_VecCt eep(c);
         vector<long> slots;
@@ -81,6 +76,36 @@ Point Point::operator*(const Ctxt & b) {
     return sumPoint; //TODO should return the point with the encCoor
 }
 
+Ctxt Point::operator>(const Point & p) {
+    vector<Vec<Ctxt> > p1dec = eCoordinates, p2dec = p.eCoordinates;
+    Ctxt mu(*pubKey), ni(*pubKey);
+    vector<long> slotsMin, slotsMax, slotsMu, slotsNi;
+    Vec<Ctxt> eMax, eMin, enca = p1dec[DIM - 1], encb = p2dec[DIM - 1];
+    compareTwoNumbers(mu, ni, CtPtrs_VecCt(enca), CtPtrs_VecCt(encb), &unpackSlotEncoding);
+    
+//    Vec<Ctxt> mumu,nini;
+//    mumu.append(mu);
+//    nini.append(ni);
+//    /** for DBG #2 - todo - remove **/
+//    vector<long> slots1, slots2;
+//    cout << "The dec mumu Point is: ( ";
+//    decryptBinaryNums(slots1, CtPtrs_VecCt(mumu), *(keysServer->secKey), *(keysServer->pubKey->getContext().ea));
+//    cout << slots1[0] << " ";
+//    cout << ")" << endl;
+//    cout << "The dec nini Point is: ( ";
+//    decryptBinaryNums(slots2, CtPtrs_VecCt(nini), *(keysServer->secKey), *(keysServer->pubKey->getContext().ea));
+//    cout << slots2[0] << " ";
+//    cout << ")" << endl;
+//    /** END for DBG #2**/
+    
+    return mu; // todo check results
+//    return mu && !ni; // todo check results
+    //! Convenience method: XOR and nXOR with arbitrary plaintext space:
+    //! a xor b = a+b-2ab = a + (1-2a)*b,
+    //! a nxor b = 1-a-b+2ab = (b-1)(2a-1)+a
+//    void xorConstant(const DoubleCRT& poly, double size=-1.0)
+
+}
 
 /** Constructor, creates a PointExtended from a vector of plaintext coordinates **/
 PointExtended::PointExtended(KeysServer * keysServer, const vector<long> & coordinates)
@@ -116,6 +141,7 @@ DecryptedPoint Point::decrypt() {
     for(auto c : eCoordinates) {
         CtPtrs_VecCt eep(c);
         vector<long> slots;
+        //todo replace with keysServer.decrypt - secKey should not be public
         decryptBinaryNums(slots, eep, *(keysServer->secKey), *(keysServer->pubKey->getContext().ea));
         dp.push_back(slots[0]);
     }
