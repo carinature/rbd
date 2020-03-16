@@ -11,7 +11,7 @@
 using namespace std;
 
 
-void Point_test::test_ctor() {
+void Point_test::test_ctor() {  // todo - add some end cases
     cout << " --------- test_ctor --------- " << endl;
     KeysServer * ks = new KeysServer();
     vector<long> v1 = {1, 2l};
@@ -22,89 +22,181 @@ void Point_test::test_ctor() {
     PointExtended pe2(ks, v2);
     PointExtended pe3(ks, v3);
     pe1.eCoordinates;
-    cout << "pe1: " << pe1 << endl;
-    cout << "pe2: " << pe2 << endl;
-    cout << "pe3: " << pe3 << endl;
+//    cout << "pe1: " << pe1 << endl;
+//    cout << "pe2: " << pe2 << endl;
+//    cout << "pe3: " << pe3 << endl;
     
     Point pp = pe1;
     PointExtended ppe = pe1;
     pp.eCoordinates;
-    cout << "pp: " << pp << endl;
-    cout << "ppe: " << ppe << endl;
+//    cout << "pp: " << pp << endl;
+//    cout << "ppe: " << ppe << endl;
     
     Point p1(ks, pe1.eCoordinates);
     Point p2(ks, pe2.eCoordinates);
     Point p3(ks, pe3.eCoordinates);
-    cout << "p1: " << p1 << endl;
-    cout << "p2: " << p2 << endl;
-    cout << "p3: " << p3 << endl;
+//    cout << "p1: " << p1 << endl;
+//    cout << "p2: " << p2 << endl;
+//    cout << "p3: " << p3 << endl;
     
-    Point kaka = p1 + p2;
-    cout << "kaka: " << kaka << endl;
     delete (ks);
 }
-/*
 
-void Point_test::point_test_dtor() {
-    cout << " --------- point_test_dtor --------- "   << endl;
-}
-
-
-void Point_test::point_test_decrypt() {
-    cout << " --------- point_test_decrypt --------- "   << endl;
-    Skeys * sk    = new Skeys();
+void Point_test::test_decrypt() {
+    cout << " --------- test_decrypt --------- "   << endl;
+    KeysServer * ks = new KeysServer();
     vector<long> v1 = {1, 2l};
     vector<long> v2 = {2, 3l};
     vector<long> v3 = {3, 4l};
     vector<long> v4 = {13, 11l};
-    Point p1(sk, v1);
-    Point p2(sk, v2);
-    Point p3(sk, v3);
-    Point p4(sk, v4);
-    vector<long> dp1 = sk->decryptPointByCA(p1);
-    vector<long> dp2 = sk->decryptPointByCA(p2);
-    vector<long> dp3 = sk->decryptPointByCA(p3);
-    vector<long> dp4 = sk->decryptPointByCA(p4);
+    
+    PointExtended pe1(ks, v1);
+    PointExtended pe2(ks, v2);
+    PointExtended pe3(ks, v3);
+    PointExtended pe4(ks, v4);
+    
+//    Point p1(ks, pe1.eCoordinates);
+//    Point p2(ks, pe2.eCoordinates);
+//    Point p3(ks, pe3.eCoordinates);
+//    Point p4(ks, pe4.eCoordinates);
+    
+    Point p1 = pe1;
+    Point p2 = pe2;
+    Point p3 = pe3;
+    Point p4 = pe4;
+    
+    vector<long> dp1 = p1.decrypt();
+    vector<long> dp2 = p2.decrypt();
+    vector<long> dp3 = p3.decrypt();
+    vector<long> dp4 = p4.decrypt();
     
     assert(dp1 == v1);
     assert(dp2 == v2);
     assert(dp3 == v3);
     assert(dp4 == v4);
     
-    cout << "and the winner is: " << dp4 << endl;
-    delete(sk);
+    delete(ks);
 }
 
-
-void Point_test::point_test_sum() {
-    cout << " --------- point_test_sum --------- "   << endl;
-    Skeys * sk    = new Skeys();
-    DecryptedPoint v1 = {1, 2l};
-    DecryptedPoint v2 = {2, 3l};
-//    vector<long> v1 = {1, 2l};
-//    vector<long> v2 = {2, 3l};
+void Point_test::test_sum() {
+    cout << " --------- test_sum --------- " << endl;
+    KeysServer * ks = new KeysServer();
+    vector<long> v1 = {1, 2l};
+    vector<long> v2 = {2, 3l};
     vector<long> v3 = {3, 4l};
-    Point p1(sk, v1);
-    Point p2(sk, v2);
-    Point p3(sk, v3);
     
-    Point          sum1 = p1 + p2;
-    Point          sum2 = p1 + p3;
+    PointExtended pe1(ks, v1);
+    PointExtended pe2(ks, v2);
+    PointExtended pe3(ks, v3);
     
-    DecryptedPoint decSum1  = sk->decryptPointByCA(sum1);
-    DecryptedPoint decSum2  = sk->decryptPointByCA(sum2);
-    cout << "sum1: " << sum1 << endl;
-    cout << "sum2: " << sum2 << endl;
-    cout << "decSum1: " << decSum1 << endl;
-    cout << "decSum2: " << decSum2 << endl;
+    Point p1(ks, pe1.eCoordinates);
+    Point p2(ks, pe2.eCoordinates);
+    Point p3(ks, pe3.eCoordinates);
 
-    //    DecryptedPoint orgSum1 = v1 + v2;
-//    assert(orgSum1 == decSum1);
-//    assert(dp2 == v2);
-//    assert(dp3 == v3);
-//    assert(dp4 == v4);
+//    PointExtended sume1 = pe1 + pe2;
+//    PointExtended sume2 = pe1 + pe3;
+//    PointExtended sume3 = pe1 + pe1;
     
-    delete(sk);
+    Point sum1 = p1 + p2;
+    Point sum2 = p1 + p3;
+    Point sum3 = p1 + p1;
+
+//    DecryptedPoint decSum1  = ks->decryptPointByCA(sum1);
+//    DecryptedPoint decSum2  = ks->decryptPointByCA(sum2);
+    DecryptedPoint decSum1 = sum1.decrypt();
+    DecryptedPoint decSum2 = sum2.decrypt();
+    DecryptedPoint decSum3 = sum3.decrypt();
+    
+    DecryptedPoint orgSum1 = v1 + v2;
+    DecryptedPoint orgSum2 = v1 + v3;
+    DecryptedPoint orgSum3 = v1 + v1;
+    assert(orgSum1 == decSum1);
+    assert(orgSum2 == decSum2);
+    assert(orgSum3 == decSum3);
+    
+//    cout << "sum1: " << sum1 << endl;
+//    cout << "sum2: " << sum2 << endl;
+//    cout << "sum3: " << sum3 << endl;
+//    cout << "decSum1: " << decSum1 << endl;
+//    cout << "decSum2: " << decSum2 << endl;
+//    cout << "decSum3: " << decSum3 << endl;
+    delete (ks);
+}
+
+void Point_test::test_mult() {
+    cout << " --------- test_mult --------- "   << endl;
+    KeysServer * ks = new KeysServer();
+    vector<long> v0 = {0, 0};
+    vector<long> v1 = {1, 2l};
+    vector<long> v2 = {2, 3l};
+    vector<long> v3 = {3, 4l};
+    
+    PointExtended pe0(ks, v0);
+    PointExtended pe1(ks, v1);
+    PointExtended pe2(ks, v2);
+    PointExtended pe3(ks, v3);
+    
+    Point p0 = pe0;
+    Point p1 = pe1;
+    Point p2 = pe2;
+    Point p3 = pe3;
+    
+//    Vec<Ctxt> b0 = p0[0];
+//    Vec<Ctxt> b1 = p1[0];
+    Ctxt b0 = p0[0][0];
+    Ctxt b1 = p1[0][0];
+
+//    PointExtended producte1 = pe1 + pe2;
+//    PointExtended producte2 = pe1 + pe3;
+//    PointExtended producte3 = pe1 + pe1;
+    
+    Point product1 = p1*b0;
+    Point product2 = p2*b0;
+    Point product3 = p3*b0;
+    Point product11 = p1*b1;
+    Point product21 = p2*b1;
+    Point product31 = p3*b1;
+
+//    DecryptedPoint decproduct1  = ks->decryptPointByCA(product1);
+//    DecryptedPoint decproduct2  = ks->decryptPointByCA(product2);
+    DecryptedPoint decproduct1 = product1.decrypt();
+    DecryptedPoint decproduct2 = product2.decrypt();
+    DecryptedPoint decproduct3 = product3.decrypt();
+    DecryptedPoint decproduct11 = product11.decrypt();
+    DecryptedPoint decproduct21 = product21.decrypt();
+    DecryptedPoint decproduct31 = product31.decrypt();
+    
+    DecryptedPoint orgproduct1 = v1 * 0;
+    DecryptedPoint orgproduct2 = v2 * 0;
+    DecryptedPoint orgproduct3 = v3 * 0;
+    
+    DecryptedPoint orgproduct11 = v1 * 1;
+    DecryptedPoint orgproduct21 = v2 * 1;
+    DecryptedPoint orgproduct31 = v3 * 1;
+    
+    assert(orgproduct1 == decproduct1);
+    assert(orgproduct2 == decproduct2);
+    assert(orgproduct3 == decproduct3);
+    assert(orgproduct11 == decproduct11);
+    assert(orgproduct21 == decproduct21);
+    assert(orgproduct31 == decproduct31);
+
+//    cout << "product1: " << product1 << endl;
+//    cout << "product2: " << product2 << endl;
+//    cout << "product3: " << product3 << endl;
+//    cout << "decproduct1: " << decproduct1 << endl;
+//    cout << "decproduct2: " << decproduct2 << endl;
+//    cout << "decproduct3: " << decproduct3 << endl;
+//    cout << "decproduct11: " << decproduct11 << endl;
+//    cout << "decproduct21: " << decproduct21 << endl;
+//    cout << "decproduct31: " << decproduct31 << endl;
+    delete (ks);
+}
+
+/*
+
+void Point_test::test_mult() {
+    cout << " --------- point_test_dtor --------- "   << endl;
 }
 
 void Point_test::point_test_g_cmp() {
@@ -156,3 +248,19 @@ void Point_test::mini_test() {
 
 
 */
+
+/** aux **/
+DecryptedPoint operator+(DecryptedPoint a, DecryptedPoint b) {
+    DecryptedPoint sum;
+    for(int i = 0; i < a.size(); ++i) {
+        sum.push_back(a[i] + b[i]);
+    }
+    return sum;
+}
+DecryptedPoint operator*(DecryptedPoint a, int b) {
+    DecryptedPoint prod;
+    for(int i = 0; i < a.size(); ++i) {
+        prod.push_back(a[i]*b);
+    }
+    return prod;
+}
