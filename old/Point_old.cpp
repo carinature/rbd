@@ -5,7 +5,7 @@
 #include "Point_old.h"
 
 #include "../impl/aux.h"
-#include "../impl/Skeys.h"
+#include "Skeys.h"
 
 //Point::Point(Skeys &sk, const vector<Binary>& coordinates) : coordinates(coordinates), sk(&sk) {
 //Point::Point(Skeys * sk, const vector<Binary>& coordinates){

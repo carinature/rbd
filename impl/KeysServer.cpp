@@ -71,11 +71,11 @@ KeysServer::KeysServer() {
         if(nthreads > 1) cout << "  using " << NTL::AvailableThreads() << " threads\n";
         cout << "computing key-independent tables..." << std::flush;
     }
-    FHEcontext * fheContext = new FHEcontext(m, p, /*r=*/1, gens, ords);
+    auto * fheContext = new FHEcontext(m, p, /*r=*/1, gens, ords);
 //    const FHEcontext * constContext = new FHEcontext(m, p, /*r=*/1, gens, ords);
     buildModChain(*fheContext, L, c,/*willBeBootstrappable=*/bootstrap);
     if(bootstrap) {
-        fheContext->makeBootstrappable(mvec, /* t= */0);
+        fheContext->makeBootstrappable(mvec, 0);
     }
     buildUnpackSlotEncoding(unpackSlotEncoding, *fheContext->ea);
     if(verbose) {
@@ -98,3 +98,32 @@ KeysServer::KeysServer() {
     this->secKey = new FHESecKey(fheSecKey);  // FHESecKey inherits from FHEPubKey
     this->pubKey = (FHESecKey *) this->secKey;  // todo notice that pubKey is a ptr and not value, so the trick from max's lecture might not work
 }
+
+KeysServer::~KeysServer() {
+    delete secKey; //fixme why you complain?
+//    cout << "delete secKey OK" <<endl;
+    delete context;
+//    cout << "delete context OK" <<endl;
+}
+
+Ctxt KeysServer::randomBit() {
+//    long c = 0;  // fixme should be random
+//    NTL::Vec<Ctxt> encVal;
+//    NTL::Vec<Ctxt> encVal;
+    Ctxt mu(*pubKey);
+//    resize(encVal, 1, mu);
+//    resize(encVal, BIT_SIZE, mu);
+//    for(long i = 0; i < BIT_SIZE; i++) {
+//        pubKey->Encrypt(encVal[i], ZZX((c >> i)&1)); ////    <----   THE PROBLEM was HERE
+//        pubKey->Encrypt(encVal[0], ZZX((c >> 0)&1)); ////    <----   THE PROBLEM was HERE
+//        pubKey->Encrypt(encVal[0], ZZX(c&1) ); ////    <----   THE PROBLEM was HERE
+//    }
+//    return encVal[0];
+    return mu;
+}
+
+
+/** for DBG **/
+//long decrypt(EncNumber n) {
+//    cout << "decrypt in KS" << endl;
+//}

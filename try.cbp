@@ -27,8 +27,8 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.hR0i9xBjaK/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="testing">
-				<Option output="/tmp/tmp.hR0i9xBjaK/testing" prefix_auto="0" extension_auto="0"/>
+			<Target title="run">
+				<Option output="/tmp/tmp.hR0i9xBjaK/run" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/tmp/tmp.hR0i9xBjaK"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -46,14 +46,14 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.hR0i9xBjaK/Makefile&quot;  VERBOSE=1 testing"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.hR0i9xBjaK/Makefile&quot;  VERBOSE=1 run"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.hR0i9xBjaK/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.hR0i9xBjaK/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.hR0i9xBjaK/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="testing/fast">
-				<Option output="/tmp/tmp.hR0i9xBjaK/testing" prefix_auto="0" extension_auto="0"/>
+			<Target title="run/fast">
+				<Option output="/tmp/tmp.hR0i9xBjaK/run" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/tmp/tmp.hR0i9xBjaK"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -71,7 +71,7 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.hR0i9xBjaK/Makefile&quot;  VERBOSE=1 testing/fast"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.hR0i9xBjaK/Makefile&quot;  VERBOSE=1 run/fast"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.hR0i9xBjaK/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.hR0i9xBjaK/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.hR0i9xBjaK/Makefile&quot;  VERBOSE=1 clean"/>
@@ -89,40 +89,28 @@
 			</Target>
 		</Build>
 		<Unit filename="/tmp/tmp.hR0i9xBjaK/impl/KeysServer.cpp">
-			<Option target="testing"/>
+			<Option target="run"/>
 		</Unit>
 		<Unit filename="/tmp/tmp.hR0i9xBjaK/impl/KeysServer.h">
-			<Option target="testing"/>
+			<Option target="run"/>
 		</Unit>
 		<Unit filename="/tmp/tmp.hR0i9xBjaK/impl/Point.cpp">
-			<Option target="testing"/>
+			<Option target="run"/>
 		</Unit>
 		<Unit filename="/tmp/tmp.hR0i9xBjaK/impl/Point.h">
-			<Option target="testing"/>
+			<Option target="run"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.hR0i9xBjaK/impl/tests/KeysServer_test.cpp">
-			<Option target="testing"/>
+		<Unit filename="/tmp/tmp.hR0i9xBjaK/impl/aux.cpp">
+			<Option target="run"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.hR0i9xBjaK/impl/tests/KeysServer_test.h">
-			<Option target="testing"/>
+		<Unit filename="/tmp/tmp.hR0i9xBjaK/impl/aux.h">
+			<Option target="run"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.hR0i9xBjaK/impl/tests/Point_test.cpp">
-			<Option target="testing"/>
+		<Unit filename="/tmp/tmp.hR0i9xBjaK/impl/imp1_kmeans.cpp">
+			<Option target="run"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.hR0i9xBjaK/impl/tests/Point_test.h">
-			<Option target="testing"/>
-		</Unit>
-		<Unit filename="/tmp/tmp.hR0i9xBjaK/impl/tests/run_tests.cpp">
-			<Option target="testing"/>
-		</Unit>
-		<Unit filename="/tmp/tmp.hR0i9xBjaK/impl/tests/run_tests.h">
-			<Option target="testing"/>
-		</Unit>
-		<Unit filename="/tmp/tmp.hR0i9xBjaK/old/PointExtended_old.cpp">
-			<Option target="testing"/>
-		</Unit>
-		<Unit filename="/tmp/tmp.hR0i9xBjaK/old/PointExtended_old.h">
-			<Option target="testing"/>
+		<Unit filename="/tmp/tmp.hR0i9xBjaK/impl/imp1_kmeans.h">
+			<Option target="run"/>
 		</Unit>
 		<Unit filename="/tmp/tmp.hR0i9xBjaK/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>

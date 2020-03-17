@@ -40,6 +40,8 @@ public:
 
 /** methods **/
     KeysServer();
+    ~KeysServer();
+    Ctxt randomBit();
 };
 
 #endif //TRY_KEYSSERVER_H

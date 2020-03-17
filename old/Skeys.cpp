@@ -19,7 +19,7 @@
 #include <iostream>
 #include <vector>
 
-#include "properties.h"
+#include "../impl/properties.h"
 
 //bool verbose = false;
 

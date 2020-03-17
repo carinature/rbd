@@ -18,8 +18,9 @@
 //#include <helib/binaryCompare.h>
 //#include <helib/ArgMap.h>
 //#include <NTL/BasicThreadPool.h>
-//#include "Point.h"
-#include "Skeys.h"
+#include "Point.h"
+//#include "KeysServer.h"
+//#include "Skeys.h"
 #include "properties.h"
 
 //using namespace std;
@@ -40,21 +41,24 @@ void tag(vector<T> vector);
 
 template<typename T>
 void tag(vector<vector<T> > vector);
+*/
 
-bool cmp(const Point &a, const Point &b);
+Bit cmp(const Point &a, const Point &b);
 
-void writeToFile(const vector<Point> &vec, const string &filename, Skeys &sk);
+void writeToFile(const vector<Point> &vec, const string &filename, KeysServer & keysServer);
 
-vector<DecryptedPoint> getPointsFromFile();
+vector<DecryptedPoint> getPointsFromFile(const string & filename = "points");
 
-vector<Point> getEncryptedPointsFromFile(Skeys &sk);
+vector<Point> getEncryptedPointsFromFile(KeysServer &sk);
 
 
 vector<long> encryptVec(const vector<double>& vector);
 
 long encryptDouble(double d);
 
-*/
+/** aux **/
+DecryptedPoint operator/(DecryptedPoint p, int factor);
+
 /*
  * Candidates for a MOVE
  */

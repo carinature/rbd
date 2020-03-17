@@ -7,11 +7,26 @@
 #include "../properties.h"
 #include <iostream>
 #include <cassert>
+
 using namespace std;
 
 void KeysServer_test::test_ctor() {
-    cout << " -------- test_ctor -------- "   << endl;
+    cout << " -------- test_ctor -------- " << endl;
     KeysServer ks = KeysServer();
     ks.pubKey;
-//    delete(sk);
+    cout << "           OK" << endl;
+//  delete ks;
+}
+
+void KeysServer_test::test_dtor() {
+    cout << " -------- test_dtor -------- " << endl;
+    KeysServer ks = KeysServer();
+    ks.pubKey;
+    cout << "           OK" << endl;
+//  delete ks;
+}
+
+void KeysServer_test::run_all() {
+    test_ctor();
+    test_dtor();
 }

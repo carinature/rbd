@@ -5,7 +5,8 @@
 #include "PointExtended_old.h"
 
 PointExtended_old::PointExtended_old(KeysServer * keysServer, const vector<long>& coordinates)
-: Point(keysServer, vector<Vec<Ctxt> >()), coordinates(coordinates) {
+: Point(keysServer->pubKey, vector<Vec<Ctxt> >()), coordinates(coordinates) {
+//: Point(keysServer, vector<Vec<Ctxt> >()), coordinates(coordinates) {
     //todo
     // encrypt coor
     // init eCoor field of *this

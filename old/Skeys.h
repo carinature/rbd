@@ -6,8 +6,8 @@
 #define TRY_SKEYS_H
 
 //#include "aux.h"
-#include "../old/Point_old.h"
-#include "Point.h"
+#include "Point_old.h"
+//#include "Point.h"
 
 #include <NTL/BasicThreadPool.h>
 NTL_CLIENT
