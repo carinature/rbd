@@ -14,6 +14,8 @@ static std::vector<zzX> unpackSlotEncoding; // a global variable
 
 //mine
 #include "properties.h"
+//#include "Point.h"
+class Point;
 
 class KeysServer {
 public:
@@ -42,6 +44,12 @@ public:
     KeysServer();
     ~KeysServer();
     Ctxt randomBit();
+    Point calculateAvgPoint(Point point, EncNumber size);
+
+public:
+//private:
+    long decrypt(EncNumber n); // should be private
+    
 };
 
 #endif //TRY_KEYSSERVER_H

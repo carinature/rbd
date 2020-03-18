@@ -1,6 +1,4 @@
-//
-// Created by rbd on 15.2.2020.
-//
+
 
 #include "Point_test.h"
 #include "../KeysServer.h"
@@ -10,9 +8,9 @@
 
 using namespace std;
 
-//consider moving to prop file
-bool dbg = true;  // use KeysServer to init Point
-//bool dbg = false;  // use PubKey to init Point
+////consider moving to prop file
+//bool dbg = true;  // use KeysServer to init Point
+////bool dbg = false;  // use PubKey to init Point
 
 void Point_test::test_ctor() {  // todo - add some end cases
     cout << " --------- test_ctor --------- " << endl;
@@ -150,6 +148,60 @@ void Point_test::test_sum() {
 //    cout << "decSum1: " << decSum1 << endl;
 //    cout << "decSum2: " << decSum2 << endl;
 //    cout << "decSum3: " << decSum3 << endl;
+    cout << "           OK" << endl;
+    delete (ks);
+}
+void Point_test::test_subt() {
+    cout << " --------- test_subt --------- " << endl;
+    KeysServer * ks = new KeysServer();
+    FHEPubKey * pubKey = ks->pubKey;
+    vector<long> v0 = {0, 0};
+    vector<long> v1 = {1, 2l};
+    vector<long> v2 = {2, 3l};
+    vector<long> v3 = {3, 4l};
+    vector<long> v4 = {13, 11l};
+    
+    
+    Point p0 = PointExtended(pubKey, v0);
+    Point p1 = PointExtended(pubKey, v1);
+    Point p2 = PointExtended(pubKey, v2);
+    Point p3 = PointExtended(pubKey, v3);
+    Point p4 = PointExtended(pubKey, v4);
+    if(dbg) {
+        p0 = PointExtended(ks, v0);
+        p1 = PointExtended(ks, v1);
+        p2 = PointExtended(ks, v2);
+        p3 = PointExtended(ks, v3);
+        p4 = PointExtended(ks, v4);
+    }
+
+//    PointExtended subte1 = pe1 + pe2;
+//    PointExtended subte2 = pe1 + pe3;
+//    PointExtended subte3 = pe1 + pe1;
+    
+    Point subt1 = p1 - p1;
+    Point subt2 = p2 - p1;
+    Point subt3 = p3 - p1;
+
+//    DecryptedPoint decsubt1  = ks->decryptPointByCA(subt1);
+//    DecryptedPoint decsubt2  = ks->decryptPointByCA(subt2);
+    DecryptedPoint decsubt1 = subt1.decrypt(*ks);
+    DecryptedPoint decsubt2 = subt2.decrypt(*ks);
+    DecryptedPoint decsubt3 = subt3.decrypt(*ks);
+    
+    DecryptedPoint orgsubt1 = v1 - v1;
+    DecryptedPoint orgsubt2 = v2 - v1;
+    DecryptedPoint orgsubt3 = v3 - v1;
+    assert(orgsubt1 == decsubt1);
+    assert(orgsubt2 == decsubt2);
+    assert(orgsubt3 == decsubt3);
+
+//    cout << "subt1: " << subt1 << endl;
+//    cout << "subt2: " << subt2 << endl;
+//    cout << "subt3: " << subt3 << endl;
+//    cout << "decsubt1: " << decsubt1 << endl;
+//    cout << "decsubt2: " << decsubt2 << endl;
+//    cout << "decsubt3: " << decsubt3 << endl;
     cout << "           OK" << endl;
     delete (ks);
 }
@@ -386,11 +438,34 @@ void Point_test::run_all() {
     test_ctor();
     test_mult();
     test_sum();
+//    test_subt();
 //    test_sum_ass();
     test_decrypt();
     test_g_cmp();
 //    mini_test();
 }
+
+void Point_test::test_id() {
+    cout << " --------- test_id --------- " << endl;
+    KeysServer * ks = new KeysServer();
+    FHEPubKey * pubKey = ks->pubKey;
+    vector<long> v1 = {1, 2l};
+    vector<long> v2 = {2, 3l};
+    vector<long> v3 = {3, 4l};
+    vector<long> v4 = {13, 11l};
+
+        Point pe1 = PointExtended(ks, v1);
+        Point pe2 = PointExtended(ks, v2);
+        Point pe3 = PointExtended(ks, v3);
+        Point pe4 = PointExtended(ks, v4);
+        
+        cout << pe1.id << endl;
+        cout << pe2.id << endl;
+        cout << pe3.id << endl;
+        cout << pe4.id << endl;
+}
+
+
 
 
 /** aux **/
@@ -408,4 +483,12 @@ DecryptedPoint operator*(DecryptedPoint a, int b) {
         prod.push_back(i * b);
     }
     return prod;
+}
+
+DecryptedPoint operator-(DecryptedPoint a, DecryptedPoint b) {
+    DecryptedPoint sum;
+    for(int i = 0; i < a.size(); ++i) {
+        sum.push_back(a[i] - b[i]);
+    }
+    return sum;
 }

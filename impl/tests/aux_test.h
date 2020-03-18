@@ -1,6 +1,4 @@
-//
-// Created by rbd on 15.2.2020.
-//
+
 
 #include <vector>
 
@@ -10,6 +8,7 @@
 
 class aux_test {
     
+    static void createCmpDictTest();
     static void getEncryptedPointsFromFileTest();
     static void writeToFileTest();
 

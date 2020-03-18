@@ -1,6 +1,4 @@
-//
-// Created by rbd on 31.1.2020.
-//
+
 
 #ifndef TRY_SKEYS_H
 #define TRY_SKEYS_H

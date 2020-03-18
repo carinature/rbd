@@ -1,8 +1,4 @@
-//
-// Created by rbd on 24.12.2019.
-//
-
-#ifndef TRY_BINARY_H
+ #ifndef TRY_BINARY_H
 #define TRY_BINARY_H
 
 //#include <iostream>

@@ -1,6 +1,4 @@
-//
-// Created by rbd on 18.10.2019.
-//
+
 
 #include <iostream>
 #include <NTL/BasicThreadPool.h>

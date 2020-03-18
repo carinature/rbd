@@ -1,6 +1,4 @@
-//
-// Created by rbd on 15.10.2019.
-//
+
 
 #ifndef HELIB_SUPERBUILD_HECMP_H
 #define HELIB_SUPERBUILD_HECMP_H

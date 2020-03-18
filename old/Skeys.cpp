@@ -1,6 +1,4 @@
-//
-// Created by rbd on 31.1.2020.
-//
+
 
 #include "Skeys.h"
 

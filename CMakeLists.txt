@@ -13,33 +13,38 @@ set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall")
 
 find_package(helib 1.0.0 EXACT REQUIRED)
 
-add_executable(run impl/imp1_kmeans.cpp
-		impl/KeysServer.cpp impl/Point.cpp impl/aux.cpp
-#		impl/imp1_kmeans.cpp impl/KeysServer.h
-		)
-target_link_libraries(run helib)
-
-#add_executable(run old/HEcmp.h  old/compare2numbers.cpp  old/Contextor.cpp )
-#add_executable(run old/scratch.cpp)
-#add_executable(testing
-#		#src
+#add_executable(run
 #		impl/imp1_kmeans.cpp
-#		impl/aux.cpp
 #		impl/KeysServer.cpp
 #		impl/Point.cpp
-#
-#		#test
-##		impl/tests/run_tests.cpp
-#		impl/tests/Point_test.cpp
-#		impl/tests/KeysServer_test.cpp
-#		impl/tests/aux_test.cpp
-#		impl/tests/imp1_kmeans_test.cpp
-#
+#		impl/aux.cpp
+#		impl/properties.h
+#		impl/imp1_kmeans.h
 ##		impl/KeysServer.h
-##		impl/tests/KeysServer_test.h
-##		impl/tests/imp1_kmeans_test.h
+#		impl/Point.h
+#		impl/aux.h
 #		)
-#target_link_libraries(testing helib)
+#target_link_libraries(run helib)
+
+add_executable(testing
+		#src
+		impl/imp1_kmeans.cpp
+		impl/aux.cpp
+		impl/KeysServer.cpp
+		impl/Point.cpp
+
+		#test
+		impl/tests/run_tests.cpp
+		impl/tests/Point_test.cpp
+		impl/tests/KeysServer_test.cpp
+		impl/tests/aux_test.cpp
+		impl/tests/imp1_kmeans_test.cpp
+
+#		impl/KeysServer.h
+#		impl/tests/KeysServer_test.h
+#		impl/tests/imp1_kmeans_test.h
+		)
+target_link_libraries(testing helib)
 
 # DangerZone
 # Makes cmake add a file to the "real" directory in the "real" world (not on docker).

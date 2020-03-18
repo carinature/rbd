@@ -1,6 +1,4 @@
-//
-// Created by rbd on 15.2.2020.
-//
+
 
 #ifndef TRY_PROPERTIES_H
 #define TRY_PROPERTIES_H
@@ -13,8 +11,9 @@
 
 NTL_CLIENT
 
+#define NUM_POINTS 40
 #define DIM 2
-#define EPSILON 0.2
+#define EPSILON 0.15
 #define DECIMAL_DIGITS 2
 #define FACTOR pow(10, DECIMAL_DIGITS) // for conversion from double to long (helib compatibility)
 #define BIT_SIZE 10
@@ -26,6 +25,9 @@ using EncNumber = Vec<Ctxt>;
 //using Binary = Vec<Ctxt>; //todo remove?
 
 static bool verbose = false;
+
+static bool dbg = true;  // use KeysServer to init Point
+//bool dbg = false;  // use PubKey to init Point
 
 
 #endif //TRY_PROPERTIES_H

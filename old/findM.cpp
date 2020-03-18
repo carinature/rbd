@@ -1,6 +1,4 @@
-//
-// Created by rbd on 10.2.2020.
-//
+
 
 
 /* Copyright (C) 2012-2017 IBM Corp.

@@ -1,6 +1,4 @@
-//
-// Created by rbd on 14.10.2019.
-//
+
 
 #include <cassert>
 #include <cmath>

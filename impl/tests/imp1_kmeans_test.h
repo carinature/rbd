@@ -1,6 +1,4 @@
-//
-// Created by rbd on 17.3.2020.
-//
+
 
 #ifndef TRY_IMP1_KMEANS_TEST_H
 #define TRY_IMP1_KMEANS_TEST_H

@@ -1,6 +1,4 @@
-//
-// Created by rbd on 15.3.2020.
-//
+
 
 #ifndef TRY_POINTEXTENDED_OLD_H
 #define TRY_POINTEXTENDED_OLD_H

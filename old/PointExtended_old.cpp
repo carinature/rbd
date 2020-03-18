@@ -1,6 +1,4 @@
-//
-// Created by rbd on 15.3.2020.
-//
+
 
 #include "PointExtended_old.h"
 

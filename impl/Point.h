@@ -23,6 +23,7 @@ NTL_CLIENT
 
 using namespace std;
 
+static long counter = 0;
 
 /**
  * @class Point
@@ -36,13 +37,15 @@ class Point {
     //! @var Ctxt pubEncrKey
     //! "The public encryption key is an encryption of 0,
     //! relative to the first secret key"
-    FHEPubKey * pubKey;  // logic - future use
+    FHEPubKey * pubKey;  // logic - future use  //todo should be public?
     
     vector<long> deCoor; /** for DBG **/
 
 private:  // other kind of ctor?
 
 public:
+    long id; // = 0;  //fixme
+
     //! @var vector<Vec<Ctxt> > eCoordinates
     //! The encrypted coordinates vector (each coor is Vec<Ctxt>)
     vector<Vec<Ctxt> > eCoordinates;
@@ -61,6 +64,7 @@ public:
     
     //! @brief compare 2 points
     Ctxt operator>(const Point & p) const;
+//    Ctxt operator<(const Point & p) const;
     
     //! @brief The encrypted coordiante
     Vec<Ctxt> operator[](int idx) { return eCoordinates[idx]; }
@@ -68,9 +72,9 @@ public:
     Vec<Ctxt> operator[](int idx) const { return eCoordinates[idx]; }
     
     /** for DBG **/
-    DecryptedPoint decrypt(KeysServer & keysServer);
+    DecryptedPoint decrypt(KeysServer & keysServ) const ;
     
-    long decryptNumber(KeysServer & keysServer, EncNumber c);
+    long decryptNumber(KeysServer & keysServ, EncNumber c) const ;
     
     friend std::ostream & operator<<(std::ostream & os, const Point & p);
 
@@ -90,6 +94,7 @@ protected:
     vector<long> coordinates; //todo check if overriding public/private is allowed
 public:
     PointExtended(KeysServer * keysServer, const vector<long> & coordinates);
+//    PointExtended(KeysServer * keysServer, vector<long> & coordinates);
     
     PointExtended(FHEPubKey * pubKey, const vector<long> & coordinates);
     //todo make c'tor private. make Skeys (or some class) a friend and create a factory method

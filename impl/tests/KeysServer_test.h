@@ -1,6 +1,3 @@
-//
-// Created by rbd on 15.3.2020.
-//
 
 #ifndef TRY_KEYSSERVER_TEST_H
 #define TRY_KEYSSERVER_TEST_H

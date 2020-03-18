@@ -1,6 +1,4 @@
-//
-// Created by rbd on 15.2.2020.
-//
+
 
 #include "aux_test.h"
 #include "../KeysServer.h"
@@ -11,16 +9,10 @@
 
 using namespace std;
 
-void aux_test::getEncryptedPointsFromFileTest() {
-    cout << " --------- test_get_enc_point_from_file --------- " << endl;
-    KeysServer * ks = new KeysServer();
-    FHEPubKey * pubKey = ks->pubKey;
-    
-    vector<DecryptedPoint> points = getPointsFromFile();
-    vector<Point> ePoints = getEncryptedPointsFromFile(*ks);
-    
-    for(int i = 0; i < points.size(); ++i) assert(points[i] == ePoints[i].decrypt(*ks));
-    cout << "           OK" << endl;
+void aux_test::runAll() {
+    getEncryptedPointsFromFileTest();
+    writeToFileTest();
+//    mini_test();
 }
 void aux_test::writeToFileTest() {
     cout << " --------- test_write_To_File --------- " << endl;
@@ -47,11 +39,20 @@ void aux_test::writeToFileTest() {
     }
     cout << "           OK" << endl;
 }
+void aux_test::getEncryptedPointsFromFileTest() {
+    cout << " --------- test_get_enc_point_from_file --------- " << endl;
+    KeysServer * ks = new KeysServer();
+    FHEPubKey * pubKey = ks->pubKey;
+    
+    vector<DecryptedPoint> points = getPointsFromFile();
+    vector<Point> ePoints = getEncryptedPointsFromFile(*ks);
+    
+    for(int i = 0; i < points.size(); ++i) assert(points[i] == ePoints[i].decrypt(*ks));
+    cout << "           OK" << endl;
+}
 
-void aux_test::runAll() {
-    getEncryptedPointsFromFileTest();
-    writeToFileTest();
-//    mini_test();
+void aux_test::createCmpDictTest() {
+
 }
 
 /** aux **/

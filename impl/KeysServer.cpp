@@ -1,8 +1,7 @@
-//
-// Created by rbd on 15.3.2020.
-//
+
 
 #include "KeysServer.h"
+#include "Point.h"
 
 //helib
 #include <unistd.h>
@@ -18,6 +17,7 @@
 #include <cmath>
 #include <algorithm>
 #include <iostream>
+#include <utility>
 #include <vector>
 
 KeysServer::KeysServer() {
@@ -122,8 +122,24 @@ Ctxt KeysServer::randomBit() {
     return mu;
 }
 
+Point KeysServer::calculateAvgPoint(Point p, EncNumber size) {
+    long amount = decrypt(std::move(size)) + 1;
+    vector<long> coorVector;
+    for(const EncNumber & coor : p.eCoordinates) {
+        coorVector.push_back(decrypt(coor) / amount);
+    }
+    const vector<long> constVec = std::move(coorVector);
+    Point avgPoint = PointExtended(this, constVec);
+    return avgPoint;
+    
+}
 
-/** for DBG **/
-//long decrypt(EncNumber n) {
-//    cout << "decrypt in KS" << endl;
-//}
+
+long KeysServer::decrypt(EncNumber n) {
+    cout << "decrypt in KS" << endl;
+    CtPtrs_VecCt eep(n);
+    vector<long> slots;
+    //todo replace with keysServer.decrypt - secKey should not be public
+    decryptBinaryNums(slots, eep, *(secKey), *(pubKey->getContext().ea));
+    return slots[0];
+}

@@ -1,7 +1,13 @@
 #!/usr/bin/env python3
 from random import *
 dim = 2  # dimensions
-numPoints = 6000
+numPoints = 100
+with open('../impl/properties.h') as f:
+	datafile = f.readlines()
+	for line in datafile:
+		if 'NUM_POINTS' in line:
+			numPoints = int(line.split(' ')[2])
+
 pointsList = []
 
 # f = open("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/points", "w")
@@ -35,7 +41,7 @@ def rand(bottom_lim=0, range_lim=10, round_lim=2):
 
 
 def generate_points(n=numPoints, d=dim):
-	points = [tuple(rand() for i in range(d)) for i in range(n)]
+	points = [tuple(rand() for _ in range(d)) for _ in range(n)]
 	points.sort()
 	return points
 

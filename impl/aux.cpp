@@ -1,6 +1,4 @@
-//
-// Created by rbd on 13.1.2020.
-//
+
 
 //#include <unistd.h>
 //#include <numeric>
@@ -89,15 +87,46 @@ vector<Point> getEncryptedPointsFromFile(KeysServer & keysServer) { // fixme Pub
     return encPoints;
 }
 
-Bit cmp(const Point & a, const Point & b) {
-    //todo cmp should return bit
-    //todo override Point's operator<
-    //todo use helib cmp
-    //todo consider <= over < (the later neve allows any points) and how to implement it with helib
-//    return a >= b;
-    return a > b;
-//    return a[1] <= b[1];
+//Bit cmp(const Point & a, const Point & b) {
+//    //todo cmp should return bit
+//    //todo override Point's operator<
+//    //todo use helib cmp
+//    //todo consider <= over < (the later neve allows any points) and how to implement it with helib
+////    return a >= b;
+//    return a > b;
+////    return a[1] <= b[1];
+//}
+
+map<Point, map<Point, vector<Bit>, cmpPoints>, cmpPoints> createCmpDict(const vector<Point> & randomPoints) {
+    map<Point, map<Point, vector<Bit>, cmpPoints>, cmpPoints> cmpDict;
+    for(const Point & p : randomPoints) {
+        map<Point, vector<Bit>, cmpPoints> cmpDictMini;
+        for(const Point & pp : randomPoints) {
+            cmpDictMini[pp].push_back(p > pp);
+        }
+        cmpDict[p] = cmpDictMini;
+    }
+    return cmpDict;
 }
+
+///** aux **/
+
+//DecryptedPoint operator/(DecryptedPoint p, int factor) {
+//    if(0 == factor) return p;
+//    DecryptedPoint dp;
+//    for(long i : p) {
+//        double x = double(double(i) / double(factor));
+//        dp.push_back(x);
+////        cout << x << ",";
+//    }
+////    cout << endl;
+//    cout << "p: " << p << endl;
+//    cout << "dp: " << dp << endl;
+//    return dp;
+//}
+//
+
+
 
 /*
  * Candidates for a MOVE
@@ -236,20 +265,5 @@ vector<Point> getRepFromClient(const Point &encMean, const vector<Point> &encCel
     return encReps;
 }
 */
-//
-///** aux **/
-//DecryptedPoint operator/(DecryptedPoint p, int factor) {
-//    if(0 == factor) return p;
-//    DecryptedPoint dp;
-//    for(long i : p) {
-//        double x = double(double(i) / double(factor));
-//        dp.push_back(x);
-////        cout << x << ",";
-//    }
-////    cout << endl;
-//    cout << "p: " << p << endl;
-//    cout << "dp: " << dp << endl;
-//    return dp;
-//}
 //
 

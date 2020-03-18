@@ -1,8 +1,4 @@
-//
-// Created by rbd on 24.12.2019.
-//
-
-#ifndef TRY_BIT_H
+ #ifndef TRY_BIT_H
 #define TRY_BIT_H
 
 
