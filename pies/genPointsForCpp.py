@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from random import *
 dim = 2  # dimensions
-numPoints = 100
+numPoints = 0
 with open('../impl/properties.h') as f:
 	datafile = f.readlines()
 	for line in datafile:
