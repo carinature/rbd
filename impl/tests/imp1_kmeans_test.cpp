@@ -16,16 +16,17 @@ void imp1_kmeans_test::getEncryptedKMeansTest() {
     FHEPubKey * pubKey = ks->pubKey;
     
     vector<Point> points = getEncryptedPointsFromFile(*ks);
-//
+//    cout << points << endl;
+    cout << " number of points: "<< points.size() << " ====" << endl;
     auto t1 = std::chrono::high_resolution_clock::now();
-    getEncryptedKMeans(points, *ks);
+    vector<DecryptedPoint> means = getEncryptedKMeans(points, *ks);
+//    vector<Point> encMeans = getEncryptedKMeans(points, *ks);
     auto t2 = std::chrono::high_resolution_clock::now();
-    
     auto duration = std::chrono::duration_cast<std::chrono::seconds>(t2 - t1).count();
-    
     std::cout << "--- duration: " << duration << endl;
 
 //    for(int i = 0; i < points.size(); ++i) assert(i==0);
+    decWriteToFile(means, "means_test", *ks);
     
     cout << "           OK" << endl;
 }

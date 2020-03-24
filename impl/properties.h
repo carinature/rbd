@@ -11,7 +11,7 @@
 
 NTL_CLIENT
 
-#define NUM_POINTS 40
+#define NUM_POINTS 80
 #define DIM 2
 #define EPSILON 0.15
 #define DECIMAL_DIGITS 2
