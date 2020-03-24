@@ -44,7 +44,7 @@ public:
     KeysServer();
     ~KeysServer();
     Ctxt randomBit();
-    Point calculateAvgPoint(Point point, EncNumber size);
+    DecryptedPoint calculateAvgPoint(const Point& p, EncNumber size);
 
 public:
 //private:

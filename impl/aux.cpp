@@ -26,9 +26,9 @@ using namespace std;
  *      The points are first decrypted and returned into a double form (from long) **/
 //*  todo consider changing KeysServer to PubKey
 void writeToFile(const vector<Point> & vec, const string & filename,
-                 KeysServer & keysServer) {// fixme PubKey instead of KeysServ
+                 KeysServer & keysServer) {  // fixme PubKey instead of KeysServ
     vector<DecryptedPoint> points; // = sk.decryptPointsByCA(vec);
-    for(Point p : vec) points.push_back(p.decrypt(keysServer));
+    for(const Point& p : vec) points.push_back(p.decrypt(keysServer));
 //    cout << "=%%%%%%%%%%%%%%%%%%%%%%%= in write points: " << points << endl;
     ofstream outputFileStream(filename);
     for(const DecryptedPoint & p : points) {
@@ -42,6 +42,21 @@ void writeToFile(const vector<Point> & vec, const string & filename,
     outputFileStream.close();
 }
 
+void decWriteToFile(const vector<DecryptedPoint> & vec, const string & filename, KeysServer & keysServer) {  // fixme PubKey instead of KeysServ
+//    vector<DecryptedPoint> points; // = sk.decryptPointsByCA(vec);
+//    for(const Point& p : vec) points.push_back(p.decrypt(keysServer));
+//    cout << "=%%%%%%%%%%%%%%%%%%%%%%%= in write points: " << points << endl;
+    ofstream outputFileStream(filename);
+    for(const DecryptedPoint & p : vec) {
+        for(double coor : p) {
+//            cout << "in write coor: " << coor << endl;
+            outputFileStream << coor / FACTOR << " ";
+        }
+        outputFileStream << '\n';
+//        outputFileStream.flush();
+    }
+    outputFileStream.close();
+}
 /** Retrieve points from a specified file. Points are palintext.
  *      If the file is not specified uses default file 'points' **/
 vector<DecryptedPoint> getPointsFromFile(const string & filename) {
@@ -97,17 +112,23 @@ Bit cmp(const Point & a, const Point & b) {
 //    return a[1] <= b[1];
 }
 
-map<Point, map<Point, vector<Bit>, cmpPoints>, cmpPoints> createCmpDict(const vector<Point> & randomPoints) {
+map<Point, map<Point, vector<Bit>, cmpPoints>, cmpPoints>
+createCmpDict(const vector<Point> & randomPoints, const vector<Point> & stripPoints) {
     map<Point, map<Point, vector<Bit>, cmpPoints>, cmpPoints> cmpDict;
     for(const Point & p : randomPoints) {
         map<Point, vector<Bit>, cmpPoints> cmpDictMini;
-        for(const Point & pp : randomPoints) {
+        map<Point, vector<Bit>, cmpPoints> cmpDictMini2;
+        for(const Point & pp : stripPoints) {
             cmpDictMini[pp].push_back(p > pp);
+            cmpDict[pp][p].push_back(pp > p);
         }
         cmpDict[p] = cmpDictMini;
+//        cmpDict[pp] = cmpDictMini2;
     }
     return cmpDict;
 }
+
+
 
 ///** aux **/
 

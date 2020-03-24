@@ -8,7 +8,7 @@
 //class Point;
 //class KeysServer;
 
-vector<Point> getEncryptedKMeans(vector<Point> points, KeysServer & keysServer);
+vector<DecryptedPoint> getEncryptedKMeans(vector<Point> points, KeysServer & keysServer);
 vector<vector<Point> > getLeftoverPoints(const vector<Point> &points, const vector<Point> &means, KeysServer & keysServer);
 EncNumber calculateThreshold(vector<EncNumber> distances, int amount);
 

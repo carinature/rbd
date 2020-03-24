@@ -30,7 +30,8 @@ KeysServer::KeysServer() {
     long nTests = 3;
 //    long nTests = 4;
     amap.arg("nTests", nTests, "number of tests to run");
-    bool bootstrap = false;
+//    bool bootstrap = false;
+    bool bootstrap = true;
     amap.arg("bootstrap", bootstrap, "test comparison with bootstrapping");
     long seed = 0;
     amap.arg("seed", seed, "PRG seed");
@@ -95,8 +96,10 @@ KeysServer::KeysServer() {
     activeContext = fheContext; // make things a little easier sometimes
     this->context = fheContext;
 //    this->pubKey = new FHESecKey(fheSecKey);  // todo notice that pubKey is a ptr and not value, so the trick from max's lecture might not work
-    this->secKey = new FHESecKey(fheSecKey);  // FHESecKey inherits from FHEPubKey
-    this->pubKey = (FHESecKey *) this->secKey;  // todo notice that pubKey is a ptr and not value, so the trick from max's lecture might not work
+    this->secKey = new FHESecKey(fheSecKey);  // FHESecKey inherits from c
+//    this->pubKey = (FHESecKey *) this->secKey;  // todo notice that pubKey is a ptr and not value, so the trick from max's lecture might not work
+    this->pubKey = (FHEPubKey *) this->secKey;  // todo notice that pubKey is a ptr and not value, so the trick from max's lecture might not work
+//    this->pubKey = new FHEPubKey(*fheContext);  // todo notice that pubKey is a ptr and not value, so the trick from max's lecture might not work
 }
 
 KeysServer::~KeysServer() {
@@ -122,21 +125,36 @@ Ctxt KeysServer::randomBit() {
     return mu;
 }
 
-Point KeysServer::calculateAvgPoint(Point p, EncNumber size) {
+//DecryptedPoint KeysServer::calculateAvgPoint(const Point& r, const Point& p, EncNumber size) { //todo so you can subtract - for better accuracy
+DecryptedPoint KeysServer::calculateAvgPoint(const Point& p, EncNumber size) {
+    cout << "   - calculateAvgPoint -   ";
     long amount = decrypt(std::move(size)) + 1;
     vector<long> coorVector;
     for(const EncNumber & coor : p.eCoordinates) {
         coorVector.push_back(decrypt(coor) / amount);
     }
-    const vector<long> constVec = std::move(coorVector);
-    Point avgPoint = PointExtended(this, constVec);
-    return avgPoint;
+    const vector<long> constVec = std::move(coorVector); //todo remove
+//    Point avgPoint = PointExtended(this, constVec);
+    return constVec;
     
 }
+//
+//Point KeysServer::calculateAvgPoint(Point p, EncNumber size) {
+//    cout << "   - calculateAvgPoint -   ";
+//    long amount = decrypt(std::move(size)) + 1;
+//    vector<long> coorVector;
+//    for(const EncNumber & coor : p.eCoordinates) {
+//        coorVector.push_back(decrypt(coor) / amount);
+//    }
+//    const vector<long> constVec = std::move(coorVector);
+//    Point avgPoint = PointExtended(this, constVec);
+//    return avgPoint;
+//
+//}
 
 
 long KeysServer::decrypt(EncNumber n) {
-    cout << "decrypt in KS" << endl;
+//    cout << "decrypt in KS" << endl;
     CtPtrs_VecCt eep(n);
     vector<long> slots;
     //todo replace with keysServer.decrypt - secKey should not be public

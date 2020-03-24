@@ -6,9 +6,10 @@
 #include "properties.h"
 #include <map>
 
-Bit cmp(const Point & a, const Point & b);
+//Bit cmp(const Point & a, const Point & b) ;
 
 void writeToFile(const vector<Point> & vec, const string & filename, KeysServer & keysServer);
+void decWriteToFile(const vector<DecryptedPoint> & vec, const string & filename, KeysServer & keysServer);
 
 vector<DecryptedPoint> getPointsFromFile(const string & filename = "points");
 
@@ -26,7 +27,8 @@ struct cmpPoints{
     }
 };
 
-map<Point, map<Point, vector<Bit>, cmpPoints>, cmpPoints> createCmpDict(const vector<Point>& randomPoints);
+map<Point, map<Point, vector<Bit>, cmpPoints>, cmpPoints>
+createCmpDict(const vector<Point> & randomPoints, const vector<Point> & stripPoints);
 
 /*
  * Deprecated
