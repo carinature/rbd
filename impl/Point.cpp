@@ -21,13 +21,16 @@ Point Point::operator+(const Point & p) const {
     for(size_t i = 0; i < this->eCoordinates.size(); ++i) {
         cout << p << endl;
         cout << *this << endl;
-        cout << "eCoordinates" << endl;
-        cout << p.eCoordinates << endl;
-        cout << eCoordinates << endl;
+//        cout << "eCoordinates" << endl;
+//        cout << p.eCoordinates << endl;
+//        cout << eCoordinates << endl;
+
         Vec<Ctxt> coor1 = eCoordinates[i], coor2 = p[i], eSum;
-        cout << "decryptNumber" << endl;
-        cout << decryptNumber(*keysServer, coor1) << endl;
-        cout << decryptNumber(*keysServer, coor2) << endl;
+//        Vec<Ctxt> coor1 = (*this)[i], coor2 = p[i], eSum;
+        
+//        cout << "decryptNumber" << endl;
+//        cout << decryptNumber(*keysServer, coor1) << endl;
+//        cout << decryptNumber(*keysServer, coor2) << endl;
         CtPtrs_VecCt eep(eSum);
         cout << "here comes trouble" << endl;
 //        int nBits = (outSize>0 && outSize<2*BIT_SIZE)? outSize : (2*BIT_SIZE);
@@ -110,7 +113,20 @@ Point Point::operator-(const Point & p) const { //fixme
 }
 
 Point Point::operator*(const Ctxt & bit) const {
-    vector<Vec<Ctxt>> newCoordinates = eCoordinates;
+    vector<Vec<Ctxt>> prodPoint = eCoordinates;
+    vector<Vec<Ctxt>> newprodPoint;
+    for(EncNumber & c : prodPoint) {
+//        int nBits = (outSize>0 && outSize<2*BIT_SIZE)? outSize : (2*BIT_SIZE);
+        //fixme - high potensial for BUG, prodPoint.bitsize can be bigger than BIT_SIZE
+        for(auto & ct : c) ct.multiplyBy(bit);  // multiplies each bit of the coordinate
+//        for(Ctxt & ct : c) ct *= bit;  // multiplies each bit of the coordinate
+        newprodPoint.push_back(c);
+    }
+//    Point mulPoint = Point(keysServer, prodPoint);
+    Point mulPoint = Point(pubKey, newprodPoint);
+
+    return mulPoint; //TODO should return the point with the encCoor
+/*    vector<Vec<Ctxt>> newCoordinates = eCoordinates;
 //    int i = 0;
     for(EncNumber & c : newCoordinates) {
 //        Vec<Ctxt> newCoor;
@@ -128,31 +144,13 @@ Point Point::operator*(const Ctxt & bit) const {
 //        newCoordinates.push_back(c);
 //        cout << "newCoor: " << decryptNumber(*keysServer, newCoor) << endl;
 //        newCoordinates.push_back(newCoor);
-//        /** for DBG #1  - todo - remove**/
-//        vector<long> slots;
-//        cout << "11 " << endl;
-//        decryptBinaryNums(slots, CtPtrs_VecCt(c), *(keysServer->secKey), *(keysServer->pubKey->getContext().ea));
-//        decryptBinaryNums(slots, CtPtrs_VecCt(c), *(keysServer->secKey), *(keysServer->pubKey->getContext().ea));
-//        cout << "11 " << endl;
-//        cout << "score! " << slots[0] << endl;
-        /* END for DBG #1*/
+
     }
 //    Point mulPoint = Point(keysServer, newCoordinates);
     
     Point mulPoint = Point(pubKey, newCoordinates);
-//    cout << "mulPoint.decrypt: " << mulPoint.decrypt(*keysServer) << endl;
-    /** for DBG #2 - todo - remove
-    cout << "The dec prodPoint Point is: ( ";
-    for(Vec<Ctxt> c : sumPoint.eCoordinates) {
-//        Vec<Ctxt> eSum;
-        CtPtrs_VecCt eep(c);
-        vector<long> slots;
-        decryptBinaryNums(slots, eep, *(keysServer->secKey), *(keysServer->pubKey->getContext().ea));
-        cout << slots[0] << " ";
-    }
-    cout << ")" << endl;
-     END for DBG #2**/
-    return mulPoint; //TODO should return the point with the encCoor
+
+    return mulPoint; //TODO should return the point with the encCoor*/
 }
 
 Ctxt Point::operator>(const Point & p) const {

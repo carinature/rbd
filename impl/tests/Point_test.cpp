@@ -289,11 +289,16 @@ void Point_test::test_mult() {
 //    Vec<Ctxt> b0 = p0[0];
 //    Vec<Ctxt> b1 = p1[0];
     Ctxt b0 = p0[0][0];
+    Ctxt b0test = p0[0][0];
     Ctxt b1 = p1[0][0];
 
 //    PointExtended producte1 = pe1 + pe2;
 //    PointExtended producte2 = pe1 + pe3;
 //    PointExtended producte3 = pe1 + pe1;
+
+    b0test.multiplyBy(b1);
+    EncNumber bla; bla.append(b0test); // = EncNumber();
+    cout << "00000000  -  " << ks->decrypt(bla) << endl;
     
     Point product1 = p1 * b0;
     Point product2 = p2 * b0;
@@ -318,8 +323,8 @@ void Point_test::test_mult() {
     DecryptedPoint orgproduct21 = v2 * 1;
     DecryptedPoint orgproduct31 = v3 * 1;
     
-//    cout << "orgproduct1: " << orgproduct1 << endl;
-//    cout << "decproduct1: " << decproduct1 << endl;
+    cout << "orgproduct1: " << orgproduct1 << endl;
+    cout << "decproduct1: " << decproduct1 << endl;
     
     assert(orgproduct1 == decproduct1);
     assert(orgproduct2 == decproduct2);

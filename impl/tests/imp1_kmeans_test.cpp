@@ -21,7 +21,7 @@ void imp1_kmeans_test::getEncryptedKMeansTest() {
     getEncryptedKMeans(points, *ks);
     auto t2 = std::chrono::high_resolution_clock::now();
     
-    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(t2 - t1).count();
+    auto duration = std::chrono::duration_cast<std::chrono::seconds>(t2 - t1).count();
     
     std::cout << "--- duration: " << duration << endl;
 

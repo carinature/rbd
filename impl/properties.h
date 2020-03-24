@@ -22,7 +22,6 @@ NTL_CLIENT
 using DecryptedPoint = std::vector<long>;
 using Bit = Ctxt;
 using EncNumber = Vec<Ctxt>;
-//using Binary = Vec<Ctxt>; //todo remove?
 
 static bool verbose = false;
 

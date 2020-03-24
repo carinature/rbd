@@ -19,9 +19,9 @@ int main(int argc, char * argv[]){
 //    Point_test::test_id();
 //    Point_test::test_decrypt();
     Point_test::test_sum();
+    Point_test::test_mult();
+    Point_test::test_g_cmp();
 //    Point_test::test_sum_ass();
-//    Point_test::test_mult();
-//    Point_test::test_g_cmp();
 //    Point_test::run_all();
     
     cout << endl;
@@ -33,7 +33,7 @@ int main(int argc, char * argv[]){
     
     cout << endl;
     cout << "==========  IMPL_test ==========" << endl;
-//    imp1_kmeans_test::getEncryptedKMeansTest();
+    imp1_kmeans_test::getEncryptedKMeansTest();
 //    imp1_kmeans_test::getLeftoverPointsTest();
 //    imp1_kmeans_test::calculateThreshold();
 //    imp1_kmeans_test::runAll();

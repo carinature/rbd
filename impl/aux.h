@@ -6,7 +6,7 @@
 #include "properties.h"
 #include <map>
 
-//Bit cmp(const Point & a, const Point & b);
+Bit cmp(const Point & a, const Point & b);
 
 void writeToFile(const vector<Point> & vec, const string & filename, KeysServer & keysServer);
 
@@ -26,7 +26,7 @@ struct cmpPoints{
     }
 };
 
-map<Point, map<Point, Bit, cmpPoints>, cmpPoints> createCmpDict(const vector<Point>& randomPoints);
+map<Point, map<Point, vector<Bit>, cmpPoints>, cmpPoints> createCmpDict(const vector<Point>& randomPoints);
 
 /*
  * Deprecated

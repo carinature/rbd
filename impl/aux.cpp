@@ -87,15 +87,15 @@ vector<Point> getEncryptedPointsFromFile(KeysServer & keysServer) { // fixme Pub
     return encPoints;
 }
 
-//Bit cmp(const Point & a, const Point & b) {
-//    //todo cmp should return bit
-//    //todo override Point's operator<
-//    //todo use helib cmp
-//    //todo consider <= over < (the later neve allows any points) and how to implement it with helib
-////    return a >= b;
-//    return a > b;
-////    return a[1] <= b[1];
-//}
+Bit cmp(const Point & a, const Point & b) {
+    //todo cmp should return bit
+    //todo override Point's operator<
+    //todo use helib cmp
+    //todo consider <= over < (the later neve allows any points) and how to implement it with helib
+//    return a >= b;
+    return a > b;
+//    return a[1] <= b[1];
+}
 
 map<Point, map<Point, vector<Bit>, cmpPoints>, cmpPoints> createCmpDict(const vector<Point> & randomPoints) {
     map<Point, map<Point, vector<Bit>, cmpPoints>, cmpPoints> cmpDict;

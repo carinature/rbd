@@ -54,15 +54,10 @@ vector<Point> getEncryptedKMeans(vector<Point> points, KeysServer & keysServer) 
         vector<Point> currStrip(points.begin() + i * stripSize,
                                 points.begin() + ((i + 1) * stripSize));
         vector<Point> copy(currStrip);
-
-/*        cout << "currStrip" << endl;
-        cout << currStrip << endl;
-        cout << "\n\n current Strip of size " << currStrip.size() << currStrip << endl;*/
         auto begin = copy.begin();
         while(k--) {
             auto r = begin;
-            advance(r, random() %
-                       stripSize); //TODO this line crushes the program with small number of points from "points"
+            advance(r, random() % stripSize); //TODO this line crushes the program with small #points
 //            swap(*begin, *r);
             swap(begin, r);
             ++begin;
@@ -70,17 +65,18 @@ vector<Point> getEncryptedKMeans(vector<Point> points, KeysServer & keysServer) 
         }
         vector<Point> random(copy.begin(), copy.begin() + numOfStrips);
 //        cout << "random points: " << random << endl << endl;
-        map<Point, map<Point, vector<Bit>, cmpPoints>, cmpPoints> cmp = createCmpDict(random);
+        //todo create cmp-dict
+//        map<Point, map<Point, vector<Bit>, cmpPoints>, cmpPoints> cmp = createCmpDict(random);
         
         ////    CUT INTO CELLS
         vector<Point> stripMeans;
-        //todo create cmp-dict
         //for each rand point
         int rp = 0;
         for(const Point & R : random) {
             ////  find the points for each cell
             vector<Point> currCell;
             Point sum = currStrip[0];
+//            cout << "sum: "<<sum.decrypt(keysServer) << endl;
             EncNumber size; size.append(keysServer.randomBit()); //init size
 //            Bit size = keysServer.randomBit(); //= 0;  // fixme either a security issue or precision
             //  for each point in the strip
@@ -90,16 +86,19 @@ vector<Point> getEncryptedKMeans(vector<Point> points, KeysServer & keysServer) 
                 vector<Bit> cmpIsAbove;
                 cout << "strip:" << i << "    rp: " << rp << "    p: " << j++ << endl;
                 for(const Point & r2 : random) {
-                    Bit r2isSmaller = cmp[p][r2][0];
-                    r2isSmaller.multiplyBy(cmp[R][r2][0]);  // r2isSmaller = (p > r2) * (R > r2)
-                    
-                    Bit r2isBigger = cmp[r2][R][0];  // r2isBigger = (r2 > R)
+                    Bit r2isSmaller =       cmp(p,r2);
+                    r2isSmaller.multiplyBy( cmp(R,r2));  // r2isSmaller = (p > r2) * (R > r2)
+                    Bit r2isBigger =        cmp(r2,R);  // r2isBigger = (r2 > R)
+//
+//                    Bit r2isSmaller = cmp[p][r2][0];
+//                    r2isSmaller.multiplyBy(cmp[R][r2][0]);  // r2isSmaller = (p > r2) * (R > r2)
+//                    Bit r2isBigger = cmp[r2][R][0];  // r2isBigger = (r2 > R)
 //                    Bit r2isBigger = cmp(r2, p) * cmp[r2][R]; //this worked but was redundant
 //
 //                  Bit isAboveR2 = r2isSmaller + r2isBigger - r2isSmaller * r2isBigger
                     Bit isAboveR2 = r2isSmaller;
                     isAboveR2.multiplyBy(r2isBigger);
-                    isAboveR2.negate();
+//                    isAboveR2.negate();
                     isAboveR2 += r2isSmaller;
                     isAboveR2 += r2isBigger;
 //                    cmpIsAbove.push_back(isAboveR2);  // currently the vector is for DBG purposes
@@ -114,22 +113,22 @@ vector<Point> getEncryptedKMeans(vector<Point> points, KeysServer & keysServer) 
                 cout << "2222" <<endl;
                 for(const Ctxt & b : cmpIsAbove) isAboveOtherReps *= b;  //accumulate prod of cmpIsAbove
                 cout << "333" <<endl;
-                Bit isInCell = cmp[R][p][0];
+                Bit isInCell = cmp(R,p);
+//                Bit isInCell = cmp[R][p][0];
                 EncNumber temp; temp.append(isInCell);
                 cout << keysServer.decrypt(temp) << endl;
                 cout << "44" <<endl;
-//                isInCell.multiplyBy(isAboveOtherReps);   //  is in  = is under random * is over other randoms
-                isInCell*=(isAboveOtherReps);   //  is in  = is under random * is over other randoms
+                isInCell.multiplyBy(isAboveOtherReps);   //  is in  = is under random * is over other randoms
+//                isInCell*=(isAboveOtherReps);   //  is in  = is under random * is over other randoms
 //                temp.append(isInCell);
 //                cout << keysServer.decrypt(temp) << endl;
                 cout << "5" <<endl;
                 Point isPoint = p * isInCell;
                 cout << "6" <<endl;
                 currCell.push_back(isPoint);
-                cout << "The problem is here" <<endl;
                 cout << sum.decrypt(keysServer) << endl;
-                cout << isPoint.decrypt(keysServer) << endl;
-                
+//                cout << isPoint.decrypt(keysServer) << endl;
+                cout << "The problem is here" <<endl;
                 sum = sum + isPoint; // <--the problem is here
                 cout << "7" <<endl;
 //        int nBits = (outSize>0 && outSize<2*BIT_SIZE)? outSize : (2*BIT_SIZE);
