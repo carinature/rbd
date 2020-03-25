@@ -23,10 +23,11 @@ void imp1_kmeans_test::getEncryptedKMeansTest() {
 //    vector<Point> encMeans = getEncryptedKMeans(points, *ks);
     auto t2 = std::chrono::high_resolution_clock::now();
     auto duration = std::chrono::duration_cast<std::chrono::seconds>(t2 - t1).count();
-    std::cout << "--- duration: " << duration << endl;
+    std::cout << "\n--- duration: " << duration << endl;
 
 //    for(int i = 0; i < points.size(); ++i) assert(i==0);
-    decWriteToFile(means, "means_test", *ks);
+//    decWriteToFile(means, "means_test", *ks);
+    decWriteToFile(means, "io/means_test", *ks);
     
     cout << "           OK" << endl;
 }

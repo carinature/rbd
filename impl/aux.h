@@ -11,7 +11,7 @@
 void writeToFile(const vector<Point> & vec, const string & filename, KeysServer & keysServer);
 void decWriteToFile(const vector<DecryptedPoint> & vec, const string & filename, KeysServer & keysServer);
 
-vector<DecryptedPoint> getPointsFromFile(const string & filename = "points");
+vector<DecryptedPoint> getPointsFromFile(const string & filename = "io/points");
 
 vector<Point> getEncryptedPointsFromFile(KeysServer & sk);
 vector<long> encryptVec(const vector<double> & vector);

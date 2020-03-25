@@ -25,11 +25,9 @@ using namespace std;
 /** Writing points to a specified.
  *      The points are first decrypted and returned into a double form (from long) **/
 //*  todo consider changing KeysServer to PubKey
-void writeToFile(const vector<Point> & vec, const string & filename,
-                 KeysServer & keysServer) {  // fixme PubKey instead of KeysServ
+void writeToFile(const vector<Point> & vec, const string & filename, KeysServer & keysServer) {  // fixme PubKey instead of KeysServ
     vector<DecryptedPoint> points; // = sk.decryptPointsByCA(vec);
     for(const Point& p : vec) points.push_back(p.decrypt(keysServer));
-//    cout << "=%%%%%%%%%%%%%%%%%%%%%%%= in write points: " << points << endl;
     ofstream outputFileStream(filename);
     for(const DecryptedPoint & p : points) {
         for(double coor : p) {
@@ -43,13 +41,9 @@ void writeToFile(const vector<Point> & vec, const string & filename,
 }
 
 void decWriteToFile(const vector<DecryptedPoint> & vec, const string & filename, KeysServer & keysServer) {  // fixme PubKey instead of KeysServ
-//    vector<DecryptedPoint> points; // = sk.decryptPointsByCA(vec);
-//    for(const Point& p : vec) points.push_back(p.decrypt(keysServer));
-//    cout << "=%%%%%%%%%%%%%%%%%%%%%%%= in write points: " << points << endl;
     ofstream outputFileStream(filename);
     for(const DecryptedPoint & p : vec) {
         for(double coor : p) {
-//            cout << "in write coor: " << coor << endl;
             outputFileStream << coor / FACTOR << " ";
         }
         outputFileStream << '\n';

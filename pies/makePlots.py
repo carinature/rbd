@@ -1,26 +1,28 @@
-from matplotlib import pyplot as plt
 import numpy as np
+from matplotlib import pyplot as plt
+
 
 def gen_encrypted_points_from_file(fileName):
     # with open(fileName) as f:
-        # points = [Point(*map(Binary, map(float, i.split(', ')))) for i in f]  # todo encapsulate in Binary
-        # points = [Point(*map(Binary, map(float, i.strip(' \n').split(' ')))) for i in f]  # todo encapsulate in Binary
-        # points = [map(float, i.strip(' \n').split(' ')) for i in f]  # todo encapsulate in Binary
-        # points = [map([] , map(float, i.strip(' \n').split(' '))) for i in f]  # todo encapsulate in Binary
-        # points = []
-        # for row in f:
-        #     split = row.strip('\n').split(' ')
-        #     print(split)
-        #     points.append(np.array(split, dtype=np.float))
-        # points = np.array(points)
+    # points = [Point(*map(Binary, map(float, i.split(', ')))) for i in f]  # todo encapsulate in Binary
+    # points = [Point(*map(Binary, map(float, i.strip(' \n').split(' ')))) for i in f]  # todo encapsulate in Binary
+    # points = [map(float, i.strip(' \n').split(' ')) for i in f]  # todo encapsulate in Binary
+    # points = [map([] , map(float, i.strip(' \n').split(' '))) for i in f]  # todo encapsulate in Binary
+    # points = []
+    # for row in f:
+    #     split = row.strip('\n').split(' ')
+    #     print(split)
+    #     points.append(np.array(split, dtype=np.float))
+    # points = np.array(points)
     points = np.loadtxt(fileName, dtype=float)
-    points = np.reshape(points, (-1,2))
+    points = np.reshape(points, (-1, 2))
     print(points)
 
-        # points = [i.strip(' \n').split(' ') for i in f]  # todo encapsulate in Binary
-        # points = [i.split(' ') for i in f]  # todo encapsulate in Binary
+    # points = [i.strip(' \n').split(' ') for i in f]  # todo encapsulate in Binary
+    # points = [i.split(' ') for i in f]  # todo encapsulate in Binary
     # print(points)
     return points
+
 
 def decrypt_data(points, rep_list=None, leftovers_list=None):
     print('  ----------------- decrypted_data ----------------------  ')
@@ -43,10 +45,11 @@ def plot_bricks(strips, rands):
         plt.axvline(x=section_end, color='grey', linestyle='--', linewidth=1)  # <--	for plot purposes only
 
 
-def make_plot(point_list, rep_list, chosen=None, leftovers_list=None, rands=None, strips=None):
+def make_plot(point_list, rand_list, rep_list, chosen=None, leftovers_list=None, rands=None, strips=None):
     if rands and strips:
         plot_bricks(strips, rands)
     point_set = decrypt_data(point_list)
+    rand_set = decrypt_data(rand_list)
     rep_set = decrypt_data(rep_list)
     # leftovers_set = decrypt_data(leftovers_list)
     # chosen_set = decrypt_data(chosen)
@@ -56,11 +59,12 @@ def make_plot(point_list, rep_list, chosen=None, leftovers_list=None, rands=None
 
     #   plot
     plt.scatter(*zip(*point_set), label='Input Points', c='blue', s=1)  # <--	for plot purposes only
+    plt.scatter(*zip(*rand_list), label='Rand Points', c='green', s=3)  # <--	for plot purposes only
     # plt.scatter(*zip(*rep_set), label='Mean Representatives', c='black', s=10)  # <--	for plot purposes only
     # plt.scatter(*zip(*leftovers_set), label='Leftovers', c='red', s=2)  # <--	for plot purposes only
 
-    # chosen = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/chosen")
-    # leftover = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/leftover")
+    # chosen = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/chosen")
+    # leftover = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/leftover")
     plt.scatter(*zip(*rep_set), label='means', c='black', s=7)  # <--	for plot purposes only
     # plt.scatter(*zip(*chosen_set), label='chosen', c='green', s=2)  # <--	for plot purposes only
     # plt.scatter(*zip(*leftovers_set), label='leftover', c='red', s=2)  # <--	for plot purposes only
@@ -72,12 +76,13 @@ def make_plot(point_list, rep_list, chosen=None, leftovers_list=None, rands=None
 
 if '__main__' == __name__:
     # points_list = gen_encrypted_points_from_file("points")
-    points_list  = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/points")
+    points_list = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/points")
+    rand_list = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/points")
 
-    # means        = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/means")
-    means_test        = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/means_test")
-    # chosen       = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/chosen")
-    # leftover     = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/leftover")
+    # means        = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/means")
+    means_test = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/means_test")
+    # chosen       = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/chosen")
+    # leftover     = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/leftover")
 
     # chosen       = [Point(Binary(0), Binary(0))]
     # leftover     = [Point(Binary(0), Binary(0))]
@@ -91,7 +96,5 @@ if '__main__' == __name__:
     # print(chosen)
     # print(leftover)
 
-    make_plot(points_list, means_test)
+    make_plot(points_list, rand_list, means_test)
     # make_plot(points_list, means, chosen, leftover)
-
-

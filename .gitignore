@@ -17,3 +17,6 @@ tmp
 pies/__pycache__/
 play
 try.cbp
+testing
+#io/means_test
+#io/points_test

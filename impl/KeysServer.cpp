@@ -30,8 +30,7 @@ KeysServer::KeysServer() {
     long nTests = 3;
 //    long nTests = 4;
     amap.arg("nTests", nTests, "number of tests to run");
-//    bool bootstrap = false;
-    bool bootstrap = true;
+    bool bootstrap = true; //    fixme in original test it's : bool bootstrap = false;
     amap.arg("bootstrap", bootstrap, "test comparison with bootstrapping");
     long seed = 0;
     amap.arg("seed", seed, "PRG seed");
@@ -110,32 +109,25 @@ KeysServer::~KeysServer() {
 }
 
 Ctxt KeysServer::randomBit() {
-//    long c = 0;  // fixme should be random
-//    NTL::Vec<Ctxt> encVal;
-//    NTL::Vec<Ctxt> encVal;
+    long c = rand();  // fixme should be random
     Ctxt mu(*pubKey);
-//    resize(encVal, 1, mu);
-//    resize(encVal, BIT_SIZE, mu);
-//    for(long i = 0; i < BIT_SIZE; i++) {
-//        pubKey->Encrypt(encVal[i], ZZX((c >> i)&1)); ////    <----   THE PROBLEM was HERE
-//        pubKey->Encrypt(encVal[0], ZZX((c >> 0)&1)); ////    <----   THE PROBLEM was HERE
-//        pubKey->Encrypt(encVal[0], ZZX(c&1) ); ////    <----   THE PROBLEM was HERE
-//    }
-//    return encVal[0];
+    pubKey->Encrypt(mu, ZZX(c&1)); ////    <----   THE PROBLEM was HERE
     return mu;
 }
 
 //DecryptedPoint KeysServer::calculateAvgPoint(const Point& r, const Point& p, EncNumber size) { //todo so you can subtract - for better accuracy
-DecryptedPoint KeysServer::calculateAvgPoint(const Point& p, EncNumber size) {
-    cout << "   - calculateAvgPoint -   ";
-    long amount = decrypt(std::move(size)) + 1;
+DecryptedPoint KeysServer::calculateAvgPoint(const Point & p, EncNumber size) {
+    cout << "   --- calculateAvgPoint ---   ";
+    const long amount = decrypt(std::move(size)) + 1;
     vector<long> coorVector;
     for(const EncNumber & coor : p.eCoordinates) {
         coorVector.push_back(decrypt(coor) / amount);
     }
-    const vector<long> constVec = std::move(coorVector); //todo remove
-//    Point avgPoint = PointExtended(this, constVec);
-    return constVec;
+    const vector<long> sumVec = std::move(coorVector); //todo remove
+//    Point avgPoint = PointExtended(this, sumVec);
+    cout << "decrypted mean: " << sumVec; // << endl;
+    cout << "   decrypted size: " << amount << endl << endl;
+    return sumVec;
     
 }
 //

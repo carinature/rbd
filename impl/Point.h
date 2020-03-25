@@ -60,7 +60,7 @@ public:
 //    Point & operator+=(const Point &) ;
     
     //! @brief _Encrypted_ multiplication of coordinates
-    Point operator*(const Ctxt & bit) const;
+    Point operator*(Ctxt bit) const;
     
     //! @brief compare 2 points
     Ctxt operator>(const Point & p) const;

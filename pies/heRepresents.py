@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 
-from numpy import *
 from random import *
+
 from matplotlib import pyplot as plt
-import sys
+from numpy import *
+
 from pies.quickSelect import median
+
+
 # from pies.quick_select import median
 
 

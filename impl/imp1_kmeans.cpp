@@ -40,21 +40,19 @@ int main(int argc, char * argv[]) {
 vector<DecryptedPoint> getEncryptedKMeans(vector<Point> points, KeysServer & keysServer) {
 //vector<Point> getEncryptedKMeans(vector<Point> points, KeysServer & keysServer) {
     cout << "getEncryptedKMeans" << endl;
-    vector<Point> leftover, chosen;
+    vector<Point> randPoints, leftover, chosen;
     vector<DecryptedPoint> means;
-    int numOfStrips = (int) (1 / EPSILON);
-/*    int numOfCells = (int) (1 / pow(EPSILON, 2));
+    int numOfStrips = (int) (1 / EPSILON);/*    int numOfCells = (int) (1 / pow(EPSILON, 2));
     cout << "\nEPSILON: " << EPSILON << endl;
     cout << "numOfStrips: " << numOfStrips << endl;
     cout << "numOfCells: " << numOfCells << endl;*/
     //for every strip do
     for(int i = 0; i < numOfStrips; ++i) {
-        //todo note the loss of points in tail (need to correct)
         ////    Fisher–Yates shuffle for choosing k random points
         int stripSize = (int) (points.size() * EPSILON), k = numOfStrips; //, left = stripSize;
         vector<Point> currStrip(points.begin() + i * stripSize, points.begin() + ((i + 1) * stripSize));
         vector<Point> copy(currStrip);
-        auto begin = copy.begin();
+        auto begin = copy.begin(); //todo note the loss of points in tail (need to correct)
         while(k--) {
             auto r = begin;
             advance(r, random() % stripSize); //TODO this line crushes the program with small(<=>20) #points in file
@@ -63,36 +61,31 @@ vector<DecryptedPoint> getEncryptedKMeans(vector<Point> points, KeysServer & key
             ++begin;
             --stripSize;
         }
-//        cout << "888454548888" << endl;
         vector<Point> random(copy.begin(), copy.begin() + numOfStrips);
+        randPoints.insert(randPoints.end(), random.begin(), random.end());
         auto t1 = std::chrono::high_resolution_clock::now();
-        //TODO dict should only compare between random point and the rest, and vice versa
-//        map<Point, map<Point, vector<Bit>, cmpPoints>, cmpPoints> cmp = createCmpDict(random);
         map<Point, map<Point, vector<Bit>, cmpPoints>, cmpPoints> cmp = createCmpDict(random, currStrip);
         auto t2 = std::chrono::high_resolution_clock::now();
         auto duration = std::chrono::duration_cast<std::chrono::seconds>(t2 - t1).count();
-        cout << "creating the dict took: " << duration << " seconds." << endl;
-        
+        cout << "\ncreating the dict took: " << duration << " seconds.\n" << endl;
+        vector<DecryptedPoint> stripMeans; //        vector<Point> stripMeans;
         ////    CUT INTO CELLS
-        vector<DecryptedPoint> stripMeans;
-//        vector<Point> stripMeans;
-        //for each rand point
-        int rp = 0;
+        //for each rand point (cell)
+        int rp = 0;  //DBG
         for(const Point & R : random) {
-            cout << " ============ The random point is : " << R.decrypt(keysServer) << "========="; // << endl;
+            cout << "The random point is : " << R.decrypt(keysServer) << endl;
             ////  find the points for each cell
             vector<Point> currCell;
             Point sum = R;
-//            cout << "sum: "<<sum.decrypt(keysServer) << endl;
             EncNumber size;
-            size.append(keysServer.randomBit()); //init size
+            CtPtrs_VecCt eep(size);  //size.append(keysServer.randomBit()); //init size
 //            Bit size = keysServer.randomBit(); //= 0;  // fixme either a security issue or precision
             //  for each point in the strip
-            int j = 0;
+            int j = 0;  //DBG
             for(const Point & p : currStrip) {
                 //        is above other stripMeans
                 vector<Bit> cmpIsAbove;
-                cout << "---------- strip:" << i << "    rp: " << rp << "    p: " << j++ << " ---------- " << endl;
+                cout << "strip:" << i << ", rp: " << rp << ", p: " << j++ << " ----- "; // << endl;   //DBG
                 for(const Point & r2 : random) {
 //                    Bit r2isSmaller =       cmp(p,r2);
 //                    r2isSmaller.multiplyBy( cmp(R,r2));  // r2isSmaller = (p > r2) * (R > r2)
@@ -112,69 +105,49 @@ vector<DecryptedPoint> getEncryptedKMeans(vector<Point> points, KeysServer & key
 //                    Bit r2isBigger = cmp(r2, p) * cmp[r2][R]; //this worked but was redundant
 
 //                    cout << "******" <<endl;
-
 //                  Bit isAboveR2 = r2isSmaller + r2isBigger - r2isSmaller * r2isBigger
                     Bit isAboveR2 = r2isSmaller;
                     isAboveR2.multiplyBy(r2isBigger);
                     isAboveR2.negate();
                     isAboveR2 += r2isSmaller;
                     isAboveR2 += r2isBigger;
-                    
-                    cmpIsAbove.push_back(isAboveR2);  // currently the vector is for DBG purposes
-                    //todo instead of vector and then "accumulate" just accumulate in cmpIsAbove*=tempcmp
-                    //               cmpIsAbove *= isAboveR2;
+                    cmpIsAbove.push_back(
+                            isAboveR2);  // currently the vector is for DBG purposes - cmpIsAbove *= isAboveR2;
                 }
-//                cout << "lalallaalalalal" <<endl;
-                
-                //                Bit isAboveOtherReps = accumulate(cmpIsAbove.begin(), cmpIsAbove.end(), 1, multiplies<Bit>());
-                
                 Bit isAboveOtherReps = cmpIsAbove[0];
-//                cout << "2222" <<endl;
-//                for(const Ctxt & b : cmpIsAbove) isAboveOtherReps *= b;  //accumulate prod of cmpIsAbove
                 for(const Ctxt & b : cmpIsAbove) isAboveOtherReps.multiplyBy(b);  //accumulate prod of cmpIsAbove
-//                cout << "333" <<endl;
-//                Bit isInCell = cmp(R,p);
-                cout << "cmpIsAbove: [ " ;
-                for(const Ctxt & b : cmpIsAbove) {
-                    EncNumber bb;
-                    bb.append(b);
-                    cout << keysServer.decrypt(bb) << " ";
-                } cout << "]\n";
                 Bit isInCell = cmp[R][p][0];
                 isInCell.multiplyBy(isAboveOtherReps);   //  is in  = is under random * is over other randoms
-//                EncNumber temp; temp.append(isInCell);
-//                cout << keysServer.decrypt(temp) << endl;
-//                cout << "44" <<endl;
 //                isInCell*=(isAboveOtherReps);   //  is in  = is under random * is over other randoms
-//                temp.append(isInCell);
-//                cout << keysServer.decrypt(temp) << endl;
-//                cout << "5" <<endl;
                 Point isPoint = p * isInCell;
-//                cout << "6" <<endl;
                 currCell.push_back(isPoint);
-                cout << sum.decrypt(keysServer) << endl;
-//                cout << isPoint.decrypt(keysServer) << endl;
-//                cout << "The problem is here" <<endl;
-                sum = sum + isPoint; // <--the problem is here
-//                cout << "7" <<endl;
+                sum = sum + isPoint;
 //        int nBits = (outSize>0 && outSize<2*BIT_SIZE)? outSize : (2*BIT_SIZE);
-                //fixme - high potensial for BUG, sum.bitsize can be bigger than BIT_SIZE
+                //fixme - potential for BUG, sum.bitsize can be bigger than BIT_SIZE
                 EncNumber isInCellNum;
                 isInCellNum.append(isInCell);
-                cout << "dec POint: " << isPoint.decrypt(keysServer) << endl;
-//                cout << "8" <<endl;
-                CtPtrs_VecCt eep(size);
-                addTwoNumbers(eep, CtPtrs_VecCt(size), CtPtrs_VecCt(isInCellNum), BIT_SIZE, &unpackSlotEncoding);
-//                cout << "2222" <<endl;
+                if(dbg) {
+                    cout << "   cmpIsAbove: [ ";
+                    for(const Ctxt & b : cmpIsAbove) {
+                        EncNumber bb; bb.append(b);
+                        cout << keysServer.decrypt(bb) << " ";
+                    }
+                    cout << "] ";
+//                    bb = EncNumber(); bb.append(isInCell);
+                    EncNumber bb; bb.append(cmp[R][p][0]);
+                    cout << "   isInCell: [" << keysServer.decrypt(bb) << "] ";
+                    cout << "   isInCellNums: " << keysServer.decrypt(isInCellNum) << " ";
+                    cout << "   size before addNums: " << keysServer.decrypt(size) << " ";
+                }
+                addTwoNumbers(eep, CtPtrs_VecCt(size), CtPtrs_VecCt(isInCellNum));//, BIT_SIZE, &unpackSlotEncoding);
+                if(dbg) {
+                    cout << "   size after addNums: " << keysServer.decrypt(size) << " ";
+                    cout << "   isPoint: " << isPoint.decrypt(keysServer) << " ";
+                    cout << "   sum: " << sum.decrypt(keysServer) << " \n";
+                }
             }
-//            if(dbg) {
-//                sum = sum - R; //todo consider removing line for efficiency OR fixme
-//            cout << "current Cell of size " << currCell.size() << " " << currCell << endl;
-//                Point mean = *keysServer.calculateAvgPointByCA(sum, size);
-//            }
+//            sum = sum - R; //todo consider removing line for efficiency OR fixme
             DecryptedPoint mean = keysServer.calculateAvgPoint(sum, size);
-            cout << "decrypted mean: " << mean << endl;
-            cout << "decrypted size: " << keysServer.decrypt(size) << endl;
 //            Point mean = keysServer.calculateAvgPoint(sum, size);
 //            cout << "mean: " << mean << endl;
 //            stripMeans.push_back(mean);
@@ -182,14 +155,13 @@ vector<DecryptedPoint> getEncryptedKMeans(vector<Point> points, KeysServer & key
             ++rp;
         }
         means.insert(means.begin(), stripMeans.begin(), stripMeans.end());
-        
         cout << "stripMeans: " << stripMeans << endl;
-        cout << "means: " << means << endl;
-        
+//        cout << "means: " << means << endl;
     }
 //    cout << "\n means list of size " << means.size() << " " << means << endl << endl;
 //    cout << "\n chosen list of size " << chosen.size() << " " << chosen << endl << endl;
 //    cout << "\n leftover list of size " << leftover.size() << " " << leftover << endl << endl;
+    if(dbg) writeToFile(randPoints, "io/random_means", keysServer);
     return means;
 }
 

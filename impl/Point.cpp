@@ -37,7 +37,8 @@ Point Point::operator+(const Point & p) const {
 //        cout << "here comes trouble" << endl;
 //        int nBits = (outSize>0 && outSize<2*BIT_SIZE)? outSize : (2*BIT_SIZE);
         //fixme - high potensial for BUG, sum.bitsize can be bigger than BIT_SIZE
-        addTwoNumbers(eep, CtPtrs_VecCt(coor1), CtPtrs_VecCt(coor2), BIT_SIZE, &unpackSlotEncoding);
+//        addTwoNumbers(eep, CtPtrs_VecCt(coor1), CtPtrs_VecCt(coor2), BIT_SIZE, &unpackSlotEncoding);
+        addTwoNumbers(eep, CtPtrs_VecCt(coor1), CtPtrs_VecCt(coor2));//, BIT_SIZE, &unpackSlotEncoding);
 //        cout << "5" << endl;
         sum.push_back(eSum);
         /** for DBG #1  - todo - remove
@@ -71,7 +72,8 @@ Point Point::operator-(const Point & p) const { //fixme
         CtPtrs_VecCt eep(eSum);
 //        int nBits = (outSize>0 && outSize<2*BIT_SIZE)? outSize : (2*BIT_SIZE);
         //fixme - high potensial for BUG, sum.bitsize can be bigger than BIT_SIZE
-        addTwoNumbers(eep, CtPtrs_VecCt(coor1), CtPtrs_VecCt(coor2), BIT_SIZE, &unpackSlotEncoding);
+//        addTwoNumbers(eep, CtPtrs_VecCt(coor1), CtPtrs_VecCt(coor2), BIT_SIZE, &unpackSlotEncoding);
+        addTwoNumbers(eep, CtPtrs_VecCt(coor1), CtPtrs_VecCt(coor2));//, BIT_SIZE, &unpackSlotEncoding);
         sum.push_back(eSum);
         /** for DBG #1  - todo - remove
         vector<long> slots;
@@ -114,7 +116,7 @@ Point Point::operator-(const Point & p) const { //fixme
 //    return Point(pubKey, pCoordinates); //TODO should return the point with the encCoor*/
 }
 
-Point Point::operator*(const Ctxt & bit) const {
+Point Point::operator*(Ctxt bit) const {
     vector<Vec<Ctxt>> prodPoint = eCoordinates;
     vector<Vec<Ctxt>> newprodPoint;
     for(EncNumber & c : prodPoint) {

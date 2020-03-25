@@ -3,8 +3,10 @@
 
 
 int main(int argc, char * argv[]){
+
+    time_t timer = time(NULL);
+    cout << endl << std::ctime(&timer) << endl;
     
-    cout << endl;
     cout << "==========  KeysServer_test  ==========" << endl;
 //    KeysServer_test::test_ctor();
 //    KeysServer_test::test_dtor();

@@ -22,7 +22,7 @@ void aux_test::writeToFileTest() {
     vector<DecryptedPoint> points = getPointsFromFile();
     vector<Point> ePoints = getEncryptedPointsFromFile(*ks);
     
-    const string & filename = "points_test";
+    const string & filename = "io/points_test";
     writeToFile(ePoints, filename, *ks);
     
     vector<DecryptedPoint> points_test = getPointsFromFile(filename);
