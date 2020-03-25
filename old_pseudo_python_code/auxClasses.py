@@ -174,6 +174,7 @@ class Point(KmeansObj):
     def __gt__(self, other, current_dim=2):
         # receives 2 Binaries and returns a Bit: 1 if a>=b, 0 otherwise
         def helib_compare(aa, bb):  # PLACEHOLDER
+            # print(aa, bb)
             return aa > bb  # defined in Binary class
 
         # for d in range(1, len(other)):
@@ -182,7 +183,14 @@ class Point(KmeansObj):
         d = current_dim - 1
         self.cmp_counter += 1
         other.cmp_counter += 1
+        # if Binary == self or Binary == other:
+        #     print(self[d], other[d])
+        #     raise KMeansException('whaaaaaaaa...?')
         return helib_compare(self[d], other[d])
+
+    def __lt__(self, other, current_dim=2):
+        return not __gt__(self, other)
+
 
 
 # Receives a list of encrypted points, and the size of the list (since we don't know which points are "real")

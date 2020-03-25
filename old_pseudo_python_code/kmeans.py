@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
-import copy
 from builtins import int
-from matplotlib import pyplot as plt
-from genPoints import *
-from auxClasses import *
-from auxEncFuncs import *
+from old_pseudo_python_code.genPoints import *
+from old_pseudo_python_code.auxEncFuncs import *
+
+
 # from auxClasses import global_bin_mul_counter
 
 # todo:
@@ -19,13 +18,16 @@ from auxEncFuncs import *
 #       cmp[point1][point2] = MU, where MU=(p1>p2) is the value returned in
 #       compareTwoNumbers(MU, ni, CtPtrs_VecCt(enca), CtPtrs_VecCt(encb),
 #                               &unpackSlotEncoding);
-def create_cmp_dict(strip, rand_points):  # todo should cmp for i-D
+def create_cmp_dict(rand_points, strip, cmp_op):  # todo should cmp for i-D
     cmp = {p: {} for p in strip}
     ctr = 0
     for rp in rand_points:  # O(1/eps)
         for p in strip:  # O(n*eps)
-            cmp[rp][p] = rp > p
-            cmp[p][rp] = p > rp
+            cmp[rp][p] = cmp_op(rp, p)
+            cmp[p][rp] = cmp_op(p, rp)
+            # print('============================')
+            # print(rp, p)
+            # print(cmp[rp][p], cmp[p][rp])
             # cmp[p][rp] = Bit(1) - cmp[rp][p]
         # cmp[point] = {point2: compare(point, point2) for point2 in strip}
         ctr += len(cmp[rp])
@@ -54,7 +56,8 @@ def get_representatives(points, eps):
         temp_strip = strip[:]
         rand_points = [temp_strip.pop(temp_strip.index(choice(temp_strip))) for i in range(int(len(strip) * eps))]
         # rand_points = [temp_strip.pop(temp_strip.index(choice(temp_strip))) for i in range(min(len(strip), int(lim)))]
-        cmp = create_cmp_dict(strip, rand_points)  # create a HElibs compare-results dict - for better performance
+        cmp = create_cmp_dict(rand_points, strip,
+                              operator.gt)  # create a HElibs compare-results dict - for better performance
         for R in rand_points:
             group_y, group_y_size = [], Binary(0)
             for p in strip:
@@ -70,7 +73,7 @@ def get_representatives(points, eps):
         rands.append(rand_points)  # <--	for plot purposes only
     leftovers = get_leftovers(reps_groups, eps)  # todo move the get_leftovers to the inner loop
     # leftovers = get_leftovers(reps_groups, True, points, reps, eps )
-    make_plot(strips, rands, points, reps, leftovers)
+    make_plot(points, reps, None, leftovers, rands, strips)
     return reps, leftovers
     # return reps
 
@@ -83,7 +86,20 @@ def get_leftovers(reps_groups, threshold=0):
         # print(rep, '----->', point)
         leftovers.extend([point * (rep > point) for point in group])
         # leftovers.extend([point * compare(rep, point) for point in group])
-    # print(leftovers)
+        # print(leftovers)
+
+        # pt, mt = threshold, 0 - threshold
+        # left, down = Point(Binary(mt), Binary(0)), Point(Binary(0), Binary(mt))
+        # right, up = Point(Binary(pt), Binary(0)), Point(Binary(0), Binary(pt))
+        # print('rep + left:', rep + left)
+        # cmp_left =  create_cmp_dict(rep + left,     group, operator.lt)
+        # cmp_right = create_cmp_dict(rep + right,    group, operator.gt)
+        # cmp_up =    create_cmp_dict(rep + up,       group, operator.gt)
+        # cmp_down =  create_cmp_dict(rep + down,     group, operator.lt)
+        # print(cmp_left)
+        # print(cmp_right)
+        # print(cmp_up)
+        # print(cmp_down)
 
     leftovers = [p for p in leftovers if p]  # <--	for plot purposes only
     return leftovers
@@ -96,7 +112,31 @@ if __name__ == "__main__":
     dimension = 2
     # points_list = get_points(n, dimension)
     # points_list = get_points_from_file()
-    points_list = gen_encrypted_points_from_file()
+    # points_list = gen_encrypted_points_from_file("points")
 
-    rep_list, leftovers_list = get_representatives(points_list, epsilon)
+    # rep_list, leftovers_list = get_representatives(points_list, epsilon)
+
     # rep_list = get_representatives(points_list, epsilon)
+
+
+    # points_list = gen_encrypted_points_from_file("points")
+    points_list  = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/points")
+    means        = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/means")
+    means_test        = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/means_test")
+    chosen       = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/chosen")
+    leftover     = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/leftover")
+    # chosen       = [Point(Binary(0), Binary(0))]
+    # leftover     = [Point(Binary(0), Binary(0))]
+    # print(points_list)
+    # points_list = decrypt_data(points_list)
+    # chosen = decrypt_data(chosen)
+    # leftover = decrypt_data(leftover)
+
+    print(points_list)
+    print(means)
+    print(chosen)
+    print(leftover)
+
+    make_plot(points_list, means_test, chosen, leftover)
+
+

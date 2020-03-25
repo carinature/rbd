@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 from random import *
-from auxClasses import *
-dim = 3  # #dimansions
+from old_pseudo_python_code.auxClasses import *
+dim = 2  # #dimansions
 size = 100
-file = "/home/rbd/PycharmProjects/dan/points"
+file = "/home/rbd/workspace/rbd/psaudo/points"
 
 
 def rand(bottom_lim=0, range_lim=10, round_lim=2):
@@ -36,9 +36,12 @@ def get_points(n=size, d=dim):
     return get_points_from_file()
 
 
-def gen_encrypted_points_from_file():
-    with open(file) as f:
-        points = [Point(*map(Binary, map(float, i.split(' ')))) for i in f]  # todo encapsulate in Binary
+def gen_encrypted_points_from_file(fileName=file):
+    with open(fileName) as f:
+        # points = [Point(*map(Binary, map(float, i.split(', ')))) for i in f]
+        points = [Point(*map(Binary, map(float, i.strip(' \n').split(' ')))) for i in f]
+        # points = [i.strip(' \n').split(' ') for i in f]
+        # points = [i.split(' ') for i in f]
         print(points)
     return points
 
@@ -47,10 +50,11 @@ def gen_encrypted_points_from_file():
 
 
 if __name__ == '__main__':
-    # create_points_file()
+    create_points_file(generate_points())
     # generate_points()
     # print('get_points')
     # print(get_points())
     print('gen_encrypted_points_from_file')
-    print(gen_encrypted_points_from_file())
+    print(gen_encrypted_points_from_file("points"))
+    # print(gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/points"))
 

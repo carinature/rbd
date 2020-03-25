@@ -2,7 +2,7 @@
 
 from functools import reduce
 import operator
-from auxClasses import *
+from old_pseudo_python_code.auxClasses import *
 from matplotlib import pyplot as plt
 
 
@@ -15,7 +15,7 @@ def prod(iterable):
     # print(iterable)
     product = reduce(operator.mul, iterable)
     # if 1 == product.value:
-    #      print('fdjskljfksdjfksjdkfjskdfjksdfjksdjfskfj')
+    #      print('1 == product.value')
     return product
     # return reduce(operator.mul, iterable, 1)
 
@@ -49,19 +49,28 @@ def plot_bricks(strips, rands):
         plt.axvline(x=section_end, color='grey', linestyle='--', linewidth=1)  # <--	for plot purposes only
 
 
-def make_plot(strips, rands, point_list, rep_list, leftovers_list):
-    plot_bricks(strips, rands)
+def make_plot(point_list, rep_list, chosen, leftovers_list, rands=None, strips=None):
+    if rands and strips:
+        plot_bricks(strips, rands)
     rep_set = decrypt_data(rep_list)
     leftovers_set = decrypt_data(leftovers_list)
     point_set = decrypt_data(point_list)
+    chosen_set = decrypt_data(chosen)
     print('rep list of size  __', len(rep_list), '__  : ', rep_list)
     print('leftovers list of size  __', len(leftovers_list), '__  : ', leftovers_list)
     print('REAL leftovers list of size  __', len(leftovers_set), '__  : ', leftovers_set)
 
     #   plot
-    plt.scatter(*zip(*point_set), label='Input Points', s=3)  # <--	for plot purposes only
-    plt.scatter(*zip(*rep_set), label='Mean Representatives', c='black', s=10)  # <--	for plot purposes only
-    plt.scatter(*zip(*leftovers_set), label='Leftovers', c='red', s=2)  # <--	for plot purposes only
+    plt.scatter(*zip(*point_set), label='Input Points', c='blue', s=1)  # <--	for plot purposes only
+    # plt.scatter(*zip(*rep_set), label='Mean Representatives', c='black', s=10)  # <--	for plot purposes only
+    # plt.scatter(*zip(*leftovers_set), label='Leftovers', c='red', s=2)  # <--	for plot purposes only
+
+    # chosen = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/chosen")
+    # leftover = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/leftover")
+    plt.scatter(*zip(*rep_set), label='means', c='black', s=7)  # <--	for plot purposes only
+    plt.scatter(*zip(*chosen_set), label='chosen', c='green', s=2)  # <--	for plot purposes only
+    plt.scatter(*zip(*leftovers_set), label='leftover', c='red', s=2)  # <--	for plot purposes only
+
     plt.title('Choosing representatives')  # <--	for plot purposes only
     plt.legend(loc='upper right')  # <--	for plot purposes only
     plt.show()  # <--	for plot purposes only
