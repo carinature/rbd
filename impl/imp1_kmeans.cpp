@@ -77,9 +77,10 @@ vector<DecryptedPoint> getEncryptedKMeans(vector<Point> points, KeysServer & key
             ////  find the points for each cell
             vector<Point> currCell;
             Point sum = R;
-            EncNumber size;
+            EncNumber size, size2, sizeDBG;
+            Vec<EncNumber> sizeDBGvec;
+//            vector<Bit> sizeDBGvec;
             CtPtrs_VecCt eep(size);  //size.append(keysServer.randomBit()); //init size
-//            Bit size = keysServer.randomBit(); //= 0;  // fixme either a security issue or precision
             //  for each point in the strip
             int j = 0;  //DBG
             for(const Point & p : currStrip) {
@@ -118,9 +119,8 @@ vector<DecryptedPoint> getEncryptedKMeans(vector<Point> points, KeysServer & key
                 for(const Ctxt & b : cmpIsAbove) isAboveOtherReps.multiplyBy(b);  //accumulate prod of cmpIsAbove
                 Bit isInCell = cmp[R][p][0];
                 isInCell.multiplyBy(isAboveOtherReps);   //  is in  = is under random * is over other randoms
-//                isInCell*=(isAboveOtherReps);   //  is in  = is under random * is over other randoms
                 Point isPoint = p * isInCell;
-                currCell.push_back(isPoint);
+                currCell.push_back(isPoint); //todo do i need this for something? remove
                 sum = sum + isPoint;
 //        int nBits = (outSize>0 && outSize<2*BIT_SIZE)? outSize : (2*BIT_SIZE);
                 //fixme - potential for BUG, sum.bitsize can be bigger than BIT_SIZE
@@ -129,28 +129,37 @@ vector<DecryptedPoint> getEncryptedKMeans(vector<Point> points, KeysServer & key
                 if(dbg) {
                     cout << "   cmpIsAbove: [ ";
                     for(const Ctxt & b : cmpIsAbove) {
-                        EncNumber bb; bb.append(b);
+                        EncNumber bb;
+                        bb.append(b);
                         cout << keysServer.decrypt(bb) << " ";
                     }
                     cout << "] ";
-//                    bb = EncNumber(); bb.append(isInCell);
-                    EncNumber bb; bb.append(cmp[R][p][0]);
-                    cout << "   isInCell: [" << keysServer.decrypt(bb) << "] ";
+                    EncNumber bb;
+                    bb.append(cmp[R][p][0]);
+                    cout << "   R > p: [" << keysServer.decrypt(bb) << "] ";
                     cout << "   isInCellNums: " << keysServer.decrypt(isInCellNum) << " ";
-                    cout << "   size before addNums: " << keysServer.decrypt(size) << " ";
+//                    cout << "   size before addNums: " << keysServer.decrypt(size) << " ";
                 }
-                addTwoNumbers(eep, CtPtrs_VecCt(size), CtPtrs_VecCt(isInCellNum));//, BIT_SIZE, &unpackSlotEncoding);
+                sizeDBGvec.append(isInCellNum);
+//                sizeDBG.append(isInCell);
+//                addTwoNumbers(eep, CtPtrs_VecCt(size), CtPtrs_VecCt(isInCellNum));//, BIT_SIZE, &unpackSlotEncoding);
                 if(dbg) {
-                    cout << "   size after addNums: " << keysServer.decrypt(size) << " ";
+//                    cout << "   size after addNums: " << keysServer.decrypt(size) << " ";
+//                    cout << "   sizeDBG after addNums: " << keysServer.decrypt(sizeDBG) << " ";
                     cout << "   isPoint: " << isPoint.decrypt(keysServer) << " ";
                     cout << "   sum: " << sum.decrypt(keysServer) << " \n";
                 }
             }
+            // sum counter vector (#points_inCell)
+            CtPtrMat_VecCt nums(sizeDBGvec); // Wrapper around numbers
+            const CtPtrs & product = CtPtrs_VecCt(size2);
+            addManyNumbers((CtPtrs &) product, nums, BIT_SIZE, &unpackSlotEncoding); // <--- "findQ(5,3) not found" is printed here
+//            cout << "   size: " << keysServer.decrypt(size2) << " ";
+
 //            sum = sum - R; //todo consider removing line for efficiency OR fixme
-            DecryptedPoint mean = keysServer.calculateAvgPoint(sum, size);
+            DecryptedPoint mean = keysServer.calculateAvgPoint(sum, size2);
 //            Point mean = keysServer.calculateAvgPoint(sum, size);
-//            cout << "mean: " << mean << endl;
-//            stripMeans.push_back(mean);
+            cout << "mean: " << mean << endl;
             stripMeans.push_back(mean);
             ++rp;
         }
