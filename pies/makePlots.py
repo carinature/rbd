@@ -38,15 +38,17 @@ def plot_bricks(strips, rands):
     dim = 2
     for i in range(len(strips)):
         section_begin = section_end  # <--	for plot purposes only
-        section_end = strips[i][-1][0].value  # <--	for plot purposes only
+        section_end = strips[i][-1][0]  # <--	for plot purposes only
+        # section_end = strips[i][-1][0].value  # <--	for plot purposes only
         for Y in rands[i]:
-            plt.hlines(Y[dim - 1].value, section_begin, section_end,
+            # plt.hlines(Y[dim - 1].value, section_begin, section_end,
+            plt.hlines(Y[dim - 1], section_begin, section_end,
                        colors='grey', linestyle='--', linewidth=1)  # <--	for plot purposes only
         plt.axvline(x=section_end, color='grey', linestyle='--', linewidth=1)  # <--	for plot purposes only
 
 
-def make_plot(point_list, rand_list, rep_list, chosen=None, leftovers_list=None, rands=None, strips=None):
-    if rands and strips:
+def make_plot(point_list, rand_list, rep_list, chosen=None, leftovers_list=None, strips=None, rands=None):
+    if rands.any() and strips.any():
         plot_bricks(strips, rands)
     point_set = decrypt_data(point_list)
     rand_set = decrypt_data(rand_list)
@@ -74,15 +76,29 @@ def make_plot(point_list, rand_list, rep_list, chosen=None, leftovers_list=None,
     plt.show()  # <--	for plot purposes only
 
 
+dim = 2  # dimensions
+numPoints = 0
+rangeLim = 0
+epsilon = 0
+with open('../impl/properties.h') as f:
+    datafile = f.readlines()
+    for line in datafile:
+        if 'NUM_POINTS' in line:
+            numPoints = int(line.split(' ')[2])
+        if 'DIM' in line:
+            dim = int(line.split(' ')[2])
+        if 'RANGE_LIM' in line:
+            rangeLim = int(line.split(' ')[2])
+        if 'EPSILON' in line:
+            epsilon = float(line.split(' ')[2])
+
 if '__main__' == __name__:
     # points_list = gen_encrypted_points_from_file("points")
     points_list = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/points")
-    rand_list = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/points")
-
-    # means        = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/means")
-    means_test = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/means_test")
-    # chosen       = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/chosen")
-    # leftover     = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/leftover")
+    rand_list = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/random_means")
+    means = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/means")
+    # chosen     = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/chosen")
+    # leftover   = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/leftover")
 
     # chosen       = [Point(Binary(0), Binary(0))]
     # leftover     = [Point(Binary(0), Binary(0))]
@@ -96,5 +112,14 @@ if '__main__' == __name__:
     # print(chosen)
     # print(leftover)
 
-    make_plot(points_list, rand_list, means_test)
+    fns = "/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/points"
+    points = np.loadtxt(fns, dtype=float)
+    strips = np.reshape(points, (int(1 / epsilon), -1, 2))
+    # print("strips\n", strips)
+    fnr = "/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/random_means"
+    rands = np.loadtxt(fnr, dtype=float)
+    rands = np.reshape(rands, (int(1 / epsilon), -1, 2))
+    # print("\nrands\n", rands)
+
+    make_plot(points_list, rand_list, means, strips=strips, rands=rands)
     # make_plot(points_list, means, chosen, leftover)
