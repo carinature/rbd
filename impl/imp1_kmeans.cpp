@@ -75,12 +75,9 @@ vector<DecryptedPoint> getEncryptedKMeans(vector<Point> points, KeysServer & key
         for(const Point & R : random) {
             cout << "The random point is : " << R.decrypt(keysServer) << endl;
             ////  find the points for each cell
-            vector<Point> currCell;
+//            vector<Point> currCell;
             Point sum = R;
-            EncNumber size, size2, sizeDBG;
-            Vec<EncNumber> sizeDBGvec;
-//            vector<Bit> sizeDBGvec;
-            CtPtrs_VecCt eep(size);  //size.append(keysServer.randomBit()); //init size
+            Vec<EncNumber> sizeVec;  // vector<Bit> sizeVec;
             //  for each point in the strip
             int j = 0;  //DBG
             for(const Point & p : currStrip) {
@@ -120,8 +117,8 @@ vector<DecryptedPoint> getEncryptedKMeans(vector<Point> points, KeysServer & key
                 Bit isInCell = cmp[R][p][0];
                 isInCell.multiplyBy(isAboveOtherReps);   //  is in  = is under random * is over other randoms
                 Point isPoint = p * isInCell;
-                currCell.push_back(isPoint); //todo do i need this for something? remove
-                sum = sum + isPoint;
+//                currCell.push_back(isPoint); // todo consider  might be more efficient to summ all the points together
+                sum = sum + isPoint;  // todo convert and use addManyNumbres instead
 //        int nBits = (outSize>0 && outSize<2*BIT_SIZE)? outSize : (2*BIT_SIZE);
                 //fixme - potential for BUG, sum.bitsize can be bigger than BIT_SIZE
                 EncNumber isInCellNum;
@@ -140,8 +137,7 @@ vector<DecryptedPoint> getEncryptedKMeans(vector<Point> points, KeysServer & key
                     cout << "   isInCellNums: " << keysServer.decrypt(isInCellNum) << " ";
 //                    cout << "   size before addNums: " << keysServer.decrypt(size) << " ";
                 }
-                sizeDBGvec.append(isInCellNum);
-//                sizeDBG.append(isInCell);
+                sizeVec.append(isInCellNum);  // sizeDBG.append(isInCell);
 //                addTwoNumbers(eep, CtPtrs_VecCt(size), CtPtrs_VecCt(isInCellNum));//, BIT_SIZE, &unpackSlotEncoding);
                 if(dbg) {
 //                    cout << "   size after addNums: " << keysServer.decrypt(size) << " ";
@@ -151,13 +147,14 @@ vector<DecryptedPoint> getEncryptedKMeans(vector<Point> points, KeysServer & key
                 }
             }
             // sum counter vector (#points_inCell)
-            CtPtrMat_VecCt nums(sizeDBGvec); // Wrapper around numbers
-            const CtPtrs & product = CtPtrs_VecCt(size2);
+            EncNumber size; //, size, sizeDBG;
+            const CtPtrs & product = CtPtrs_VecCt(size);
+            CtPtrMat_VecCt nums(sizeVec); // Wrapper around numbers
             addManyNumbers((CtPtrs &) product, nums, BIT_SIZE, &unpackSlotEncoding); // <--- "findQ(5,3) not found" is printed here
-//            cout << "   size: " << keysServer.decrypt(size2) << " ";
+//            cout << "   size: " << keysServer.decrypt(size) << " ";
 
 //            sum = sum - R; //todo consider removing line for efficiency OR fixme
-            DecryptedPoint mean = keysServer.calculateAvgPoint(sum, size2);
+            DecryptedPoint mean = keysServer.calculateAvgPoint(sum, size);
 //            Point mean = keysServer.calculateAvgPoint(sum, size);
             cout << "mean: " << mean << endl;
             stripMeans.push_back(mean);
@@ -171,15 +168,42 @@ vector<DecryptedPoint> getEncryptedKMeans(vector<Point> points, KeysServer & key
 //    cout << "\n chosen list of size " << chosen.size() << " " << chosen << endl << endl;
 //    cout << "\n leftover list of size " << leftover.size() << " " << leftover << endl << endl;
     if(dbg) writeToFile(randPoints, "io/random_means", keysServer);
+    decWriteToFile(means, "io/means_test", keysServer);
     return means;
 }
 
+EncNumber calculateThreshold(vector<EncNumber> distances, KeysServer * keysServer) {//}, int amount) {
+    try {
+        EncNumber distSum;
+        const CtPtrs & product = CtPtrs_VecCt(distSum);
+        Vec<EncNumber> distanceVec; for (const EncNumber & d : distances) distanceVec.append(d);
+        CtPtrMat_VecCt nums(distanceVec); // Wrapper around numbers
+        addManyNumbers((CtPtrs &) product, nums, BIT_SIZE, &unpackSlotEncoding); // <--- "findQ(5,3) not found" is printed here
+        return distances[0]; //fixme should return avg dist
+//        vector<EncNumber> vec(DIM, distSum);
+//        Point distPoint(keysServer, vec);
+//        return  keysServer->calculateAvgPoint(distPoint, distances.size()); //todo check if division by a decrypted number is allowed in helib
+    }
+    catch(...) {
+        return distances[0]; ///TODO
+    }
+}
+
+vector<EncNumber> getDistances(const vector<PointExtended>& clients, const vector<DecryptedPoint>& means) {
+//    cout << "getDistances means: " << means << endl;
+    vector<EncNumber> distances;
+     for (PointExtended client : clients){
+         const EncNumber & dist = client.getDistanceFromClosestPoint(means);
+         distances.push_back(dist);
+    }
+    return distances;
+}
 
 /*vector<vector<Point> > getLeftoverPoints(const vector<Point> & points, const vector<Point> & means, KeysServer & keysServer) {
     vector<DecryptedPoint> decMeans = *keysServer.decryptPointsByCA(
             means); //todo ideally this should be done by the point "itself" for every point (every "point" gets number of means and picks the closest one)
     vector<EncNumber> distances = getDistFromClosestMeanByClient(decMeans, points, *keysServer);
-    EncNumber threshold = calculateThreshold(distances, distances.size());
+    EncNumber threshold = calculateThresholdTest(distances, distances.size());
     vector<Point> chosen, leftover;
     for(unsigned long j = 0; j < points.size(); ++j) { //TODO this should not be an IF !!!
         if(threshold >= distances[j]) {
@@ -198,16 +222,4 @@ vector<DecryptedPoint> getEncryptedKMeans(vector<Point> points, KeysServer & key
     return retVec;
 }
 
-EncNumber calculateThreshold(vector<EncNumber> distances, int amount) {
-    try {
-        EncNumber distSum = distances[0];
-        for(EncNumber d : distances) {
-            distSum += d;
-        }
-        distSum -= distances[0];
-        return distSum / EncNumber(amount); //todo check if division by a decrypted number is allowed in helib
-    }
-    catch(...) {
-        return EncNumber(0); ///TODO
-    }
-}*/
+*/

@@ -33,15 +33,16 @@ class Point {
     //! @var KeysServer * keysServer
     //! points to the corresponding CA
     KeysServer * keysServer{}; //CA - the keys Server
-    
+
+    vector<long> deCoor; /** for DBG **/
+
+protected:
     //! @var Ctxt pubEncrKey
     //! "The public encryption key is an encryption of 0,
     //! relative to the first secret key"
     FHEPubKey * pubKey;  // logic - future use  //todo should be public?
     
-    vector<long> deCoor; /** for DBG **/
-
-private:  // other kind of ctor?
+    // other kind of ctor?
 
 public:
     long id; // = 0;  //fixme
@@ -88,10 +89,14 @@ protected:
  * @brief Extention of class Point - allows init with plaintext (long) coordinates, and saves them
  ********************************************************************/
 class PointExtended : public Point {
+private:
+    long dist(DecryptedPoint & point);
+
 protected:
     //! @var vector<long> coordinates
     //! The plaintext coordinates vector (double represented as long)
     vector<long> coordinates; //todo check if overriding public/private is allowed
+
 public:
     PointExtended(KeysServer * keysServer, const vector<long> & coordinates);
 //    PointExtended(KeysServer * keysServer, vector<long> & coordinates);
@@ -101,14 +106,18 @@ public:
     
     /** for DBG **/
     void print(ostream & os) const override;
+    
+    EncNumber getDistanceFromClosestPoint(vector<DecryptedPoint> points);
+    
 };
 
 
 // Encryption and decryption are done by the friends FHE[Pub|Sec]Key
 
 // TODO
-//  cmp
-//  substruction
+//  addManyPoints - collect the points and use addManyNumbers (like you did with 'size')
+//      - more efficient than on at a time, and probably more safe
+//  subtraction
 //  multi by negative
 //  --maybe
 //  dummy_Point (with random values)

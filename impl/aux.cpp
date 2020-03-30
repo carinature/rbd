@@ -25,22 +25,25 @@ using namespace std;
 /** Writing points to a specified.
  *      The points are first decrypted and returned into a double form (from long) **/
 //*  todo consider changing KeysServer to PubKey
-void writeToFile(const vector<Point> & vec, const string & filename, KeysServer & keysServer) {  // fixme PubKey instead of KeysServ
+void writeToFile(const vector<Point> & vec, const string & filename,
+                 KeysServer & keysServer) {  // fixme PubKey instead of KeysServ
     vector<DecryptedPoint> points; // = sk.decryptPointsByCA(vec);
-    for(const Point& p : vec) points.push_back(p.decrypt(keysServer));
+//    vector<vector<double> > points; // = sk.decryptPointsByCA(vec);
+    for(const Point & p : vec) points.push_back(p.decrypt(keysServer));
     ofstream outputFileStream(filename);
     for(const DecryptedPoint & p : points) {
-        for(double coor : p) {
+        for(long coor : p) {
 //            cout << "in write coor: " << coor << endl;
             outputFileStream << coor / FACTOR << " ";
         }
         outputFileStream << '\n';
-//        outputFileStream.flush();
     }
+//    outputFileStream.flush();
     outputFileStream.close();
 }
 
-void decWriteToFile(const vector<DecryptedPoint> & vec, const string & filename, KeysServer & keysServer) {  // fixme PubKey instead of KeysServ
+void decWriteToFile(const vector<DecryptedPoint> & vec, const string & filename,
+                    KeysServer & keysServer) {  // fixme PubKey instead of KeysServ
     ofstream outputFileStream(filename);
     for(const DecryptedPoint & p : vec) {
         for(double coor : p) {
@@ -51,6 +54,7 @@ void decWriteToFile(const vector<DecryptedPoint> & vec, const string & filename,
     }
     outputFileStream.close();
 }
+
 /** Retrieve points from a specified file. Points are palintext.
  *      If the file is not specified uses default file 'points' **/
 vector<DecryptedPoint> getPointsFromFile(const string & filename) {
@@ -81,16 +85,16 @@ vector<DecryptedPoint> getPointsFromFile(const string & filename) {
     return points;
 }
 
-vector<Point> getEncryptedPointsFromFile(KeysServer & keysServer) { // fixme PubKey instead of KeysServ
+vector<PointExtended> getEncryptedPointsFromFile(KeysServer & keysServer) { // fixme PubKey instead of KeysServ
     vector<DecryptedPoint> points = getPointsFromFile();
-    vector<Point> encPoints;
+    vector<PointExtended> encPoints;
     for(DecryptedPoint p : points) {
         vector<long> coorVec; // = vector<Binary>();
         for(int coor = 0; coor < DIM; ++coor) {
             coorVec.emplace_back(p[coor]);
         }
 //        PointExtended point = PointExtended(keysServer.pubKey, coorVec);
-        Point point = PointExtended(keysServer.pubKey, coorVec);
+        PointExtended point = PointExtended(keysServer.pubKey, coorVec);
         encPoints.emplace_back(point);
     }
     return encPoints;
@@ -157,29 +161,7 @@ createCmpDict(const vector<Point> & randomPoints, const vector<Point> & stripPoi
 //    return encVec;
 //}
 
-//vector<Binary> getDistFromClosestMeanByClient
-//        (const vector<DecryptedPoint> &reps, const vector<Point> &pointsForDBG, Skeys &sk) {
-//    // init distance vector
-//    vector<double> distance;
-//    // each point ( from points for DBG)
-//    for (const Point &p : pointsForDBG) {
-//        DecryptedPoint point = sk.decryptPointByCA(p);
-////        DecryptedPoint point = Skeys::decryptPointByCA(p);
-//        if (isNullPoint) distance.push_back(-1);
-//        else {
-//            //  calculates the distance from the reps
-//            double min = dist(point, reps[0]);
-//            for (const DecryptedPoint& rep : reps) {
-//                double currDist = dist(point, rep);
-//                if (currDist < min) min = currDist;
-//            }
-//            //  chooses the smallest distance and adds to the distance vector
-//            distance.push_back(min);
-//        }
-//    }
-//    // return the distance vector
-//    return encryptVec(distance);
-//}
+
 
 
 /*

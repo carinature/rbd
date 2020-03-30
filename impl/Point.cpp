@@ -160,7 +160,7 @@ Point Point::operator*(Ctxt bit) const {
 Ctxt Point::operator>(const Point & p) const {
     Ctxt mu(*pubKey), ni(*pubKey);
     if(p.id == this->id) { //fixme
-        pubKey->Encrypt(mu,ZZX(1&1)); //fixme
+        pubKey->Encrypt(mu, ZZX(1&1)); //fixme
         return mu;
     }
     vector<Vec<Ctxt> > p1dec = eCoordinates, p2dec = p.eCoordinates;
@@ -186,8 +186,7 @@ Ctxt Point::operator<(const Point & p) const {
 }
 */
 
-PointExtended::PointExtended(FHEPubKey * pubKey,
-                             const vector<long> & coordinates)
+PointExtended::PointExtended(FHEPubKey * pubKey, const vector<long> & coordinates)
         : Point(pubKey, vector<Vec<Ctxt> >()), coordinates(coordinates) {
     for(long c : coordinates) {
         NTL::Vec<Ctxt> encVal;
@@ -201,12 +200,10 @@ PointExtended::PointExtended(FHEPubKey * pubKey,
 }
 
 /** Constructor, creates a PointExtended from a vector of plaintext coordinates **/
-PointExtended::PointExtended(KeysServer * keysServer,
-                             const vector<long> & coordinates)
+PointExtended::PointExtended(KeysServer * keysServer, const vector<long> & coordinates)
         : Point(keysServer, vector<Vec<Ctxt> >()), coordinates(coordinates) {
     for(long c : coordinates) {
-        NTL::Vec<Ctxt> encVal;
-        FHEPubKey * pubKey = (FHEPubKey *) keysServer->pubKey;
+        EncNumber encVal;
         Ctxt mu(*pubKey);
         resize(encVal, BIT_SIZE, mu);
         for(long i = 0; i < BIT_SIZE; i++) {
@@ -250,6 +247,8 @@ DecryptedPoint Point::decrypt(KeysServer & keysServ) const {
         //todo replace with keysServ.decrypt - secKey should not be public
         decryptBinaryNums(slots, eep, *(keysServ.secKey), *(pubKey->getContext().ea));
         dp.push_back(slots[0]);
+//        long decC = keysServ.decrypt(c);
+//        dp.push_back(decC);
     }
 //    cout << "The dec Point is: ";
 //    cout << dp << endl;
@@ -275,4 +274,39 @@ void PointExtended::print(ostream & os) const {
     cout << " (" << coordinates[0];
     for(size_t i = 1; i < coordinates.size(); ++i) cout << ", " << coordinates[i];
     cout << ") ";
+}
+
+long PointExtended::dist(DecryptedPoint & point) {
+    long d = 0;
+//    cout << "d0: " << d << endl;
+//    cout << "coordinates: " << coordinates << endl;
+    for(int i = 0; i < DIM; ++i) {
+        d += pow(coordinates[i] - point[i], 2);
+//        cout << "--" << i << "--  d: " << d << endl;
+    }
+//    cout << "d: " << d << endl;
+    return d;  // notice this returns the SQUARE of the distance
+}
+
+
+EncNumber PointExtended::getDistanceFromClosestPoint(vector<DecryptedPoint> points) {
+//    cout << "getDistanceFromClosestPoint means: " << points << endl;
+    long min = dist(points[0]), currDist;
+    DecryptedPoint closest = points[0]; //for dbg
+//    cout << "min: " << min <<  "    closest: " << closest << endl;
+    for(DecryptedPoint point : points) {
+        currDist = dist(point);
+        if(currDist < min) {
+            min = currDist;
+            closest = point; //for dbg
+        }
+    }
+    if(dbg) cout << "dist from " << coordinates << " to " << closest << " is: " << min << endl;
+    EncNumber minDist;
+    Ctxt mu(*pubKey);
+    resize(minDist, BIT_SIZE, mu);
+    for(long i = 0; i < BIT_SIZE; i++) {
+        pubKey->Encrypt(minDist[i], ZZX((min >> i)&1));
+    }
+    return minDist;
 }

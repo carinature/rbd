@@ -6,19 +6,26 @@
 #include "properties.h"
 #include <map>
 
-//Bit cmp(const Point & a, const Point & b) ;
+struct cmpPoints;
 
 void writeToFile(const vector<Point> & vec, const string & filename, KeysServer & keysServer);
 void decWriteToFile(const vector<DecryptedPoint> & vec, const string & filename, KeysServer & keysServer);
 
+//! retrieves the list of coordinates and converts to a list of points
 vector<DecryptedPoint> getPointsFromFile(const string & filename = "io/points");
+vector<PointExtended> getEncryptedPointsFromFile(KeysServer & keysServer);
 
-vector<Point> getEncryptedPointsFromFile(KeysServer & sk);
-vector<long> encryptVec(const vector<double> & vector);
+//! creates a dictionary of helib's compatr results.
+//! the result for the query point1 > point2 is located at cmp[point1][point2] and return as Bit (Ctxt)
+map<Point, map<Point, vector<Bit>, cmpPoints>, cmpPoints>
+createCmpDict(const vector<Point> & randomPoints, const vector<Point> & stripPoints);
+//Bit cmp(const Point & a, const Point & b) ;
 
 long encryptDouble(double d);
+vector<long> encryptVec(const vector<double> & vector);
 
-/** aux **/
+
+/***********  aux  ***********/
 DecryptedPoint operator/(DecryptedPoint p, int factor);
 
 struct cmpPoints{
@@ -26,9 +33,6 @@ struct cmpPoints{
         return a.id>b.id;
     }
 };
-
-map<Point, map<Point, vector<Bit>, cmpPoints>, cmpPoints>
-createCmpDict(const vector<Point> & randomPoints, const vector<Point> & stripPoints);
 
 /*
  * Deprecated
