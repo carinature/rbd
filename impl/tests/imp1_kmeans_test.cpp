@@ -10,6 +10,27 @@
 #include <cassert>
 
 
+void imp1_kmeans_test::getEncryptedKMeansTestNew() {
+    auto t1 = std::chrono::high_resolution_clock::now();
+    cout << " --------- get_Encrypted_KMeans_test --------- " << endl;
+    KeysServer * ks = new KeysServer();
+//    FHEPubKey * pubKey = ks->pubKey;
+    vector<PointExtended> pointsEx = getEncryptedPointsFromFile(*ks);
+    assert(pointsEx.size() == NUM_POINTS); //sanity check
+    
+    vector<Point> points(pointsEx.begin(), pointsEx.end());
+    vector<DecryptedPoint> means = calculateMeans(getCells(points, *ks), *ks);
+    writeToFile(means, "io/means");
+//    writeToFile(means, "io/means_test");
+//    for(int i = 0; i < points.size(); ++i) assert(i==0);
+    //todo check points manually and not visually
+    
+    cout << "           OK" << endl;
+    auto t2 = std::chrono::high_resolution_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::seconds>(t2 - t1).count();
+    std::cout << "\n--- duration: " << duration << endl;
+}
+
 void imp1_kmeans_test::getEncryptedKMeansTest() {
     cout << " --------- get_Encrypted_KMeans_test --------- " << endl;
     auto t1 = std::chrono::high_resolution_clock::now();

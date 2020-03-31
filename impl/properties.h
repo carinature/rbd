@@ -14,12 +14,11 @@ NTL_CLIENT
 #define NUM_POINTS 60  // for python
 #define DIM 2
 #define RANGE_LIM 5  // for python
-#define EPSILON 0.15
+#define EPSILON 0.2
 #define DECIMAL_DIGITS 2
 #define FACTOR pow(10, DECIMAL_DIGITS) // for conversion from double to long (helib compatibility)
 #define BIT_SIZE 10
 #define N_THreads 1
-
 using DecryptedPoint = std::vector<long>;
 using Bit = Ctxt;
 using EncNumber = Vec<Ctxt>;

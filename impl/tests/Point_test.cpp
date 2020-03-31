@@ -23,9 +23,9 @@ void Point_test::test_ctor() {  // todo - add some end cases
 //    PointExtended pe1(ks, v1);
 //    PointExtended pe2(ks, v2);
 //    PointExtended pe3(ks, v3);
-    PointExtended pe1(pubKey, v1);
-    PointExtended pe2(pubKey, v2);
-    PointExtended pe3(pubKey, v3);
+    PointExtended pe1(v1, pubKey);
+    PointExtended pe2(v2, pubKey);
+    PointExtended pe3(v3, pubKey);
     pe1.eCoordinates;
 //    cout << "pe1: " << pe1 << endl;
 //    cout << "pe2: " << pe2 << endl;
@@ -37,9 +37,9 @@ void Point_test::test_ctor() {  // todo - add some end cases
 //    cout << "pp: " << pp << endl;
 //    cout << "ppe: " << ppe << endl;
     
-    Point p1(pubKey, pe1.eCoordinates);
-    Point p2(pubKey, pe2.eCoordinates);
-    Point p3(pubKey, pe3.eCoordinates);
+    Point p1(pe1.eCoordinates, pubKey);
+    Point p2(pe2.eCoordinates, pubKey);
+    Point p3(pe3.eCoordinates, pubKey);
 //    Point p1(ks, pe1.eCoordinates);
 //    Point p2(ks, pe2.eCoordinates);
 //    Point p3(ks, pe3.eCoordinates);
@@ -62,15 +62,15 @@ void Point_test::test_decrypt() {
     vector<long> v3 = {3, 4l};
     vector<long> v4 = {13, 11l};
     
-    PointExtended pe1(pubKey, v1);
-    PointExtended pe2(pubKey, v2);
-    PointExtended pe3(pubKey, v3);
-    PointExtended pe4(pubKey, v4);
+    PointExtended pe1(v1, pubKey);
+    PointExtended pe2(v2, pubKey);
+    PointExtended pe3(v3, pubKey);
+    PointExtended pe4(v4, pubKey);
     if(dbg) {
-         pe1 = PointExtended(ks, v1);
-         pe2 = PointExtended(ks, v2);
-         pe3 = PointExtended(ks, v3);
-         pe4 = PointExtended(ks, v4);
+         pe1 = PointExtended(v1, ks);
+         pe2 = PointExtended(v2, ks);
+         pe3 = PointExtended(v3, ks);
+         pe4 = PointExtended(v4, ks);
     }
     
 //    Point p1(ks, pe1.eCoordinates);
@@ -108,17 +108,17 @@ void Point_test::test_sum() {
     vector<long> v4 = {13, 11l};
     
     
-    Point p0 = PointExtended(pubKey, v0);
-    Point p1 = PointExtended(pubKey, v1);
-    Point p2 = PointExtended(pubKey, v2);
-    Point p3 = PointExtended(pubKey, v3);
-    Point p4 = PointExtended(pubKey, v4);
+    Point p0 = PointExtended(v0, pubKey);
+    Point p1 = PointExtended(v1, pubKey);
+    Point p2 = PointExtended(v2, pubKey);
+    Point p3 = PointExtended(v3, pubKey);
+    Point p4 = PointExtended(v4, pubKey);
     if(dbg) {
-        p0 = PointExtended(ks, v0);
-        p1 = PointExtended(ks, v1);
-        p2 = PointExtended(ks, v2);
-        p3 = PointExtended(ks, v3);
-        p4 = PointExtended(ks, v4);
+        p0 = PointExtended(v0, ks);
+        p1 = PointExtended(v1, ks);
+        p2 = PointExtended(v2, ks);
+        p3 = PointExtended(v3, ks);
+        p4 = PointExtended(v4, ks);
     }
 
 //    PointExtended sume1 = pe1 + pe2;
@@ -162,17 +162,17 @@ void Point_test::test_subt() {
     vector<long> v4 = {13, 11l};
     
     
-    Point p0 = PointExtended(pubKey, v0);
-    Point p1 = PointExtended(pubKey, v1);
-    Point p2 = PointExtended(pubKey, v2);
-    Point p3 = PointExtended(pubKey, v3);
-    Point p4 = PointExtended(pubKey, v4);
+    Point p0 = PointExtended(v0, pubKey);
+    Point p1 = PointExtended(v1, pubKey);
+    Point p2 = PointExtended(v2, pubKey);
+    Point p3 = PointExtended(v3, pubKey);
+    Point p4 = PointExtended(v4, pubKey);
     if(dbg) {
-        p0 = PointExtended(ks, v0);
-        p1 = PointExtended(ks, v1);
-        p2 = PointExtended(ks, v2);
-        p3 = PointExtended(ks, v3);
-        p4 = PointExtended(ks, v4);
+        p0 = PointExtended(v0, ks);
+        p1 = PointExtended(v1, ks);
+        p2 = PointExtended(v2, ks);
+        p3 = PointExtended(v3, ks);
+        p4 = PointExtended(v4, ks);
     }
 
 //    PointExtended subte1 = pe1 + pe2;
@@ -217,17 +217,17 @@ void Point_test::test_sum_ass() {
     vector<long> v4 = {13, 11l};
     
     
-    Point p0 = PointExtended(pubKey, v0);
-    Point p1 = PointExtended(pubKey, v1);
-    Point p2 = PointExtended(pubKey, v2);
-    Point p3 = PointExtended(pubKey, v3);
-    Point p4 = PointExtended(pubKey, v4);
+    Point p0 = PointExtended(v0, pubKey);
+    Point p1 = PointExtended(v1, pubKey);
+    Point p2 = PointExtended(v2, pubKey);
+    Point p3 = PointExtended(v3, pubKey);
+    Point p4 = PointExtended(v4, pubKey);
     if(dbg) {
-        p0 = PointExtended(ks, v0);
-        p1 = PointExtended(ks, v1);
-        p2 = PointExtended(ks, v2);
-        p3 = PointExtended(ks, v3);
-        p4 = PointExtended(ks, v4);
+        p0 = PointExtended(v0, ks);
+        p1 = PointExtended(v1, ks);
+        p2 = PointExtended(v2, ks);
+        p3 = PointExtended(v3, ks);
+        p4 = PointExtended(v4, ks);
     }
 
 //    PointExtended sume1 = pe1 + pe2;
@@ -273,17 +273,17 @@ void Point_test::test_mult() {
     vector<long> v3 = {3, 4l};
     vector<long> v4 = {13, 11l};
     
-    Point p0 = PointExtended(pubKey, v0);
-    Point p1 = PointExtended(pubKey, v1);
-    Point p2 = PointExtended(pubKey, v2);
-    Point p3 = PointExtended(pubKey, v3);
-    Point p4 = PointExtended(pubKey, v4);
+    Point p0 = PointExtended(v0, pubKey);
+    Point p1 = PointExtended(v1, pubKey);
+    Point p2 = PointExtended(v2, pubKey);
+    Point p3 = PointExtended(v3, pubKey);
+    Point p4 = PointExtended(v4, pubKey);
     if(dbg) {
-        p0 = PointExtended(ks, v0);
-        p1 = PointExtended(ks, v1);
-        p2 = PointExtended(ks, v2);
-        p3 = PointExtended(ks, v3);
-        p4 = PointExtended(ks, v4);
+        p0 = PointExtended(v0, ks);
+        p1 = PointExtended(v1, ks);
+        p2 = PointExtended(v2, ks);
+        p3 = PointExtended(v3, ks);
+        p4 = PointExtended(v4, ks);
     }
     
 //    Vec<Ctxt> b0 = p0[0];
@@ -359,17 +359,17 @@ void Point_test::test_g_cmp() {
     vector<long> v3 = {3, 4l};
     vector<long> v4 = {13, 11l};
     
-    Point p0 = PointExtended(pubKey, v0);
-    Point p1 = PointExtended(pubKey, v1);
-    Point p2 = PointExtended(pubKey, v2);
-    Point p3 = PointExtended(pubKey, v3);
-    Point p4 = PointExtended(pubKey, v4);
+    Point p0 = PointExtended(v0, pubKey);
+    Point p1 = PointExtended(v1, pubKey);
+    Point p2 = PointExtended(v2, pubKey);
+    Point p3 = PointExtended(v3, pubKey);
+    Point p4 = PointExtended(v4, pubKey);
     if(dbg) {
-        p0 = PointExtended(ks, v0);
-        p1 = PointExtended(ks, v1);
-        p2 = PointExtended(ks, v2);
-        p3 = PointExtended(ks, v3);
-        p4 = PointExtended(ks, v4);
+        p0 = PointExtended(v0, ks);
+        p1 = PointExtended(v1, ks);
+        p2 = PointExtended(v2, ks);
+        p3 = PointExtended(v3, ks);
+        p4 = PointExtended(v4, ks);
     }
     
     Ctxt cmp11 = p1 > p1;  // should return 0
@@ -459,10 +459,10 @@ void Point_test::test_id() {
     vector<long> v3 = {3, 4l};
     vector<long> v4 = {13, 11l};
 
-        Point pe1 = PointExtended(ks, v1);
-        Point pe2 = PointExtended(ks, v2);
-        Point pe3 = PointExtended(ks, v3);
-        Point pe4 = PointExtended(ks, v4);
+        Point pe1 = PointExtended(v1, ks);
+        Point pe2 = PointExtended(v2, ks);
+        Point pe3 = PointExtended(v3, ks);
+        Point pe4 = PointExtended(v4, ks);
         
         cout << pe1.id << endl;
         cout << pe2.id << endl;

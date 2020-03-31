@@ -6,6 +6,7 @@
 
 class imp1_kmeans_test {
 public:
+    static void getEncryptedKMeansTestNew();
     static void getEncryptedKMeansTest();
     static void getLeftoverPointsTest();
     static void calculateThresholdTest();

@@ -14,17 +14,22 @@ void aux_test::runAll() {
     writeToFileTest();
 //    mini_test();
 }
+
 void aux_test::writeToFileTest() {
     cout << " --------- test_write_To_File --------- " << endl;
     KeysServer * ks = new KeysServer();
     FHEPubKey * pubKey = ks->pubKey;
     
     vector<DecryptedPoint> points = getPointsFromFile();
-    vector<PointExtended> point = getEncryptedPointsFromFile(*ks);
-    vector<Point> ePoints(point.begin(), point.end());
+    vector<PointExtended> pointsEx = getEncryptedPointsFromFile(*ks);
+    vector<Point> ePoints(pointsEx.begin(), pointsEx.end());
     
     const string & filename = "io/points_test";
-    writeToFile(ePoints, filename, *ks);
+    decAndWriteToFile(ePoints, filename, *ks);
+//    cout << "here's the problam\n";
+//    writeToFile(ePoints, "io/enc_points_test");
+//    writeToFile(ePoints, "io/enc_points_test2");
+//    cout << "t'was the problam\n";
     vector<DecryptedPoint> points_test = getPointsFromFile(filename);
     
     for(int i = 0; i < points.size(); ++i) {
@@ -38,6 +43,7 @@ void aux_test::writeToFileTest() {
     }
     cout << "           OK" << endl << endl;
 }
+
 void aux_test::getEncryptedPointsFromFileTest() {
     cout << " --------- test_get_enc_point_from_file --------- " << endl;
     KeysServer * ks = new KeysServer();

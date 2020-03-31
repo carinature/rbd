@@ -43,8 +43,8 @@ def plot_bricks(strips, rands):
         for Y in rands[i]:
             # plt.hlines(Y[dim - 1].value, section_begin, section_end,
             plt.hlines(Y[dim - 1], section_begin, section_end,
-                       colors='grey', linestyle='--', linewidth=1)  # <--	for plot purposes only
-        plt.axvline(x=section_end, color='grey', linestyle='--', linewidth=1)  # <--	for plot purposes only
+                       colors='grey', linestyle='--', linewidth=0.3)  # <--	for plot purposes only
+        plt.axvline(x=section_end, color='grey', linestyle='--', linewidth=0.3)  # <--	for plot purposes only
 
 
 def make_plot(point_list, rand_list, rep_list, chosen=None, leftovers_list=None, strips=None, rands=None):
@@ -60,14 +60,14 @@ def make_plot(point_list, rand_list, rep_list, chosen=None, leftovers_list=None,
     # print('REAL leftovers list of size  __', len(leftovers_set), '__  : ', leftovers_set)
 
     #   plot
-    plt.scatter(*zip(*point_set), label='Input Points', c='blue', s=1)  # <--	for plot purposes only
-    plt.scatter(*zip(*rand_list), label='Rand Points', c='green', s=3)  # <--	for plot purposes only
+    plt.scatter(*zip(*point_set), label='Input Points', c='green', s=4)  # <--	for plot purposes only
+    plt.scatter(*zip(*rand_list), label='Rand Points', c='blue', s=6)  # <--	for plot purposes only
     # plt.scatter(*zip(*rep_set), label='Mean Representatives', c='black', s=10)  # <--	for plot purposes only
     # plt.scatter(*zip(*leftovers_set), label='Leftovers', c='red', s=2)  # <--	for plot purposes only
 
     # chosen = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/chosen")
     # leftover = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/leftover")
-    plt.scatter(*zip(*rep_set), label='means', c='black', s=7)  # <--	for plot purposes only
+    plt.scatter(*zip(*rep_set), label='means', c='black', s=20)  # <--	for plot purposes only
     # plt.scatter(*zip(*chosen_set), label='chosen', c='green', s=2)  # <--	for plot purposes only
     # plt.scatter(*zip(*leftovers_set), label='leftover', c='red', s=2)  # <--	for plot purposes only
 
@@ -93,10 +93,17 @@ with open('../impl/properties.h') as f:
             epsilon = float(line.split(' ')[2])
 
 if '__main__' == __name__:
+
     # points_list = gen_encrypted_points_from_file("points")
     points_list = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/points")
+    if numPoints != points_list.size/dim: #sanity check
+        print(numPoints != points_list.size/dim)
+        print(numPoints)
+        print(points_list.size)
+        raise("NOT SYNCED!!!")
     rand_list = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/random_means")
     means = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/means")
+    # means = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/means_test")
     # chosen     = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/chosen")
     # leftover   = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/leftover")
 

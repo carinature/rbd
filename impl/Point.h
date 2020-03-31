@@ -51,14 +51,13 @@ public:
     //! The encrypted coordinates vector (each coor is Vec<Ctxt>)
     vector<Vec<Ctxt> > eCoordinates;
     
-    Point(KeysServer * keysServer, vector<Vec<Ctxt> > eCoordinates);
+    Point(vector<Vec<Ctxt> > eCoordinates, KeysServer * keysServer);
     
-    Point(FHEPubKey * pubKey, vector<Vec<Ctxt> > eCoordinates);
+    Point(vector<Vec<Ctxt> > eCoordinates, FHEPubKey * pubKey);
     
     //! @brief _Encrypted_ addition of coordinates
     Point operator+(const Point &) const;
     Point operator-(const Point &) const;
-//    Point & operator+=(const Point &) ;
     
     //! @brief _Encrypted_ multiplication of coordinates
     Point operator*(Ctxt bit) const;
@@ -73,7 +72,7 @@ public:
     Vec<Ctxt> operator[](int idx) const { return eCoordinates[idx]; }
     
     /** for DBG **/
-    DecryptedPoint decrypt(KeysServer & keysServ) const ;
+    DecryptedPoint decrypt(KeysServer & keysServ = *(new KeysServer())) const ;
     
     long decryptNumber(KeysServer & keysServ, EncNumber c) const ;
     
@@ -98,10 +97,10 @@ protected:
     vector<long> coordinates; //todo check if overriding public/private is allowed
 
 public:
-    PointExtended(KeysServer * keysServer, const vector<long> & coordinates);
+    PointExtended(const vector<long> & coordinates, KeysServer * keysServer);
 //    PointExtended(KeysServer * keysServer, vector<long> & coordinates);
     
-    PointExtended(FHEPubKey * pubKey, const vector<long> & coordinates);
+    PointExtended(const vector<long> & coordinates, FHEPubKey * pubKey);
     //todo make c'tor private. make Skeys (or some class) a friend and create a factory method
     
     /** for DBG **/

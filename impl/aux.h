@@ -8,8 +8,9 @@
 
 struct cmpPoints;
 
-void writeToFile(const vector<Point> & vec, const string & filename, KeysServer & keysServer);
-void decWriteToFile(const vector<DecryptedPoint> & vec, const string & filename, KeysServer & keysServer);
+void decAndWriteToFile(const vector<Point> & points, const string & filename, KeysServer & keysServer);
+void writeToFile(const vector<DecryptedPoint> & points, const string & filename);
+void writeToFile(const vector<Point> & points, const string & filename);
 
 //! retrieves the list of coordinates and converts to a list of points
 vector<DecryptedPoint> getPointsFromFile(const string & filename = "io/points");

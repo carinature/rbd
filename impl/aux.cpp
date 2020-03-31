@@ -25,13 +25,12 @@ using namespace std;
 /** Writing points to a specified.
  *      The points are first decrypted and returned into a double form (from long) **/
 //*  todo consider changing KeysServer to PubKey
-void writeToFile(const vector<Point> & vec, const string & filename,
-                 KeysServer & keysServer) {  // fixme PubKey instead of KeysServ
-    vector<DecryptedPoint> points; // = sk.decryptPointsByCA(vec);
-//    vector<vector<double> > points; // = sk.decryptPointsByCA(vec);
-    for(const Point & p : vec) points.push_back(p.decrypt(keysServer));
+void decAndWriteToFile(const vector<Point> & points, const string & filename,
+                       KeysServer & keysServer) {  // fixme PubKey instead of KeysServ
+    vector<DecryptedPoint> decPoints; // = sk.decryptPointsByCA(points);
+    for(const Point & p : points) decPoints.push_back(p.decrypt(keysServer));
     ofstream outputFileStream(filename);
-    for(const DecryptedPoint & p : points) {
+    for(const DecryptedPoint & p : decPoints) {
         for(long coor : p) {
 //            cout << "in write coor: " << coor << endl;
             outputFileStream << coor / FACTOR << " ";
@@ -42,15 +41,26 @@ void writeToFile(const vector<Point> & vec, const string & filename,
     outputFileStream.close();
 }
 
-void decWriteToFile(const vector<DecryptedPoint> & vec, const string & filename,
-                    KeysServer & keysServer) {  // fixme PubKey instead of KeysServ
+void writeToFile(const vector<DecryptedPoint> & points, const string & filename) {  // fixme PubKey instead of KeysServ
     ofstream outputFileStream(filename);
-    for(const DecryptedPoint & p : vec) {
-        for(double coor : p) {
-            outputFileStream << coor / FACTOR << " ";
+    for(const DecryptedPoint & p : points) {
+        for(long coor : p) {
+            outputFileStream << (double)(coor / FACTOR) << " ";
         }
         outputFileStream << '\n';
-//        outputFileStream.flush();
+    }
+    outputFileStream.close();
+}
+
+void writeToFile(const vector<Point> & points, const string & filename) {  // fixme PubKey instead of KeysServ
+    cout << "write enc points to file" << endl;
+    ofstream outputFileStream(filename);
+    for(const Point & p : points) {
+        for(EncNumber coor : p.eCoordinates) {
+//            outputFileStream << coor / FACTOR << " ";
+            outputFileStream << coor  << "\n\n---\n\n";
+        }
+        outputFileStream << '\n';
     }
     outputFileStream.close();
 }
@@ -59,22 +69,14 @@ void decWriteToFile(const vector<DecryptedPoint> & vec, const string & filename,
  *      If the file is not specified uses default file 'points' **/
 vector<DecryptedPoint> getPointsFromFile(const string & filename) {
     ifstream inputFileStream(filename);
-    string line; //, pa0, pa1;
+    string line;
     string pa[DIM];
-//    int count;  //  #points
-//    inputFileStream >> count;
-//    inputFileStream.ignore(1, '\n');
-    
     vector<DecryptedPoint> points;
-//    for (int i = 0; i < count; ++i) {
-//    getline(inputFileStream, line);
     while(getline(inputFileStream, line)) {
         istringstream lineStream(line);
         DecryptedPoint point;
         for(auto & coor : pa) {
-//            getline(lineStream, coor, ',');
             getline(lineStream, coor, ' ');
-//            point.push_back(stod(coor));
 //            cout <<" FACTOR * stod(coor) " << FACTOR * stod(coor) << endl;
 //            cout <<" stod(coor) " << stod(coor) << endl;
 //            cout <<" (coor) " << coor << endl;
@@ -93,8 +95,8 @@ vector<PointExtended> getEncryptedPointsFromFile(KeysServer & keysServer) { // f
         for(int coor = 0; coor < DIM; ++coor) {
             coorVec.emplace_back(p[coor]);
         }
+        PointExtended point = PointExtended(coorVec, &keysServer);
 //        PointExtended point = PointExtended(keysServer.pubKey, coorVec);
-        PointExtended point = PointExtended(keysServer.pubKey, coorVec);
         encPoints.emplace_back(point);
     }
     return encPoints;

@@ -32,8 +32,9 @@ int main(int argc, char * argv[]) {
 //    aux_test::runAll();
     
     cout << endl << "==========  IMPL_test ==========" << endl;
+    imp1_kmeans_test::getEncryptedKMeansTestNew();
 //    imp1_kmeans_test::getEncryptedKMeansTest();
-    imp1_kmeans_test::calculateThresholdTest();
+//    imp1_kmeans_test::calculateThresholdTest();
 //    imp1_kmeans_test::getLeftoverPointsTest();
 //    imp1_kmeans_test::runAll();
     

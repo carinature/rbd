@@ -115,10 +115,18 @@ Ctxt KeysServer::randomBit() {
     return mu;
 }
 
+
+long KeysServer::calculateAvg(const EncNumber & sum, const EncNumber & size) {
+    cout << "   --- calculateAvg ---   ";
+    return decrypt(sum) / decrypt(size); // todo decrypt(size)+1 ?
+    
+}
+
+
 //DecryptedPoint KeysServer::calculateAvgPoint(const Point& r, const Point& p, EncNumber size) { //todo so you can subtract - for better accuracy
 DecryptedPoint KeysServer::calculateAvgPoint(const Point & p, EncNumber size) {
     cout << "   --- calculateAvgPoint ---   ";
-    const long amount = decrypt(std::move(size)) + 1;
+    const long amount = decrypt(std::move(size)); // + 1;
     vector<long> coorVector;
     for(const EncNumber & coor : p.eCoordinates) {
         coorVector.push_back(decrypt(coor) / amount);

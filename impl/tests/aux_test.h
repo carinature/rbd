@@ -10,10 +10,11 @@ class aux_test {
     
     static void createCmpDictTest();
     static void getEncryptedPointsFromFileTest();
-    static void writeToFileTest();
 
 public:
     static void runAll();
+    
+    static void writeToFileTest();
 };
 
 //void getEncryptedPointsFromFileTest();
