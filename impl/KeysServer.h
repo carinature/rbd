@@ -44,7 +44,8 @@ public:
     KeysServer();
     ~KeysServer();
     Ctxt randomBit();
-    long calculateAvg(const EncNumber& sum, const EncNumber & size);
+    EncNumber calculateAvg(const EncNumber& sum, const EncNumber & size);
+    long calculateAvg(const EncNumber& sum,long size);
     DecryptedPoint calculateAvgPoint(const Point& p, EncNumber size);
 
 public:

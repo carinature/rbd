@@ -63,7 +63,7 @@ Point Point::operator+(const Point & p) const {
     return sumPoint; //TODO should return the point with the encCoor
 }
 
-Point Point::operator*(Ctxt bit) const {
+Point Point::operator*(const Ctxt& bit) const {
     vector<Vec<Ctxt>> prodPoint = eCoordinates;
     vector<Vec<Ctxt>> newprodPoint;
     for(EncNumber & c : prodPoint) {
@@ -268,14 +268,15 @@ void PointExtended::print(ostream & os) const {
 
 long PointExtended::dist(DecryptedPoint & point) {
     long d = 0;
-//    cout << "d0: " << d << endl;
+    cout << "point1: " << this->coordinates << " point2: " << point << endl;
 //    cout << "coordinates: " << coordinates << endl;
     for(int i = 0; i < DIM; ++i) {
         d += pow(coordinates[i] - point[i], 2);
-//        cout << "--" << i << "--  d: " << d << endl;
+        cout << "--" << i << "--  d: " << d << endl;
     }
-//    cout << "d: " << d << endl;
-    return d;  // notice this returns the SQUARE of the distance
+    cout << "d: " << d << endl;
+    return sqrt(d);  // notice this does NOT return the SQUARE of the distance
+//    return d;  // notice this returns the SQUARE of the distance
 }
 
 EncNumber PointExtended::getDistanceFromClosestPoint(vector<DecryptedPoint> points) {
@@ -291,14 +292,21 @@ EncNumber PointExtended::getDistanceFromClosestPoint(vector<DecryptedPoint> poin
         }
     }
     if(dbg) cout << "dist from " << coordinates << " to " << closest << " is: " << min << endl;
+//    EncNumber minDist;
+//    minDist = encryptNum(min);
+//    return minDist;
+    return encryptNum(min);
+}
+
+EncNumber PointExtended::encryptNum(long min) const {
     EncNumber minDist;
     Ctxt mu(*pubKey);
     resize(minDist, BIT_SIZE, mu);
-    for(long i = 0; i < BIT_SIZE; i++) {
-        pubKey->Encrypt(minDist[i], ZZX((min >> i)&1));
-    }
+    for(long i = 0; i < BIT_SIZE; i++) pubKey->Encrypt(minDist[i], ZZX((min >> i)&1));
     return minDist;
 }
+
+
 
 /*
  * Deprecated
@@ -310,3 +318,4 @@ Ctxt Point::operator<(const Point & p) const {
 
 }
 */
+

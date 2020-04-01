@@ -54,7 +54,7 @@ def make_plot(point_list, rand_list, rep_list, chosen=None, leftovers_list=None,
     rand_set = decrypt_data(rand_list)
     rep_set = decrypt_data(rep_list)
     # leftovers_set = decrypt_data(leftovers_list)
-    # chosen_set = decrypt_data(chosen)
+    chosen_set = decrypt_data(chosen)
     print('rep list of size  __', len(rep_list), '__  : ', rep_list)
     # print('leftovers list of size  __', len(leftovers_list), '__  : ', leftovers_list)
     # print('REAL leftovers list of size  __', len(leftovers_set), '__  : ', leftovers_set)
@@ -68,7 +68,7 @@ def make_plot(point_list, rand_list, rep_list, chosen=None, leftovers_list=None,
     # chosen = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/chosen")
     # leftover = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/leftover")
     plt.scatter(*zip(*rep_set), label='means', c='black', s=20)  # <--	for plot purposes only
-    # plt.scatter(*zip(*chosen_set), label='chosen', c='green', s=2)  # <--	for plot purposes only
+    plt.scatter(*zip(*chosen_set), label='chosen', c='pink', s=8)  # <--	for plot purposes only
     # plt.scatter(*zip(*leftovers_set), label='leftover', c='red', s=2)  # <--	for plot purposes only
 
     plt.title('Choosing representatives')  # <--	for plot purposes only
@@ -103,8 +103,7 @@ if '__main__' == __name__:
         raise("NOT SYNCED!!!")
     rand_list = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/random_means")
     means = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/means")
-    # means = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/means_test")
-    # chosen     = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/chosen")
+    chosen     = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/chosen")
     # leftover   = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/leftover")
 
     # chosen       = [Point(Binary(0), Binary(0))]
@@ -128,5 +127,5 @@ if '__main__' == __name__:
     rands = np.reshape(rands, (int(1 / epsilon), -1, 2))
     # print("\nrands\n", rands)
 
-    make_plot(points_list, rand_list, means, strips=strips, rands=rands)
+    make_plot(points_list, rand_list, means, chosen, strips=strips, rands=rands)
     # make_plot(points_list, means, chosen, leftover)

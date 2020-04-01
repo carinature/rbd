@@ -60,7 +60,7 @@ public:
     Point operator-(const Point &) const;
     
     //! @brief _Encrypted_ multiplication of coordinates
-    Point operator*(Ctxt bit) const;
+    Point operator*(const Ctxt& bit) const;
     
     //! @brief compare 2 points
     Ctxt operator>(const Point & p) const;
@@ -103,10 +103,13 @@ public:
     PointExtended(const vector<long> & coordinates, FHEPubKey * pubKey);
     //todo make c'tor private. make Skeys (or some class) a friend and create a factory method
     
+    EncNumber getDistanceFromClosestPoint(vector<DecryptedPoint> points);
+
+    EncNumber encryptNum(long min) const;
+    
     /** for DBG **/
     void print(ostream & os) const override;
     
-    EncNumber getDistanceFromClosestPoint(vector<DecryptedPoint> points);
     
 };
 

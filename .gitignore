@@ -20,8 +20,8 @@ pies/__pycache__/
 testing
 #io/means_test
 #io/points_test
-#io/points
-#io/means
-#io/random_means
-#io/leftover
-#io/chosen
+io/points
+io/means
+io/random_means
+io/leftover
+io/chosen

@@ -103,9 +103,6 @@ vector<PointExtended> getEncryptedPointsFromFile(KeysServer & keysServer) { // f
 }
 
 Bit cmp(const Point & a, const Point & b) {
-    //todo cmp should return bit
-    //todo override Point's operator<
-    //todo use helib cmp
     //todo consider <= over < (the later neve allows any points) and how to implement it with helib
 //    return a >= b;
     return a > b;
@@ -116,10 +113,9 @@ map<Point, map<Point, vector<Bit>, cmpPoints>, cmpPoints>
 createCmpDict(const vector<Point> & randomPoints, const vector<Point> & stripPoints) {
     map<Point, map<Point, vector<Bit>, cmpPoints>, cmpPoints> cmpDict;
     for(const Point & p : randomPoints) {
-        map<Point, vector<Bit>, cmpPoints> cmpDictMini;
-        map<Point, vector<Bit>, cmpPoints> cmpDictMini2;
+        map<Point, vector<Bit>, cmpPoints> cmpDictMini; //, cmpDictMini2;
         for(const Point & pp : stripPoints) {
-            cmpDictMini[pp].push_back(p > pp);
+            cmpDictMini[pp].push_back(p > pp); // fixme why aren't you doing this: cmpDict[p][pp].push_back(p > pp);
             cmpDict[pp][p].push_back(pp > p);
         }
         cmpDict[p] = cmpDictMini;
@@ -127,6 +123,20 @@ createCmpDict(const vector<Point> & randomPoints, const vector<Point> & stripPoi
     }
     return cmpDict;
 }
+
+
+
+EncNumber sumEncNumVec(Vec<EncNumber> & vec, long factor) {
+//    for ( auto num : vec) cout <<
+    EncNumber sum;
+    const CtPtrs & product = CtPtrs_VecCt(sum); //, & productY = CtPtrs_VecCt(sumY);
+    CtPtrMat_VecCt nums(vec); // Wrapper around numbers
+    addManyNumbers((CtPtrs &) product, nums, BIT_SIZE * factor, &unpackSlotEncoding);
+    // <--- fixme "findQ(5,3) not found" is printed here in addManyNum
+//    cout << "sumEncNumVec sum: " << keysum << endl;
+    return sum;
+}
+
 
 
 

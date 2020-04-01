@@ -115,26 +115,36 @@ Ctxt KeysServer::randomBit() {
     return mu;
 }
 
-
-long KeysServer::calculateAvg(const EncNumber & sum, const EncNumber & size) {
+EncNumber KeysServer::calculateAvg(const EncNumber & sum, const EncNumber & size) {
     cout << "   --- calculateAvg ---   ";
-    return decrypt(sum) / decrypt(size); // todo decrypt(size)+1 ?
-    
+    long avg = decrypt(sum) / decrypt(size);
+    NTL::Vec<Ctxt> encVal;
+    Ctxt mu(*pubKey);
+    resize(encVal, BIT_SIZE, mu);
+    for(long i = 0; i < BIT_SIZE; i++) {
+        pubKey->Encrypt(encVal[i], ZZX((avg >> i)&1)); ////    <----   THE PROBLEM was HERE
+    }
 }
 
+long KeysServer::calculateAvg(const EncNumber & sum, const long size) {
+    cout << "   --- calculateAvg ---   ";
+    long dSum = decrypt(sum);
+    cout << "dSum " << dSum << "  size " << size << endl;
+    return dSum / size; // todo decrypt(size)+1 ?
+}
 
 //DecryptedPoint KeysServer::calculateAvgPoint(const Point& r, const Point& p, EncNumber size) { //todo so you can subtract - for better accuracy
 DecryptedPoint KeysServer::calculateAvgPoint(const Point & p, EncNumber size) {
     cout << "   --- calculateAvgPoint ---   ";
     const long amount = decrypt(std::move(size)); // + 1;
     vector<long> coorVector;
-    for(const EncNumber & coor : p.eCoordinates) {
-        coorVector.push_back(decrypt(coor) / amount);
-    }
-    const vector<long> sumVec = std::move(coorVector); //todo remove
+    for(const EncNumber & coor : p.eCoordinates)
+//        coorVector.push_back(decrypt(coor) / amount); //todo replace with calculateAvg
+        coorVector.push_back(calculateAvg(coor, amount)); //todo replace with calculateAvg
+    const DecryptedPoint sumVec = std::move(coorVector); //todo remove
 //    Point avgPoint = PointExtended(this, sumVec);
-    cout << "decrypted mean: " << sumVec; // << endl;
-    cout << "   decrypted size: " << amount << endl << endl;
+//    cout << "decrypted mean: " << sumVec; // << endl;
+//    cout << "   decrypted size: " << amount << endl << endl;
     return sumVec;
     
 }
