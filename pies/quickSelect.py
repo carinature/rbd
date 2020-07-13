@@ -43,3 +43,15 @@ if __name__ == "__main__":
     print(a)  # , i)
     for i in range(0, len(a)):
         print(i, ": ", quickselect(a, i))
+
+
+
+# def func():
+#     if something:
+#         # do something
+#         if another_thing:
+#             # do
+#         else:
+#             # do else
+#     else:
+#         # do else

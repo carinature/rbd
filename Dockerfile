@@ -63,8 +63,19 @@ RUN cd ~ && \
 CMD ["/usr/sbin/sshd", "-D"]
 
 RUN apt-get update &&\
-    apt-get install python3.6  # &&\
-    apt-get install python3-tk
+    apt-get install -y python3.6 &&\
+#    apt-get install -y python3-tk &&\
+    apt install -y python3-pip
 
-VOLUME ["/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger"]
+#VOLUME ["/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger"]
 #/DangerZone
+
+RUN ls home/*
+RUN pwd
+
+#COPY rbd_helib_with_remote_debugger/requirements.txt .
+RUN pip3 install phe
+RUN pip3 install matplotlib
+RUN pip3 install numpy
+
+#CMD ["python", "-u", "simulator.py"] THIS DOES NOT WORK IN THIS FORM

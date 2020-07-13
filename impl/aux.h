@@ -22,7 +22,7 @@ map<Point, map<Point, vector<Bit>, cmpPoints>, cmpPoints>
 createCmpDict(const vector<Point> & randomPoints, const vector<Point> & stripPoints);
 //Bit cmp(const Point & a, const Point & b) ;
 
-EncNumber sumEncNumVec(Vec<EncNumber> & vec, long factor = NUM_POINTS/ pow(EPSILON, 2));
+EncNumber sumEncNumVec(Vec<EncNumber> & vec, long factor = 1);
 
 
 long encryptDouble(double d);

@@ -45,11 +45,13 @@ protected:
     // other kind of ctor?
 
 public:
-    long id; // = 0;  //fixme
-
     //! @var vector<Vec<Ctxt> > eCoordinates
     //! The encrypted coordinates vector (each coor is Vec<Ctxt>)
     vector<Vec<Ctxt> > eCoordinates;
+    
+    //! @var long id
+    //! used in createCmpDict for comparison
+    long id; // = 0;  //fixme
     
     Point(vector<Vec<Ctxt> > eCoordinates, KeysServer * keysServer);
     
@@ -79,7 +81,7 @@ public:
     friend std::ostream & operator<<(std::ostream & os, const Point & p);
 
 protected:
-    virtual void print(ostream & os) const;
+    virtual ostream & print(ostream & os) const;
     
 };
 
@@ -108,7 +110,7 @@ public:
     EncNumber encryptNum(long min) const;
     
     /** for DBG **/
-    void print(ostream & os) const override;
+    ostream & print(ostream & os) const override;
     
     
 };

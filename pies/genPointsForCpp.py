@@ -4,6 +4,7 @@ from random import *
 dim = 2  # dimensions
 numPoints = 0
 rangeLim = 0
+bottomLim = 0
 with open('../impl/properties.h') as f:
     datafile = f.readlines()
     for line in datafile:
@@ -13,6 +14,8 @@ with open('../impl/properties.h') as f:
             dim = int(line.split(' ')[2])
         if 'RANGE_LIM' in line:
             rangeLim = int(line.split(' ')[2])
+        if 'Bottom_LIM' in line:
+            bottomLim = int(line.split(' ')[2])
 
 pointsList = []
 
@@ -43,7 +46,7 @@ file = "/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/points"
 
 # print(pointsList)
 
-def rand(bottom_lim=0, range_lim=rangeLim, round_lim=2):
+def rand(bottom_lim=bottomLim, range_lim=rangeLim, round_lim=2):
     return round(range_lim * random() + bottom_lim, round_lim)
 
 

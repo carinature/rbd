@@ -9,7 +9,7 @@
 using namespace std;
 
 ////consider moving to prop file
-//bool dbg = true;  // use KeysServer to init Point
+//bool DBG = true;  // use KeysServer to init Point
 ////bool dbg = false;  // use PubKey to init Point
 
 void Point_test::test_ctor() {  // todo - add some end cases
@@ -66,7 +66,7 @@ void Point_test::test_decrypt() {
     PointExtended pe2(v2, pubKey);
     PointExtended pe3(v3, pubKey);
     PointExtended pe4(v4, pubKey);
-    if(dbg) {
+    if(DBG) {
          pe1 = PointExtended(v1, ks);
          pe2 = PointExtended(v2, ks);
          pe3 = PointExtended(v3, ks);
@@ -113,7 +113,7 @@ void Point_test::test_sum() {
     Point p2 = PointExtended(v2, pubKey);
     Point p3 = PointExtended(v3, pubKey);
     Point p4 = PointExtended(v4, pubKey);
-    if(dbg) {
+    if(DBG) {
         p0 = PointExtended(v0, ks);
         p1 = PointExtended(v1, ks);
         p2 = PointExtended(v2, ks);
@@ -167,7 +167,7 @@ void Point_test::test_subt() {
     Point p2 = PointExtended(v2, pubKey);
     Point p3 = PointExtended(v3, pubKey);
     Point p4 = PointExtended(v4, pubKey);
-    if(dbg) {
+    if(DBG) {
         p0 = PointExtended(v0, ks);
         p1 = PointExtended(v1, ks);
         p2 = PointExtended(v2, ks);
@@ -222,7 +222,7 @@ void Point_test::test_sum_ass() {
     Point p2 = PointExtended(v2, pubKey);
     Point p3 = PointExtended(v3, pubKey);
     Point p4 = PointExtended(v4, pubKey);
-    if(dbg) {
+    if(DBG) {
         p0 = PointExtended(v0, ks);
         p1 = PointExtended(v1, ks);
         p2 = PointExtended(v2, ks);
@@ -278,7 +278,7 @@ void Point_test::test_mult() {
     Point p2 = PointExtended(v2, pubKey);
     Point p3 = PointExtended(v3, pubKey);
     Point p4 = PointExtended(v4, pubKey);
-    if(dbg) {
+    if(DBG) {
         p0 = PointExtended(v0, ks);
         p1 = PointExtended(v1, ks);
         p2 = PointExtended(v2, ks);
@@ -364,7 +364,7 @@ void Point_test::test_g_cmp() {
     Point p2 = PointExtended(v2, pubKey);
     Point p3 = PointExtended(v3, pubKey);
     Point p4 = PointExtended(v4, pubKey);
-    if(dbg) {
+    if(DBG) {
         p0 = PointExtended(v0, ks);
         p1 = PointExtended(v1, ks);
         p2 = PointExtended(v2, ks);

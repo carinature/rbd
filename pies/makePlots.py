@@ -1,3 +1,5 @@
+import os
+
 import numpy as np
 from matplotlib import pyplot as plt
 
@@ -54,23 +56,15 @@ def make_plot(fig, axs, point_list, rands_list, means_list, chosen=None, leftove
     rands_set = decrypt_data(rands_list)
     means_set = decrypt_data(means_list)
     chosen_set = decrypt_data(chosen)
-    # leftovers_set = decrypt_data(leftovers_list)
     print('rep list of size  __', len(means_list), '__  : ', means_list)
     # print('leftovers list of size  __', len(leftovers_list), '__  : ', leftovers_list)
     # print('REAL leftovers list of size  __', len(leftovers_set), '__  : ', leftovers_set)
 
     # fig, axs = plt.subplots(2, 2)
     axs[0, 0].scatter(*zip(*point_set), label='Input Points', c='green', s=4)
-    # axs[0, 0].scatter(*zip(*rands_set), label='Rand Points', c='blue', s=6)
-    # axs[0, 0].scatter(*zip(*means_set), label='means', c='black', s=20)
-    # axs[0, 0].scatter(*zip(*chosen_set), label='chosen', c='pink', s=8)
-    # axs[0, 0].scatter(*zip(*leftovers_set), label='leftover', c='red', s=2)
     axs[0, 0].set_title('Input Points')
     axs[0, 1].scatter(*zip(*point_set), label='Input Points', c='green', s=4)
     axs[0, 1].scatter(*zip(*rands_set), label='Rand Points', c='blue', s=6)
-    # axs[0, 1].scatter(*zip(*means_set), label='means', c='black', s=20)
-    # axs[0, 1].scatter(*zip(*chosen_set), label='chosen', c='pink', s=8)
-    # axs[0, 1].scatter(*zip(*leftovers_set), label='leftover', c='red', s=2)
     axs[0, 1].set_title('Rand Points')
     axs[1, 0].scatter(*zip(*point_set), label='Input Points', c='green', s=4)
     axs[1, 0].scatter(*zip(*rands_set), label='Rand Points', c='blue', s=6)
@@ -79,22 +73,13 @@ def make_plot(fig, axs, point_list, rands_list, means_list, chosen=None, leftove
     for i in range(len(means_set)):
         axs[1, 0].text(rands_list[i][0] + 0.001, rands_list[i][1] + 0.001, str(i))
         axs[1, 0].text(means_list[i][0] + 0.001, means_list[i][1] + 0.001, str(i))
-        i+=1
-    # axs[1, 0].scatter(*zip(*chosen_set), label='chosen', c='pink', s=8)
-    # axs[1, 0].scatter(*zip(*leftovers_set), label='leftover', c='red', s=2)
+        i += 1
     axs[1, 0].set_title('means')
     axs[1, 1].scatter(*zip(*point_set), label='Input Points', c='green', s=4)
     axs[1, 1].scatter(*zip(*rands_set), label='Rand Points', c='blue', s=6)
     axs[1, 1].scatter(*zip(*means_set), label='means', c='black', s=20)
     axs[1, 1].scatter(*zip(*chosen_set), label='chosen', c='pink', s=8)
-    # axs[1, 1].scatter(*zip(*leftovers_set), label='leftover', c='red', s=2)
     axs[1, 1].set_title('chosen')
-    # axs[0, 1].plot(x, y, 'tab:orange')
-    # axs[0, 1].set_title('Axis [0, 1]')
-    # axs[1, 0].plot(x, -y, 'tab:green')
-    # axs[1, 0].set_title('Axis [1, 0]')
-    # axs[1, 1].plot(x, -y, 'tab:red')
-    # axs[1, 1].set_title('Axis [1, 1]')
 
     for ax in axs.flat:
         ax.set(xlabel='x-label', ylabel='y-label')
@@ -106,18 +91,13 @@ def make_plot(fig, axs, point_list, rands_list, means_list, chosen=None, leftove
     fig.suptitle('Choosing representatives')
     fig.legend(loc='upper right')
     plt.show()
+    fname = 'check_save.png'
+    plt.savefig(fname)
+    print(fname)
+    print('----------------------------------')
 
-    # #   plot
-    # plt.scatter(*zip(*point_set), label='Input Points', c='green', s=4)
-    # plt.scatter(*zip(*rands_set), label='Rand Points', c='blue', s=6)
-    # plt.scatter(*zip(*means_set), label='means', c='black', s=20)
-    # plt.scatter(*zip(*chosen_set), label='chosen', c='pink', s=8)
-    # # plt.scatter(*zip(*leftovers_set), label='leftover', c='red', s=2)
-    #
-    # plt.title('Choosing representatives')
-    # plt.legend(loc='upper right')
-    # plt.show()
-
+    if os.path.exists(fname):
+        print(os.path.abspath(fname))
 
 dim = 2  # dimensions
 numPoints = 0
@@ -148,19 +128,7 @@ if '__main__' == __name__:
         print(numPoints != points_list.size / dim)
         print(numPoints)
         print(points_list.size)
-        raise ("NOT SYNCED!!!")
-
-    # chosen       = [Point(Binary(0), Binary(0))]
-    # leftover     = [Point(Binary(0), Binary(0))]
-    # print(points_list)
-    # points_list = decrypt_data(points_list)
-    # chosen = decrypt_data(chosen)
-    # leftover = decrypt_data(leftover)
-
-    # print(points_list)
-    # print(means)
-    # print(chosen)
-    # print(leftover)
+        raise Exception("NOT SYNCED!!!")
 
     numStrips = int(1 / epsilon)
     lacks = (numStrips - int(numPoints * dim % numStrips)) % numStrips
@@ -168,7 +136,7 @@ if '__main__' == __name__:
 
     fns = "/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/points"
     points = np.loadtxt(fns, dtype=float)
-    # points = np.append(points, buffer)
+    points = np.append(points, buffer)
     strips = np.resize(points, (numStrips, -1, 2))
     # strips = np.reshape(points, (int(1 / epsilon), -1, 2))
     print("strips\n", strips)
@@ -179,13 +147,20 @@ if '__main__' == __name__:
     # rands = np.reshape(rands, (int(1 / epsilon), -1, 2))
     print("\nbricks\n", bricks)
 
-    # print("points")
-    # print(points)
-    # print(points.size)
-    # print(lacks)
-    # print(buffer)
-    # print(buffer.size)
 
     # make_plot(points_list, rands, means, chosen)
     make_plot_with_bricks(points_list, rands, means, chosen, strips=strips, bricks=bricks)
     # make_plot(points_list, means, chosen, leftover)
+
+# chosen=[]
+# points = np.loadtxt('io/chosen', dtype=float)
+# points = np.reshape(points, (-1, 2))
+# for p in points:
+#     print(p[0])
+#     print(p[0]==0)
+#     if 0==p[0] and 0==p[1]:
+#         chosen.append(p)
+#         print(len(chosen))
+
+
+

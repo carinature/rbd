@@ -36,49 +36,49 @@ KeysServer::KeysServer() {
     amap.arg("seed", seed, "PRG seed");
     long nthreads = 1;
     amap.arg("nthreads", nthreads, "number of threads");
-    amap.arg("verbose", verbose, "print more information");
+    amap.arg("VERBOSE", VERBOSE, "print more information");
 //    amap.parse(argc, argv); //todo find a way to remove this so that Skeys can be c'tores without argc, argv arguments
     assert(prm >= 0 && prm < 5);
-    if(seed) NTL::SetSeed(ZZ(seed));
-    if(nthreads > 1) NTL::SetNumThreads(nthreads);
-    if(bitSize <= 0) bitSize = 5;
-    else if(bitSize > 32) bitSize = 32;
+    if (seed) NTL::SetSeed(ZZ(seed));
+    if (nthreads > 1) NTL::SetNumThreads(nthreads);
+    if (bitSize <= 0) bitSize = 5;
+    else if (bitSize > 32) bitSize = 32;
     long * vals = mValues[0];
     long p = vals[0];
     //  long phim = vals[1];
     long m = vals[2];
     NTL::Vec<long> mvec;
     append(mvec, vals[4]);
-    if(vals[5] > 1) append(mvec, vals[5]);
-    if(vals[6] > 1) append(mvec, vals[6]);
+    if (vals[5] > 1) append(mvec, vals[5]);
+    if (vals[6] > 1) append(mvec, vals[6]);
     std::vector<long> gens;
     gens.push_back(vals[7]);
-    if(vals[8] > 1) gens.push_back(vals[8]);
-    if(vals[9] > 1) gens.push_back(vals[9]);
+    if (vals[8] > 1) gens.push_back(vals[8]);
+    if (vals[9] > 1) gens.push_back(vals[9]);
     std::vector<long> ords;
     ords.push_back(vals[10]);
-    if(abs(vals[11]) > 1) ords.push_back(vals[11]);
-    if(abs(vals[12]) > 1) ords.push_back(vals[12]);
+    if (abs(vals[11]) > 1) ords.push_back(vals[11]);
+    if (abs(vals[12]) > 1) ords.push_back(vals[12]);
     long B = vals[13];
     long c = vals[14];
     // Compute the number of levels
     long L;
-    if(bootstrap) L = 900; // that should be enough
+    if (bootstrap) L = 900; // that should be enough
     else L = 30 * (7 + NTL::NumBits(bitSize + 2));
-    if(verbose) {
+    if (VERBOSE) {
         cout << "input bitSize=" << bitSize
              << ", running " << nTests << " tests for each function\n";
-        if(nthreads > 1) cout << "  using " << NTL::AvailableThreads() << " threads\n";
+        if (nthreads > 1) cout << "  using " << NTL::AvailableThreads() << " threads\n";
         cout << "computing key-independent tables..." << std::flush;
     }
     auto * fheContext = new FHEcontext(m, p, /*r=*/1, gens, ords);
 //    const FHEcontext * constContext = new FHEcontext(m, p, /*r=*/1, gens, ords);
     buildModChain(*fheContext, L, c,/*willBeBootstrappable=*/bootstrap);
-    if(bootstrap) {
+    if (bootstrap) {
         fheContext->makeBootstrappable(mvec, 0);
     }
     buildUnpackSlotEncoding(unpackSlotEncoding, *fheContext->ea);
-    if(verbose) {
+    if (VERBOSE) {
         cout << " done.\n";
         fheContext->zMStar.printout();
         cout << " L=" << L << ", B=" << B << endl;
@@ -89,57 +89,68 @@ KeysServer::KeysServer() {
     fheSecKey.GenSecKey();
     addSome1DMatrices(fheSecKey); // compute key-switching matrices
     addFrbMatrices(fheSecKey);
-    if(bootstrap) fheSecKey.genRecryptData();
-    if(verbose) cout << " done\n";
+    if (bootstrap) fheSecKey.genRecryptData();
+    if (VERBOSE) cout << " done\n";
     
     activeContext = fheContext; // make things a little easier sometimes
     this->context = fheContext;
 //    this->pubKey = new FHESecKey(fheSecKey);  // todo notice that pubKey is a ptr and not value, so the trick from max's lecture might not work
-    this->secKey = new FHESecKey(fheSecKey);  // FHESecKey inherits from c
+    this->secKey = new FHESecKey(fheSecKey);  // FHESecKey inherits from FHEPubKey
 //    this->pubKey = (FHESecKey *) this->secKey;  // todo notice that pubKey is a ptr and not value, so the trick from max's lecture might not work
     this->pubKey = (FHEPubKey *) this->secKey;  // todo notice that pubKey is a ptr and not value, so the trick from max's lecture might not work
 //    this->pubKey = new FHEPubKey(*fheContext);  // todo notice that pubKey is a ptr and not value, so the trick from max's lecture might not work
 }
 
 KeysServer::~KeysServer() {
-    delete secKey; //fixme why you complain?
-//    cout << "delete secKey OK" <<endl;
+    delete secKey; //fixme why IDE complains?
+//    delete pubKey; //fixme why IDE complains? //delete static_cast<DerA>(object) ?
     delete context;
-//    cout << "delete context OK" <<endl;
 }
 
 Ctxt KeysServer::randomBit() {
-    long c = rand();  // fixme should be random
+    long c = rand();
     Ctxt mu(*pubKey);
     pubKey->Encrypt(mu, ZZX(c&1)); ////    <----   THE PROBLEM was HERE
     return mu;
 }
 
 EncNumber KeysServer::calculateAvg(const EncNumber & sum, const EncNumber & size) {
-    cout << "   --- calculateAvg ---   ";
+    if (DBG) cout << "   --- calculateAvg ---   ";
     long avg = decrypt(sum) / decrypt(size);
     NTL::Vec<Ctxt> encVal;
     Ctxt mu(*pubKey);
     resize(encVal, BIT_SIZE, mu);
-    for(long i = 0; i < BIT_SIZE; i++) {
+    for (long i = 0; i < BIT_SIZE; i++) {
         pubKey->Encrypt(encVal[i], ZZX((avg >> i)&1)); ////    <----   THE PROBLEM was HERE
     }
 }
 
 long KeysServer::calculateAvg(const EncNumber & sum, const long size) {
-    cout << "   --- calculateAvg ---   ";
     long dSum = decrypt(sum);
-    cout << "dSum " << dSum << "  size " << size << endl;
-    return dSum / size; // todo decrypt(size)+1 ?
+    if (DBG) {
+        cout << "   --- calculateAvg ---   ";
+        cout << "dSum " << dSum << "  size " << size << endl;
+        fcout << "   --- calculateAvg ---   ";
+        fcout << "dSum " << dSum << "  size " << size << endl;
+    }
+    int amount = size;
+    if (0 == size) ++amount;//fixme
+    return dSum / amount; // todo decrypt(size)+1 ?
 }
 
 //DecryptedPoint KeysServer::calculateAvgPoint(const Point& r, const Point& p, EncNumber size) { //todo so you can subtract - for better accuracy
 DecryptedPoint KeysServer::calculateAvgPoint(const Point & p, EncNumber size) {
-    cout << "   --- calculateAvgPoint ---   ";
     const long amount = decrypt(std::move(size)); // + 1;
+    if (DBG) {
+        cout << "   --- calculateAvgPoint ---   ";
+        cout << "calculateAvgPoint points amount " << amount << endl;
+        fcout << "   --- calculateAvgPoint ---   ";
+        fcout << "calculateAvgPoint points amount " << amount << endl;
+    }
     vector<long> coorVector;
-    for(const EncNumber & coor : p.eCoordinates)
+    for (const EncNumber & coor : p.eCoordinates)
 //        coorVector.push_back(decrypt(coor) / amount); //todo replace with calculateAvg
+        
         coorVector.push_back(calculateAvg(coor, amount)); //todo replace with calculateAvg
     const DecryptedPoint sumVec = std::move(coorVector); //todo remove
 //    Point avgPoint = PointExtended(this, sumVec);

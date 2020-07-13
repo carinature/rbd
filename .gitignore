@@ -13,15 +13,16 @@ venv
 .cache
 .idea
 .clion.source.upload.marker
-#tmp
 pies/__pycache__/
-#play
-#try.cbp
+
 testing
-#io/means_test
-#io/points_test
+
+# only remove/comment when you update results
+io/means_test
+io/points_test
 io/points
 io/means
 io/random_means
 io/leftover
 io/chosen
+plots/

@@ -19,89 +19,28 @@ Point::Point(vector<Vec<Ctxt> > eCoordinates, FHEPubKey * pubKey)
 Point Point::operator+(const Point & p) const {
     vector<Vec<Ctxt>> sum;
     for(size_t i = 0; i < this->eCoordinates.size(); ++i) {
-//        cout << p << endl;
-//        cout << *this << endl;
-//        cout << "eCoordinates" << endl;
-//        cout << p.eCoordinates << endl;
-//        cout << eCoordinates << endl;
-        
         Vec<Ctxt> coor1 = eCoordinates[i], coor2 = p[i], eSum;
-//        Vec<Ctxt> coor1 = (*this)[i], coor2 = p[i], eSum;
-
-//        cout << "decryptNumber" << endl;
-//        cout << decryptNumber(*keysServer, coor1) << endl;
-//        cout << decryptNumber(*keysServer, coor2) << endl;
         CtPtrs_VecCt eep(eSum);
-//        cout << "here comes trouble" << endl;
-//        int nBits = (outSize>0 && outSize<2*BIT_SIZE)? outSize : (2*BIT_SIZE);
-        //fixme - high potensial for BUG, sum.bitsize can be bigger than BIT_SIZE
-//        addTwoNumbers(eep, CtPtrs_VecCt(coor1), CtPtrs_VecCt(coor2), BIT_SIZE, &unpackSlotEncoding);
         addTwoNumbers(eep, CtPtrs_VecCt(coor1), CtPtrs_VecCt(coor2));//, BIT_SIZE, &unpackSlotEncoding);
-//        cout << "5" << endl;
         sum.push_back(eSum);
-        /** for DBG #1  - todo - remove
-        vector<long> slots;
-        decryptBinaryNums(slots, eep, *(keysServer->secKey), *(keysServer->pubKey->getContext().ea));
-//        cout << "score! " << slots[0] << endl;
-         END for DBG #1**/
     }
-//    cout << "6" << endl;
     Point sumPoint = Point(sum, pubKey);
 //    Point sumPoint = Point(keysServer, sum);
-//    cout << "7" << endl;
-    /** for DBG #2 - todo - remove
-    cout << "The dec sum Point is: ( ";
-    for(auto c : sumPoint.eCoordinates) {
-//        Vec<Ctxt> eSum;
-        CtPtrs_VecCt eep(c);
-        vector<long> slots;
-        decryptBinaryNums(slots, eep, *(keysServer->secKey), *(keysServer->pubKey->getContext().ea));
-        cout << slots[0] << " ";
-    }
-    cout << ")" << endl;
-     END for DBG #2**/
-    return sumPoint; //TODO should return the point with the encCoor
+    return sumPoint;
 }
 
 Point Point::operator*(const Ctxt& bit) const {
     vector<Vec<Ctxt>> prodPoint = eCoordinates;
-    vector<Vec<Ctxt>> newprodPoint;
+    vector<Vec<Ctxt>> newProdPoint;
     for(EncNumber & c : prodPoint) {
-//        int nBits = (outSize>0 && outSize<2*BIT_SIZE)? outSize : (2*BIT_SIZE);
-        //fixme - high potensial for BUG, prodPoint.bitsize can be bigger than BIT_SIZE
         for(auto & ct : c) ct.multiplyBy(bit);  // multiplies each bit of the coordinate
 //        for(Ctxt & ct : c) ct *= bit;  // multiplies each bit of the coordinate
-        newprodPoint.push_back(c);
+        newProdPoint.push_back(c);
     }
 //    Point mulPoint = Point(keysServer, prodPoint);
-    Point mulPoint = Point(newprodPoint, pubKey);
+    Point mulPoint = Point(newProdPoint, pubKey);
     
-    return mulPoint; //TODO should return the point with the encCoor
-/*    vector<Vec<Ctxt>> newCoordinates = eCoordinates;
-//    int i = 0;
-    for(EncNumber & c : newCoordinates) {
-//        Vec<Ctxt> newCoor;
-//        int nBits = (outSize>0 && outSize<2*BIT_SIZE)? outSize : (2*BIT_SIZE);
-        //fixme - high potensial for BUG, newCoordinates.bitsize can be bigger than BIT_SIZE
-//        for(auto & ct : c) ct.multiplyBy(bit);  // multiplies each bit of the coordinate
-//        cout << "-- i --: "  << i++ << endl;
-        for(Ctxt & ct : c) {
-//            multTwoNumbers();//TODO
-            ct *= bit;  // multiplies each bit of the coordinate
-//            newCoor.append(ct);
-//            EncNumber ctct; ctct.append(ct);
-//            cout << "ct * bit: " << decryptNumber(*keysServer, ctct) << endl;
-        }
-//        newCoordinates.push_back(c);
-//        cout << "newCoor: " << decryptNumber(*keysServer, newCoor) << endl;
-//        newCoordinates.push_back(newCoor);
-
-    }
-//    Point mulPoint = Point(keysServer, newCoordinates);
-    
-    Point mulPoint = Point(pubKey, newCoordinates);
-
-    return mulPoint; //TODO should return the point with the encCoor*/
+    return mulPoint;
 }
 
 Ctxt Point::operator>(const Point & p) const {
@@ -130,50 +69,12 @@ Point Point::operator-(const Point & p) const { //fixme
     for(size_t i = 0; i < this->eCoordinates.size(); ++i) {
         Vec<Ctxt> coor1 = (*this)[i], coor2 = p[i], eSum;
         CtPtrs_VecCt eep(eSum);
-//        int nBits = (outSize>0 && outSize<2*BIT_SIZE)? outSize : (2*BIT_SIZE);
-        //fixme - high potensial for BUG, sum.bitsize can be bigger than BIT_SIZE
-//        addTwoNumbers(eep, CtPtrs_VecCt(coor1), CtPtrs_VecCt(coor2), BIT_SIZE, &unpackSlotEncoding);
         addTwoNumbers(eep, CtPtrs_VecCt(coor1), CtPtrs_VecCt(coor2));//, BIT_SIZE, &unpackSlotEncoding);
         sum.push_back(eSum);
-        /** for DBG #1  - todo - remove
-        vector<long> slots;
-        decryptBinaryNums(slots, eep, *(keysServer->secKey), *(keysServer->pubKey->getContext().ea));
-//        cout << "score! " << slots[0] << endl;
-         END for DBG #1**/
     }
-    Point sumPoint = Point(sum, pubKey);
-//    Point sumPoint = Point(keysServer, sum);
-    /** for DBG #2 - todo - remove
-    cout << "The dec sum Point is: ( ";
-    for(auto c : sumPoint.eCoordinates) {
-//        Vec<Ctxt> eSum;
-        CtPtrs_VecCt eep(c);
-        vector<long> slots;
-        decryptBinaryNums(slots, eep, *(keysServer->secKey), *(keysServer->pubKey->getContext().ea));
-        cout << slots[0] << " ";
-    }
-    cout << ")" << endl;
-     END for DBG #2**/
-    return sumPoint; //TODO should return the point with the encCoor
-/*//    new coor-vec
-    vector<Vec<Ctxt>> pCoordinates = p.eCoordinates;
-//    for every coor i
-    for(int i = 0; i < DIM; ++i) {//(EncNumber c : eCoordinates) {
-//      new coor
-        Vec<Ctxt> newCoor;
-//      for every bit j
-        for(int j = 0; j < BIT_SIZE; ++j) {
-//          b = this[i][j] - p[i][j]
-            pCoordinates[i][j], eCoordinates[i][j].negate();
-//          push new   bit   into new   coor
-        }
-//      push new   coor   into new   coor-vec
-    }
-//    create & return new point
-    Point subPoint = Point(pubKey, pCoordinates);
-    cout << "subPoint.decrypt: " << subPoint.decrypt(*keysServer) << endl;
+    Point subPoint = Point(sum, pubKey);
+//    Point subPoint = Point(keysServer, sum);
     return subPoint;
-//    return Point(pubKey, pCoordinates); //TODO should return the point with the encCoor*/
 }
 
 PointExtended::PointExtended(const vector<long> & coordinates, FHEPubKey * pubKey)
@@ -219,14 +120,20 @@ PointExtended::PointExtended(const vector<long> & coordinates, KeysServer * keys
 
 /** for DBG **/
 
-void Point::print(ostream & os) const {
+ostream & Point::print(ostream & os) const {
     cout << " ep(" << eCoordinates[0]._vec__rep;
     for(size_t i = 1; i < eCoordinates.size(); ++i) cout << ", " << eCoordinates[i]._vec__rep;
     cout << ") ";
+    
+    fcout << " ep(" << eCoordinates[0]._vec__rep;
+    for(size_t i = 1; i < eCoordinates.size(); ++i) fcout << ", " << eCoordinates[i]._vec__rep;
+    fcout << ") ";
+    
+    return os;
 }
 
 std::ostream & operator<<(std::ostream & os, const Point & p) {
-    p.print(os);
+    return p.print(os);
 }
 
 DecryptedPoint Point::decrypt(KeysServer & keysServ) const {
@@ -260,38 +167,55 @@ long Point::decryptNumber(KeysServer & keysServ, EncNumber c) const {
 }
 
 
-void PointExtended::print(ostream & os) const {
-    cout << " (" << coordinates[0];
+ostream & PointExtended::print(ostream & os) const {
+    cout << " epE(" << coordinates[0];
     for(size_t i = 1; i < coordinates.size(); ++i) cout << ", " << coordinates[i];
     cout << ") ";
+    
+    fcout << " epE(" << coordinates[0];
+    for(size_t i = 1; i < coordinates.size(); ++i) fcout << ", " << coordinates[i];
+    fcout << ") ";
+    
+    return os;
 }
 
 long PointExtended::dist(DecryptedPoint & point) {
     long d = 0;
-    cout << "point1: " << this->coordinates << " point2: " << point << endl;
+    cout << "point1: " << this->coordinates << " point2: " << point;// << endl;
 //    cout << "coordinates: " << coordinates << endl;
     for(int i = 0; i < DIM; ++i) {
         d += pow(coordinates[i] - point[i], 2);
-        cout << "--" << i << "--  d: " << d << endl;
+//        cout << "--" << i << "--  d: " << d << endl;
     }
-    cout << "d: " << d << endl;
-    return sqrt(d);  // notice this does NOT return the SQUARE of the distance
+    cout << "   dist: " << d << endl;
+    
+    fcout << "point1: " << this->coordinates << " point2: " << point;// << endl;
+//    cout << "coordinates: " << coordinates << endl;
+    for(int i = 0; i < DIM; ++i) {
+        d += pow(coordinates[i] - point[i], 2);
+//        fcout << "--" << i << "--  d: " << d << endl;
+    }
+    fcout << "  dist: " << d << endl;
+    return sqrt(d);  // notice this returns the ROOT of the distance size
 //    return d;  // notice this returns the SQUARE of the distance
 }
 
 EncNumber PointExtended::getDistanceFromClosestPoint(vector<DecryptedPoint> points) {
 //    cout << "getDistanceFromClosestPoint means: " << points << endl;
     long min = dist(points[0]), currDist;
-    DecryptedPoint closest = points[0]; //for dbg
+    DecryptedPoint closest = points[0]; //for DBG
 //    cout << "min: " << min <<  "    closest: " << closest << endl;
     for(DecryptedPoint point : points) {
         currDist = dist(point);
         if(currDist < min) {
             min = currDist;
-            closest = point; //for dbg
+            closest = point; //for DBG
         }
     }
-    if(dbg) cout << "dist from " << coordinates << " to " << closest << " is: " << min << endl;
+    if(DBG) {
+        cout << "dist from " << coordinates << " to " << closest << " is: " << min << endl;
+        fcout << "dist from " << coordinates << " to " << closest << " is: " << min << endl;
+    }
 //    EncNumber minDist;
 //    minDist = encryptNum(min);
 //    return minDist;
@@ -306,16 +230,4 @@ EncNumber PointExtended::encryptNum(long min) const {
     return minDist;
 }
 
-
-
-/*
- * Deprecated
- * */
-/*
-//this is not a real cmp between points - op< is used in std::map
-Ctxt Point::operator<(const Point & p) const {
-
-
-}
-*/
 

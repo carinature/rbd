@@ -33,7 +33,7 @@ void decAndWriteToFile(const vector<Point> & points, const string & filename,
     for(const DecryptedPoint & p : decPoints) {
         for(long coor : p) {
 //            cout << "in write coor: " << coor << endl;
-            outputFileStream << coor / FACTOR << " ";
+            outputFileStream << coor / CONVERSION_FACTOR << " ";
         }
         outputFileStream << '\n';
     }
@@ -44,9 +44,7 @@ void decAndWriteToFile(const vector<Point> & points, const string & filename,
 void writeToFile(const vector<DecryptedPoint> & points, const string & filename) {  // fixme PubKey instead of KeysServ
     ofstream outputFileStream(filename);
     for(const DecryptedPoint & p : points) {
-        for(long coor : p) {
-            outputFileStream << (double)(coor / FACTOR) << " ";
-        }
+        for(long coor : p) outputFileStream << (double)(coor / CONVERSION_FACTOR) << " ";
         outputFileStream << '\n';
     }
     outputFileStream.close();
@@ -56,10 +54,7 @@ void writeToFile(const vector<Point> & points, const string & filename) {  // fi
     cout << "write enc points to file" << endl;
     ofstream outputFileStream(filename);
     for(const Point & p : points) {
-        for(EncNumber coor : p.eCoordinates) {
-//            outputFileStream << coor / FACTOR << " ";
-            outputFileStream << coor  << "\n\n---\n\n";
-        }
+        for(EncNumber coor : p.eCoordinates) outputFileStream << coor  << "\n\n---\n\n";
         outputFileStream << '\n';
     }
     outputFileStream.close();
@@ -77,10 +72,10 @@ vector<DecryptedPoint> getPointsFromFile(const string & filename) {
         DecryptedPoint point;
         for(auto & coor : pa) {
             getline(lineStream, coor, ' ');
-//            cout <<" FACTOR * stod(coor) " << FACTOR * stod(coor) << endl;
+//            cout <<" CONVERSION_FACTOR * stod(coor) " << CONVERSION_FACTOR * stod(coor) << endl;
 //            cout <<" stod(coor) " << stod(coor) << endl;
 //            cout <<" (coor) " << coor << endl;
-            point.push_back(FACTOR * stod(coor)); // conversion from double to long
+            point.push_back(CONVERSION_FACTOR * stod(coor)); // conversion from double to long
         }
         points.push_back(point);
     }
@@ -115,11 +110,9 @@ createCmpDict(const vector<Point> & randomPoints, const vector<Point> & stripPoi
     for(const Point & p : randomPoints) {
         map<Point, vector<Bit>, cmpPoints> cmpDictMini; //, cmpDictMini2;
         for(const Point & pp : stripPoints) {
-            cmpDictMini[pp].push_back(p > pp); // fixme why aren't you doing this: cmpDict[p][pp].push_back(p > pp);
+            cmpDict[p][pp].push_back(p > pp); // used to be cmpDictMini[pp].push_back(p > pp); and worked
             cmpDict[pp][p].push_back(pp > p);
         }
-        cmpDict[p] = cmpDictMini;
-//        cmpDict[pp] = cmpDictMini2;
     }
     return cmpDict;
 }
@@ -127,12 +120,13 @@ createCmpDict(const vector<Point> & randomPoints, const vector<Point> & stripPoi
 
 
 EncNumber sumEncNumVec(Vec<EncNumber> & vec, long factor) {
-//    for ( auto num : vec) cout <<
     EncNumber sum;
     const CtPtrs & product = CtPtrs_VecCt(sum); //, & productY = CtPtrs_VecCt(sumY);
     CtPtrMat_VecCt nums(vec); // Wrapper around numbers
+//        int nBits = (outSize>0 && outSize<2*BIT_SIZE)? outSize : (2*BIT_SIZE);
+    //fixme - potential for BUG, sum.bitsize can be bigger than BIT_SIZE
+    // <--- notice "findQ(x,y) not found" is printed here in addManyNum
     addManyNumbers((CtPtrs &) product, nums, BIT_SIZE * factor, &unpackSlotEncoding);
-    // <--- fixme "findQ(5,3) not found" is printed here in addManyNum
 //    cout << "sumEncNumVec sum: " << keysum << endl;
     return sum;
 }
@@ -204,7 +198,6 @@ double dist(const DecryptedPoint & a, const DecryptedPoint & b) {
             int cellSize = (int) (currStrip.size() * EPSILON);
             vector<vector<double> > currCell(currStrip.begin() + j * cellSize,
                                              currStrip.begin() + ((j + 1) * cellSize));
-            //  #TODO - replace this part with your alg
 //            nth_element(currCell.begin(), currCell.begin() + currCell.size()/ 2, currCell.end(), cmp);
             representatives.push_back(currCell[currCell.size() / 2]);
             cout << ".  The median is " << currCell[currCell.size() / 2] << '\n';

@@ -1,6 +1,5 @@
 
 
-
 #include "imp1_kmeans_test.h"
 //#include "../KeysServer.h"
 //#include "../Point.h"
@@ -57,7 +56,7 @@ void imp1_kmeans_test::calculateThresholdTest() {
 }
 
 void imp1_kmeans_test::getLeftoverPointsTest() {
-    cout << " --------- test_write_To_File --------- " << endl;
+    cout << " --------- getLeftoverPointsTest --------- " << endl;
     auto t1 = std::chrono::high_resolution_clock::now();
     
     auto * ks = new KeysServer();
@@ -84,7 +83,8 @@ void imp1_kmeans_test::getLeftoverPointsTest() {
     cout << "           OK" << endl;
     auto t2 = std::chrono::high_resolution_clock::now();
     auto duration = std::chrono::duration_cast<std::chrono::seconds>(t2 - t1).count();
-    std::cout << "\n--- duration: " << duration << endl;
+    cout << "\n--- duration: " << duration; // << endl;
+    cout << "\n--- #points: " << NUM_POINTS <<" EPSILON = " << EPSILON << endl;
 }
 
 void imp1_kmeans_test::run_all() {
@@ -123,7 +123,7 @@ void imp1_kmeans_test::run_all() {
 //    cout << "The threshold is: " << threshold << endl;
 //
 //    vector<Point> chosen, leftover;
-//    for (unsigned long j = 0; j < clients.size(); ++j) { //TODO this should not be an IF !!!
+//    for (unsigned long j = 0; j < clients.size(); ++j) {
 ////        if(threshold >= decDistances[j]) chosen.push_back(clients[j].decrypt(keysServer));
 ////        else leftover.push_back(clients[j].decrypt(keysServer));
 //        if (threshold >= decDistances[j]) chosen.push_back(clients[j]);
@@ -135,7 +135,7 @@ void imp1_kmeans_test::run_all() {
 ////    cout << "distances of size: " << distances.size() << " " << distances << endl;
 //    cout << "chosen of size: " << chosen.size() << " " << chosen << endl;
 //    cout << "leftover of size: " << leftover.size() << " " << leftover << endl;
-//    if (dbg) decAndWriteToFile(chosen, "io/chosen", keysServer);
+//    if (DBG) decAndWriteToFile(chosen, "io/chosen", keysServer);
 ////    return leftover;
 //    return retVec;
 //}
@@ -147,7 +147,7 @@ void imp1_kmeans_test::getEncryptedKMeansTest() {
     cout << " --------- get_Encrypted_KMeans_test --------- " << endl;
     auto t1 = std::chrono::high_resolution_clock::now();
     
-    KeysServer * ks = new KeysServer();
+    auto * ks = new KeysServer();
     FHEPubKey * pubKey = ks->pubKey;
     vector<PointExtended> pointsEx = getEncryptedPointsFromFile(*ks);
     vector<Point> points(pointsEx.begin(), pointsEx.end());

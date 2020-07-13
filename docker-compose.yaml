@@ -16,5 +16,6 @@ services:
       - "7777:7777"
     volumes:
       - .:/home/debugger/rbd_helib_with_remote_debugger/
+#      - /home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/plots:/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/plots
 #    working_dir:  /home/debugger/rbd_helib_with_remote_debugger/
     hostname: debug

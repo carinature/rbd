@@ -11,23 +11,25 @@
 
 NTL_CLIENT
 
-#define NUM_POINTS 60  // for python
+#define NUM_POINTS 20  // for python
 #define DIM 2
-#define RANGE_LIM 1  // for python
-#define EPSILON 0.2
+#define RANGE_LIM 1  // for python defines the range of the points (from Bottom_LIM to RANGE_LIM)
+#define Bottom_LIM 0
+#define EPSILON 0.5
 #define DECIMAL_DIGITS 2
-#define FACTOR pow(10, DECIMAL_DIGITS) // for conversion from double to long (helib compatibility)
+#define CONVERSION_FACTOR pow(10, DECIMAL_DIGITS) // for conversion from double to long (helib compatibility)
 #define BIT_SIZE 10
 #define N_THreads 1
+
 using DecryptedPoint = std::vector<long>;
 using Bit = Ctxt;
 using EncNumber = Vec<Ctxt>;
 
-static bool verbose = false;
+//bool DBG = false;  // use PubKey to init Point
+static bool DBG = true;  // use KeysServer to init Point
+static bool VERBOSE = false;
 
-static bool dbg = true;  // use KeysServer to init Point
-//bool dbg = false;  // use PubKey to init Point
-
+static ofstream fcout("fcout");  //for DBG
 
 #endif //TRY_PROPERTIES_H
 
