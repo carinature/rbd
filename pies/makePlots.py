@@ -70,10 +70,10 @@ def make_plot(fig, axs, point_list, rands_list, means_list, chosen=None, leftove
     axs[1, 0].scatter(*zip(*rands_set), label='Rand Points', c='blue', s=6)
     sc = axs[1, 0].scatter(*zip(*means_set), label='means', c='black', s=20)
     i = 0
-    for i in range(len(means_set)):
-        axs[1, 0].text(rands_list[i][0] + 0.001, rands_list[i][1] + 0.001, str(i))
-        axs[1, 0].text(means_list[i][0] + 0.001, means_list[i][1] + 0.001, str(i))
-        i += 1
+    # for i in range(len(means_set)):
+    #     axs[1, 0].text(rands_list[i][0] + 0.001, rands_list[i][1] + 0.001, str(i))
+    #     axs[1, 0].text(means_list[i][0] + 0.001, means_list[i][1] + 0.001, str(i))
+    #     i += 1
     axs[1, 0].set_title('means')
     axs[1, 1].scatter(*zip(*point_set), label='Input Points', c='green', s=4)
     axs[1, 1].scatter(*zip(*rands_set), label='Rand Points', c='blue', s=6)
@@ -118,7 +118,7 @@ with open('../impl/properties.h') as f:
 if '__main__' == __name__:
 
     # points_list = gen_encrypted_points_from_file("points")
-    points_list = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/points")
+    points_list = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/points_copy")
     rands = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/random_means")
     means = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/means")
     chosen = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/chosen")

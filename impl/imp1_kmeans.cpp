@@ -15,50 +15,52 @@ getLeftoverPoints(
         const vector<DecryptedPoint> & means,
         KeysServer & keysServer);
 
+
 using Cell = vector<Point>;
 using Points = vector<Point>;
 
 
 int main(int argc, char * argv[]) {
-  ////    todo fixme DO NOT DELETE THIS PART
-/*    cout << " --------- getLeftoverPointsTest --------- " << endl;
-    auto t1 = std::chrono::high_resolution_clock::now();
+  auto * ks = new KeysServer();
+  
+//  vector<PointExtended> clients = getEncryptedPointsFromFile(*ks);
+  
+  encryptedKmeans();
+  
+  return 0;
+}
 
-    auto * ks = new KeysServer();
-//    FHEPubKey * pubKey = ks->pubKey;
-    vector<PointExtended> clients = getEncryptedPointsFromFile(*ks);
-//    assert(clients.size() == NUM_POINTS); //sanity check
-    vector<Point> points(clients.begin(), clients.end());
-
-//    vector<DecryptedPoint> means = getPointsFromFile("io/means"); // requires reloading of cmake project
-    vector<DecryptedPoint> means = calculateMeans(getCells(points, *ks), *ks);
-    cout << "size of means: " << means.size() << ": " << means << endl;
-
-//    Vec<EncNumber> distances = getDistances(clients, means);
-
-//    EncNumber threshold = calculateThreshold(distances, *ks);// {//}, int amount) {
-//    long threshold = calculateThreshold(distances, *ks);// {//}, int amount) {
-//    cout << "The threshold is: " << threshold << endl;
-    //todo test with the "real" distances
-    //  check against distances.decrypted (assert)
-
-    vector< vector<Point> > leftoverPointsDec = getLeftoverPoints(clients, means, *ks);
-    vector<Point> chosen = leftoverPointsDec[0];
-
-    cout << "           OK" << endl;
-    auto t2 = std::chrono::high_resolution_clock::now();
-    auto duration = std::chrono::duration_cast<std::chrono::seconds>(t2 - t1).count();
-    cout << "\n--- duration: " << duration; // << endl;
-    cout << "\n--- #points: " << NUM_POINTS <<" EPSILON = " << EPSILON << endl;*/
-  ////    todo fixme DO NOT DELETE THIS PART (ABOVE)
+void encryptedKmeans() {
+    
+  cout << " --------- encryptedKmeans --------- " << endl;
+  auto t1 = std::chrono::high_resolution_clock::now();
+  
+  auto * ks = new KeysServer();  //   in the future should be FHEPubKey * pubKey = ks->pubKey;
+  vector<PointExtended> clients = getEncryptedPointsFromFile(*ks);
+  if (clients.empty()) return; // end of recursion
+  
+  vector<Point> points(clients.begin(), clients.end());
+  
+  vector<DecryptedPoint> means = calculateMeans(getCells(points, *ks), *ks);
+  cout << "size of means: " << means.size() << ": " << means << endl;
+  
+  vector<vector<Point> > pointsSplited = getLeftoverPoints(clients, means, *ks);
+  vector<Point> chosen = pointsSplited[0];
+  vector<Point> & leftover = pointsSplited[1];
+  
+  cout << "           OK" << endl;
+  auto t2 = std::chrono::high_resolution_clock::now();
+  auto duration = std::chrono::duration_cast<std::chrono::seconds>(t2 - t1).count();
+  cout << "\n--- duration: " << duration; // << endl;
+  cout << "\n--- #points: " << NUM_POINTS << " EPSILON = " << EPSILON << endl;
   
   
-  vector < DecryptedPoint > chosenDBG = getPointsFromFile("io/chosen");
-//    for (vector<long> point:chosenDBG) cout << point << endl;
+/**********   integration to the project    ***********/
+  decAndWriteToFile(leftover, "points", *ks);
+  
+  vector<DecryptedPoint> chosenForCorset = getPointsFromFile("io/chosen");
   vector<vector<double> > dps;
-//    int count = 0;
-  for (const DecryptedPoint & point : chosenDBG) {
-//        vector<long> dp = point.decrypt(*ks);
+  for (const DecryptedPoint & point : chosenForCorset) {
     vector<double> dpd;
     for (long coor : point) dpd.push_back(coor / CONVERSION_FACTOR);
 //        dps.push_back(point.decrypt(*ks));
@@ -68,42 +70,33 @@ int main(int argc, char * argv[]) {
   }
 //    cout << "count: "<< count<< endl;
   
-  
-  runCoreset(dps, NUM_POINTS, DIM, EPSILON);
+  decAndWriteToFile(leftover, "points", *ks);
 
-//    KeysServer * keysServer = new KeysServer();
-//    vector<Point> encPoints = getEncryptedPointsFromFile(*keysServer);
-//    cout << "encPoints : " << encPoints << " END encPoints" << endl;
-//    vector<Point> encMeans = getEncryptedKMeans(encPoints, *keysServer);
-//    vector<vector<Point> > leftoverPoints = getLeftoverPoints(encPoints, encMeans, *keysServer);
-//    writeToFile(encMeans, "means", *keysServer);
-//    writeToFile(leftoverPoints[0], "chosen", *keysServer);
-//    decAndWriteToFile(leftoverPoints[1], "leftover", *keysServer);
-  return 0;
+  runCoreset(dps, NUM_POINTS, DIM, EPSILON);
+  
+  encryptedKmeans();
+
+  return;
 }
 
 
 vector<tuple<vector<Point>, EncNumber> > getCells(vector<Point> points, KeysServer & keysServer) {
   cout << "getCells" << endl;
   fcout << "getCells" << endl;
-  vector < Point > randPoints, leftover, chosen;
-  vector < DecryptedPoint > means, badRands;
+  vector<Point> randPoints, leftover, chosen;
+  vector<DecryptedPoint> means, badRands;
   
   srand(time(NULL));  // for extra randomness //fixme - why is this not random!?!?!
   cout << "TIME: " << time(NULL) << endl;
   
-  vector < tuple<vector<Point>, EncNumber> > cellTuples;
-  int numOfStrips = (int) (1 / EPSILON);/*    int numOfCells = (int) (1 / pow(EPSILON, 2));
-    cout << "\nEPSILON: " << EPSILON << endl;
-    cout << "numOfStrips: " << numOfStrips << endl;
-    cout << "numOfCells: " << numOfCells << endl;*/
-  
+  vector<tuple<vector<Point>, EncNumber> > cellTuples;
+  int numOfStrips = (int) (1 / EPSILON);
   
   for (int i = 0; i < numOfStrips; ++i) {
     //    Fisher–Yates shuffle for choosing k random points
     int stripSize = (int) (points.size() * EPSILON), k = numOfStrips;
-    vector < Point > currStrip(points.begin() + i * stripSize, points.begin() + ((i + 1) * stripSize));
-    vector < Point > copy(currStrip); //todo note the loss of points in tail (need to correct)
+    vector<Point> currStrip(points.begin() + i * stripSize, points.begin() + ((i + 1) * stripSize));
+    vector<Point> copy(currStrip); //todo note the loss of points in tail (need to correct)
     auto begin = copy.begin();
     while (k--) {
       auto r = begin;
@@ -112,7 +105,7 @@ vector<tuple<vector<Point>, EncNumber> > getCells(vector<Point> points, KeysServ
       ++begin;
       --stripSize;
     }
-    vector < Point > random(copy.begin(), copy.begin() + numOfStrips);
+    vector<Point> random(copy.begin(), copy.begin() + numOfStrips);
     randPoints.insert(randPoints.end(), random.begin(), random.end());
     
     auto t1 = std::chrono::high_resolution_clock::now();
@@ -136,7 +129,7 @@ vector<tuple<vector<Point>, EncNumber> > getCells(vector<Point> points, KeysServ
       
       for (const Point & p : currStrip) {
         //        is above other stripMeans
-        vector < Bit > cmpIsAbove;
+        vector<Bit> cmpIsAbove;
         cout << "strip:" << i << ", rp: " << rp << ", p: " << j++ << " ----- "; // << endl;   //DBG
         fcout << "strip:" << i << ", rp: " << rp << ", p: " << j++ << " ----- "; // << endl;   //DBG
         for (const Point & r2 : random) {
@@ -212,7 +205,7 @@ vector<tuple<vector<Point>, EncNumber> > getCells(vector<Point> points, KeysServ
 }
 
 vector<DecryptedPoint> calculateMeans(const vector<tuple<Cell, EncNumber> > & cellTuples, KeysServer & keysServer) {
-  vector < DecryptedPoint > means;
+  vector<DecryptedPoint> means;
   cout << "calculateMeans cell size" << cellTuples.size() << endl;
   fcout << "calculateMeans cell size" << cellTuples.size() << endl;
   int i = 0, j = 0; // for DBG
@@ -247,7 +240,7 @@ DecryptedPoint calculateCellMean(tuple<Cell, EncNumber> cellTuple, KeysServer & 
   for (int j = 0; j < DIM; ++j) sum[j] = sumEncNumVec(vec[j], NUM_POINTS * pow(EPSILON, 2));
 //    for (int j = 0; j < DIM; ++j) sum[j] = sumEncNumVec(vec[j], 1l / pow(EPSILON, 2));
 //    for (int j = 0; j < DIM; ++j) sum[j] = sumEncNumVec(vec[j]);
-  Point sumPoint = Point(vector < EncNumber > (sum, sum + DIM), &keysServer);
+  Point sumPoint = Point(vector<EncNumber>(sum, sum + DIM), &keysServer);
   DecryptedPoint avgPoint = keysServer.calculateAvgPoint(sumPoint, size);
   cout << "avgPoint: " << avgPoint << endl;
   fcout << "avgPoint: " << avgPoint << endl;
@@ -315,7 +308,7 @@ vector<vector<Point> > getLeftoverPoints(
   cout << "The threshold is: " << keysServer.decrypt(threshold) << endl;
   fcout << "The threshold is: " << keysServer.decrypt(threshold) << endl;
   
-  vector < Point > chosen, leftover;
+  vector<Point> chosen, leftover;
   for (long j = 0; j < clients.size(); ++j) {
     Ctxt mu(*keysServer.pubKey), ni(*keysServer.pubKey);
     compareTwoNumbers(mu, ni, CtPtrs_VecCt(threshold), CtPtrs_VecCt(distances[j]), &unpackSlotEncoding);
@@ -364,8 +357,8 @@ aux
 vector<DecryptedPoint> getEncryptedKMeans(vector<Point> points, KeysServer & keysServer) {
 //vector<Point> getEncryptedKMeans(vector<Point> points, KeysServer & keysServer) {
   cout << "getEncryptedKMeans" << endl;
-  vector < Point > randPoints, leftover, chosen;
-  vector < DecryptedPoint > means;
+  vector<Point> randPoints, leftover, chosen;
+  vector<DecryptedPoint> means;
   int numOfStrips = (int) (1 / EPSILON);/*    int numOfCells = (int) (1 / pow(EPSILON, 2));
     cout << "\nEPSILON: " << EPSILON << endl;
     cout << "numOfStrips: " << numOfStrips << endl;
@@ -374,8 +367,8 @@ vector<DecryptedPoint> getEncryptedKMeans(vector<Point> points, KeysServer & key
   for (int i = 0; i < numOfStrips; ++i) {
     ////    Fisher–Yates shuffle for choosing k random points
     int stripSize = (int) (points.size() * EPSILON), k = numOfStrips; //, left = stripSize;
-    vector < Point > currStrip(points.begin() + i * stripSize, points.begin() + ((i + 1) * stripSize));
-    vector < Point > copy(currStrip);
+    vector<Point> currStrip(points.begin() + i * stripSize, points.begin() + ((i + 1) * stripSize));
+    vector<Point> copy(currStrip);
     auto begin = copy.begin(); //todo note the loss of points in tail (need to correct)
     while (k--) {
       auto r = begin;
@@ -385,28 +378,28 @@ vector<DecryptedPoint> getEncryptedKMeans(vector<Point> points, KeysServer & key
       ++begin;
       --stripSize;
     }
-    vector < Point > random(copy.begin(), copy.begin() + numOfStrips);
+    vector<Point> random(copy.begin(), copy.begin() + numOfStrips);
     randPoints.insert(randPoints.end(), random.begin(), random.end());
     auto t1 = std::chrono::high_resolution_clock::now();
     map<Point, map<Point, vector<Bit>, cmpPoints>, cmpPoints> cmp = createCmpDict(random, currStrip);
     auto t2 = std::chrono::high_resolution_clock::now();
     auto duration = std::chrono::duration_cast<std::chrono::seconds>(t2 - t1).count();
     cout << "\ncreating the dict took: " << duration << " seconds.\n" << endl;
-    vector < DecryptedPoint > stripMeans; //        vector<Point> stripMeans;
+    vector<DecryptedPoint> stripMeans; //        vector<Point> stripMeans;
     ////    CUT INTO CELLS
     //for each rand point (cell)
     int rp = 0;  //DBG
     for (const Point & R : random) {
       cout << "The random point is : " << R.decrypt(keysServer) << endl;
       ////  find the points for each cell
-      vector < Point > currCell;
+      vector<Point> currCell;
       Point sum = R;
       Vec<EncNumber> sizeVec;  // vector<Bit> sizeVec;
       //  for each point in the strip
       int j = 0;  //DBG
       for (const Point & p : currStrip) {
         //        is above other stripMeans
-        vector < Bit > cmpIsAbove;
+        vector<Bit> cmpIsAbove;
         cout << "strip:" << i << ", rp: " << rp << ", p: " << j++ << " ----- "; // << endl;   //DBG
         for (const Point & r2 : random) {
 //                    Bit r2isSmaller =       cmp(p,r2);

@@ -19,10 +19,11 @@ vector<DecryptedPoint> getEncryptedKMeans(vector<Point> points, KeysServer & key
 
 Vec<EncNumber> getDistances(const vector<PointExtended> & clients, const vector<DecryptedPoint> & means);
 
-//EncNumber calculateThreshold(vector<EncNumber> distances, int amount);
 EncNumber calculateThreshold(Vec<EncNumber> distances, KeysServer & keysServer);
 
 vector<vector<Point> >
 getLeftoverPoints(const vector<Point> & points, const vector<Point> & means, KeysServer & keysServer);
+
+void encryptedKmeans();
 
 #endif //TRY_IMP1_KMEANS_H

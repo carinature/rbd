@@ -11,11 +11,11 @@
 
 NTL_CLIENT
 
-#define NUM_POINTS 20  // for python
+#define NUM_POINTS 100  // for python
 #define DIM 2
-#define RANGE_LIM 1  // for python defines the range of the points (from Bottom_LIM to RANGE_LIM)
+#define RANGE_LIM 1  // for python, defines the range of the points (from Bottom_LIM to RANGE_LIM)
 #define Bottom_LIM 0
-#define EPSILON 0.5
+#define EPSILON 0.25
 #define DECIMAL_DIGITS 2
 #define CONVERSION_FACTOR pow(10, DECIMAL_DIGITS) // for conversion from double to long (helib compatibility)
 #define BIT_SIZE 10

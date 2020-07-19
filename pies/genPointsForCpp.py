@@ -21,6 +21,7 @@ pointsList = []
 
 # f = open("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/points", "w")
 file = "/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/points"
+filecopy = "/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/points_copy"
 
 
 # for i in range(numPoints):
@@ -62,6 +63,9 @@ def create_points_file(points):
         for point in points:
             f.write(f' '.join(map(str, point)))
             f.write('\n')
+    # for integration with yoins code
+    from shutil import copyfile
+    copyfile(file, filecopy)
 
 
 create_points_file(generate_points())
