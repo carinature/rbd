@@ -57,9 +57,9 @@ void encryptedKmeans() {
   }
   cout << "count: " << dps.size() << endl;
   
-  decAndWriteToFile(leftover, "points", *ks);
-  runCoreset(dps, NUM_POINTS, DIM, EPSILON);
-  encryptedKmeans();
+//  decAndWriteToFile(leftover, "points", *ks);
+//  runCoreset(dps, NUM_POINTS, DIM, EPSILON);
+//  encryptedKmeans();
 }
 
 /*getCells
