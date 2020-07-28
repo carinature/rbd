@@ -15,14 +15,14 @@ DecryptedPoint calculateCellMean(tuple<vector<Point>, EncNumber> cellTuple, Keys
 vector<DecryptedPoint>
 calculateMeans(const vector<tuple<vector<Point>, EncNumber> > & cellTuples, KeysServer & keysServer);
 
-vector<DecryptedPoint> getEncryptedKMeans(vector<Point> points, KeysServer & keysServer);
+//vector<DecryptedPoint> getEncryptedKMeans(vector<Point> points, KeysServer & keysServer);
 
 Vec<EncNumber> getDistances(const vector<PointExtended> & clients, const vector<DecryptedPoint> & means);
 
 EncNumber calculateThreshold(Vec<EncNumber> distances, KeysServer & keysServer);
 
 vector<vector<Point> >
-getLeftoverPoints(const vector<Point> & points, const vector<Point> & means, KeysServer & keysServer);
+getLeftoverPoints(const vector<PointExtended> & clients, const vector<DecryptedPoint> & means, KeysServer & keysServer);
 
 void encryptedKmeans();
 
