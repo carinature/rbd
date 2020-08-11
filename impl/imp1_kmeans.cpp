@@ -16,7 +16,14 @@ vector<vector<Point> >
 getLeftoverPoints(const vector<PointExtended> & clients, const vector<DecryptedPoint> & means, KeysServer & keysServer);
 
 int main(int argc, char * argv[]) {
+  cout << " --------- MAIN --------- " << endl;
+  auto t1 = std::chrono::high_resolution_clock::now();
+  auto * ks = new KeysServer();  //   in the future should be FHEPubKey * pubKey = ks->pubKey;
   encryptedKmeans(); //recursive
+  cout << "           OK" << endl;
+  auto t2 = std::chrono::high_resolution_clock::now();
+  auto duration = std::chrono::duration_cast<std::chrono::seconds>(t2 - t1).count();
+  cout << "\n--- duration of MAIN: " << duration; // << endl;
   return 0;
 }
 
@@ -47,7 +54,7 @@ void encryptedKmeans() {
   cout << "\n--- duration: " << duration; // << endl;
   
   /**********   integration to coreset alg    ***********/
-  decAndWriteToFile(leftover, "points", *ks);
+  decAndWriteToFile(chosen, "io/chosen", *ks);  // <-------------
   vector<DecryptedPoint> chosenForCorset = getPointsFromFile("io/chosen");
   vector<vector<double> > dps;
   for (const DecryptedPoint & point : chosenForCorset) {
@@ -57,9 +64,9 @@ void encryptedKmeans() {
   }
   cout << "count: " << dps.size() << endl;
   
-//  decAndWriteToFile(leftover, "points", *ks);
-//  runCoreset(dps, NUM_POINTS, DIM, EPSILON);
-//  encryptedKmeans();
+  runCoreset(dps, NUM_POINTS, DIM, EPSILON);
+  decAndWriteToFile(leftover, "io/points", *ks);  // <-------------
+  encryptedKmeans();
 }
 
 /*getCells
@@ -340,12 +347,12 @@ vector<vector<Point> > getLeftoverPoints(
   retVec.push_back(chosen);
   retVec.push_back(leftover);
   if (DBG) {
-    cout << "distances of size: " << distances.length() << " " << distances << endl;
-    cout << "chosen of size: " << chosen.size() << " " << chosen << endl;
-    cout << "leftover of size: " << leftover.size() << " " << leftover << endl;
-    fcout << "distances of size: " << distances.length() << " " << distances << endl;
-    fcout << "chosen of size: " << chosen.size() << " " << chosen << endl;
-    fcout << "leftover of size: " << leftover.size() << " " << leftover << endl;
+//    cout << "distances of size: " << distances.length() << " " << distances << endl;
+//    cout << "chosen of size: " << chosen.size() << " " << chosen << endl;
+//    cout << "leftover of size: " << leftover.size() << " " << leftover << endl;
+//    fcout << "distances of size: " << distances.length() << " " << distances << endl;
+//    fcout << "chosen of size: " << chosen.size() << " " << chosen << endl;
+//    fcout << "leftover of size: " << leftover.size() << " " << leftover << endl;
     // todo make sure to not use the files as input (the points should be encrypted)
     decAndWriteToFile(chosen, "io/chosen", keysServer);
     decAndWriteToFile(leftover, "io/leftover", keysServer);

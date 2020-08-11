@@ -1,0 +1,26 @@
+cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
+
+## Use -std=c++11 as default.
+set(CMAKE_CXX_STANDARD 11)
+## Disable C++ extensions
+set(CMAKE_CXX_EXTENSIONS OFF)
+## Require full C++ standard
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+project(EpsilonNet
+		LANGUAGES CXX)
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall")
+
+find_package(helib 1.0.0 EXACT REQUIRED)
+
+add_executable( epsNet
+		impl/imp1_kmeans.cpp
+		impl/KeysServer.cpp
+		impl/Point.cpp
+		impl/aux.cpp
+		impl/yonis/run1meancore.cpp
+		impl/properties.h )
+
+target_link_libraries(epsNet helib)
+
+

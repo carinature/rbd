@@ -28,8 +28,8 @@ NTL_CLIENT
 class Skeys;
 //#include "Skeys.h"
 
-//#include "Bit_old.h" //todo add
-using Bit_old = bool; //todo remove
+//#include "Bit.h" //todo add
+using Bit = bool; //todo remove
 using namespace std;
 
 class Point_ {
@@ -64,11 +64,11 @@ public:
     
     friend Point_ operator-=(Point_ &, const Point_ &);
 
-//    friend Point_ operator*(const Point_ &, const Bit_old &);
+//    friend Point_ operator*(const Point_ &, const Bit &);
 //    friend Point_ operator / (const Point_ &p, const Binary &i);
-    friend Bit_old operator>(const Point_ &p1, const Point_ &p2);
+    friend Bit operator>(const Point_ &p1, const Point_ &p2);
     
-    friend Bit_old operator>=(const Point_ &p1, const Point_ &p2); //TODO
+    friend Bit operator>=(const Point_ &p1, const Point_ &p2); //TODO
     Point_ &operator=(const Point_ &p1); //todo consider returning  Point_&
 //    Point_ & operator = ( Point_ p1); //todo consider returning  Point_&
 //    static Point_ dummyPoint_(Skeys &sk);

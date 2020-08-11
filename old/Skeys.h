@@ -5,7 +5,7 @@
 
 //#include "aux.h"
 #include "Point_old.h"
-//#include "Point.h"
+#include "../impl/Point.h"
 
 #include <NTL/BasicThreadPool.h>
 NTL_CLIENT

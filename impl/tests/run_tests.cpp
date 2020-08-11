@@ -19,9 +19,9 @@ int main(int argc, char * argv[]) {
 //    Point_test::test_ctor();
 //    Point_test::test_id();
 //    Point_test::test_decrypt();
-    Point_test::test_sum();
-    Point_test::test_mult();
-    Point_test::test_g_cmp();
+//    Point_test::test_sum();
+//    Point_test::test_mult();
+//    Point_test::test_g_cmp();
 //    Point_test::test_sum_ass();
 //    Point_test::run_all();
     
