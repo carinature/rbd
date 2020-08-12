@@ -118,11 +118,11 @@ with open('../impl/properties.h') as f:
 if '__main__' == __name__:
 
     # points_list = gen_encrypted_points_from_file("points")
-    points_list = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/points_copy")
-    rands = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/random_means")
-    means = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/means")
-    chosen = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/chosen")
-    # leftover   = gen_encrypted_points_from_file("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/leftover")
+    points_list = gen_encrypted_points_from_file(points_copy)
+    rands = gen_encrypted_points_from_file(rand_means_file)
+    means = gen_encrypted_points_from_file(means_file)
+    chosen = gen_encrypted_points_from_file(chosen_file)
+    # leftover   = gen_encrypted_points_from_file(leftover_file)
 
     if numPoints != points_list.size / dim:  # sanity check
         print(numPoints != points_list.size / dim)
@@ -134,13 +134,13 @@ if '__main__' == __name__:
     lacks = (numStrips - int(numPoints * dim % numStrips)) % numStrips
     buffer = np.zeros(lacks, dtype=float)
 
-    fns = "/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/points"
+    fns = points_file
     points = np.loadtxt(fns, dtype=float)
     points = np.append(points, buffer)
     strips = np.resize(points, (numStrips, -1, 2))
     # strips = np.reshape(points, (int(1 / epsilon), -1, 2))
     print("strips\n", strips)
-    fnr = "/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/random_means"
+    fnr = rand_means_file
     bricks = np.loadtxt(fnr, dtype=float)
     # np.append(bricks, buffer)
     # bricks = np.resize(bricks, (numStrips, -1, 2))

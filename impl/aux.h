@@ -13,7 +13,7 @@ void writeToFile(const vector<DecryptedPoint> & points, const string & filename)
 void writeToFile(const vector<Point> & points, const string & filename);
 
 //! retrieves the list of coordinates and converts to a list of points
-vector<DecryptedPoint> getPointsFromFile(const string & filename = "io/points");
+vector<DecryptedPoint> getPointsFromFile(const string & filename = points_file);
 vector<PointExtended> getEncryptedPointsFromFile(KeysServer & keysServer);
 
 //! creates a dictionary of helib's compatr results.

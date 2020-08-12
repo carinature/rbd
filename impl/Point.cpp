@@ -145,6 +145,7 @@ DecryptedPoint Point::decrypt(KeysServer & keysServ) const {
 //        decryptBinaryNums(slots, eep, *(keysServer->secKey), *(pubKey->getContext().ea)); // <---- throes exception - KeysServer of this is NULL!! why??
 //        dp.push_back(slots[0]);
         long decC = keysServ.decrypt(c);
+//        cout << "-------decC: " <<decC << endl;
         dp.push_back(decC);
     }
 //    cout << "The dec Point is: ";

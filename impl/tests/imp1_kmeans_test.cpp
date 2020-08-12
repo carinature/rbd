@@ -25,7 +25,7 @@ void imp1_kmeans_test::getEncryptedKMeansTestNew() {
     
     vector<Point> points(pointsEx.begin(), pointsEx.end());
     vector<DecryptedPoint> means = calculateMeans(getCells(points, *ks), *ks);
-    writeToFile(means, "io/means");
+    writeToFile(means, means_file);
 //    for(int i = 0; i < points.size(); ++i) assert(i==0);
     //todo check points manually and not visually
     
@@ -42,7 +42,7 @@ void imp1_kmeans_test::calculateThresholdTest() {
     auto * ks = new KeysServer();
 //    FHEPubKey * pubKey = ks->pubKey;
     vector<PointExtended> clients = getEncryptedPointsFromFile(*ks);
-    vector<DecryptedPoint> means = getPointsFromFile("io/means");
+    vector<DecryptedPoint> means = getPointsFromFile(means_file);
     Vec<EncNumber> distances = getDistances(clients, means);
     long threshold = ks->decrypt(calculateThreshold(distances, *ks));
     cout << "The threshold is: " << threshold << endl;
@@ -65,7 +65,7 @@ void imp1_kmeans_test::getLeftoverPointsTest() {
     assert(clients.size() == NUM_POINTS); //sanity check
     vector<Point> points(clients.begin(), clients.end());
     
-//    vector<DecryptedPoint> means = getPointsFromFile("io/means"); // requires reloading of cmake project
+//    vector<DecryptedPoint> means = getPointsFromFile(means_file); // requires reloading of cmake project
     vector<DecryptedPoint> means = calculateMeans(getCells(points, *ks), *ks);
     cout << "size of means: " << means.size() << ": " << means << endl;
     
@@ -135,7 +135,7 @@ void imp1_kmeans_test::run_all() {
 ////    cout << "distances of size: " << distances.size() << " " << distances << endl;
 //    cout << "chosen of size: " << chosen.size() << " " << chosen << endl;
 //    cout << "leftover of size: " << leftover.size() << " " << leftover << endl;
-//    if (DBG) decAndWriteToFile(chosen, "io/chosen", keysServer);
+//    if (DBG) decAndWriteToFile(chosen, chosen_file, keysServer);
 ////    return leftover;
 //    return retVec;
 //}

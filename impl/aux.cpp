@@ -25,36 +25,42 @@ using namespace std;
 /** Writing points to a specified.
  *      The points are first decrypted and returned into a double form (from long) **/
 //*  todo consider changing KeysServer to PubKey
-void decAndWriteToFile(const vector<Point> & points, const string & filename,
-                       KeysServer & keysServer) {  // fixme PubKey instead of KeysServ
-    vector<DecryptedPoint> decPoints; // = sk.decryptPointsByCA(points);
-    for(const Point & p : points) decPoints.push_back(p.decrypt(keysServer));
+void decAndWriteToFile(const vector<Point> &points, const string &filename,  KeysServer &keysServer) {  // <----------
+    vector<DecryptedPoint> decPoints;
+    decPoints.reserve(points.size());
+    for (const Point &p : points) decPoints.push_back(p.decrypt(keysServer));
     ofstream outputFileStream(filename);
-    for(const DecryptedPoint & p : decPoints) {
-        for(long coor : p) {
-//            cout << "in write coor: " << coor << endl;
-            outputFileStream << coor / CONVERSION_FACTOR << " ";
+    stringstream ss;
+    long sum;
+    for (const DecryptedPoint &p : decPoints) {
+        sum = 0;
+        ss.str(std::string());
+        for (long coor : p) {
+            sum += coor;
+            ss << coor / CONVERSION_FACTOR << " ";
         }
-        outputFileStream << '\n';
+        if (0 < sum) {
+            outputFileStream << ss.rdbuf() << endl;
+        }
     }
 //    outputFileStream.flush();
     outputFileStream.close();
 }
 
-void writeToFile(const vector<DecryptedPoint> & points, const string & filename) {  // fixme PubKey instead of KeysServ
+void writeToFile(const vector<DecryptedPoint> &points, const string &filename) {  // fixme PubKey instead of KeysServ
     ofstream outputFileStream(filename);
-    for(const DecryptedPoint & p : points) {
-        for(long coor : p) outputFileStream << (double)(coor / CONVERSION_FACTOR) << " ";
+    for (const DecryptedPoint &p : points) {
+        for (long coor : p) outputFileStream << (double) (coor / CONVERSION_FACTOR) << " ";
         outputFileStream << '\n';
     }
     outputFileStream.close();
 }
 
-void writeToFile(const vector<Point> & points, const string & filename) {  // fixme PubKey instead of KeysServ
+void writeToFile(const vector<Point> &points, const string &filename) {  // fixme PubKey instead of KeysServ
     cout << "write enc points to file" << endl;
     ofstream outputFileStream(filename);
-    for(const Point & p : points) {
-        for(EncNumber coor : p.eCoordinates) outputFileStream << coor  << "\n\n---\n\n";
+    for (const Point &p : points) {
+        for (EncNumber coor : p.eCoordinates) outputFileStream << coor << "\n\n---\n\n";
         outputFileStream << '\n';
     }
     outputFileStream.close();
@@ -62,15 +68,15 @@ void writeToFile(const vector<Point> & points, const string & filename) {  // fi
 
 /** Retrieve points from a specified file. Points are palintext.
  *      If the file is not specified uses default file 'points' **/
-vector<DecryptedPoint> getPointsFromFile(const string & filename) {
+vector<DecryptedPoint> getPointsFromFile(const string &filename) {
     ifstream inputFileStream(filename);
     string line;
     string pa[DIM];
     vector<DecryptedPoint> points;
-    while(getline(inputFileStream, line)) {
+    while (getline(inputFileStream, line)) {
         istringstream lineStream(line);
         DecryptedPoint point;
-        for(auto & coor : pa) {
+        for (auto &coor : pa) {
             getline(lineStream, coor, ' ');
 //            cout <<" CONVERSION_FACTOR * stod(coor) " << CONVERSION_FACTOR * stod(coor) << endl;
 //            cout <<" stod(coor) " << stod(coor) << endl;
@@ -82,12 +88,12 @@ vector<DecryptedPoint> getPointsFromFile(const string & filename) {
     return points;
 }
 
-vector<PointExtended> getEncryptedPointsFromFile(KeysServer & keysServer) { // fixme PubKey instead of KeysServ
+vector<PointExtended> getEncryptedPointsFromFile(KeysServer &keysServer) { // fixme PubKey instead of KeysServ
     vector<DecryptedPoint> points = getPointsFromFile();
     vector<PointExtended> encPoints;
-    for(DecryptedPoint p : points) {
+    for (DecryptedPoint p : points) {
         vector<long> coorVec; // = vector<Binary>();
-        for(int coor = 0; coor < DIM; ++coor) {
+        for (int coor = 0; coor < DIM; ++coor) {
             coorVec.emplace_back(p[coor]);
         }
         PointExtended point = PointExtended(coorVec, &keysServer);
@@ -97,7 +103,7 @@ vector<PointExtended> getEncryptedPointsFromFile(KeysServer & keysServer) { // f
     return encPoints;
 }
 
-Bit cmp(const Point & a, const Point & b) {
+Bit cmp(const Point &a, const Point &b) {
     //todo consider <= over < (the later neve allows any points) and how to implement it with helib
 //    return a >= b;
     return a > b;
@@ -105,11 +111,11 @@ Bit cmp(const Point & a, const Point & b) {
 }
 
 map<Point, map<Point, vector<Bit>, cmpPoints>, cmpPoints>
-createCmpDict(const vector<Point> & randomPoints, const vector<Point> & stripPoints) {
+createCmpDict(const vector<Point> &randomPoints, const vector<Point> &stripPoints) {
     map<Point, map<Point, vector<Bit>, cmpPoints>, cmpPoints> cmpDict;
-    for(const Point & p : randomPoints) {
+    for (const Point &p : randomPoints) {
         map<Point, vector<Bit>, cmpPoints> cmpDictMini; //, cmpDictMini2;
-        for(const Point & pp : stripPoints) {
+        for (const Point &pp : stripPoints) {
             cmpDict[p][pp].push_back(p > pp); // used to be cmpDictMini[pp].push_back(p > pp); and worked
             cmpDict[pp][p].push_back(pp > p);
         }
@@ -119,9 +125,9 @@ createCmpDict(const vector<Point> & randomPoints, const vector<Point> & stripPoi
 
 
 
-EncNumber sumEncNumVec(Vec<EncNumber> & vec, long factor) {
+EncNumber sumEncNumVec(Vec<EncNumber> &vec, long factor) {
     EncNumber sum;
-    const CtPtrs & product = CtPtrs_VecCt(sum); //, & productY = CtPtrs_VecCt(sumY);
+    const CtPtrs &product = CtPtrs_VecCt(sum); //, & productY = CtPtrs_VecCt(sumY);
     CtPtrMat_VecCt nums(vec); // Wrapper around numbers
 //        int nBits = (outSize>0 && outSize<2*BIT_SIZE)? outSize : (2*BIT_SIZE);
     //fixme - potential for BUG, sum.bitsize can be bigger than BIT_SIZE

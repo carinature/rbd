@@ -115,7 +115,7 @@ Ctxt KeysServer::randomBit() {
 }
 
 EncNumber KeysServer::calculateAvg(const EncNumber & sum, const EncNumber & size) {
-    if (DBG) cout << "   --- calculateAvg ---   ";
+//    if (DBG) cout << "   --- calculateAvg ---   ";
     long avg = decrypt(sum) / decrypt(size);
     NTL::Vec<Ctxt> encVal;
     Ctxt mu(*pubKey);
@@ -128,10 +128,10 @@ EncNumber KeysServer::calculateAvg(const EncNumber & sum, const EncNumber & size
 long KeysServer::calculateAvg(const EncNumber & sum, const long size) {
     long dSum = decrypt(sum);
     if (DBG) {
-        cout << "   --- calculateAvg ---   ";
-        cout << "dSum " << dSum << "  size " << size << endl;
-        fcout << "   --- calculateAvg ---   ";
-        fcout << "dSum " << dSum << "  size " << size << endl;
+//        cout << "   --- calculateAvg ---   ";
+//        cout << "dSum " << dSum << "  size " << size << endl;
+//        fcout << "   --- calculateAvg ---   ";
+//        fcout << "dSum " << dSum << "  size " << size << endl;
     }
     int amount = size;
     if (0 == size) ++amount;//fixme
@@ -142,10 +142,10 @@ long KeysServer::calculateAvg(const EncNumber & sum, const long size) {
 DecryptedPoint KeysServer::calculateAvgPoint(const Point & p, EncNumber size) {
     const long amount = decrypt(std::move(size)); // + 1;
     if (DBG) {
-        cout << "   --- calculateAvgPoint ---   ";
-        cout << "calculateAvgPoint points amount " << amount << endl;
-        fcout << "   --- calculateAvgPoint ---   ";
-        fcout << "calculateAvgPoint points amount " << amount << endl;
+//        cout << "   --- calculateAvgPoint ---   ";
+//        cout << "calculateAvgPoint points amount " << amount << endl;
+//        fcout << "   --- calculateAvgPoint ---   ";
+//        fcout << "calculateAvgPoint points amount " << amount << endl;
     }
     vector<long> coorVector;
     for (const EncNumber & coor : p.eCoordinates)

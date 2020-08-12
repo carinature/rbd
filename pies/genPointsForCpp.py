@@ -5,7 +5,11 @@ dim = 2  # dimensions
 numPoints = 0
 rangeLim = 0
 bottomLim = 0
-with open('../impl/properties.h') as f:
+
+file = None
+file_copy = None
+
+with open('impl/properties.h') as f:
     datafile = f.readlines()
     for line in datafile:
         if 'NUM_POINTS' in line:
@@ -16,13 +20,15 @@ with open('../impl/properties.h') as f:
             rangeLim = int(line.split(' ')[2])
         if 'Bottom_LIM' in line:
             bottomLim = int(line.split(' ')[2])
+        if 'points_file' in line:
+            file = line.split(' ')[2].rstrip().replace('"', '')
+        if 'points_copy' in line:
+            file_copy = line.split(' ')[2].rstrip().replace('"', '')
+
 
 pointsList = []
 
-# f = open("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/points", "w")
-file = "/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/points"
-filecopy = "/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/io/points_copy"
-
+# f = open(points_file, "w")
 
 # for i in range(numPoints):
 # 	tempTup = [round(10*random(), 2) for _ in range(d)]
@@ -63,9 +69,9 @@ def create_points_file(points):
         for point in points:
             f.write(f' '.join(map(str, point)))
             f.write('\n')
-    # for integration with yoins code
+    # for integration with yonis code
     from shutil import copyfile
-    copyfile(file, filecopy)
+    copyfile(file, file_copy)
 
 
 create_points_file(generate_points())
