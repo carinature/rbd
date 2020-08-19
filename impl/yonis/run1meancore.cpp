@@ -17,15 +17,11 @@ vector<vector<double>> & runCoreset(vector<vector<double> > & P, int n, int d, d
     toCSV(P, n, d, "points.csv");
 //    string commandLS ="ls -l */*"; system(commandLS.c_str());
     string command =
-//            "python -m simulator points.csv " + to_string(eps) + " " + to_string(alpha) + " " + to_string(delta) +
-//            "cd /home/fares/CLionProjects/rbd && python3 -m impl.yonis.simulator points.csv " + to_string(eps) + " " + to_string(alpha) + " " + to_string(delta) +
-//            "python3 -m impl.yonis.simulator points.csv " + to_string(eps) + " " + to_string(alpha) + " " + to_string(delta) +
             "/home/fares/.virtualenvs/kmeans/bin/python -m impl.yonis.simulator points.csv " + to_string(eps) + " " + to_string(alpha) + " " + to_string(delta) +
-//            "python3 -m simulator points.csv " + to_string(eps) + " " + to_string(alpha) + " " + to_string(delta) +
             " -s " + to_string(security) + (isPrivate ? "" : " -n") + " -f coreset.csv";
     system(command.c_str());
-    string commandl ="ls -l "; system(commandl.c_str());
-    string commandl2 ="pwd "; system(commandl2.c_str());
+//    string commandl ="ls -l "; system(commandl.c_str());
+//    string commandl2 ="pwd "; system(commandl2.c_str());
     return parseCSV("coreset.csv");
 }
 

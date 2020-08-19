@@ -9,11 +9,17 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project(EpsilonNet
 		LANGUAGES CXX)
-set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall")
+
+set(DCMAKE_BUILD_TYPE "Debug")
+
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall ")
+#set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall -DCMAKE_BUILD_TYPE=Debug")
+
 
 find_package(helib 1.0.0 EXACT REQUIRED)
 
-add_executable( epsNet
+#add_executable( epsNet
+add_executable( epsNetD
 		impl/imp1_kmeans.cpp
 		impl/KeysServer.cpp
 		impl/Point.cpp
@@ -21,8 +27,10 @@ add_executable( epsNet
 		impl/yonis/run1meancore.cpp
 		impl/properties.h )
 
-target_link_libraries(epsNet helib)
+#target_link_libraries(epsNet helib)
+target_link_libraries(epsNetD helib)
 
+#-DCMAKE_BUILD_TYPE=Debug
 #add_executable(testing
 #		#src
 #		impl/imp1_kmeans.cpp

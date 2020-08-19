@@ -1,2258 +1,1262 @@
-point1: [2 0] point2: [2 0]  dist: 0
-point1: [2 0] point2: [2 0]  dist: 0
-point1: [2 0] point2: [10 3]  dist: 146
-point1: [2 0] point2: [13 21]  dist: 1124
-point1: [2 0] point2: [29 92]  dist: 18386
-point1: [2 0] point2: [42 25]  dist: 4450
-point1: [2 0] point2: [39 71]  dist: 12820
-point1: [2 0] point2: [64 18]  dist: 8336
-point1: [2 0] point2: [59 44]  dist: 10370
-point1: [2 0] point2: [63 59]  dist: 14404
-point1: [2 0] point2: [88 23]  dist: 15850
-point1: [2 0] point2: [89 56]  dist: 21410
-point1: [2 0] point2: [78 3]  dist: 11570
-dist from [2 0] to [2 0] is: 0
-point1: [2 7] point2: [2 0]  dist: 98
-point1: [2 7] point2: [2 0]  dist: 98
-point1: [2 7] point2: [10 3]  dist: 160
-point1: [2 7] point2: [13 21]  dist: 634
-point1: [2 7] point2: [29 92]  dist: 15908
-point1: [2 7] point2: [42 25]  dist: 3848
-point1: [2 7] point2: [39 71]  dist: 10930
-point1: [2 7] point2: [64 18]  dist: 7930
-point1: [2 7] point2: [59 44]  dist: 9236
-point1: [2 7] point2: [63 59]  dist: 12850
-point1: [2 7] point2: [88 23]  dist: 15304
-point1: [2 7] point2: [89 56]  dist: 19940
-point1: [2 7] point2: [78 3]  dist: 11584
-dist from [2 7] to [2 0] is: 9
-point1: [2 33] point2: [2 0]  dist: 2178
-point1: [2 33] point2: [2 0]  dist: 2178
-point1: [2 33] point2: [10 3]  dist: 1928
-point1: [2 33] point2: [13 21]  dist: 530
-point1: [2 33] point2: [29 92]  dist: 8420
-point1: [2 33] point2: [42 25]  dist: 3328
-point1: [2 33] point2: [39 71]  dist: 5626
-point1: [2 33] point2: [64 18]  dist: 8138
-point1: [2 33] point2: [59 44]  dist: 6740
-point1: [2 33] point2: [63 59]  dist: 8794
-point1: [2 33] point2: [88 23]  dist: 14992
-point1: [2 33] point2: [89 56]  dist: 16196
-point1: [2 33] point2: [78 3]  dist: 13352
-dist from [2 33] to [13 21] is: 23
-point1: [2 80] point2: [2 0]  dist: 12800
-point1: [2 80] point2: [2 0]  dist: 12800
-point1: [2 80   --- calculateAvg ---   dSum 3111  size 160
-oint2: [13 21]  dist: 7204
-point1: [2 80] point2: [29 92]  dist: 1746
-point1: [2 80] point2: [42 25]  dist: 9250
-point1: [2 80] point2: [39 71]  dist: 2900
-point1: [2 80] point2: [64 18]  dist: 15376
-point1: [2 80] point2: [59 44]  dist: 9090
-point1: [2 80] point2: [63 59]  dist: 8324
-point1: [2 80] point2: [88 23]  dist: 21290
-point1: [2 80] point2: [89 56]  dist: 16290
-point1: [2 80] point2: [78 3]  dist: 23410
-dist from [2 80] to [29 92] is: 41
-point1: [2 89] point2: [2 0]  dist: 15842
-point1: [2 89] point2: [2 0]  dist: 15842
-point1: [2 89] point2: [10 3]  dist: 14920
-point1: [2 89] point2: [13 21]  dist: 9490
-point1: [2 89] point2: [29 92]  dist: 1476
-point1: [2 89] point2: [42 25]  dist: 11392
-point1: [2 89] point2: [39 71]  dist: 3386
-point1: [2 89] point2: [64 18]  dist: 17770
-point1: [2 89] point2: [59 44]  dist: 10548
-point1: [2 89] point2: [63 59]  dist: 9242
-point1: [2 89] point2: [88 23]  dist: 23504
-point1: [2 89] point2: [89 56]  dist: 17316
-point1: [2 89] point2: [78 3]  dist: 26344
-dist from [2 89] to [29 92] is: 38
-point1: [2 89] point2: [2 0]  dist: 15842
-point1: [2 89] point2: [2 0]  dist: 15842
-point1: [2 89] point2: [10 3]  dist: 14920
-point1: [2 89] point2: [13 21]  dist: 9490
-point1: [2 89] point2: [29 92]  dist: 1476
-point1: [2 89] point2: [42 25]  dist: 11392
-point1: [2 89] point2: [39 71]  dist: 3386
-point1: [2 89] point2: [64 18]  dist: 17770
-point1: [2 89] point2: [59 44]  dist: 10548
-point1: [2 89] point2: [63 59]  dist: 9242
-point1: [2 89] point2: [88 23]  dist: 23504
-point1: [2 89] point2: [89 56]  dist: 17316
-point1: [2 89] point2: [78 3]  dist: 26344
-dist from [2 89] to [29 92] is: 38
-point1: [5 41] point2: [2 0]  dist: 3380
-point1: [5 41] point2: [2 0]  dist: 3380
-point1: [5 41] point2: [10 3]  dist: 2938
-point1: [5 41] point2: [13 21]  dist: 928
-point1: [5 41] point2: [29 92]  dist: 6354
-point1: [5 41] point2: [42 25]  dist: 3250
-point1: [5 41] point2: [39 71]  dist: 4112
-point1: [5 41] point2: [64 18]  dist: 8020
-point1: [5 41] point2: [59 44]  dist: 5850
-point1: [5 41] point2: [63 59]  dist: 7376
-point1: [5 41] point2: [88 23]  dist: 14426
-point1: [5 41] point2: [89 56]  dist: 14562
-point1: [5 41] point2: [78 3]  dist: 13546
-dist from [5 41] to [13 21] is: 30
-point1: [5 49] point2: [2 0]  dist: 4820
-point1: [5 49] point2: [2 0]  dist: 4820
-point1: [5 49] point2: [10 3]  dist: 4282
-point1: [5 49] point2: [13 21]  dist: 1696
-point1: [5 49] point2: [29 92]  dist: 4850
-point1: [5 49] point2: [42 25]  dist: 3890
-point1: [5 49] point2: [39 71]  dist: 3280
-point1: [5 49] point2: [64 18]  dist: 8884
-point1: [5 49] point2: [59 44]  dist: 5882
-point1: [5 49] point2: [63 59]  dist: 6928
-point1: [5 49] point2: [88 23]  dist: 15130
-point1: [5 49] point2: [89 56]  dist: 14210
-point1: [5 49] point2: [78 3]  dist: 14890
-dist from [5 49] to [13 21] is: 41
-point1: [6 17] point2: [2 0]  dist: 610
-point1: [6 17] point2: [2 0]  dist: 610
-point1: [6 17] point2: [10 3]  dist: 424
-point1: [6 17] point2: [13 21]  dist: 130
-point1: [6 17] point2: [29 92]  dist: 12308
-point1: [6 17] point2: [42 25]  dist: 2720
-point1: [6 17] point2: [39 71]  dist: 8010
-point1: [6 17] point2: [64 18]  dist: 6730
-point1: [6 17] point2: [59 44]  dist: 7076
-point1: [6 17] point2: [63 59]  dist: 10026
-point1: [6 17] point2: [88 23]  dist: 13520
-point1: [6 17] point2: [89 56]  dist: 16820
-point1: [6 17] point2: [78 3]  dist: 10760
-dist from [6 17] to [13 21] is: 11
-point1: [7 23] point2: [2 0]  dist: 1108
-point1: [7 23] point2: [2 0]  dist: 1108
-point1: [7 23] point2: [10 3]  dist: 818
-point1: [7 23] point2: [13 21]  dist: 80
-point1: [7 23] point2: [29 92]  dist: 10490
-point1: [7 23] point2: [42 25]  dist: 2458
-point1: [7 23] point2: [39 71]  dist: 6656
-point1: [7 23] point2: [64 18]  dist: 6548
-point1: [7 23] point2: [59 44]  dist: 6290
-point1: [7 23] point2: [63 59]  dist: 8864
-point1: [7 23] point2: [88 23]  dist: 13122
-point1: [7 23] point2: [89 56]  dist: 15626
-point1: [7 23] point2: [78 3]  dist: 10882
-dist from [7 23] to [13 21] is: 8
-point1: [7 43] point2: [2 0]  dist: 3748
-point1: [7 43] point2: [2 0]  dist: 3748
-point1: [7 43] point2: [10 3]  dist: 3218
-point1: [7 43] point2: [13 21]  dist: 1040
-point1: [7 43] point2: [29 92]  dist: 5770
-point1: [7 43] point2: [42 25]  dist: 3098
-point1: [7 43] point2: [39 71]  dist: 3616
-point1: [7 43] point2: [64 18]  dist: 7748
-point1: [7 43] point2: [59 44]  dist: 5410
-point1: [7 43] point2: [63 59]  dist: 6784
-point1: [7 43] point2: [88 23]  dist: 13922
-point1: [7 43] point2: [89 56]  dist: 13786
-point1: [7 43] point2: [78 3]  dist: 13282
-dist from [7 43] to [13 21] is: 32
-point1: [7 78] point2: [2 0]  dist: 12218
-point1: [7 78] point2: [2 0]  dist: 12218
-point1: [7 78] point2: [10 3]  dist: 11268
-point1: [7 78] point2: [13 21]  dist: 6570
-point1: [7 78] point2: [29 92]  dist: 1360
-point1: [7 78] point2: [42 25]  dist: 8068
-point1: [7 78] point2: [39 71]  dist: 2146
-point1: [7 78] point2: [64 18]  dist: 13698
-point1: [7 78] point2: [59 44]  dist: 7720
-point1: [7 78] point2: [63 59]  dist: 6994
-point1: [7 78] point2: [88 23]  dist: 19172
-point1: [7 78] point2: [89 56]  dist: 14416
-point1: [7 78] point2: [78 3]  dist: 21332
-dist from [7 78] to [29 92] is: 36
-point1: [8 2] point2: [2 0]  dist: 80
-point1: [8 2] point2: [2 0]  dist: 80
-point1: [8 2] point2: [10 3]  dist: 10
-point1: [8 2] point2: [13 21]  dist: 772
-point1: [8 2] point2: [29 92]  dist: 17082
-point1: [8 2] point2: [42 25]  dist: 3370
-point1: [8 2] point2: [39 71]  dist: 11444
-point1: [8 2] point2: [64 18]  dist: 6784
-point1: [8 2] point2: [59 44]  dist: 8730
-point1: [8 2] point2: [63 59]  dist: 12548
-point1: [8 2] point2: [88 23]  dist: 13682
-point1: [8 2] point2: [89 56]  dist: 18954
-point1: [8 2] point2: [78 3]  dist: 9802
-dist from [8 2] to [10 3] is: 3
-point1: [9 62] point2: [2 0]  dist: 7786
-point1: [9 62] point2: [2 0]  dist: 7786
-point1: [9 62] point2: [10 3]  dist: 6964
-point1: [9 62] point2: [13 21]  dist: 3394
-point1: [9 62] point2: [29 92]  dist: 2600
-point1: [9 62] point2: [42 25]  dist: 4916
-point1: [9 62] point2: [39 71]  dist: 1962
-point1: [9 62] point2: [64 18]  dist: 9922
-point1: [9 62] point2: [59 44]  dist: 5648
-point1: [9 62] point2: [63 59]  dist: 5850
-point1: [9 62] point2: [88 23]  dist: 15524
-point1: [9 62] point2: [89 56]  dist: 12872
-point1: [9 62] point2: [78 3]  dist: 16484
-dist from [9 62] to [39 71] is: 44
-point1: [10 17] point2: [2 0]  dist: 706
-point1: [10 17] point2: [2 0]  dist: 706
-point1: [10 17] point2: [10 3]  dist: 392
-point1: [10 17] point2: [13 21]  dist: 50
-point1: [10 17] point2: [29 92]  dist: 11972
-point1: [10 17] point2: [42 25]  dist: 2176
-point1: [10 17] point2: [39 71]  dist: 7514
-point1: [10 17] point2: [64 18]  dist: 5834
-point1: [10 17] point2: [59 44]  dist: 6260
-point1: [10 17] point2: [63 59]  dist: 9146
-point1: [10 17] point2: [88 23]  dist: 12240
-point1: [10 17] point2: [89 56]  dist: 15524
-point1: [10 17] point2: [78 3]  dist: 9640
-dist from [10 17] to [13 21] is: 7
-point1: [10 63] point2: [2 0]  dist: 8066
-point1: [10 63] point2: [2 0]  dist: 8066
-point1: [10 63] point2: [10 3]  dist: 7200
-point1: [10 63] point2: [13 21]  dist: 3546
-point1: [10 63] point2: [29 92]  dist: 2404
-point1: [10 63] point2: [42 25]  dist: 4936
-point1: [10 63] point2: [39 71]  dist: 1810
-point1: [10 63] point2: [64 18]  dist: 9882
-point1: [10 63] point2: [59 44]  dist: 5524
-point1: [10 63] point2: [63 59]  dist: 5650
-point1: [10 63] point2: [88 23]  dist: 15368
-point1: [10 63] point2: [89 56]  dist: 12580
-point1: [10 63] point2: [78 3]  dist: 16448
-dist from [10 63] to [39 71] is: 42
-point1: [11 73] point2: [2 0]  dist: 10820
-point1: [11 73] point2: [2 0]  dist: 10820
-point1: [11 73] point2: [10 3]  dist: 9802
-point1: [11 73] point2: [13 21]  dist: 5416
-point1: [11 73] point2: [29 92]  dist: 1370
-point1: [11 73] point2: [42 25]  dist: 6530
-point1: [11 73] point2: [39 71]  dist: 1576
-point1: [11 73] point2: [64 18]  dist: 11668
-point1: [11 73] point2: [59 44]  dist: 6290
-point1: [11 73] point2: [63 59]  dist: 5800
-point1: [11 73] point2: [88 23]  dist: 16858
-point1: [11 73] point2: [89 56]  dist: 12746
-point1: [11 73] point2: [78 3]  dist: 18778
-dist from [11 73] to [29 92] is: 37
-point1: [11 93] point2: [2 0]  dist: 17460
-point1: [11 93] point2: [2 0]  dist: 17460
-point1: [11 93] point2: [10 3]  dist: 16202
-point1: [11 93] point2: [13 21]  dist: 10376
-point1: [11 93] point2: [29 92]  dist: 650
-point1: [11 93] point2: [42 25]  dist: 11170
-point1: [11 93] point2: [39 71]  dist: 2536
-point1: [11 93] point2: [64 18]  dist: 16868
-point1: [11 93] point2: [59 44]  dist: 9410
-point1: [11 93] point2: [63 59]  dist: 7720
-point1: [11 93] point2: [88 23]  dist: 21658
-point1: [11 93] point2: [89 56]  dist: 14906
-point1: [11 93] point2: [78 3]  dist: 25178
-dist from [11 93] to [29 92] is: 25
-point1: [12 44] point2: [2 0]  dist: 4072
-point1: [12 44] point2: [2 0]  dist: 4072
-point1: [12 44] point2: [10 3]  dist: 3370
-point1: [12 44] point2: [13 21]  dist: 1060
-point1: [12 44] point2: [29 92]  dist: 5186
-point1: [12 44] point2: [42 25]  dist: 2522
-point1: [12 44] point2: [39 71]  dist: 2916
-point1: [12 44] point2: [64 18]  dist: 6760
-point1: [12 44] point2: [59 44]  dist: 4418
-point1: [12 44] point2: [63 59]  dist: 5652
-point1: [12 44] point2: [88 23]  dist: 12434
-point1: [12 44] point2: [89 56]  dist: 12146
-point1: [12 44] point2: [78 3]  dist: 12074
-dist from [12 44] to [13 21] is: 32
-point1: [12 60] point2: [2 0]  dist: 7400
-point1: [12 60] point2: [2 0]  dist: 7400
-point1: [12 60] point2: [10 3]  dist: 6506
-point1: [12 60] point2: [13 21]  dist: 3044
-point1: [12 60] point2: [29 92]  dist: 2626
-point1: [12 60] point2: [42 25]  dist: 4250
-point1: [12 60] point2: [39 71]  dist: 1700
-point1: [12 60] point2: [64 18]  dist: 8936
-point1: [12 60] point2: [59 44]  dist: 4930
-point1: [12 60] point2: [63 59]  dist: 5204
-point1: [12 60] point2: [88 23]  dist: 14290
-point1: [12 60] point2: [89 56]  dist: 11890
-point1: [12 60] point2: [78 3]  dist: 15210
-dist from [12 60] to [39 71] is: 41
-point1: [12 67] point2: [2 0]  dist: 9178
-point1: [12 67] point2: [2 0]  dist: 9178
-point1: [12 67] point2: [10 3]  dist: 8200
-point1: [12 67] point2: [13 21]  dist: 4234
-point1: [12 67] point2: [29 92]  dist: 1828
-point1: [12 67] point2: [42 25]  dist: 5328
-point1: [12 67] point2: [39 71]  dist: 1490
-point1: [12 67] point2: [64 18]  dist: 10210
-point1: [12 67] point2: [59 44]  dist: 5476
-point1: [12 67] point2: [63 59]  dist: 5330
-point1: [12 67] point2: [88 23]  dist: 15424
-point1: [12 67] point2: [89 56]  dist: 12100
-point1: [12 67] point2: [78 3]  dist: 16904
-dist from [12 67] to [39 71] is: 38
-point1: [16 4] point2: [2 0]  dist: 424
-point1: [16 4] point2: [2 0]  dist: 424
-point1: [16 4] point2: [10 3]  dist: 74
-point1: [16 4] point2: [13 21]  dist: 596
-point1: [16 4] point2: [29 92]  dist: 15826
-point1: [16 4] point2: [42 25]  dist: 2234
-point1: [16 4] point2: [39 71]  dist: 10036
-point1: [16 4] point2: [64 18]  dist: 5000
-point1: [16 4] point2: [59 44]  dist: 6898
-point1: [16 4] point2: [63 59]  dist: 10468
-point1: [16 4] point2: [88 23]  dist: 11090
-point1: [16 4] point2: [89 56]  dist: 16066
-point1: [16 4] point2: [78 3]  dist: 7690
-dist from [16 4] to [10 3] is: 8
-point1: [16 90] point2: [2 0]  dist: 16592
-point1: [16 90] point2: [2 0]  dist: 16592
-point1: [16 90] point2: [10 3]  dist: 15210
-point1: [16 90] point2: [13 21]  dist: 9540
-point1: [16 90] point2: [29 92]  dist: 346
-point1: [16 90] point2: [42 25]  dist: 9802
-point1: [16 90] point2: [39 71]  dist: 1780
-point1: [16 90] point2: [64 18]  dist: 14976
-point1: [16 90] point2: [59 44]  dist: 7930
-point1: [16 90] point2: [63 59]  dist: 6340
-point1: [16 90] point2: [88 23]  dist: 19346
-point1: [16 90] point2: [89 56]  dist: 12970
-point1: [16 90] point2: [78 3]  dist: 22826
-dist from [16 90] to [29 92] is: 18
-point1: [17 64] point2: [2 0]  dist: 8642
-point1: [17 64] point2: [2 0]  dist: 8642
-point1: [17 64] point2: [10 3]  dist: 7540
-point1: [17 64] point2: [13 21]  dist: 3730
-point1: [17 64] point2: [29 92]  dist: 1856
-point1: [17 64] point2: [42 25]  dist: 4292
-point1: [17 64] point2: [39 71]  dist: 1066
-point1: [17 64] point2: [64 18]  dist: 8650
-point1: [17 64] point2: [59 44]  dist: 4328
-point1: [17 64] point2: [63 59]  dist: 4282
-point1: [17 64] point2: [88 23]  dist: 13444
-point1: [17 64] point2: [89 56]  dist: 10496
-point1: [17 64] point2: [78 3]  dist: 14884
-dist from [17 64] to [39 71] is: 32
-point1: [18 24] point2: [2 0]  dist: 1664
-point1: [18 24] point2: [2 0]  dist: 1664
-point1: [18 24] point2: [10 3]  dist: 1010
-point1: [18 24] point2: [13 21]  dist: 68
-point1: [18 24] point2: [29 92]  dist: 9490
-point1: [18 24] point2: [42 25]  dist: 1154
-point1: [18 24] point2: [39 71]  dist: 5300
-point1: [18 24] point2: [64 18]  dist: 4304
-point1: [18 24] point2: [59 44]  dist: 4162
-point1: [18 24] point2: [63 59]  dist: 6500
-point1: [18 24] point2: [88 23]  dist: 9802
-point1: [18 24] point2: [89 56]  dist: 12130
-point1: [18 24] point2: [78 3]  dist: 8082
-dist from [18 24] to [13 21] is: 8
-point1: [19 17] point2: [2 0]  dist: 1156
-point1: [19 17] point2: [2 0]  dist: 1156
-point1: [19 17] point2: [10 3]  dist: 554
-point1: [19 17] point2: [13 21]  dist: 104
-point1: [19 17] point2: [29 92]  dist: 11450
-point1: [19 17] point2: [42 25]  dist: 1186
-point1: [19 17] point2: [39 71]  dist: 6632
-point1: [19 17] point2: [64 18]  dist: 4052
-point1: [19 17] point2: [59 44]  dist: 4658
-point1: [19 17] point2: [63 59]  dist: 7400
-point1: [19 17] point2: [88 23]  dist: 9594
-point1: [19 17] point2: [89 56]  dist: 12842
-point1: [19 17] point2: [78 3]  dist: 7354
-dist from [19 17] to [13 21] is: 10
-point1: [19 17] point2: [2 0]  dist: 1156
-point1: [19 17] point2: [2 0]  dist: 1156
-point1: [19 17] point2: [10 3]  dist: 554
-point1: [19 17] point2: [13 21]  dist: 104
-point1: [19 17] point2: [29 92]  dist: 11450
-point1: [19 17] point2: [42 25]  dist: 1186
-point1: [19 17] point2: [39 71]  dist: 6632
-point1: [19 17] point2: [64 18]  dist: 4052
-point1: [19 17] point2: [59 44]  dist: 4658
-point1: [19 17] point2: [63 59]  dist: 7400
-point1: [19 17] point2: [88 23]  dist: 9594
-point1: [19 17] point2: [89 56]  dist: 12842
-point1: [19 17] point2: [78 3]  dist: 7354
-dist from [19 17] to [13 21] is: 10
-point1: [19 26] point2: [2 0]  dist: 1930
-point1: [19 26] point2: [2 0]  dist: 1930
-point1: [19 26] point2: [10 3]  dist: 1220
-point1: [19 26] point2: [13 21]  dist: 122
-point1: [19 26] point2: [29 92]  dist: 8912
-point1: [19 26] point2: [42 25]  dist: 1060
-point1: [19 26] point2: [39 71]  dist: 4850
-point1: [19 26] point2: [64 18]  dist: 4178
-point1: [19 26] point2: [59 44]  dist: 3848
-point1: [19 26] point2: [63 59]  dist: 6050
-point1: [19 26] point2: [88 23]  dist: 9540
-point1: [19 26] point2: [89 56]  dist: 11600
-point1: [19 26] point2: [78 3]  dist: 8020
-dist from [19 26] to [13 21] is: 11
-point1: [19 73] point2: [2 0]  dist: 11236
-point1: [19 73] point2: [2 0]  dist: 11236
-point1: [19 73] point2: [10 3]  dist: 9962
-point1: [19 73] point2: [13 21]  dist: 5480
-point1: [19 73] point2: [29 92]  dist: 922
-point1: [19 73] point2: [42 25]  dist: 5666
-point1: [19 73] point2: [39 71]  dist: 808
-point1: [19 73] point2: [64 18]  dist: 10100
-point1: [19 73] point2: [59 44]  dist: 4882
-point1: [19 73] point2: [63 59]  dist: 4264
-point1: [19 73] point2: [88 23]  dist: 14522
-point1: [19 73] point2: [89 56]  dist: 10378
-point1: [19 73] point2: [78 3]  dist: 16762
-dist from [19 73] to [39 71] is: 28
-point1: [19 81] point2: [2 0]  dist: 13700
-point1: [19 81] point2: [2 0]  dist: 13700
-point1: [19 81] point2: [10 3]  dist: 12330
-point1: [19 81] point2: [13 21]  dist: 7272
-point1: [19 81] point2: [29 92]  dist: 442
-point1: [19 81] point2: [42 25]  dist: 7330
-point1: [19 81] point2: [39 71]  dist: 1000
-point1: [19 81] point2: [64 18]  dist: 11988
-point1: [19 81] point2: [59 44]  dist: 5938
-point1: [19 81] point2: [63 59]  dist: 4840
-point1: [19 81] point2: [88 23]  dist: 16250
-point1: [19 81] point2: [89 56]  dist: 11050
-point1: [19 81] point2: [78 3]  dist: 19130
-dist from [19 81] to [29 92] is: 21
-point1: [20 31] point2: [2 0]  dist: 2570
-point1: [20 31] point2: [2 0]  dist: 2570
-point1: [20 31] point2: [10 3]  dist: 1768
-point1: [20 31] point2: [13 21]  dist: 298
-point1: [20 31] point2: [29 92]  dist: 7604
-point1: [20 31] point2: [42 25]  dist: 1040
-point1: [20 31] point2: [39 71]  dist: 3922
-point1: [20 31] point2: [64 18]  dist: 4210
-point1: [20 31] point2: [59 44]  dist: 3380
-point1: [20 31] point2: [63 59]  dist: 5266
-point1: [20 31] point2: [88 23]  dist: 9376
-point1: [20 31] point2: [89 56]  dist: 10772
-point1: [20 31] point2: [78 3]  dist: 8296
-dist from [20 31] to [13 21] is: 17
-point1: [20 67] point2: [2 0]  dist: 9626
-point1: [20 67] point2: [2 0]  dist: 9626
-point1: [20 67] point2: [10 3]  dist: 8392
-point1: [20 67] point2: [13 21]  dist: 4330
-point1: [20 67] point2: [29 92]  dist: 1412
-point1: [20 67] point2: [42 25]  dist: 4496
-point1: [20 67] point2: [39 71]  dist: 754
-point1: [20 67] point2: [64 18]  dist: 8674
-point1: [20 67] point2: [59 44]  dist: 4100
-point1: [20 67] point2: [63 59]  dist: 3826
-point1: [20 67] point2: [88 23]  dist: 13120
-point1: [20 67] point2: [89 56]  dist: 9764
-point1: [20 67] point2: [78 3]  dist: 14920
-dist from [20 67] to [39 71] is: 27
-point1: [20 94] point2: [2 0]  dist: 18320
-point1: [20 94] point2: [2 0]  dist: 18320
-point1: [20 94] point2: [10 3]  dist: 16762
-point1: [20 94] point2: [13 21]  dist: 10756
-point1: [20 94] point2: [29 92]  dist: 170
-point1: [20 94] point2: [42 25]  dist: 10490
-point1: [20 94] point2: [39 71]  dist: 1780
-point1: [20 94] point2: [64 18]  dist: 15424
-point1: [20 94] point2: [59 44]  dist: 8042
-point1: [20 94] point2: [63 59]  dist: 6148
-point1: [20 94] point2: [88 23]  dist: 19330
-point1: [20 94] point2: [89 56]  dist: 12410
-point1: [20 94] point2: [78 3]  dist: 23290
-dist from [20 94] to [29 92] is: 13
-point1: [21 26] point2: [2 0]  dist: 2074
-point1: [21 26] point2: [2 0]  dist: 2074
-point1: [21 26] point2: [10 3]  dist: 1300
-point1: [21 26] point2: [13 21]  dist: 178
-point1: [21 26] point2: [29 92]  dist: 8840
-point1: [21 26] point2: [42 25]  dist: 884
-point1: [21 26] point2: [39 71]  dist: 4698
-point1: [21 26] point2: [64 18]  dist: 3826
-point1: [21 26] point2: [59 44]  dist: 3536
-point1: [21 26] point2: [63 59]  dist: 5706
-point1: [21 26] point2: [88 23]  dist: 8996
-point1: [21 26] point2: [89 56]  dist: 11048
-point1: [21 26] point2: [78 3]  dist: 7556
-dist from [21 26] to [13 21] is: 13
-point1: [21 85] point2: [2 0]  dist: 15172
-point1: [21 85] point2: [2 0]  dist: 15172
-point1: [21 85] point2: [10 3]  dist: 13690
-point1: [21 85] point2: [13 21]  dist: 8320
-point1: [21 85] point2: [29 92]  dist: 226
-point1: [21 85] point2: [42 25]  dist: 8082
-point1: [21 85] point2: [39 71]  dist: 1040
-point1: [21 85] point2: [64 18]  dist: 12676
-point1: [21 85] point2: [59 44]  dist: 6250
-point1: [21 85] point2: [63 59]  dist: 4880
-point1: [21 85] point2: [88 23]  dist: 16666
-point1: [21 85] point2: [89 56]  dist: 10930
-point1: [21 85] point2: [78 3]  dist: 19946
-dist from [21 85] to [29 92] is: 15
-point1: [21 100] point2: [2 0]  dist: 20722
-point1: [21 100] point2: [2 0]  dist: 20722
-point1: [21 100] point2: [10 3]  dist: 19060
-point1: [21 100] point2: [13 21]  dist: 12610
-point1: [21 100] point2: [29 92]  dist: 256
-point1: [21 100] point2: [42 25]  dist: 12132
-point1: [21 100] point2: [39 71]  dist: 2330
-point1: [21 100] point2: [64 18]  dist: 17146
-point1: [21 100] point2: [59 44]  dist: 9160
-point1: [21 100] point2: [63 59]  dist: 6890
-point1: [21 100] point2: [88 23]  dist: 20836
-point1: [21 100] point2: [89 56]  dist: 13120
-point1: [21 100] point2: [78 3]  dist: 25316
-dist from [21 100] to [29 92] is: 16
-point1: [22 55] point2: [2 0]  dist: 6850
-point1: [22 55] point2: [2 0]  dist: 6850
-point1: [22 55] point2: [10 3]  dist: 5696
-point1: [22 55] point2: [13 21]  dist: 2474
-point1: [22 55] point2: [29 92]  dist: 2836
-point1: [22 55] point2: [42 25]  dist: 2600
-point1: [22 55] point2: [39 71]  dist: 1090
-point1: [22 55] point2: [64 18]  dist: 6266
-point1: [22 55] point2: [59 44]  dist: 2980
-point1: [22 55] point2: [63 59]  dist: 3394
-point1: [22 55] point2: [88 23]  dist: 10760
-point1: [22 55] point2: [89 56]  dist: 8980
-point1: [22 55] point2: [78 3]  dist: 11680
-dist from [22 55] to [39 71] is: 33
-point1: [23 5] point2: [2 0]  dist: 932
-point1: [23 5] point2: [2 0]  dist: 932
-point1: [23 5] point2: [10 3]  dist: 346
-point1: [23 5] point2: [13 21]  dist: 712
-point1: [23 5] point2: [29 92]  dist: 15210
-point1: [23 5] point2: [42 25]  dist: 1522
-point1: [23 5] point2: [39 71]  dist: 9224
-point1: [23 5] point2: [64 18]  dist: 3700
-point1: [23 5] point2: [59 44]  dist: 5634
-point1: [23 5] point2: [63 59]  dist: 9032
-point1: [23 5] point2: [88 23]  dist: 9098
-point1: [23 5] point2: [89 56]  dist: 13914
-point1: [23 5] point2: [78 3]  dist: 6058
-dist from [23 5] to [10 3] is: 18
-point1: [23 95] point2: [2 0]  dist: 18932
-point1: [23 95] point2: [2 0]  dist: 18932
-point1: [23 95] point2: [10 3]  dist: 17266
-point1: [23 95] point2: [13 21]  dist: 11152
-point1: [23 95] point2: [29 92]  dist: 90
-point1: [23 95] point2: [42 25]  dist: 10522
-point1: [23 95] point2: [39 71]  dist: 1664
-point1: [23 95] point2: [64 18]  dist: 15220
-point1: [23 95] point2: [59 44]  dist: 7794
-point1: [23 95] point2: [63 59]  dist: 5792
-point1: [23 95] point2: [88 23]  dist: 18818
-point1: [23 95] point2: [89 56]  dist: 11754
-point1: [23 95] point2: [78 3]  dist: 22978
-dist from [23 95] to [29 92] is: 9
-point1: [24 35] point2: [2 0]  dist: 3418
-point1: [24 35] point2: [2 0]  dist: 3418
-point1: [24 35] point2: [10 3]  dist: 2440
-point1: [24 35] point2: [13 21]  dist: 634
-point1: [24 35] point2: [29 92]  dist: 6548
-point1: [24 35] point2: [42 25]  dist: 848
-point1: [24 35] point2: [39 71]  dist: 3042
-point1: [24 35] point2: [64 18]  dist: 3778
-point1: [24 35] point2: [59 44]  dist: 2612
-point1: [24 35] point2: [63 59]  dist: 4194
-point1: [24 35] point2: [88 23]  dist: 8480
-point1: [24 35] point2: [89 56]  dist: 9332
-point1: [24 35] point2: [78 3]  dist: 7880
-dist from [24 35] to [13 21] is: 25
-point1: [24 96] point2: [2 0]  dist: 19400
-point1: [24 96] point2: [2 0]  dist: 19400
-point1: [24 96] point2: [10 3]  dist: 17690
-point1: [24 96] point2: [13 21]  dist: 11492
-point1: [24 96] point2: [29 92]  dist: 82
-point1: [24 96] point2: [42 25]  dist: 10730
-point1: [24 96] point2: [39 71]  dist: 1700
-point1: [24 96] point2: [64 18]  dist: 15368
-point1: [24 96] point2: [59 44]  dist: 7858
-point1: [24 96] point2: [63 59]  dist: 5780
-point1: [24 96] point2: [88 23]  dist: 18850
-point1: [24 96] point2: [89 56]  dist: 11650
-point1: [24 96] point2: [78 3]  dist: 23130
-dist from [24 96] to [29 92] is: 9
-point1: [25 48] point2: [2 0]  dist: 5666
-point1: [25 48] point2: [2 0]  dist: 5666
-point1: [25 48] point2: [10 3]  dist: 4500
-point1: [25 48] point2: [13 21]  dist: 1746
-point1: [25 48] point2: [29 92]  dist: 3904
-point1: [25 48] point2: [42 25]  dist: 1636
-point1: [25 48] point2: [39 71]  dist: 1450
-point1: [25 48] point2: [64 18]  dist: 4842
-point1: [25 48] point2: [59 44]  dist: 2344
-point1: [25 48] point2: [63 59]  dist: 3130
-point1: [25 48] point2: [88 23]  dist: 9188
-point1: [25 48] point2: [89 56]  dist: 8320
-point1: [25 48] point2: [78 3]  dist: 9668
-dist from [25 48] to [39 71] is: 38
-point1: [26 88] point2: [2 0]  dist: 16640
-point1: [26 88] point2: [2 0]  dist: 16640
-point1: [26 88] point2: [10 3]  dist: 14962
-point1: [26 88] point2: [13 21]  dist: 9316
-point1: [26 88] point2: [29 92]  dist: 50
-point1: [26 88] point2: [42 25]  dist: 8450
-point1: [26 88] point2: [39 71]  dist: 916
-point1: [26 88] point2: [64 18]  dist: 12688
-point1: [26 88] point2: [59 44]  dist: 6050
-point1: [26 88] point2: [63 59]  dist: 4420
-point1: [26 88] point2: [88 23]  dist: 16138
-point1: [26 88] point2: [89 56]  dist: 9986
-point1: [26 88] point2: [78 3]  dist: 19858
-dist from [26 88] to [29 92] is: 7
-point1: [26 91] point2: [2 0]  dist: 17714
-point1: [26 91] point2: [2 0]  dist: 17714
-point1: [26 91] point2: [10 3]  dist: 16000
-point1: [26 91] point2: [13 21]  dist: 10138
-point1: [26 91] point2: [29 92]  dist: 20
-point1: [26 91] point2: [42 25]  dist: 9224
-point1: [26 91] point2: [39 71]  dist: 1138
-point1: [26 91] point2: [64 18]  dist: 13546
-point1: [26 91] point2: [59 44]  dist: 6596
-point1: [26 91] point2: [63 59]  dist: 4786
-point1: [26 91] point2: [88 23]  dist: 16936
-point1: [26 91] point2: [89 56]  dist: 10388
-point1: [26 91] point2: [78 3]  dist: 20896
-dist from [26 91] to [29 92] is: 4
-point1: [27 14] point2: [2 0]  dist: 1642
-point1: [27 14] point2: [2 0]  dist: 1642
-point1: [27 14] point2: [10 3]  dist: 820
-point1: [27 14] point2: [13 21]  dist: 490
-point1: [27 14] point2: [29 92]  dist: 12176
-point1: [27 14] point2: [42 25]  dist: 692
-point1: [27 14] point2: [39 71]  dist: 6786
-point1: [27 14] point2: [64 18]  dist: 2770
-point1: [27 14] point2: [59 44]  dist: 3848
-point1: [27 14] point2: [63 59]  dist: 6642
-point1: [27 14] point2: [88 23]  dist: 7604
-point1: [27 14] point2: [89 56]  dist: 11216
-point1: [27 14] point2: [78 3]  dist: 5444
-dist from [27 14] to [13 21] is: 22
-point1: [28 9] point2: [2 0]  dist: 1514
-point1: [28 9] point2: [2 0]  dist: 1514
-point1: [28 9] point2: [10 3]  dist: 720
-point1: [28 9] point2: [13 21]  dist: 738
-point1: [28 9] point2: [29 92]  dist: 13780
-point1: [28 9] point2: [42 25]  dist: 904
-point1: [28 9] point2: [39 71]  dist: 7930
-point1: [28 9] point2: [64 18]  dist: 2754
-point1: [28 9] point2: [59 44]  dist: 4372
-point1: [28 9] point2: [63 59]  dist: 7450
-point1: [28 9] point2: [88 23]  dist: 7592
-point1: [28 9] point2: [89 56]  dist: 11860
-point1: [28 9] point2: [78 3]  dist: 5072
-dist from [28 9] to [10 3] is: 26
-point1: [28 87] point2: [2 0]  dist: 16490
-point1: [28 87] point2: [2 0]  dist: 16490
-point1: [28 87] point2: [10 3]  dist: 14760
-point1: [28 87] point2: [13 21]  dist: 9162
-point1: [28 87] point2: [29 92]  dist: 52
-point1: [28 87] point2: [42 25]  dist: 8080
-point1: [28 87] point2: [39 71]  dist: 754
-point1: [28 87] point2: [64 18]  dist: 12114
-point1: [28 87] point2: [59 44]  dist: 5620
-point1: [28 87] point2: [63 59]  dist: 4018
-point1: [28 87] point2: [88 23]  dist: 15392
-point1: [28 87] point2: [89 56]  dist: 9364
-point1: [28 87] point2: [78 3]  dist: 19112
-dist from [28 87] to [29 92] is: 7
-point1: [28 39] point2: [2 0]  dist: 4394
-point1: [28 39] point2: [2 0]  dist: 4394
-point1: [28 39] point2: [10 3]  dist: 3240
-point1: [28 39] point2: [13 21]  dist: 1098
-point1: [28 39] point2: [29 92]  dist: 5620
-point1: [28 39] point2: [42 25]  dist: 784
-point1: [28 39] point2: [39 71]  dist: 2290
-point1: [28 39] point2: [64 18]  dist: 3474
-point1: [28 39] point2: [59 44]  dist: 1972
-point1: [28 39] point2: [63 59]  dist: 3250
-point1: [28 39] point2: [88 23]  dist: 7712
-point1: [28 39] point2: [89 56]  dist: 8020
-point1: [28 39] point2: [78 3]  dist: 7592
-dist from [28 39] to [42 25] is: 28
-point1: [30 79] point2: [2 0]  dist: 14050
-point1: [30 79] point2: [2 0]  dist: 14050
-point1: [30 79] point2: [10 3]  dist: 12352
-point1: [30 79] point2: [13 21]  dist: 7306
-point1: [30 79] point2: [29 92]  dist: 340
-point1: [30 79] point2: [42 25]  dist: 6120
-point1: [30 79] point2: [39 71]  dist: 290
-point1: [30 79] point2: [64 18]  dist: 9754
-point1: [30 79] point2: [59 44]  dist: 4132
-point1: [30 79] point2: [63 59]  dist: 2978
-point1: [30 79] point2: [88 23]  dist: 13000
-point1: [30 79] point2: [89 56]  dist: 8020
-point1: [30 79] point2: [78 3]  dist: 16160
-dist from [30 79] to [39 71] is: 17
-point1: [34 73] point2: [2 0]  dist: 12706
-point1: [34 73] point2: [2 0]  dist: 12706
-point1: [34 73] point2: [10 3]  dist: 10952
-point1: [34 73] point2: [13 21]  dist: 6290
-point1: [34 73] point2: [29 92]  dist: 772
-point1: [34 73] point2: [42 25]  dist: 4736
-point1: [34 73] point2: [39 71]  dist: 58
-point1: [34 73] point2: [64 18]  dist: 7850
-point1: [34 73] point2: [59 44]  dist: 2932
-point1: [34 73] point2: [63 59]  dist: 2074
-point1: [34 73] point2: [88 23]  dist: 10832
-point1: [34 73] point2: [89 56]  dist: 6628
-point1: [34 73] point2: [78 3]  dist: 13672
-dist from [34 73] to [39 71] is: 7
-point1: [35 44] point2: [2 0]  dist: 6050
-point1: [35 44] point2: [2 0]  dist: 6050
-point1: [35 44] point2: [10 3]  dist: 4612
-point1: [35 44] point2: [13 21]  dist: 2026
-point1: [35 44] point2: [29 92]  dist: 4680
-point1: [35 44] point2: [42 25]  dist: 820
-point1: [35 44] point2: [39 71]  dist: 1490
-point1: [35 44] point2: [64 18]  dist: 3034
-point1: [35 44] point2: [59 44]  dist: 1152
-point1: [35 44] point2: [63 59]  dist: 2018
-point1: [35 44] point2: [88 23]  dist: 6500
-point1: [35 44] point2: [89 56]  dist: 6120
-point1: [35 44] point2: [78 3]  dist: 7060
-dist from [35 44] to [42 25] is: 28
-point1: [37 26] point2: [2 0]  dist: 3802
-point1: [37 26] point2: [2 0]  dist: 3802
-point1: [37 26] point2: [10 3]  dist: 2516
-point1: [37 26] point2: [13 21]  dist: 1202
-point1: [37 26] point2: [29 92]  dist: 8840
-point1: [37 26] point2: [42 25]  dist: 52
-point1: [37 26] point2: [39 71]  dist: 4058
-point1: [37 26] point2: [64 18]  dist: 1586
-point1: [37 26] point2: [59 44]  dist: 1616
-point1: [37 26] point2: [63 59]  dist: 3530
-point1: [37 26] point2: [88 23]  dist: 5220
-point1: [37 26] point2: [89 56]  dist: 7208
-point1: [37 26] point2: [78 3]  dist: 4420
-dist from [37 26] to [42 25] is: 7
-point1: [37 76] point2: [2 0]  dist: 14002
-point1: [37 76] point2: [2 0]  dist: 14002
-point1: [37 76] point2: [10 3]  dist: 12116
-point1: [37 76] point2: [13 21]  dist: 7202
-point1: [37 76] point2: [29 92]  dist: 640
-point1: [37 76] point2: [42 25]  dist: 5252
-point1: [37 76] point2: [39 71]  dist: 58
-point1: [37 76] point2: [64 18]  dist: 8186
-point1: [37 76] point2: [59 44]  dist: 3016
-point1: [37 76] point2: [63 59]  dist: 1930
-point1: [37 76] point2: [88 23]  dist: 10820
-point1: [37 76] point2: [89 56]  dist: 6208
-point1: [37 76] point2: [78 3]  dist: 14020
-dist from [37 76] to [39 71] is: 7
-point1: [38 28] point2: [2 0]  dist: 4160
-point1: [38 28] point2: [2 0]  dist: 4160
-point1: [38 28] point2: [10 3]  dist: 2818
-point1: [38 28] point2: [13 21]  dist: 1348
-point1: [38 28] point2: [29 92]  dist: 8354
-point1: [38 28] point2: [42 25]  dist: 50
-point1: [38 28] point2: [39 71]  dist: 3700
-point1: [38 28] point2: [64 18]  dist: 1552
-point1: [38 28] point2: [59 44]  dist: 1394
-point1: [38 28] point2: [63 59]  dist: 3172
-point1: [38 28] point2: [88 23]  dist: 5050
-point1: [38 28] point2: [89 56]  dist: 6770
-point1: [38 28] point2: [78 3]  dist: 4450
-dist from [38 28] to [42 25] is: 7
-point1: [39 1] point2: [2 0]  dist: 2740
-point1: [39 1] point2: [2 0]  dist: 2740
-point1: [39 1] point2: [10 3]  dist: 1690
-point1: [39 1] point2: [13 21]  dist: 2152
-point1: [39 1] point2: [29 92]  dist: 16762
-point1: [39 1] point2: [42 25]  dist: 1170
-point1: [39 1] point2: [39 71]  dist: 9800
-point1: [39 1] point2: [64 18]  dist: 1828
-point1: [39 1] point2: [59 44]  dist: 4498
-point1: [39 1] point2: [63 59]  dist: 7880
-point1: [39 1] point2: [88 23]  dist: 5770
-point1: [39 1] point2: [89 56]  dist: 11050
-point1: [39 1] point2: [78 3]  dist: 3050
-dist from [39 1] to [42 25] is: 34
-point1: [39 48] point2: [2 0]  dist: 7346
-point1: [39 48] point2: [2 0]  dist: 7346
-point1: [39 48] point2: [10 3]  dist: 5732
-point1: [39 48] point2: [13 21]  dist: 2810
-point1: [39 48] point2: [29 92]  dist: 4072
-point1: [39 48] point2: [42 25]  dist: 1076
-point1: [39 48] point2: [39 71]  dist: 1058
-point1: [39 48] point2: [64 18]  dist: 3050
-point1: [39 48] point2: [59 44]  dist: 832
-point1: [39 48] point2: [63 59]  dist: 1394
-point1: [39 48] point2: [88 23]  dist: 6052
-point1: [39 48] point2: [89 56]  dist: 5128
-point1: [39 48] point2: [78 3]  dist: 7092
-dist from [39 48] to [59 44] is: 28
-point1: [40 55] point2: [2 0]  dist: 8938
-point1: [40 55] point2: [2 0]  dist: 8938
-point1: [40 55] point2: [10 3]  dist: 7208
-point1: [40 55] point2: [13 21]  dist: 3770
-point1: [40 55] point2: [29 92]  dist: 2980
-point1: [40 55] point2: [42 25]  dist: 1808
-point1: [40 55] point2: [39 71]  dist: 514
-point1: [40 55] point2: [64 18]  dist: 3890
-point1: [40 55] point2: [59 44]  dist: 964
-point1: [40 55] point2: [63 59]  dist: 1090
-point1: [40 55] point2: [88 23]  dist: 6656
-point1: [40 55] point2: [89 56]  dist: 4804
-point1: [40 55] point2: [78 3]  dist: 8296
-dist from [40 55] to [39 71] is: 22
-point1: [40 57] point2: [2 0]  dist: 9386
-point1: [40 57] point2: [2 0]  dist: 9386
-point1: [40 57] point2: [10 3]  dist: 7632
-point1: [40 57] point2: [13 21]  dist: 4050
-point1: [40 57] point2: [29 92]  dist: 2692
-point1: [40 57] point2: [42 25]  dist: 2056
-point1: [40 57] point2: [39 71]  dist: 394
-point1: [40 57] point2: [64 18]  dist: 4194
-point1: [40 57] point2: [59 44]  dist: 1060
-point1: [40 57] point2: [63 59]  dist: 1066
-point1: [40 57] point2: [88 23]  dist: 6920
-point1: [40 57] point2: [89 56]  dist: 4804
-point1: [40 57] point2: [78 3]  dist: 8720
-dist from [40 57] to [39 71] is: 19
-point1: [41 49] point2: [2 0]  dist: 7844
-point1: [41 49] point2: [2 0]  dist: 7844
-point1: [41 49] point2: [10 3]  dist: 6154
-point1: [41 49] point2: [13 21]  dist: 3136
-point1: [41 49] point2: [29 92]  dist: 3986
-point1: [41 49] point2: [42 25]  dist: 1154
-point1: [41 49] point2: [39 71]  dist: 976
-point1: [41 49] point2: [64 18]  dist: 2980
-point1: [41 49] point2: [59 44]  dist: 698
-point1: [41 49] point2: [63 59]  dist: 1168
-point1: [41 49] point2: [88 23]  dist: 5770
-point1: [41 49] point2: [89 56]  dist: 4706
-point1: [41 49] point2: [78 3]  dist: 6970
-dist from [41 49] to [59 44] is: 26
-point1: [42 5] point2: [2 0]  dist: 3250
-point1: [42 5] point2: [2 0]  dist: 3250
-point1: [42 5] point2: [10 3]  dist: 2056
-point1: [42 5] point2: [13 21]  dist: 2194
-point1: [42 5] point2: [29 92]  dist: 15476
-point1: [42 5] point2: [42 25]  dist: 800
-point1: [42 5] point2: [39 71]  dist: 8730
-point1: [42 5] point2: [64 18]  dist: 1306
-point1: [42 5] point2: [59 44]  dist: 3620
-point1: [42 5] point2: [63 59]  dist: 6714
-point1: [42 5] point2: [88 23]  dist: 4880
-point1: [42 5] point2: [89 56]  dist: 9620
-point1: [42 5] point2: [78 3]  dist: 2600
-dist from [42 5] to [42 25] is: 28
-point1: [42 95] point2: [2 0]  dist: 21250
-point1: [42 95] point2: [2 0]  dist: 21250
-point1: [42 95] point2: [10 3]  dist: 18976
-point1: [42 95] point2: [13 21]  dist: 12634
-point1: [42 95] point2: [29 92]  dist: 356
-point1: [42 95] point2: [42 25]  dist: 9800
-point1: [42 95] point2: [39 71]  dist: 1170
-point1: [42 95] point2: [64 18]  dist: 12826
-point1: [42 95] point2: [59 44]  dist: 5780
-point1: [42 95] point2: [63 59]  dist: 3474
-point1: [42 95] point2: [88 23]  dist: 14600
-point1: [42 95] point2: [89 56]  dist: 7460
-point1: [42 95] point2: [78 3]  dist: 19520
-dist from [42 95] to [29 92] is: 18
-point1: [42 97] point2: [2 0]  dist: 22018
-point1: [42 97] point2: [2 0]  dist: 22018
-point1: [42 97] point2: [10 3]  dist: 19720
-point1: [42 97] point2: [13 21]  dist: 13234
-point1: [42 97] point2: [29 92]  dist: 388
-point1: [42 97] point2: [42 25]  dist: 10368
-point1: [42 97] point2: [39 71]  dist: 1370
-point1: [42 97] point2: [64 18]  dist: 13450
-point1: [42 97] point2: [59 44]  dist: 6196
-point1: [42 97] point2: [63 59]  dist: 3770
-point1: [42 97] point2: [88 23]  dist: 15184
-point1: [42 97] point2: [89 56]  dist: 7780
-point1: [42 97] point2: [78 3]  dist: 20264
-dist from [42 97] to [29 92] is: 19
-point1: [43 23] point2: [2 0]  dist: 4420
-point1: [43 23] point2: [2 0]  dist: 4420
-point1: [43 23] point2: [10 3]  dist: 2978
-point1: [43 23] point2: [13 21]  dist: 1808
-point1: [43 23] point2: [29 92]  dist: 9914
-point1: [43 23] point2: [42 25]  dist: 10
-point1: [43 23] point2: [39 71]  dist: 4640
-point1: [43 23] point2: [64 18]  dist: 932
-point1: [43 23] point2: [59 44]  dist: 1394
-point1: [43 23] point2: [63 59]  dist: 3392
-point1: [43 23] point2: [88 23]  dist: 4050
-point1: [43 23] point2: [89 56]  dist: 6410
-point1: [43 23] point2: [78 3]  dist: 3250
-dist from [43 23] to [42 25] is: 3
-point1: [44 28] point2: [2 0]  dist: 5096
-point1: [44 28] point2: [2 0]  dist: 5096
-point1: [44 28] point2: [10 3]  dist: 3562
-point1: [44 28] point2: [13 21]  dist: 2020
-point1: [44 28] point2: [29 92]  dist: 8642
-point1: [44 28] point2: [42 25]  dist: 26
-point1: [44 28] point2: [39 71]  dist: 3748
-point1: [44 28] point2: [64 18]  dist: 1000
-point1: [44 28] point2: [59 44]  dist: 962
-point1: [44 28] point2: [63 59]  dist: 2644
-point1: [44 28] point2: [88 23]  dist: 3922
-point1: [44 28] point2: [89 56]  dist: 5618
-point1: [44 28] point2: [78 3]  dist: 3562
-dist from [44 28] to [42 25] is: 5
-point1: [44 87] point2: [2 0]  dist: 18666
-point1: [44 87] point2: [2 0]  dist: 18666
-point1: [44 87] point2: [10 3]  dist: 16424
-point1: [44 87] point2: [13 21]  dist: 10634
-point1: [44 87] point2: [29 92]  dist: 500
-point1: [44 87] point2: [42 25]  dist: 7696
-point1: [44 87] point2: [39 71]  dist: 562
-point1: [44 87] point2: [64 18]  dist: 10322
-point1: [44 87] point2: [59 44]  dist: 4148
-point1: [44 87] point2: [63 59]  dist: 2290
-point1: [44 87] point2: [88 23]  dist: 12064
-point1: [44 87] point2: [89 56]  dist: 5972
-point1: [44 87] point2: [78 3]  dist: 16424
-dist from [44 87] to [29 92] is: 22
-point1: [46 26] point2: [2 0]  dist: 5224
-point1: [46 26] point2: [2 0]  dist: 5224
-point1: [46 26] point2: [10 3]  dist: 3650
-point1: [46 26] point2: [13 21]  dist: 2228
-point1: [46 26] point2: [29 92]  dist: 9290
-point1: [46 26] point2: [42 25]  dist: 34
-point1: [46 26] point2: [39 71]  dist: 4148
-point1: [46 26] point2: [64 18]  dist: 776
-point1: [46 26] point2: [59 44]  dist: 986
-point1: [46 26] point2: [63 59]  dist: 2756
-point1: [46 26] point2: [88 23]  dist: 3546
-point1: [46 26] point2: [89 56]  dist: 5498
-point1: [46 26] point2: [78 3]  dist: 3106
-dist from [46 26] to [42 25] is: 5
-point1: [47 21] point2: [2 0]  dist: 4932
-point1: [47 21] point2: [2 0]  dist: 4932
-point1: [47 21] point2: [10 3]  dist: 3386
-point1: [47 21] point2: [13 21]  dist: 2312
-point1: [47 21] point2: [29 92]  dist: 10730
-point1: [47 21] point2: [42 25]  dist: 82
-point1: [47 21] point2: [39 71]  dist: 5128
-point1: [47 21] point2: [64 18]  dist: 596
-point1: [47 21] point2: [59 44]  dist: 1346
-point1: [47 21] point2: [63 59]  dist: 3400
-point1: [47 21] point2: [88 23]  dist: 3370
-point1: [47 21] point2: [89 56]  dist: 5978
-point1: [47 21] point2: [78 3]  dist: 2570
-dist from [47 21] to [42 25] is: 9
-point1: [47 38] point2: [2 0]  dist: 6938
-point1: [47 38] point2: [2 0]  dist: 6938
-point1: [47 38] point2: [10 3]  dist: 5188
-point1: [47 38] point2: [13 21]  dist: 2890
-point1: [47 38] point2: [29 92]  dist: 6480
-point1: [47 38] point2: [42 25]  dist: 388
-point1: [47 38] point2: [39 71]  dist: 2306
-point1: [47 38] point2: [64 18]  dist: 1378
-point1: [47 38] point2: [59 44]  dist: 360
-point1: [47 38] point2: [63 59]  dist: 1394
-point1: [47 38] point2: [88 23]  dist: 3812
-point1: [47 38] point2: [89 56]  dist: 4176
-point1: [47 38] point2: [78 3]  dist: 4372
-dist from [47 38] to [59 44] is: 18
-point1: [47 44] point2: [2 0]  dist: 7922
-point1: [47 44] point2: [2 0]  dist: 7922
-point1: [47 44] point2: [10 3]  dist: 6100
-point1: [47 44] point2: [13 21]  dist: 3370
-point1: [47 44] point2: [29 92]  dist: 5256
-point1: [47 44] point2: [42 25]  dist: 772
-point1: [47 44] point2: [39 71]  dist: 1586
-point1: [47 44] point2: [64 18]  dist: 1930
-point1: [47 44] point2: [59 44]  dist: 288
-point1: [47 44] point2: [63 59]  dist: 962
-point1: [47 44] point2: [88 23]  dist: 4244
-point1: [47 44] point2: [89 56]  dist: 3816
-point1: [47 44] point2: [78 3]  dist: 5284
-dist from [47 44] to [59 44] is: 16
-point1: [47 83] point2: [2 0]  dist: 17828
-point1: [47 83] point2: [2 0]  dist: 17828
-point1: [47 83] point2: [10 3]  dist: 15538
-point1: [47 83] point2: [13 21]  dist: 10000
-point1: [47 83] point2: [29 92]  dist: 810
-point1: [47 83] point2: [42 25]  dist: 6778
-point1: [47 83] point2: [39 71]  dist: 416
-point1: [47 83] point2: [64 18]  dist: 9028
-point1: [47 83] point2: [59 44]  dist: 3330
-point1: [47 83] point2: [63 59]  dist: 1664
-point1: [47 83] point2: [88 23]  dist: 10562
-point1: [47 83] point2: [89 56]  dist: 4986
-point1: [47 83] point2: [78 3]  dist: 14722
-dist from [47 83] to [39 71] is: 20
-point1: [49 35] point2: [2 0]  dist: 6868
-point1: [49 35] point2: [2 0]  dist: 6868
-point1: [49 35] point2: [10 3]  dist: 5090
-point1: [49 35] point2: [13 21]  dist: 2984
-point1: [49 35] point2: [29 92]  dist: 7298
-point1: [49 35] point2: [42 25]  dist: 298
-point1: [49 35] point2: [39 71]  dist: 2792
-point1: [49 35] point2: [64 18]  dist: 1028
-point1: [49 35] point2: [59 44]  dist: 362
-point1: [49 35] point2: [63 59]  dist: 1544
-point1: [49 35] point2: [88 23]  dist: 3330
-point1: [49 35] point2: [89 56]  dist: 4082
-point1: [49 35] point2: [78 3]  dist: 3730
-dist from [49 35] to [42 25] is: 17
-point1: [49 79] point2: [2 0]  dist: 16900
-point1: [49 79] point2: [2 0]  dist: 16900
-point1: [49 79] point2: [10 3]  dist: 14594
-point1: [49 79] point2: [13 21]  dist: 9320
-point1: [49 79] point2: [29 92]  dist: 1138
-point1: [49 79] point2: [42 25]  dist: 5930
-point1: [49 79] point2: [39 71]  dist: 328
-point1: [49 79] point2: [64 18]  dist: 7892
-point1: [49 79] point2: [59 44]  dist: 2650
-point1: [49 79] point2: [63 59]  dist: 1192
-point1: [49 79] point2: [88 23]  dist: 9314
-point1: [49 79] point2: [89 56]  dist: 4258
-point1: [49 79] point2: [78 3]  dist: 13234
-dist from [49 79] to [39 71] is: 18
-point1: [51 3] point2: [2 0]  dist: 4820
-point1: [51 3] point2: [2 0]  dist: 4820
-point1: [51 3] point2: [10 3]  dist: 3362
-point1: [51 3] point2: [13 21]  dist: 3536
-point1: [51 3] point2: [29 92]  dist: 16810
-point1: [51 3] point2: [42 25]  dist: 1130
-point1: [51 3] point2: [39 71]  dist: 9536
-point1: [51 3] point2: [64 18]  dist: 788
-point1: [51 3] point2: [59 44]  dist: 3490
-point1: [51 3] point2: [63 59]  dist: 6560
-point1: [51 3] point2: [88 23]  dist: 3538
-point1: [51 3] point2: [89 56]  dist: 8506
-point1: [51 3] point2: [78 3]  dist: 1458
-dist from [51 3] to [64 18] is: 28
-point1: [51 28] point2: [2 0]  dist: 6370
-point1: [51 28] point2: [2 0]  dist: 6370
-point1: [51 28] point2: [10 3]  dist: 4612
-point1: [51 28] point2: [13 21]  dist: 2986
-point1: [51 28] point2: [29 92]  dist: 9160
-point1: [51 28] point2: [42 25]  dist: 180
-point1: [51 28] point2: [39 71]  dist: 3986
-point1: [51 28] point2: [64 18]  dist: 538
-point1: [51 28] point2: [59 44]  dist: 640
-point1: [51 28] point2: [63 59]  dist: 2210
-point1: [51 28] point2: [88 23]  dist: 2788
-point1: [51 28] point2: [89 56]  dist: 4456
-point1: [51 28] point2: [78 3]  dist: 2708
-dist from [51 28] to [42 25] is: 13
-point1: [51 55] point2: [2 0]  dist: 10852
-point1: [51 55] point2: [2 0]  dist: 10852
-point1: [51 55] point2: [10 3]  dist: 8770
-point1: [51 55] point2: [13 21]  dist: 5200
-point1: [51 55] point2: [29 92]  dist: 3706
-point1: [51 55] point2: [42 25]  dist: 1962
-point1: [51 55] point2: [39 71]  dist: 800
-point1: [51 55] point2: [64 18]  dist: 3076
-point1: [51 55] point2: [59 44]  dist: 370
-point1: [51 55] point2: [63 59]  dist: 320
-point1: [51 55] point2: [88 23]  dist: 4786
-point1: [51 55] point2: [89 56]  dist: 2890
-point1: [51 55] point2: [78 3]  dist: 6866
-dist from [51 55] to [63 59] is: 17
-point1: [51 78] point2: [2 0]  dist: 16970
-point1: [51 78] point2: [2 0]  dist: 16970
-point1: [51 78] point2: [10 3]  dist: 14612
-point1: [51 78] point2: [13 21]  dist: 9386
-point1: [51 78] point2: [29 92]  dist: 1360
-point1: [51 78] point2: [42 25]  dist: 5780
-point1: [51 78] point2: [39 71]  dist: 386
-point1: [51 78] point2: [64 18]  dist: 7538
-point1: [51 78] point2: [59 44]  dist: 2440
-point1: [51 78] point2: [63 59]  dist: 1010
-point1: [51 78] point2: [88 23]  dist: 8788
-point1: [51 78] point2: [89 56]  dist: 3856
-point1: [51 78] point2: [78 3]  dist: 12708
-dist from [51 78] to [39 71] is: 19
-point1: [52 4] point2: [2 0]  dist: 5032
-point1: [52 4] point2: [2 0]  dist: 5032
-point1: [52 4] point2: [10 3]  dist: 3530
-point1: [52 4] point2: [13 21]  dist: 3620
-point1: [52 4] point2: [29 92]  dist: 16546
-point1: [52 4] point2: [42 25]  dist: 1082
-point1: [52 4] point2: [39 71]  dist: 9316
-point1: [52 4] point2: [64 18]  dist: 680
-point1: [52 4] point2: [59 44]  dist: 3298
-point1: [52 4] point2: [63 59]  dist: 6292
-point1: [52 4] point2: [88 23]  dist: 3314
-point1: [52 4] point2: [89 56]  dist: 8146
-point1: [52 4] point2: [78 3]  dist: 1354
-dist from [52 4] to [64 18] is: 26
-point1: [53 75] point2: [2 0]  dist: 16452
-point1: [53 75] point2: [2 0]  dist: 16452
-point1: [53 75] point2: [10 3]  dist: 14066
-point1: [53 75] point2: [13 21]  dist: 9032
-point1: [53 75] point2: [29 92]  dist: 1730
-point1: [53 75] point2: [42 25]  dist: 5242
-point1: [53 75] point2: [39 71]  dist: 424
-point1: [53 75] point2: [64 18]  dist: 6740
-point1: [53 75] point2: [59 44]  dist: 1994
-point1: [53 75] point2: [63 59]  dist: 712
-point1: [53 75] point2: [88 23]  dist: 7858
-point1: [53 75] point2: [89 56]  dist: 3314
-point1: [53 75] point2: [78 3]  dist: 11618
-dist from [53 75] to [39 71] is: 20
-point1: [54 30] point2: [2 0]  dist: 7208
-point1: [54 30] point2: [2 0]  dist: 7208
-point1: [54 30] point2: [10 3]  dist: 5330
-point1: [54 30] point2: [13 21]  dist: 3524
-point1: [54 30] point2: [29 92]  dist: 8938
-point1: [54 30] point2: [42 25]  dist: 338
-point1: [54 30] point2: [39 71]  dist: 3812
-point1: [54 30] point2: [64 18]  dist: 488
-point1: [54 30] point2: [59 44]  dist: 442
-point1: [54 30] point2: [63 59]  dist: 1844
-point1: [54 30] point2: [88 23]  dist: 2410
-point1: [54 30] point2: [89 56]  dist: 3802
-point1: [54 30] point2: [78 3]  dist: 2610
-dist from [54 30] to [42 25] is: 18
-point1: [54 38] point2: [2 0]  dist: 8296
-point1: [54 38] point2: [2 0]  dist: 8296
-point1: [54 38] point2: [10 3]  dist: 6322
-point1: [54 38] point2: [13 21]  dist: 3940
-point1: [54 38] point2: [29 92]  dist: 7082
-point1: [54 38] point2: [42 25]  dist: 626
-point1: [54 38] point2: [39 71]  dist: 2628
-point1: [54 38] point2: [64 18]  dist: 1000
-point1: [54 38] point2: [59 44]  dist: 122
-point1: [54 38] point2: [63 59]  dist: 1044
-point1: [54 38] point2: [88 23]  dist: 2762
-point1: [54 38] point2: [89 56]  dist: 3098
-point1: [54 38] point2: [78 3]  dist: 3602
-dist from [54 38] to [59 44] is: 11
-point1: [54 39] point2: [2 0]  dist: 8450
-point1: [54 39] point2: [2 0]  dist: 8450
-point1: [54 39] point2: [10 3]  dist: 6464
-point1: [54 39] point2: [13 21]  dist: 4010
-point1: [54 39] point2: [29 92]  dist: 6868
-point1: [54 39] point2: [42 25]  dist: 680
-point1: [54 39] point2: [39 71]  dist: 2498
-point1: [54 39] point2: [64 18]  dist: 1082
-point1: [54 39] point2: [59 44]  dist: 100
-point1: [54 39] point2: [63 59]  dist: 962
-point1: [54 39] point2: [88 23]  dist: 2824
-point1: [54 39] point2: [89 56]  dist: 3028
-point1: [54 39] point2: [78 3]  dist: 3744
-dist from [54 39] to [59 44] is: 10
-point1: [54 48] point2: [2 0]  dist: 10016
-point1: [54 48] point2: [2 0]  dist: 10016
-point1: [54 48] point2: [10 3]  dist: 7922
-point1: [54 48] point2: [13 21]  dist: 4820
-point1: [54 48] point2: [29 92]  dist: 5122
-point1: [54 48] point2: [42 25]  dist: 1346
-point1: [54 48] point2: [39 71]  dist: 1508
-point1: [54 48] point2: [64 18]  dist: 2000
-point1: [54 48] point2: [59 44]  dist: 82
-point1: [54 48] point2: [63 59]  dist: 404
-point1: [54 48] point2: [88 23]  dist: 3562
-point1: [54 48] point2: [89 56]  dist: 2578
-point1: [54 48] point2: [78 3]  dist: 5202
-dist from [54 48] to [59 44] is: 9
-point1: [54 82] point2: [2 0]  dist: 18856
-point1: [54 82] point2: [2 0]  dist: 18856
-point1: [54 82] point2: [10 3]  dist: 16354
-point1: [54 82] point2: [13 21]  dist: 10804
-point1: [54 82] point2: [29 92]  dist: 1450
-point1: [54 82] point2: [42 25]  dist: 6786
-point1: [54 82] point2: [39 71]  dist: 692
-point1: [54 82] point2: [64 18]  dist: 8392
-point1: [54 82] point2: [59 44]  dist: 2938
-point1: [54 82] point2: [63 59]  dist: 1220
-point1: [54 82] point2: [88 23]  dist: 9274
-point1: [54 82] point2: [89 56]  dist: 3802
-point1: [54 82] point2: [78 3]  dist: 13634
-dist from [54 82] to [39 71] is: 26
-point1: [56 36] point2: [2 0]  dist: 8424
-point1: [56 36] point2: [2 0]  dist: 8424
-point1: [56 36] point2: [10 3]  dist: 6410
-point1: [56 36] point2: [13 21]  dist: 4148
-point1: [56 36] point2: [29 92]  dist: 7730
-point1: [56 36] point2: [42 25]  dist: 634
-point1: [56 36] point2: [39 71]  dist: 3028
-point1: [56 36] point2: [64 18]  dist: 776
-point1: [56 36] point2: [59 44]  dist: 146
-point1: [56 36] point2: [63 59]  dist: 1156
-point1: [56 36] point2: [88 23]  dist: 2386
-point1: [56 36] point2: [89 56]  dist: 2978
-point1: [56 36] point2: [78 3]  dist: 3146
-dist from [56 36] to [59 44] is: 12
-point1: [56 54] point2: [2 0]  dist: 11664
-point1: [56 54] point2: [2 0]  dist: 11664
-point1: [56 54] point2: [10 3]  dist: 9434
-point1: [56 54] point2: [13 21]  dist: 5876
-point1: [56 54] point2: [29 92]  dist: 4346
-point1: [56 54] point2: [42 25]  dist: 2074
-point1: [56 54] point2: [39 71]  dist: 1156
-point1: [56 54] point2: [64 18]  dist: 2720
-point1: [56 54] point2: [59 44]  dist: 218
-point1: [56 54] point2: [63 59]  dist: 148
-point1: [56 54] point2: [88 23]  dist: 3970
-point1: [56 54] point2: [89 56]  dist: 2186
-point1: [56 54] point2: [78 3]  dist: 6170
-dist from [56 54] to [63 59] is: 12
-point1: [57 3] point2: [2 0]  dist: 6068
-point1: [57 3] point2: [2 0]  dist: 6068
-point1: [57 3] point2: [10 3]  dist: 4418
-point1: [57 3] point2: [13 21]  dist: 4520
-point1: [57 3] point2: [29 92]  dist: 17410
-point1: [57 3] point2: [42 25]  dist: 1418
-point1: [57 3] point2: [39 71]  dist: 9896
-point1: [57 3] point2: [64 18]  dist: 548
-point1: [57 3] point2: [59 44]  dist: 3370
-point1: [57 3] point2: [63 59]  dist: 6344
-point1: [57 3] point2: [88 23]  dist: 2722
-point1: [57 3] point2: [89 56]  dist: 7666
-point1: [57 3] point2: [78 3]  dist: 882
-dist from [57 3] to [64 18] is: 23
-point1: [57 4] point2: [2 0]  dist: 6082
-point1: [57 4] point2: [2 0]  dist: 6082
-point1: [57 4] point2: [10 3]  dist: 4420
-point1: [57 4] point2: [13 21]  dist: 4450
-point1: [57 4] point2: [29 92]  dist: 17056
-poidistSum: 3111 size: 160
-The threshold is: 19
-isPoint: [2 0]   isNotPoint: [0 0]
-isPoint: [2 7]   isNotPoint: [0 0]
-isPoint: [0 0]   isNotPoint: [2 33]
-isPoint: [0 0]   isNotPoint: [2 80]
-isPoint: [0 0]   isNotPoint: [2 89]
-isPoint: [0 0]   isNotPoint: [2 89]
-isPoint: [0 0]   isNotPoint: [5 41]
-isPoint: [0 0]   isNotPoint: [5 49]
-isPoint: [6 17]   isNotPoint: [0 0]
-isPoint: [7 23]   isNotPoint: [0 0]
-isPoint: [0 0]   isNotPoint: [7 43]
-isPoint: [0 0]   isNotPoint: [7 78]
-isPoint: [8 2]   isNotPoint: [0 0]
-isPoint: [0 0]   isNotPoint: [9 62]
-isPoint: [10 17]   isNotPoint: [0 0]
-isPoint: [0 0]   isNotPoint: [10 63]
-isPoint: [0 0]   isNotPoint: [11 73]
-isPoint: [0 0]   isNotPoint: [11 93]
-isPoint: [0 0]   isNotPoint: [12 44]
-isPoint: [0 0]   isNotPoint: [12 60]
-isPoint: [0 0]   isNotPoint: [12 67]
-isPoint: [16 4]   isNotPoint: [0 0]
-isPoint: [16 90]   isNotPoint: [0 0]
-isPoint: [0 0]   isNotPoint: [17 64]
-isPoint: [18 24]   isNotPoint: [0 0]
-isPoint: [19 17]   isNotPoint: [0 0]
-isPoint: [19 17]   isNotPoint: [0 0]
-isPoint: [19 26]   isNotPoint: [0 0]
-isPoint: [0 0]   isNotPoint: [19 73]
-isPoint: [0 0]   isNotPoint: [19 81]
-isPoint: [20 31]   isNotPoint: [0 0]
-isPoint: [0 0]   isNotPoint: [20 67]
-isPoint: [20 94]   isNotPoint: [0 0]
-isPoint: [21 26]   isNotPoint: [0 0]
-isPoint: [21 85]   isNotPoint: [0 0]
-isPoint: [21 100]   isNotPoint: [0 0]
-isPoint: [0 0]   isNotPoint: [22 55]
-isPoint: [23 5]   isNotPoint: [0 0]
-isPoint: [23 95]   isNotPoint: [0 0]
-isPoint: [0 0]   isNotPoint: [24 35]
-isPoint: [24 96]   isNotPoint: [0 0]
-isPoint: [0 0]   isNotPoint: [25 48]
-isPoint: [26 88]   isNotPoint: [0 0]
-isPoint: [26 91]   isNotPoint: [0 0]
-isPoint: [0 0]   isNotPoint: [27 14]
-isPoint: [0 0]   isNotPoint: [28 9]
-isPoint: [28 87]   isNotPoint: [0 0]
-isPoint: [0 0]   isNotPoint: [28 39]
-isPoint: [30 79]   isNotPoint: [0 0]
-isPoint: [34 73]   isNotPoint: [0 0]
-isPoint: [0 0]   isNotPoint: [35 44]
-isPoint: [37 26]   isNotPoint: [0 0]
-isPoint: [37 76]   isNotPoint: [0 0]
-isPoint: [38 28]   isNotPoint: [0 0]
-isPoint: [0 0]   isNotPoint: [39 1]
-isPoint: [0 0]   isNotPoint: [39 48]
-isPoint: [0 0]   isNotPoint: [40 55]
+point1: [3 51] point2: [13 29]  dist: 1168
+point1: [3 51] point2: [13 29]  dist: 1168
+point1: [3 51] point2: [4 76]  dist: 1252
+point1: [3 51] point2: [14 64]  dist: 580
+point1: [3 51] point2: [42 52]  dist: 3044
+point1: [3 51] point2: [35 8]  dist: 5746
+point1: [3 51] point2: [33 5]  dist: 6032
+point1: [3 51] point2: [60 58]  dist: 6596
+point1: [3 51] point2: [64 31]  dist: 8242
+point1: [3 51] point2: [60 70]  dist: 7220
+point1: [3 51] point2: [87 13]  dist: 17000
+point1: [3 51] point2: [84 43]  dist: 13250
+point1: [3 51] point2: [85 18]  dist: 15626
+dist from [3 51] to [14 64] is: 24
+point1: [3 77] point2: [13 29]  dist: 4808
+point1: [3 77] point2: [13 29]  dist: 4808
+point1: [3 77] point2: [4 76]  dist: 4
+point1: [3 77] point2: [14 64]  dist: 580
+point1: [3 77] point2: [42 52]  dist: 4292
+point1: [3 77] point2: [35 8]  dist: 11570
+point1: [3 77] point2: [33 5]  dist: 12168
+point1: [3 77] point2: [60 58]  dist: 7220
+point1: [3 77] point2: [64 31]  dist: 11674
+point1: [3 77] point2: [60 70]  dist: 6596
+point1: [3 77] point2: [87 13]  dist: 22304
+point1: [3 77] point2: [84 43]  dist: 15434
+point1: [3 77] point2: [85 18]  dist: 20410
+dist from [3 77] to [4 76] is: 2
+point1: [5 75] point2: [13 29]  dist: 4360
+point1: [5 75] point2: [13 29]  dist: 4360
+point1: [5 75] point2: [4 76]  dist: 4
+point1: [5 75] point2: [14 64]  dist: 404
+point1: [5 75] point2: [42 52]  dist: 3796
+point1: [5 75] point2: [35 8]  dist: 10778
+point1: [5 75] point2: [33 5]  dist: 11368
+point1: [5 75] point2: [60 58]  dist: 6628
+point1: [5 75] point2: [64 31]  dist: 10834
+point1: [5 75] point2: [60 70]  dist: 6100
+point1: [5 75] point2: [87 13]  dist: 21136
+point1: [5 75] point2: [84 43]  dist: 14530
+point1: [5 75] point2: [85 18]  dist: 19298
+dist from [5 75] to [4 76] is: 2
+point1: [8 81] point2: [13 29]  dist: 5458
+point1: [8 81] point2: [13 29]  dist: 5458
+point1: [8 81] point2: [4 76]  dist: 82
+point1: [8 81] point2: [14 64]  dist: 650
+point1: [8 81] point2: [42 52]  dist: 3994
+point1: [8 81] point2: [35 8]  dist: 12116
+point1: [8 81] point2: [33 5]  dist: 12802
+point1: [8 81] point2: [60 58]  dist: 6466
+point1: [8 81] point2: [64 31]  dist: 11272
+point1: [8 81] point2: [60 70]  dist: 5650
+point1: [8 81] point2: [87 13]  dist: 21730
+point1: [8 81] point2: [84 43]  dist: 14440
+point1: [8 81] point2: [85 18]  dist: 19796
+dist from [8 81] to [4 76] is: 9
+point1: [9 49] point2: [13 29]  dist: 832
+point1: [9 49] point2: [13 29]  dist: 832
+point1: [9 49] point2: [4 76]  dist: 1508
+point1: [9 49] point2: [14 64]  dist: 500
+point1: [9 49] point2: [42 52]  dist: 2196
+point1: [9 49] point2: [35 8]  dist: 4714
+point1: [9 49] point2: [33 5]  dist: 5024
+point1: [9 49] point2: [60 58]  dist: 5364
+point1: [9 49] point2: [64 31]  dist: 6698
+point1: [9 49] point2: [60 70]  dist: 6084
+point1: [9 49] point2: [87 13]  dist: 14760
+point1: [9 49] point2: [84 43]  dist: 11322
+point1: [9 49] point2: [85 18]  dist: 13474
+dist from [9 49] to [14 64] is: 22
+point1: [14 14] point2: [13 29]  dist: 452
+point1: [14 14] point2: [13 29]  dist: 452
+point1: [14 14] point2: [4 76]  dist: 7888
+point1: [14 14] point2: [14 64]  dist: 5000
+point1: [14 14] point2: [42 52]  dist: 4456
+point1: [14 14] point2: [35 8]  dist: 954
+point1: [14 14] point2: [33 5]  dist: 884
+point1: [14 14] point2: [60 58]  dist: 8104
+point1: [14 14] point2: [64 31]  dist: 5578
+point1: [14 14] point2: [60 70]  dist: 10504
+point1: [14 14] point2: [87 13]  dist: 10660
+point1: [14 14] point2: [84 43]  dist: 11482
+point1: [14 14] point2: [85 18]  dist: 10114
+dist from [14 14] to [13 29] is: 21
+point1: [14 80] point2: [13 29]  dist: 5204
+point1: [14 80] point2: [13 29]  dist: 5204
+point1: [14 80] point2: [4 76]  dist: 232
+point1: [14 80] point2: [14 64]  dist: 512
+point1: [14 80] point2: [42 52]  dist: 3136
+point1: [14 80] point2: [35 8]  dist: 11250
+point1: [14 80] point2: [33 5]  dist: 11972
+point1: [14 80] point2: [60 58]  dist: 5200
+point1: [14 80] point2: [64 31]  dist: 9802
+point1: [14 80] point2: [60 70]  dist: 4432
+point1: [14 80] point2: [87 13]  dist: 19636
+point1: [14 80] point2: [84 43]  dist: 12538
+point1: [14 80] point2: [85 18]  dist: 17770
+dist from [14 80] to [4 76] is: 15
+point1: [16 100] point2: [13 29]  dist: 10100
+point1: [16 100] point2: [13 29]  dist: 10100
+point1: [16 100] pdistSum: 1096 size: 60
+The threshold is: 18
+isPoint: [0 0]   isNotPoint: [3 51]
+isPoint: [3 77]   isNotPoint: [0 0]
+isPoint: [5 75]   isNotPoint: [0 0]
+isPoint: [8 81]   isNotPoint: [0 0]
+isPoint: [0 0]   isNotPoint: [9 49]
+isPoint: [0 0]   isNotPoint: [14 14]
+isPoint: [14 80]   isNotPoint: [0 0]
+isPoint: [0 0]   isNotPoint: [16 100]
+isPoint: [17 26]   isNotPoint: [0 0]
+isPoint: [0 0]   isNotPoint: [18 4]
+isPoint: [18 73]   isNotPoint: [0 0]
+isPoint: [0 0]   isNotPoint: [18 86]
+isPoint: [20 72]   isNotPoint: [0 0]
+isPoint: [22 30]   isNotPoint: [0 0]
+isPoint: [0 0]   isNotPoint: [24 52]
+isPoint: [0 0]   isNotPoint: [28 87]
+isPoint: [28 12]   isNotPoint: [0 0]
+isPoint: [33 5]   isNotPoint: [0 0]
+isPoint: [0 0]   isNotPoint: [33 92]
+isPoint: [36 57]   isNotPoint: [0 0]
+isPoint: [0 0]   isNotPoint: [37 85]
+isPoint: [0 0]   isNotPoint: [41 33]
+isPoint: [42 53]   isNotPoint: [0 0]
+isPoint: [45 13]   isNotPoint: [0 0]
+isPoint: [46 7]   isNotPoint: [0 0]
+isPoint: [0 0]   isNotPoint: [46 81]
 isPoint: [0 0]   isNotPoint: [0 0]
-isPoint: [0 0]   isNotPoint: [41 49]
-isPoint: [0 0]   isNotPoint: [42 5]
-isPoint: [42 95]   isNotPoint: [0 0]
-isPoint: [0 0]   isNotPoint: [0 0]
-isPoint: [43 23]   isNotPoint: [0 0]
-isPoint: [44 28]   isNotPoint: [0 0]
-isPoint: [0 0]   isNotPoint: [44 87]
-isPoint: [46 26]   isNotPoint: [0 0]
-isPoint: [47 21]   isNotPoint: [0 0]
-isPoint: [47 38]   isNotPoint: [0 0]
-isPoint: [47 44]   isNotPoint: [0 0]
-isPoint: [0 0]   isNotPoint: [47 83]
-isPoint: [49 35]   isNotPoint: [0 0]
-isPoint: [49 79]   isNotPoint: [0 0]
-isPoint: [0 0]   isNotPoint: [51 3]
-isPoint: [51 28]   isNotPoint: [0 0]
-isPoint: [51 55]   isNotPoint: [0 0]
-isPoint: [0 0]   isNotPoint: [0 0]
-isPoint: [0 0]   isNotPoint: [52 4]
-isPoint: [0 0]   isNotPoint: [53 75]
-isPoint: [54 30]   isNotPoint: [0 0]
-isPoint: [54 38]   isNotPoint: [0 0]
-isPoint: [54 39]   isNotPoint: [0 0]
-isPoint: [54 48]   isNotPoint: [0 0]
-isPoint: [0 0]   isNotPoint: [54 82]
-isPoint: [56 36]   isNotPoint: [0 0]
-isPoint: [56 54]   isNotPoint: [0 0]
-isPoint: [0 0]   isNotPoint: [57 3]
-isPoint: [0 0]   isNotPoint: [57 4]
-isPoint: [57 12]   isNotPoint: [0 0]
-isPoint: [57 19]   isNotPoint: [0 0]
-isPoint: [57 34]   isNotPoint: [0 0]
-isPoint: [60 28]   isNotPoint: [0 0]
-isPoint: [60 56]   isNotPoint: [0 0]
-isPoint: [61 28]   isNotPoint: [0 0]
-isPoint: [61 51]   isNotPoint: [0 0]
-isPoint: [0 0]   isNotPoint: [62 4]
-isPoint: [62 6]   isNotPoint: [0 0]
-isPoint: [0 0]   isNotPoint: [63 3]
-isPoint: [63 5]   isNotPoint: [0 0]
+isPoint: [0 0]   isNotPoint: [49 79]
+isPoint: [0 0]   isNotPoint: [51 13]
+isPoint: [53 48]   isNotPoint: [0 0]
+isPoint: [54 67]   isNotPoint: [0 0]
+isPoint: [0 0]   isNotPoint: [57 44]
+isPoint: [57 77]   isNotPoint: [0 0]
+isPoint: [59 40]   isNotPoint: [0 0]
+isPoint: [61 77]   isNotPoint: [0 0]
 isPoint: [63 26]   isNotPoint: [0 0]
-isPoint: [63 67]   isNotPoint: [0 0]
-isPoint: [64 43]   isNotPoint: [0 0]
-isPoint: [65 46]   isNotPoint: [0 0]
-isPoint: [66 54]   isNotPoint: [0 0]
-isPoint: [66 63]   isNotPoint: [0 0]
-isPoint: [67 35]   isNotPoint: [0 0]
-isPoint: [0 0]   isNotPoint: [67 96]
-isPoint: [68 8]   isNotPoint: [0 0]
-isPoint: [0 0]   isNotPoint: [68 95]
-isPoint: [69 68]   isNotPoint: [0 0]
-isPoint: [70 62]   isNotPoint: [0 0]
-isPoint: [0 0]   isNotPoint: [70 84]
-isPoint: [0 0]   isNotPoint: [71 82]
-isPoint: [72 5]   isNotPoint: [0 0]
-isPoint: [72 54]   isNotPoint: [0 0]
-isPoint: [0 0]   isNotPoint: [0 0]
-isPoint: [74 57]   isNotPoint: [0 0]
-isPoint: [0 0]   isNotPoint: [75 35]
-isPoint: [76 6]   isNotPoint: [0 0]
-isPoint: [76 9]   isNotPoint: [0 0]
-isPoint: [76 27]   isNotPoint: [0 0]
-isPoint: [0 0]   isNotPoint: [76 37]
-isPoint: [0 0]   isNotPoint: [77 74]
-isPoint: [78 3]   isNotPoint: [0 0]
-isPoint: [0 0]   isNotPoint: [80 99]
-isPoint: [81 28]   isNotPoint: [0 0]
-isPoint: [0 0]   isNotPoint: [81 43]
-isPoint: [81 47]   isNotPoint: [0 0]
-isPoint: [0 0]   isNotPoint: [81 68]
-isPoint: [82 17]   isNotPoint: [0 0]
-isPoint: [0 0]   isNotPoint: [84 79]
-isPoint: [0 0]   isNotPoint: [84 85]
-isPoint: [86 21]   isNotPoint: [0 0]
-isPoint: [86 50]   isNotPoint: [0 0]
-isPoint: [87 9]   isNotPoint: [0 0]
-isPoint: [87 64]   isNotPoint: [0 0]
-isPoint: [0 0]   isNotPoint: [88 72]
-isPoint: [89 25]   isNotPoint: [0 0]
-isPoint: [89 55]   isNotPoint: [0 0]
-isPoint: [90 47]   isNotPoint: [0 0]
-isPoint: [90 49]   isNotPoint: [0 0]
-isPoint: [91 50]   isNotPoint: [0 0]
-isPoint: [0 0]   isNotPoint: [92 73]
-isPoint: [0 0]   isNotPoint: [93 99]
-isPoint: [94 23]   isNotPoint: [0 0]
-isPoint: [0 0]   isNotPoint: [94 93]
-isPoint: [95 25]   isNotPoint: [0 0]
-isPoint: [95 28]   isNotPoint: [0 0]
-isPoint: [95 28]   isNotPoint: [0 0]
-isPoint: [0 0]   isNotPoint: [95 39]
-isPoint: [95 62]   isNotPoint: [0 0]
-isPoint: [96 22]   isNotPoint: [0 0]
-isPoint: [0 0]   isNotPoint: [96 77]
-isPoint: [0 0]   isNotPoint: [98 45]
-isPoint: [98 51]   isNotPoint: [0 0]
-isPoint: [0 0]   isNotPoint: [98 72]
-isPoint: [0 0]   isNotPoint: [98 83]
-isPoint: [0 0]   isNotPoint: [99 36]
-isPoint: [99 53]   isNotPoint: [0 0]
-isPoint: [0 0]   isNotPoint: [99 71]
-isPoint: [0 0]   isNotPoint: [99 97]
-chosen of size: 160 [                                                                                                                                                               ]
-leftover of size: 160 [                                                                                                                                                               ]
-78 3]  dist: 450
-dist from [63 3] to [64 18] is: 21
-point1: [63 5] point2: [2 0]  dist: 7492
-point1: [63 5] point2: [2 0]  dist: 7492
-point1: [63 5] point2: [10 3]  dist: 5626
-point1: [63 5] point2: [13 21]  dist: 5512
-point1: [63 5] point2: [29 92]  dist: 17450
-point1: [63 5] point2: [42 25]  dist: 1682
-point1: [63 5] point2: [39 71]  dist: 9864
-point1: [63 5] point2: [64 18]  dist: 340
-point1: [63 5] point2: [59 44]  dist: 3074
-point1: [63 5] point2: [63 59]  dist: 5832
-point1: [63 5] point2: [88 23]  dist: 1898
-point1: [63 5] point2: [89 56]  dist: 6554
-point1: [63 5] point2: [78 3]  dist: 458
-dist from [63 5] to [64 18] is: 18
-point1: [63 26] point2: [2 0]  dist: 8794
-point1: [63 26] point2: [2 0]  dist: 8794
-point1: [63 26] point2: [10 3]  dist: 6676
-point1: [63 26] point2: [13 21]  dist: 5050
-point1: [63 26] point2: [29 92]  dist: 11024
-point1: [63 26] point2: [42 25]  dist: 884
-point1: [63 26] point2: [39 71]  dist: 5202
-point1: [63 26] point2: [64 18]  dist: 130
-point1: [63 26] point2: [59 44]  dist: 680
-point1: [63 26] point2: [63 59]  dist: 2178
-point1: [63 26] point2: [88 23]  dist: 1268
-point1: [63 26] point2: [89 56]  dist: 3152
-point1: [63 26] point2: [78 3]  dist: 1508
-dist from [63 26] to [64 18] is: 11
-point1: [63 67] point2: [2 0]  dist: 16420
-point1: [63 67] point2: [2 0]  dist: 16420
-point1: [63 67] point2: [10 3]  dist: 13810
-point1: [63 67] point2: [13 21]  dist: 9232
-point1: [63 67] point2: [29 92]  dist: 3562
-point1: [63 67] point2: [42 25]  dist: 4410
-point1: [63 67] point2: [39 71]  dist: 1184
-point1: [63 67] point2: [64 18]  dist: 4804
-point1: [63 67] point2: [59 44]  dist: 1090
-point1: [63 67] point2: [63 59]  dist: 128
-point1: [63 67] point2: [88 23]  dist: 5122
-point1: [63 67] point2: [89 56]  dist: 1594
-point1: [63 67] point2: [78 3]  dist: 8642
-dist from [63 67] to [63 59] is: 11
-point1: [64 43] point2: [2 0]  dist: 11386
-point1: [64 43] point2: [2 0]  dist: 11386
-point1: [64 43] point2: [10 3]  dist: 9032
-point1: [64 43] point2: [13 21]  dist: 6170
-point1: [64 43] point2: [29 92]  dist: 7252
-point1: [64 43] point2: [42 25]  dist: 1616
-point1: [64 43] point2: [39 71]  dist: 2818
-point1: [64 43] point2: [64 18]  dist: 1250
-point1: [64 43] point2: [59 44]  dist: 52
-point1: [64 43] point2: [63 59]  dist: 514
-point1: [64 43] point2: [88 23]  dist: 1952
-point1: [64 43] point2: [89 56]  dist: 1588
-point1: [64 43] point2: [78 3]  dist: 3592
-dist from [64 43] to [59 44] is: 7
-point1: [65 46] point2: [2 0]  dist: 12170
-point1: [65 46] point2: [2 0]  dist: 12170
-point1: [65 46] point2: [10 3]  dist: 9748
-point1: [65 46] point2: [13 21]  dist: 6658
-point1: [65 46] point2: [29 92]  dist: 6824
-point1: [65 46] point2: [42 25]  dist: 1940
-point1: [65 46] point2: [39 71]  dist: 2602
-point1: [65 46] point2: [64 18]  dist: 1570
-point1: [65 46] point2: [59 44]  dist: 80
-point1: [65 46] point2: [63 59]  dist: 346
-point1: [65 46] point2: [88 23]  dist: 2116
-point1: [65 46] point2: [89 56]  dist: 1352
-point1: [65 46] point2: [78 3]  dist: 4036
-dist from [65 46] to [59 44] is: 8
-point1: [66 54] point2: [2 0]  dist: 14024
-point1: [66 54] point2: [2 0]  dist: 14024
-point1: [66 54] point2: [10 3]  dist: 11474
-point1: [66 54] point2: [13 21]  dist: 7796
-point1: [66 54] point2: [29 92]  dist: 5626
-point1: [66 54] point2: [42 25]  dist: 2834
-point1: [66 54] point2: [39 71]  dist: 2036
-point1: [66 54] point2: [64 18]  dist: 2600
-point1: [66 54] point2: [59 44]  dist: 298
-point1: [66 54] point2: [63 59]  dist: 68
-point1: [66 54] point2: [88 23]  dist: 2890
-point1: [66 54] point2: [89 56]  dist: 1066
-point1: [66 54] point2: [78 3]  dist: 5490
-dist from [66 54] to [63 59] is: 8
-point1: [66 63] point2: [2 0]  dist: 16130
-point1: [66 63] point2: [2 0]  dist: 16130
-point1: [66 63] point2: [10 3]  dist: 13472
-point1: [66 63] point2: [13 21]  dist: 9146
-point1: [66 63] point2: [29 92]  dist: 4420
-point1: [66 63] point2: [42 25]  dist: 4040
-point1: [66 63] point2: [39 71]  dist: 1586
-point1: [66 63] point2: [64 18]  dist: 4058
-point1: [66 63] point2: [59 44]  dist: 820
-point1: [66 63] point2: [63 59]  dist: 50
-point1: [66 63] point2: [88 23]  dist: 4168
-point1: [66 63] point2: [89 56]  dist: 1156
-point1: [66 63] point2: [78 3]  dist: 7488
-dist from [66 63] to [63 59] is: 7
-point1: [67 35] point2: [2 0]  dist: 10900
-point1: [67 35] point2: [2 0]  dist: 10900
-point1: [67 35] point2: [10 3]  dist: 8546
-point1: [67 35] point2: [13 21]  dist: 6224
-point1: [67 35] point2: [29 92]  dist: 9386
-point1: [67 35] point2: [42 25]  dist: 1450
-point1: [67 35] point2: [39 71]  dist: 4160
-point1: [67 35] point2: [64 18]  dist: 596
-point1: [67 35] point2: [59 44]  dist: 290
-point1: [67 35] point2: [63 59]  dist: 1184
-point1: [67 35] point2: [88 23]  dist: 1170
-point1: [67 35] point2: [89 56]  dist: 1850
-point1: [67 35] point2: [78 3]  dist: 2290
-dist from [67 35] to [59 44] is: 17
-point1: [67 96] point2: [2 0]  dist: 26882
-point1: [67 96] point2: [2 0]  dist: 26882
-point1: [67 96] point2: [10 3]  dist: 23796
-point1: [67 96] point2: [13 21]  dist: 17082
-point1: [67 96] point2: [29 92]  dist: 2920
-point1: [67 96] point2: [42 25]  dist: 11332
-point1: [67 96] point2: [39 71]  dist: 2818
-point1: [67 96] point2: [64 18]  dist: 12186
-point1: [67 96] point2: [59 44]  dist: 5536
-point1: [67 96] point2: [63 59]  dist: 2770
-point1: [67 96] point2: [88 23]  dist: 11540
-point1: [67 96] point2: [89 56]  dist: 4168
-point1: [67 96] point2: [78 3]  dist: 17540
-dist from [67 96] to [63 59] is: 52
-point1: [68 8] point2: [2 0]  dist: 8840
-point1: [68 8] point2: [2 0]  dist: 8840
-point1: [68 8] point2: [10 3]  dist: 6778
-point1: [68 8] point2: [13 21]  dist: 6388
-point1: [68 8] point2: [29 92]  dist: 17154
-point1: [68 8] point2: [42 25]  dist: 1930
-point1: [68 8] point2: [39 71]  dist: 9620
-point1: [68 8] point2: [64 18]  dist: 232
-point1: [68 8] point2: [59 44]  dist: 2754
-point1: [68 8] point2: [63 59]  dist: 5252
-point1: [68 8] point2: [88 23]  dist: 1250
-point1: [68 8] point2: [89 56]  dist: 5490
-point1: [68 8] point2: [78 3]  dist: 250
-dist from [68 8] to [64 18] is: 15
-point1: [68 95] point2: [2 0]  dist: 26762
-point1: [68 95] point2: [2 0]  dist: 26762
-point1: [68 95] point2: [10 3]  dist: 23656
-point1: [68 95] point2: [13 21]  dist: 17002
-point1: [68 95] point2: [29 92]  dist: 3060
-point1: [68 95] point2: [42 25]  dist: 11152
-point1: [68 95] point2: [39 71]  dist: 2834
-point1: [68 95] point2: [64 18]  dist: 11890
-point1: [68 95] point2: [59 44]  dist: 5364
-point1: [68 95] point2: [63 59]  dist: 2642
-point1: [68 95] point2: [88 23]  dist: 11168
-point1: [68 95] point2: [89 56]  dist: 3924
-point1: [68 95] point2: [78 3]  dist: 17128
-dist from [68 95] to [63 59] is: 51
-point1: [69 68] point2: [2 0]  dist: 18226
-point1: [69 68] point2: [2 0]  dist: 18226
-point1: [69 68] point2: [10 3]  dist: 15412
-point1: [69 68] point2: [13 21]  dist: 10690
-point1: [69 68] point2: [29 92]  dist: 4352
-point1: [69 68] point2: [42 25]  dist: 5156
-point1: [69 68] point2: [39 71]  dist: 1818
-point1: [69 68] point2: [64 18]  dist: 5050
-point1: [69 68] point2: [59 44]  dist: 1352
-point1: [69 68] point2: [63 59]  dist: 234
-point1: [69 68] point2: [88 23]  dist: 4772
-point1: [69 68] point2: [89 56]  dist: 1088
-point1: [69 68] point2: [78 3]  dist: 8612
-dist from [69 68] to [63 59] is: 15
-point1: [70 62] point2: [2 0]  dist: 16936
-point1: [70 62] point2: [2 0]  dist: 16936
-point1: [70 62] point2: [10 3]  dist: 14162
-point1: [70 62] point2: [13 21]  dist: 9860
-point1: [70 62] point2: [29 92]  dist: 5162
-point1: [70 62] point2: [42 25]  dist: 4306
-point1: [70 62] point2: [39 71]  dist: 2084
-point1: [70 62] point2: [64 18]  dist: 3944
-point1: [70 62] point2: [59 44]  dist: 890
-point1: [70 62] point2: [63 59]  dist: 116
-point1: [70 62] point2: [88 23]  dist: 3690
-point1: [70 62] point2: [89 56]  dist: 794
-point1: [70 62] point2: [78 3]  dist: 7090
-dist from [70 62] to [63 59] is: 10
-point1: [70 84] point2: [2 0]  dist: 23360
-point1: [70 84] point2: [2 0]  dist: 23360
-point1: [70 84] point2: [10 3]  dist: 20322
-point1: [70 84] point2: [13 21]  dist: 14436
-point1: [70 84] point2: [29 92]  dist: 3490
-point1: [70 84] point2: [42 25]  dist: 8530
-point1: [70 84] point2: [39 71]  dist: 2260
-point1: [70 84] point2: [64 18]  dist: 8784
-point1: [70 84] point2: [59 44]  dist: 3442
-point1: [70 84] point2: [63 59]  dist: 1348
-point1: [70 84] point2: [88 23]  dist: 8090
-point1: [70 84] point2: [89 56]  dist: 2290
-point1: [70 84] point2: [78 3]  dist: 13250
-dist from [70 84] to [63 59] is: 36
-point1: [71 82] point2: [2 0]  dist: 22970
-point1: [71 82] point2: [2 0]  dist: 22970
-point1: [71 82] point2: [10 3]  dist: 19924
-point1: [71 82] point2: [13 21]  dist: 14170
-point1: [71 82] point2: [29 92]  dist: 3728
-point1: [71 82] point2: [42 25]  dist: 8180
-point1: [71 82] point2: [39 71]  dist: 2290
-point1: [71 82] point2: [64 18]  dist: 8290
-point1: [71 82] point2: [59 44]  dist: 3176
-point1: [71 82] point2: [63 59]  dist: 1186
-point1: [71 82] point2: [88 23]  dist: 7540
-point1: [71 82] point2: [89 56]  dist: 2000
-point1: [71 82] point2: [78 3]  dist: 12580
-dist from [71 82] to [63 59] is: 34
-point1: [72 5] point2: [2 0]  dist: 9850
-point1: [72 5] point2: [2 0]  dist: 9850
-point1: [72 5] point2: [10 3]  dist: 7696
-point1: [72 5] point2: [13 21]  dist: 7474
-point1: [72 5] point2: [29 92]  dist: 18836
-point1: [72 5] point2: [42 25]  dist: 2600
-point1: [72 5] point2: [39 71]  dist: 10890
-point1: [72 5] point2: [64 18]  dist: 466
-point1: [72 5] point2: [59 44]  dist: 3380
-point1: [72 5] point2: [63 59]  dist: 5994
-point1: [72 5] point2: [88 23]  dist: 1160
-point1: [72 5] point2: [89 56]  dist: 5780
-point1: [72 5] point2: [78 3]  dist: 80
-dist from [72 5] to [78 3] is: 8
-point1: [72 54] point2: [2 0]  dist: 15632
-point1: [72 54] point2: [2 0]  dist: 15632
-point1: [72 54] point2: [10 3]  dist: 12890
-point1: [72 54] point2: [13 21]  dist: 9140
-point1: [72 54] point2: [29 92]  dist: 6586
-point1: [72 54] point2: [42 25]  dist: 3482
-point1: [72 54] point2: [39 71]  dist: 2756
-point1: [72 54] point2: [64 18]  dist: 2720
-point1: [72 54] point2: [59 44]  dist: 538
-point1: [72 54] point2: [63 59]  dist: 212
-point1: [72 54] point2: [88 23]  dist: 2434
-point1: [72 54] point2: [89 56]  dist: 586
-point1: [72 54] point2: [78 3]  dist: 5274
-dist from [72 54] to [63 59] is: 14
-point1: [73 28] point2: [2 0]  dist: 11650
-point1: [73 28] point2: [2 0]  dist: 11650
-point1: [73 28] point2: [10 3]  dist: 9188
-point1: [73 28] point2: [13 21]  dist: 7298
-point1: [73 28] point2: [29 92]  dist: 12064
-point1: [73 28] point2: [42 25]  dist: 1940
-point1: [73 28] point2: [39 71]  dist: 6010
-point1: [73 28] point2: [64 18]  dist: 362
-point1: [73 28] point2: [59 44]  dist: 904
-point1: [73 28] point2: [63 59]  dist: 2122
-point1: [73 28] point2: [88 23]  dist: 500
-point1: [73 28] point2: [89 56]  dist: 2080
-point1: [73 28] point2: [78 3]  dist: 1300
-dist from [73 28] to [64 18] is: 19
-point1: [74 57] point2: [2 0]  dist: 16866
-point1: [74 57] point2: [2 0]  dist: 16866
-point1: [74 57] point2: [10 3]  dist: 14024
-point1: [74 57] point2: [13 21]  dist: 10034
-point1: [74 57] point2: [29 92]  dist: 6500
-point1: [74 57] point2: [42 25]  dist: 4096
-point1: [74 57] point2: [39 71]  dist: 2842
-point1: [74 57] point2: [64 18]  dist: 3242
-point1: [74 57] point2: [59 44]  dist: 788
-point1: [74 57] point2: [63 59]  dist: 250
-point1: [74 57] point2: [88 23]  dist: 2704
-point1: [74 57] point2: [89 56]  dist: 452
-point1: [74 57] point2: [78 3]  dist: 5864
-dist from [74 57] to [63 59] is: 15
-point1: [75 35] point2: [2 0]  dist: 13108
-point1: [75 35] point2: [2 0]  dist: 13108
-point1: [75 35] point2: [10 3]  dist: 10498
-point1: [75 35] point2: [13 21]  dist: 8080
-point1: [75 35] point2: [29 92]  dist: 10730
-point1: [75 35] point2: [42 25]  dist: 2378
-point1: [75 35] point2: [39 71]  dist: 5184
-point1: [75 35] point2: [64 18]  dist: 820
-point1: [75 35] point2: [59 44]  dist: 674
-point1: [75 35] point2: [63 59]  dist: 1440
-point1: [75 35] point2: [88 23]  dist: 626
-point1: [75 35] point2: [89 56]  dist: 1274
-point1: [75 35] point2: [78 3]  dist: 2066
-dist from [75 35] to [59 44] is: 25
-point1: [76 6] point2: [2 0]  dist: 11024
-point1: [76 6] point2: [2 0]  dist: 11024
-point1: [76 6] point2: [10 3]  dist: 8730
-point1: [76 6] point2: [13 21]  dist: 8388
-point1: [76 6] point2: [29 92]  dist: 19210
-point1: [76 6] point2: [42 25]  dist: 3034
-point1: [76 6] point2: [39 71]  dist: 11188
-point1: [76 6] point2: [64 18]  dist: 576
-point1: [76 6] point2: [59 44]  dist: 3466
-point1: [76 6] point2: [63 59]  dist: 5956
-point1: [76 6] point2: [88 23]  dist: 866
-point1: [76 6] point2: [89 56]  dist: 5338
-point1: [76 6] point2: [78 3]  dist: 26
-dist from [76 6] to [78 3] is: 5
-point1: [76 9] point2: [2 0]  dist: 11114
-point1: [76 9] point2: [2 0]  dist: 11114
-point1: [76 9] point2: [10 3]  dist: 8784
-point1: [76 9] point2: [13 21]  dist: 8226
-point1: [76 9] point2: [29 92]  dist: 18196
-point1: [76 9] point2: [42 25]  dist: 2824
-point1: [76 9] point2: [39 71]  dist: 10426
-point1: [76 9] point2: [64 18]  dist: 450
-point1: [76 9] point2: [59 44]  dist: 3028
-point1: [76 9] point2: [63 59]  dist: 5338
-point1: [76 9] point2: [88 23]  dist: 680
-point1: [76 9] point2: [89 56]  dist: 4756
-point1: [76 9] point2: [78 3]  dist: 80
-dist from [76 9] to [78 3] is: 8
-point1: [76 27] point2: [2 0]  dist: 12410
-point1: [76 27] point2: [2 0]  dist: 12410
-point1: [76 27] point2: [10 3]  dist: 9864
-point1: [76 27] point2: [13 21]  dist: 8010
-point1: [76 27] point2: [29 92]  dist: 12868
-point1: [76 27] point2: [42 25]  dist: 2320
-point1: [76 27] point2: [39 71]  dist: 6610
-point1: [76 27] point2: [64 18]  dist: 450
-point1: [76 27] point2: [59 44]  dist: 1156
-point1: [76 27] point2: [63 59]  dist: 2386
-point1: [76 27] point2: [88 23]  dist: 320
-point1: [76 27] point2: [89 56]  dist: 2020
-point1: [76 27] point2: [78 3]  dist: 1160
-dist from [76 27] to [88 23] is: 17
-point1: [76 37] point2: [2 0]  dist: 13690
-point1: [76 37] point2: [2 0]  dist: 13690
-point1: [76 37] point2: [10 3]  dist: 11024
-point1: [76 37] point2: [13 21]  dist: 8450
-point1: [76 37] point2: [29 92]  dist: 10468
-point1: [76 37] point2: [42 25]  dist: 2600
-point1: [76 37] point2: [39 71]  dist: 5050
-point1: [76 37] point2: [64 18]  dist: 1010
-point1: [76 37] point2: [59 44]  dist: 676
-point1: [76 37] point2: [63 59]  dist: 1306
-point1: [76 37] point2: [88 23]  dist: 680
-point1: [76 37] point2: [89 56]  dist: 1060
-point1: [76 37] point2: [78 3]  dist: 2320
-dist from [76 37] to [59 44] is: 26
-point1: [77 74] point2: [2 0]  dist: 22202
-point1: [77 74] point2: [2 0]  dist: 22202
-point1: [77 74] point2: [10 3]  dist: 19060
-point1: [77 74] point2: [13 21]  dist: 13810
-point1: [77 74] point2: [29 92]  dist: 5256
-point1: [77 74] point2: [42 25]  dist: 7252
-point1: [77 74] point2: [39 71]  dist: 2906
-point1: [77 74] point2: [64 18]  dist: 6610
-point1: [77 74] point2: [59 44]  dist: 2448
-point1: [77 74] point2: [63 59]  dist: 842
-point1: [77 74] point2: [88 23]  dist: 5444
-point1: [77 74] point2: [89 56]  dist: 936
-point1: [77 74] point2: [78 3]  dist: 10084
-dist from [77 74] to [63 59] is: 29
-point1: [78 3] point2: [2 0]  dist: 11570
-point1: [78 3] point2: [2 0]  dist: 11570
-point1: [78 3] point2: [10 3]  dist: 9248
-point1: [78 3] point2: [13 21]  dist: 9098
-point1: [78 3] point2: [29 92]  dist: 20644
-point1: [78 3] point2: [42 25]  dist: 3560
-point1: [78 3] point2: [39 71]  dist: 12290
-point1: [78 3] point2: [64 18]  dist: 842
-point1: [78 3] point2: [59 44]  dist: 4084
-point1: [78 3] point2: [63 59]  dist: 6722
-point1: [78 3] point2: [88 23]  dist: 1000
-point1: [78 3] point2: [89 56]  dist: 5860
-point1: [78 3] point2: [78 3]  dist: 0
-dist from [78 3] to [78 3] is: 0
-point1: [80 99] point2: [2 0]  dist: 31770
-point1: [80 99] point2: [2 0]  dist: 31770
-point1: [80 99] point2: [10 3]  dist: 28232
-point1: [80 99] point2: [13 21]  dist: 21146
-point1: [80 99] point2: [29 92]  dist: 5300
-point1: [80 99] point2: [42 25]  dist: 13840
-point1: [80 99] point2: [39 71]  dist: 4930
-point1: [80 99] point2: [64 18]  dist: 13634
-point1: [80 99] point2: [59 44]  dist: 6932
-point1: [80 99] point2: [63 59]  dist: 3778
-point1: [80 99] point2: [88 23]  dist: 11680
-point1: [80 99] point2: [89 56]  dist: 3860
-point1: [80 99] point2: [78 3]  dist: 18440
-dist from [80 99] to [63 59] is: 61
-point1: [81 28] point2: [2 0]  dist: 14050
-point1: [81 28] point2: [2 0]  dist: 14050
-point1: [81 28] point2: [10 3]  dist: 11332
-point1: [81 28] point2: [13 21]  dist: 9346
-point1: [81 28] point2: [29 92]  dist: 13600
-point1: [81 28] point2: [42 25]  dist: 3060
-point1: [81 28] point2: [39 71]  dist: 7226
-point1: [81 28] point2: [64 18]  dist: 778
-point1: [81 28] point2: [59 44]  dist: 1480
-point1: [81 28] point2: [63 59]  dist: 2570
-point1: [81 28] point2: [88 23]  dist: 148
-point1: [81 28] point2: [89 56]  dist: 1696
-point1: [81 28] point2: [78 3]  dist: 1268
-dist from [81 28] to [88 23] is: 12
-point1: [81 43] point2: [2 0]  dist: 16180
-point1: [81 43] point2: [2 0]  dist: 16180
-point1: [81 43] point2: [10 3]  dist: 13282
-point1: [81 43] point2: [13 21]  dist: 10216
-point1: [81 43] point2: [29 92]  dist: 10210
-point1: [81 43] point2: [42 25]  dist: 3690
-point1: [81 43] point2: [39 71]  dist: 5096
-point1: [81 43] point2: [64 18]  dist: 1828
-point1: [81 43] point2: [59 44]  dist: 970
-point1: [81 43] point2: [63 59]  dist: 1160
-point1: [81 43] point2: [88 23]  dist: 898
-point1: [81 43] point2: [89 56]  dist: 466
-point1: [81 43] point2: [78 3]  dist: 3218
-dist from [81 43] to [89 56] is: 21
-point1: [81 47] point2: [2 0]  dist: 16900
-point1: [81 47] point2: [2 0]  dist: 16900
-point1: [81 47] point2: [10 3]  dist: 13954
-point1: [81 47] point2: [13 21]  dist: 10600
-point1: [81 47] point2: [29 92]  dist: 9458
-point1: [81 47] point2: [42 25]  dist: 4010
-point1: [81 47] point2: [39 71]  dist: 4680
-point1: [81 47] point2: [64 18]  dist: 2260
-point1: [81 47] point2: [59 44]  dist: 986
-point1: [81 47] point2: [63 59]  dist: 936
-point1: [81 47] point2: [88 23]  dist: 1250
-point1: [81 47] point2: [89 56]  dist: 290
-point1: [81 47] point2: [78 3]  dist: 3890
-dist from [81 47] to [89 56] is: 17
-point1: [81 68] point2: [2 0]  dist: 21730
-point1: [81 68] point2: [2 0]  dist: 21730
-point1: [81 68] point2: [10 3]  dist: 18532
-point1: [81 68] point2: [13 21]  dist: 13666
-point1: [81 68] point2: [29 92]  dist: 6560
-point1: [81 68] point2: [42 25]  dist: 6740
-point1: [81 68] point2: [39 71]  dist: 3546
-point1: [81 68] point2: [64 18]  dist: 5578
-point1: [81 68] point2: [59 44]  dist: 2120
-point1: [81 68] point2: [63 59]  dist: 810
-point1: [81 68] point2: [88 23]  dist: 4148
-point1: [81 68] point2: [89 56]  dist: 416
-point1: [81 68] point2: [78 3]  dist: 8468
-dist from [81 68] to [89 56] is: 20
-point1: [82 17] point2: [2 0]  dist: 13378
-point1: [82 17] point2: [2 0]  dist: 13378
-point1: [82 17] point2: [10 3]  dist: 10760
-point1: [82 17] point2: [13 21]  dist: 9554
-point1: [82 17] point2: [29 92]  dist: 16868
-point1: [82 17] point2: [42 25]  dist: 3328
-point1: [82 17] point2: [39 71]  dist: 9530
-point1: [82 17] point2: [64 18]  dist: 650
-point1: [82 17] point2: [59 44]  dist: 2516
-point1: [82 17] point2: [63 59]  dist: 4250
-point1: [82 17] point2: [88 23]  dist: 144
-point1: [82 17] point2: [89 56]  dist: 3140
-point1: [82 17] point2: [78 3]  dist: 424
-dist from [82 17] to [88 23] is: 12
-point1: [84 79] point2: [2 0]  dist: 25930
-point1: [84 79] point2: [2 0]  dist: 25930
-point1: [84 79] point2: [10 3]  dist: 22504
-point1: [84 79] point2: [13 21]  dist: 16810
-point1: [84 79] point2: [29 92]  dist: 6388
-point1: [84 79] point2: [42 25]  dist: 9360
-point1: [84 79] point2: [39 71]  dist: 4178
-point1: [84 79] point2: [64 18]  dist: 8242
-point1: [84 79] point2: [59 44]  dist: 3700
-point1: [84 79] point2: [63 59]  dist: 1682
-point1: [84 79] point2: [88 23]  dist: 6304
-point1: [84 79] point2: [89 56]  dist: 1108
-point1: [84 79] point2: [78 3]  dist: 11624
-dist from [84 79] to [89 56] is: 33
-point1: [84 85] point2: [2 0]  dist: 27898
-point1: [84 85] point2: [2 0]  dist: 27898
-point1: [84 85] point2: [10 3]  dist: 24400
-point1: [84 85] point2: [13 21]  dist: 18274
-point1: [84 85] point2: [29 92]  dist: 6148
-point1: [84 85] point2: [42 25]  dist: 10728
-point1: [84 85] point2: [39 71]  dist: 4442
-point1: [84 85] point2: [64 18]  dist: 9778
-point1: [84 85] point2: [59 44]  dist: 4612
-point1: [84 85] point2: [63 59]  dist: 2234
-point1: [84 85] point2: [88 23]  dist: 7720
-point1: [84 85] point2: [89 56]  dist: 1732
-point1: [84 85] point2: [78 3]  dist: 13520
-dist from [84 85] to [89 56] is: 41
-point1: [86 21] point2: [2 0]  dist: 14994
-point1: [86 21] point2: [2 0]  dist: 14994
-point1: [86 21] point2: [10 3]  dist: 12200
-point1: [86 21] point2: [13 21]  dist: 10658
-point1: [86 21] point2: [29 92]  dist: 16580
-point1: [86 21] point2: [42 25]  dist: 3904
-point1: [86 21] point2: [39 71]  dist: 9418
-point1: [86 21] point2: [64 18]  dist: 986
-point1: [86 21] point2: [59 44]  dist: 2516
-point1: [86 21] point2: [63 59]  dist: 3946
-point1: [86 21] point2: [88 23]  dist: 16
-point1: [86 21] point2: [89 56]  dist: 2468
-point1: [86 21] point2: [78 3]  dist: 776
-dist from [86 21] to [88 23] is: 4
-point1: [86 50] point2: [2 0]  dist: 19112
-point1: [86 50] point2: [2 0]  dist: 19112
-point1: [86 50] point2: [10 3]  dist: 15970
-point1: [86 50] point2: [13 21]  dist: 12340
-point1: [86 50] point2: [29 92]  dist: 10026
-point1: [86 50] point2: [42 25]  dist: 5122
-point1: [86 50] point2: [39 71]  dist: 5300
-point1: [86 50] point2: [64 18]  dist: 3016
-point1: [86 50] point2: [59 44]  dist: 1530
-point1: [86 50] point2: [63 59]  dist: 1220
-point1: [86 50] point2: [88 23]  dist: 1466
-point1: [86 50] point2: [89 56]  dist: 90
-point1: [86 50] point2: [78 3]  dist: 4546
-dist from [86 50] to [89 56] is: 9
-point1: [87 9] point2: [2 0]  dist: 14612
-point1: [87 9] point2: [2 0]  dist: 14612
-point1: [87 9] point2: [10 3]  dist: 11930
-point1: [87 9] point2: [13 21]  dist: 11240
-point1: [87 9] point2: [29 92]  dist: 20506
-point1: [87 9] point2: [42 25]  dist: 4562
-point1: [87 9] point2: [39 71]  dist: 12296
-point1: [87 9] point2: [64 18]  dist: 1220
-point1: [87 9] point2: [59 44]  dist: 4018
-point1: [87 9] point2: [63 59]  dist: 6152
-point1: [87 9] point2: [88 23]  dist: 394
-point1: [87 9] point2: [89 56]  dist: 4426
-point1: [87 9] point2: [78 3]  dist: 234
-dist from [87 9] to [78 3] is: 15
-point1: [87 64] point2: [2 0]  dist: 22642
-point1: [87 64] point2: [2 0]  dist: 22642
-point1: [87 64] point2: [10 3]  dist: 19300
-point1: [87 64] point2: [13 21]  dist: 14650
-point1: [87 64] point2: [29 92]  dist: 8296
-point1: [87 64] point2: [42 25]  dist: 7092
-point1: [87 64] point2: [39 71]  dist: 4706
-point1: [87 64] point2: [64 18]  dist: 5290
-point1: [87 64] point2: [59 44]  dist: 2368
-point1: [87 64] point2: [63 59]  dist: 1202
-point1: [87 64] point2: [88 23]  dist: 3364
-point1: [87 64] point2: [89 56]  dist: 136
-point1: [87 64] point2: [78 3]  dist: 7604
-dist from [87 64] to [89 56] is: 11
-point1: [88 72] point2: [2 0]  dist: 25160
-point1: [88 72] point2: [2 0]  dist: 25160
-point1: [88 72] point2: [10 3]  dist: 21690
-point1: [88 72] point2: [13 21]  dist: 16452
-point1: [88 72] point2: [29 92]  dist: 7762
-point1: [88 72] point2: [42 25]  dist: 8650
-point1: [88 72] point2: [39 71]  dist: 4804
-point1: [88 72] point2: [64 18]  dist: 6984
-point1: [88 72] point2: [59 44]  dist: 3250
-point1: [88 72] point2: [63 59]  dist: 1588
-point1: [88 72] point2: [88 23]  dist: 4802
-point1: [88 72] point2: [89 56]  dist: 514
-point1: [88 72] point2: [78 3]  dist: 9722
-dist from [88 72] to [89 56] is: 22
-point1: [89 25] point2: [2 0]  dist: 16388
-point1: [89 25] point2: [2 0]  dist: 16388
-point1: [89 25] point2: [10 3]  dist: 13450
-point1: [89 25] point2: [13 21]  dist: 11584
-point1: [89 25] point2: [29 92]  dist: 16178
-point1: [89 25] point2: [42 25]  dist: 4418
-point1: [89 25] point2: [39 71]  dist: 9232
-point1: [89 25] point2: [64 18]  dist: 1348
-point1: [89 25] point2: [59 44]  dist: 2522
-point1: [89 25] point2: [63 59]  dist: 3664
-point1: [89 25] point2: [88 23]  dist: 10
-point1: [89 25] point2: [89 56]  dist: 1922
-point1: [89 25] point2: [78 3]  dist: 1210
-dist from [89 25] to [88 23] is: 3
-point1: [89 55] point2: [2 0]  dist: 21188
-point1: [89 55] point2: [2 0]  dist: 21188
-point1: [89 55] point2: [10 3]  dist: 17890
-point1: [89 55] point2: [13 21]  dist: 13864
-point1: [89 55] point2: [29 92]  dist: 9938
-point1: [89 55] point2: [42 25]  dist: 6218
-point1: [89 55] point2: [39 71]  dist: 5512
-point1: [89 55] point2: [64 18]  dist: 3988
-point1: [89 55] point2: [59 44]  dist: 2042
-point1: [89 55] point2: [63 59]  dist: 1384
-point1: [89 55] point2: [88 23]  dist: 2050
-point1: [89 55] point2: [89 56]  dist: 2
-point1: [89 55] point2: [78 3]  dist: 5650
-dist from [89 55] to [89 56] is: 1
-point1: [90 47] point2: [2 0]  dist: 19906
-point1: [90 47] point2: [2 0]  dist: 19906
-point1: [90 47] point2: [10 3]  dist: 16672
-point1: [90 47] point2: [13 21]  dist: 13210
-point1: [90 47] point2: [29 92]  dist: 11492
-point1: [90 47] point2: [42 25]  dist: 5576
-point1: [90 47] point2: [39 71]  dist: 6354
-point1: [90 47] point2: [64 18]  dist: 3034
-point1: [90 47] point2: [59 44]  dist: 1940
-point1: [90 47] point2: [63 59]  dist: 1746
-point1: [90 47] point2: [88 23]  dist: 1160
-point1: [90 47] point2: [89 56]  dist: 164
-point1: [90 47] point2: [78 3]  dist: 4160
-dist from [90 47] to [89 56] is: 12
-point1: [90 49] point2: [2 0]  dist: 20290
-point1: [90 49] point2: [2 0]  dist: 20290
-point1: [90 49] point2: [10 3]  dist: 17032
-point1: [90 49] point2: [13 21]  dist: 13426
-point1: [90 49] point2: [29 92]  dist: 11140
-point1: [90 49] point2: [42 25]  dist: 5760
-point1: [90 49] point2: [39 71]  dist: 6170
-point1: [90 49] point2: [64 18]  dist: 3274
-point1: [90 49] point2: [59 44]  dist: 1972
-point1: [90 49] point2: [63 59]  dist: 1658
-point1: [90 49] point2: [88 23]  dist: 1360
-point1: [90 49] point2: [89 56]  dist: 100
-point1: [90 49] point2: [78 3]  dist: 4520
-dist from [90 49] to [89 56] is: 10
-point1: [91 50] point2: [2 0]  dist: 20842
-point1: [91 50] point2: [2 0]  dist: 20842
-point1: [91 50] point2: [10 3]  dist: 17540
-point1: [91 50] point2: [13 21]  dist: 13850
-point1: [91 50] point2: [29 92]  dist: 11216
-point1: [91 50] point2: [42 25]  dist: 6052
-point1: [91 50] point2: [39 71]  dist: 6290
-point1: [91 50] point2: [64 18]  dist: 3506
-point1: [91 50] point2: [59 44]  dist: 2120
-point1: [91 50] point2: [63 59]  dist: 1730
-point1: [91 50] point2: [88 23]  dist: 1476
-point1: [91 50] point2: [89 56]  dist: 80
-point1: [91 50] point2: [78 3]  dist: 4756
-dist from [91 50] to [89 56] is: 8
-point1: [92 73] point2: [2 0]  dist: 26858
-point1: [92 73] point2: [2 0]  dist: 26858
-point1: [92 73] point2: [10 3]  dist: 23248
-point1: [92 73] point2: [13 21]  dist: 17890
-point1: [92 73] point2: [29 92]  dist: 8660
-point1: [92 73] point2: [42 25]  dist: 9608
-point1: [92 73] point2: [39 71]  dist: 5626
-point1: [92 73] point2: [64 18]  dist: 7618
-point1: [92 73] point2: [59 44]  dist: 3860
-point1: [92 73] point2: [63 59]  dist: 2074
-point1: [92 73] point2: [88 23]  dist: 5032
-point1: [92 73] point2: [89 56]  dist: 596
-point1: [92 73] point2: [78 3]  dist: 10192
-dist from [92 73] to [89 56] is: 24
-point1: [93 99] point2: [2 0]  dist: 36164
-point1: [93 99] point2: [2 0]  dist: 36164
-point1: [93 99] point2: [10 3]  dist: 32210
-point1: [93 99] point2: [13 21]  dist: 24968
-point1: [93 99] point2: [29 92]  dist: 8290
-point1: [93 99] point2: [42 25]  dist: 16154
-point1: [93 99] point2: [39 71]  dist: 7400
-point1: [93 99] point2: [64 18]  dist: 14804
-point1: [93 99] point2: [59 44]  dist: 8362
-point1: [93 99] point2: [63 59]  dist: 5000
-point1: [93 99] point2: [88 23]  dist: 11602
-point1: [93 99] point2: [89 56]  dist: 3730
-point1: [93 99] point2: [78 3]  dist: 18882
-dist from [93 99] to [89 56] is: 61
-point1: [94 23] point2: [2 0]  dist: 17986
-point1: [94 23] point2: [2 0]  dist: 17986
-point1: [94 23] point2: [10 3]  dist: 14912
-point1: [94 23] point2: [13 21]  dist: 13130
-point1: [94 23] point2: [29 92]  dist: 17972
-point1: [94 23] point2: [42 25]  dist: 5416
-point1: [94 23] point2: [39 71]  dist: 10658
-point1: [94 23] point2: [64 18]  dist: 1850
-point1: [94 23] point2: [59 44]  dist: 3332
-point1: [94 23] point2: [63 59]  dist: 4514
-point1: [94 23] point2: [88 23]  dist: 72
-point1: [94 23] point2: [89 56]  dist: 2228
-point1: [94 23] point2: [78 3]  dist: 1312
-dist from [94 23] to [88 23] is: 8
-point1: [94 93] point2: [2 0]  dist: 34226
-point1: [94 93] point2: [2 0]  dist: 34226
-point1: [94 93] point2: [10 3]  dist: 30312
-point1: [94 93] point2: [13 21]  dist: 23490
-point1: [94 93] point2: [29 92]  dist: 8452
-point1: [94 93] point2: [42 25]  dist: 14656
-point1: [94 93] point2: [39 71]  dist: 7018
-point1: [94 93] point2: [64 18]  dist: 13050
-point1: [94 93] point2: [59 44]  dist: 7252
-point1: [94 93] point2: [63 59]  dist: 4234
-point1: [94 93] point2: [88 23]  dist: 9872
-point1: [94 93] point2: [89 56]  dist: 2788
-point1: [94 93] point2: [78 3]  dist: 16712
-dist from [94 93] to [89 56] is: 52
-point1: [95 25] point2: [2 0]  dist: 18548
-point1: [95 25] point2: [2 0]  dist: 18548
-point1: [95 25] point2: [10 3]  dist: 15418
-point1: [95 25] point2: [13 21]  dist: 13480
-point1: [95 25] point2: [29 92]  dist: 17690
-point1: [95 25] point2: [42 25]  dist: 5618
-point1: [95 25] point2: [39 71]  dist: 10504
-point1: [95 25] point2: [64 18]  dist: 2020
-point1: [95 25] point2: [59 44]  dist: 3314
-point1: [95 25] point2: [63 59]  dist: 4360
-point1: [95 25] point2: [88 23]  dist: 106
-point1: [95 25] point2: [89 56]  dist: 1994
-point1: [95 25] point2: [78 3]  dist: 1546
-dist from [95 25] to [88 23] is: 10
-point1: [95 28] point2: [2 0]  dist: 18866
-point1: [95 28] point2: [2 0]  dist: 18866
-point1: [95 28] point2: [10 3]  dist: 15700
-point1: [95 28] point2: [13 21]  dist: 13546
-point1: [95 28] point2: [29 92]  dist: 16904
-point1: [95 28] point2: [42 25]  dist: 5636
-point1: [95 28] point2: [39 71]  dist: 9970
-point1: [95 28] point2: [64 18]  dist: 2122
-point1: [95 28] point2: [59 44]  dist: 3104
-point1: [95 28] point2: [63 59]  dist: 3970
-point1: [95 28] point2: [88 23]  dist: 148
-point1: [95 28] point2: [89 56]  dist: 1640
-point1: [95 28] point2: [78 3]  dist: 1828
-dist from [95 28] to [88 23] is: 12
-point1: [95 28] point2: [2 0]  dist: 18866
-point1: [95 28] point2: [2 0]  dist: 18866
-point1: [95 28] point2: [10 3]  dist: 15700
-point1: [95 28] point2: [13 21]  dist: 13546
-point1: [95 28] point2: [29 92]  dist: 16904
-point1: [95 28] point2: [42 25]  dist: 5636
-point1: [95 28] point2: [39 71]  dist: 9970
-point1: [95 28] point2: [64 18]  dist: 2122
-point1: [95 28] point2: [59 44]  dist: 3104
-point1: [95 28] point2: [63 59]  dist: 3970
-point1: [95 28] point2: [88 23]  dist: 148
-point1: [95 28] point2: [89 56]  dist: 1640
-point1: [95 28] point2: [78 3]  dist: 1828
-dist from [95 28] to [88 23] is: 12
-point1: [95 39] point2: [2 0]  dist: 20340
-point1: [95 39] point2: [2 0]  dist: 20340
-point1: [95 39] point2: [10 3]  dist: 17042
-point1: [95 39] point2: [13 21]  dist: 14096
-point1: [95 39] point2: [29 92]  dist: 14330
-point1: [95 39] point2: [42 25]  dist: 6010
-point1: [95 39] point2: [39 71]  dist: 8320
-point1: [95 39] point2: [64 18]  dist: 2804
-point1: [95 39] point2: [59 44]  dist: 2642
-point1: [95 39] point2: [63 59]  dist: 2848
-point1: [95 39] point2: [88 23]  dist: 610
-point1: [95 39] point2: [89 56]  dist: 650
-point1: [95 39] point2: [78 3]  dist: 3170
-dist from [95 39] to [88 23] is: 24
-point1: [95 62] point2: [2 0]  dist: 24986
-point1: [95 62] point2: [2 0]  dist: 24986
-point1: [95 62] point2: [10 3]  dist: 21412
-point1: [95 62] point2: [13 21]  dist: 16810
-point1: [95 62] point2: [29 92]  dist: 10512
-point1: [95 62] point2: [42 25]  dist: 8356
-point1: [95 62] point2: [39 71]  dist: 6434
-point1: [95 62] point2: [64 18]  dist: 5794
-point1: [95 62] point2: [59 44]  dist: 3240
-point1: [95 62] point2: [63 59]  dist: 2066
-point1: [95 62] point2: [88 23]  dist: 3140
-point1: [95 62] point2: [89 56]  dist: 144
-point1: [95 62] point2: [78 3]  dist: 7540
-dist from [95 62] to [89 56] is: 12
-point1: [96 22] point2: [2 0]  dist: 18640
-point1: [96 22] point2: [2 0]  dist: 18640
-point1: [96 22] point2: [10 3]  dist: 15514
-point1: [96 22] point2: [13 21]  dist: 13780
-point1: [96 22] point2: [29 92]  dist: 18778
-point1: [96 22] point2: [42 25]  dist: 5850
-point1: [96 22] point2: [39 71]  dist: 11300
-point1: [96 22] point2: [64 18]  dist: 2080
-point1: [96 22] point2: [59 44]  dist: 3706
-point1: [96 22] point2: [63 59]  dist: 4916
-point1: [96 22] point2: [88 23]  dist: 130
-point1: [96 22] point2: [89 56]  dist: 2410
-point1: [96 22] point2: [78 3]  dist: 1370
-dist from [96 22] to [88 23] is: 11
-point1: [96 77] point2: [2 0]  dist: 29530
-point1: [96 77] point2: [2 0]  dist: 29530
-point1: [96 77] point2: [10 3]  dist: 25744
-point1: [96 77] point2: [13 21]  dist: 20050
-point1: [96 77] point2: [29 92]  dist: 9428
-point1: [96 77] point2: [42 25]  dist: 11240
-point1: [96 77] point2: [39 71]  dist: 6570
-point1: [96 77] point2: [64 18]  dist: 9010
-point1: [96 77] point2: [59 44]  dist: 4916
-point1: [96 77] point2: [63 59]  dist: 2826
-point1: [96 77] point2: [88 23]  dist: 5960
-point1: [96 77] point2: [89 56]  dist: 980
-point1: [96 77] point2: [78 3]  dist: 11600
-dist from [96 77] to [89 56] is: 31
-point1: [98 45] point2: [2 0]  dist: 22482
-point1: [98 45] point2: [2 0]  dist: 22482
-point1: [98 45] point2: [10 3]  dist: 19016
-point1: [98 45] point2: [13 21]  dist: 15602
-point1: [98 45] point2: [29 92]  dist: 13940
-point1: [98 45] point2: [42 25]  dist: 7072
-point1: [98 45] point2: [39 71]  dist: 8314
-point1: [98 45] point2: [64 18]  dist: 3770
-point1: [98 45] point2: [59 44]  dist: 3044
-point1: [98 45] point2: [63 59]  dist: 2842
-point1: [98 45] point2: [88 23]  dist: 1168
-point1: [98 45] point2: [89 56]  dist: 404
-point1: [98 45] point2: [78 3]  dist: 4328
-dist from [98 45] to [89 56] is: 20
-point1: [98 51] point2: [2 0]  dist: 23634
-point1: [98 51] point2: [2 0]  dist: 23634
-point1: [98 51] point2: [10 3]  dist: 20096
-point1: [98 51] point2: [13 21]  dist: 16250
-point1: [98 51] point2: [29 92]  dist: 12884
-point1: [98 51] point2: [42 25]  dist: 7624
-point1: [98 51] point2: [39 71]  dist: 7762
-point1: [98 51] point2: [64 18]  dist: 4490
-point1: [98 51] point2: [59 44]  dist: 3140
-point1: [98 51] point2: [63 59]  dist: 2578
-point1: [98 51] point2: [88 23]  dist: 1768
-point1: [98 51] point2: [89 56]  dist: 212
-point1: [98 51] point2: [78 3]  dist: 5408
-dist from [98 51] to [89 56] is: 14
-point1: [98 72] point2: [2 0]  dist: 28800
-point1: [98 72] point2: [2 0]  dist: 28800
-point1: [98 72] point2: [10 3]  dist: 25010
-point1: [98 72] point2: [13 21]  dist: 19652
-point1: [98 72] point2: [29 92]  dist: 10322
-point1: [98 72] point2: [42 25]  dist: 10690
-point1: [98 72] point2: [39 71]  dist: 6964
-point1: [98 72] point2: [64 18]  dist: 8144
-point1: [98 72] point2: [59 44]  dist: 4610
-point1: [98 72] point2: [63 59]  dist: 2788
-point1: [98 72] point2: [88 23]  dist: 5002
-point1: [98 72] point2: [89 56]  dist: 674
-point1: [98 72] point2: [78 3]  dist: 10322
-dist from [98 72] to [89 56] is: 25
-point1: [98 83] point2: [2 0]  dist: 32210
-point1: [98 83] point2: [2 0]  dist: 32210
-point1: [98 83] point2: [10 3]  dist: 28288
-point1: [98 83] point2: [13 21]  dist: 22138
-point1: [98 83] point2: [29 92]  dist: 9684
-point1: [98 83] point2: [42 25]  dist: 13000
-point1: [98 83] point2: [39 71]  dist: 7250
-point1: [98 83] point2: [64 18]  dist: 10762
-point1: [98 83] point2: [59 44]  dist: 6084
-point1: [98 83] point2: [63 59]  dist: 3602
-point1: [98 83] point2: [88 23]  dist: 7400
-point1: [98 83] point2: [89 56]  dist: 1620
-point1: [98 83] point2: [78 3]  dist: 13600
-dist from [98 83] to [89 56] is: 40
-point1: [99 36] point2: [2 0]  dist: 21410
-point1: [99 36] point2: [2 0]  dist: 21410
-point1: [99 36] point2: [10 3]  dist: 18020
-point1: [99 36] point2: [13 21]  dist: 15242
-point1: [99 36] point2: [29 92]  dist: 16072
-point1: [99 36] point2: [42 25]  dist: 6740
-point1: [99 36] point2: [39 71]  dist: 9650
-point1: [99 36] point2: [64 18]  dist: 3098
-point1: [99 36] point2: [59 44]  dist: 3328
-point1: [99 36] point2: [63 59]  dist: 3650
-point1: [99 36] point2: [88 23]  dist: 580
-point1: [99 36] point2: [89 56]  dist: 1000
-point1: [99 36] point2: [78 3]  dist: 3060
-dist from [99 36] to [88 23] is: 24
-point1: [99 53] point2: [2 0]  dist: 24436
-point1: [99 53] point2: [2 0]  dist: 24436
-point1: [99 53] point2: [10 3]  dist: 20842
-point1: [99 53] point2: [13 21]  dist: 16840
-point1: [99 53] point2: [29 92]  dist: 12842
-point1: [99 53] point2: [42 25]  dist: 8066
-point1: [99 53] point2: [39 71]  dist: 7848
-point1: [99 53] point2: [64 18]  dist: 4900
-point1: [99 53] point2: [59 44]  dist: 3362
-point1: [99 53] point2: [63 59]  dist: 2664
-point1: [99 53] point2: [88 23]  dist: 2042
-point1: [99 53] point2: [89 56]  dist: 218
-point1: [99 53] point2: [78 3]  dist: 5882
-dist from [99 53] to [89 56] is: 14
-point1: [99 71] point2: [2 0]  dist: 28900
-point1: [99 71] point2: [2 0]  dist: 28900
-point1: [99 71] point2: [10 3]  dist: 25090
-point1: [99 71] point2: [13 21]  dist: 19792
-point1: [99 71] point2: [29 92]  dist: 10682
-point1: [99 71] point2: [42 25]  dist: 10730
-point1: [99 71] point2: [39 71]  dist: 7200
-point1: [99 71] point2: [64 18]  dist: 8068
-point1: [99 71] point2: [59 44]  dist: 4658
-point1: [99 71] point2: [63 59]  dist: 2880
-point1: [99 71] point2: [88 23]  dist: 4850
-point1: [99 71] point2: [89 56]  dist: 650
-point1: [99 71] point2: [78 3]  dist: 10130
-dist from [99 71] to [89 56] is: 25
-point1: [99 97] point2: [2 0]  dist: 37636
-point1: [99 97] point2: [2 0]  dist: 37636
-point1: [99 97] point2: [10 3]  dist: 33514
-point1: [99 97] point2: [13 21]  dist: 26344
-point1: [99 97] point2: [29 92]  dist: 9850
-point1: [99 97] point2: [42 25]  dist: 16866
-point1: [99 97] point2: [39 71]  dist: 8552
-point1: [99 97] point2: [64 18]  dist: 14932
-point1: [99 97] point2: [59 44]  dist: 8818
-point1: [99 97] point2: [63 59]  dist: 5480
-point1: [99 97] point2: [88 23]  dist: 11194
-point1: [99 97] point2: [89 56]  dist: 3562
-point1: [99 97] point2: [78 3]  dist: 18554
-dist from [99 97] to [89 56] is: 59
- ep(0x55d5a4836f20, 0x55d5a4870850)  ep(0x55d5a48aa1a0, 0x55d5a48e3ad0)  ep(0x55d5a491d420, 0x55d5a4956d50)  ep(0x55d5a49906a0, 0x55d5a49c9fd0)  ep(0x55d5a4a03920, 0x55d5a4a3d250)  ep(0x55d5a4a76ba0, 0x55d5a4ab04d0)  ep(0x55d5a4ae9e20, 0x55d5a4b23750)  ep(0x55d5a4b5d0a0, 0x55d5a4b969d0)  ep(0x55d5a4bd0320, 0x55d5a4c09c50)  ep(0x55d5a4c435a0, 0x55d5a4c7ced0)  ep(0x55d5a4cb6820, 0x55d5a4cf0150)  ep(0x55d5a4d29aa0, 0x55d5a4d633d0)  ep(0x55d5a4d9cd20, 0x55d5a4dd6650)  ep(0x55d5a4e0ffa0, 0x55d5a4e498d0)  ep(0x55d5a4e83220, 0x55d5a4ebcb50)  ep(0x55d5a4ef64a0, 0x55d5a4f2fdd0)  ep(0x55d5a4f69720, 0x55d5a4fa3050)  ep(0x55d5a4fdc9a0, 0x55d5a50162d0)  ep(0x55d5a504fc20, 0x55d5a5089550)  ep(0x55d5a50c2ea0, 0x55d5a50fc7d0)  ep(0x55d5a5136120, 0x55d5a516fa50)  ep(0x55d5a51a93a0, 0x55d5a51e2cd0)  ep(0x55d5a521c620, 0x55d5a5255f50)  ep(0x55d5a528f8a0, 0x55d5a52c91d0)  ep(0x55d5a5302b20, 0x55d5a533c450)  ep(0x55d5a5375da0, 0x55d5a53af6d0)  ep(0x55d5a53e9020, 0x55d5a5422950)  ep(0x55d5a545c2a0, 0x55d5a5495bd0)  ep(0x55d5a54cf520, 0x55d5a5508e50)  ep(0x55d5a55427a0, 0x55d5a557c0d0)  ep(0x55d5a55b5a20, 0x55d5a55ef350)  ep(0x55d5a5628ca0, 0x55d5a56625d0)  ep(0x55d5a569bf20, 0x55d5a56d5850)  ep(0x55d5a570f1a0, 0x55d5a5748ad0)  ep(0x55d5a5782420, 0x55d5a57bbd50)  ep(0x55d5a57f56a0, 0x55d5a582efd0)  ep(0x55d5a5868920, 0x55d5a58a2250)  ep(0x55d5a58dbba0, 0x55d5a59154d0)  ep(0x55d5a594ee20, 0x55d5a5988750)  ep(0x55d5a59c20a0, 0x55d5a59fb9d0)  ep(0x55d5a5a35320, 0x55d5a5a6ec50)  ep(0x55d5a5aa85a0, 0x55d5a5ae1ed0)  ep(0x55d5a5b1b820, 0x55d5a5b55150)  ep(0x55d5a5b8eaa0, 0x55d5a5bc83d0)  ep(0x55d5a5c01d20, 0x55d5a5c3b650)  ep(0x55d5a5c74fa0, 0x55d5a5cae8d0)  ep(0x55d5a5ce8220, 0x55d5a5d21b50)  ep(0x55d5a5d5b4a0, 0x55d5a5d94dd0)  ep(0x55d5a5dce720, 0x55d5a5e08050)  ep(0x55d5a5e419a0, 0x55d5a5e7b2d0)  ep(0x55d5a5eb4c20, 0x55d5a5eee550)  ep(0x55d5a5f27ea0, 0x55d5a5f617d0)  ep(0x55d5a5f9b120, 0x55d5a5fd4a50)  ep(0x55d5a600e3a0, 0x55d5a6047cd0)  ep(0x55d5a6081620, 0x55d5a60baf50)  ep(0x55d5a60f48a0, 0x55d5a612e1d0)  ep(0x55d5a6167b20, 0x55d5a61a1450)  ep(0x55d5a61dada0, 0x55d5a62146d0)  ep(0x55d5a624e020, 0x55d5a6287950)  ep(0x55d5a62c12a0, 0x55d5a62fabd0)  ep(0x55d5a6334520, 0x55d5a636de50)  ep(0x55d5a63a77a0, 0x55d5a63e10d0)  ep(0x55d5a641aa20, 0x55d5a6454350)  ep(0x55d5a648dca0, 0x55d5a64c75d0)  ep(0x55d5a6500f20, 0x55d5a653a850)  ep(0x55d5a65741a0, 0x55d5a65adad0)  ep(0x55d5a65e7420, 0x55d5a6620d50)  ep(0x55d5a665a6a0, 0x55d5a6693fd0)  ep(0x55d5a66cd920, 0x55d5a6707250)  ep(0x55d5a6740ba0, 0x55d5a677a4d0)  ep(0x55d5a67b3e20, 0x55d5a67ed750)  ep(0x55d5a68270a0, 0x55d5a68609d0)  ep(0x55d5a689a320, 0x55d5a68d3c50)  ep(0x55d5a690d5a0, 0x55d5a6946ed0)  ep(0x55d5a6980820, 0x55d5a69ba150)  ep(0x55d5a69f3aa0, 0x55d5a6a2d3d0)  ep(0x55d5a6a66d20, 0x55d5a6aa0650)  ep(0x55d5a6ad9fa0, 0x55d5a6b138d0)  ep(0x55d5a6b4d220, 0x55d5a6b86b50)  ep(0x55d5a6bc04a0, 0x55d5a6bf9dd0)  ep(0x55d5a6c33720, 0x55d5a6c6d050)  ep(0x55d5a6ca69a0, 0x55d5a6ce02d0)  ep(0x55d5a6d19c20, 0x55d5a6d53550)  ep(0x55d5a6d8cea0, 0x55d5a6dc67d0)  ep(0x55d5a6e00120, 0x55d5a6e39a50)  ep(0x55d5a6e733a0, 0x55d5a6eaccd0)  ep(0x55d5a6ee6620, 0x55d5a6f1ff50)  ep(0x55d5a6f598a0, 0x55d5a6f931d0)  ep(0x55d5a6fccb20, 0x55d5a7006450)  ep(0x55d5a703fda0, 0x55d5a70796d0)  ep(0x55d5a70b3020, 0x55d5a70ec950)  ep(0x55d5a71262a0, 0x55d5a715fbd0)  ep(0x55d5a7199520, 0x55d5a71d2e50)  ep(0x55d5a720c7a0, 0x55d5a72460d0)  ep(0x55d5a727fa20, 0x55d5a72b9350)  ep(0x55d5a72f2ca0, 0x55d5a732c5d0)  ep(0x55d5a7365f20, 0x55d5a739f850)  ep(0x55d5a73d91a0, 0x55d5a7412ad0)  ep(0x55d5a744c420, 0x55d5a7485d50)  ep(0x55d5a74bf6a0, 0x55d5a74f8fd0)  ep(0x55d5a7532920, 0x55d5a756c250)  ep(0x55d5a75a5ba0, 0x55d5a75df4d0)  ep(0x55d5a7618e20, 0x55d5a7652750)  ep(0x55d5a768c0a0, 0x55d5a76c59d0)  ep(0x55d5a76ff320, 0x55d5a7738c50)  ep(0x55d5a77725a0, 0x55d5a77abed0)  ep(0x55d5a77e5820, 0x55d5a781f150)  ep(0x55d5a7858aa0, 0x55d5a78923d0)  ep(0x55d5a78cbd20, 0x55d5a7905650)  ep(0x55d5a793efa0, 0x55d5a79788d0)  ep(0x55d5a79b2220, 0x55d5a79ebb50)  ep(0x55d5a7a254a0, 0x55d5a7a5edd0)  ep(0x55d5a7a98720, 0x55d5a7ad2050)  ep(0x55d5a7b0b9a0, 0x55d5a7b452d0)  ep(0x55d5a7b7ec20, 0x55d5a7bb8550)  ep(0x55d5a7bf1ea0, 0x55d5a7c2b7d0)  ep(0x55d5a7c65120, 0x55d5a7c9ea50)  ep(0x55d5a7cd83a0, 0x55d5a7d11cd0)  ep(0x55d5a7d4b620, 0x55d5a7d84f50)  ep(0x55d5a7dbe8a0, 0x55d5a7df81d0)  ep(0x55d5a7e31b20, 0x55d5a7e6b450)  ep(0x55d5a7ea4da0, 0x55d5a7ede6d0)  ep(0x55d5a7f18020, 0x55d5a7f51950)  ep(0x55d5a7f8b2a0, 0x55d5a7fc4bd0)  ep(0x55d5a7ffe520, 0x55d5a8037e50)  ep(0x55d5a80717a0, 0x55d5a80ab0d0)  ep(0x55d5a80e4a20, 0x55d5a811e350)  ep(0x55d5a8157ca0, 0x55d5a81915d0)  ep(0x55d5a81caf20, 0x55d5a8204850)  ep(0x55d5a823e1a0, 0x55d5a8277ad0)  ep(0x55d5a82b1420, 0x55d5a82ead50)  ep(0x55d5a83246a0, 0x55d5a835dfd0)  ep(0x55d5a8397920, 0x55d5a83d1250)  ep(0x55d5a840aba0, 0x55d5a84444d0)  ep(0x55d5a847de20, 0x55d5a84b7750)  ep(0x55d5a84f10a0, 0x55d5a852a9d0)  ep(0x55d5a8564320, 0x55d5a859dc50)  ep(0x55d5a85d75a0, 0x55d5a8610ed0)  ep(0x55d5a864a820, 0x55d5a8684150)  ep(0x55d5a86bdaa0, 0x55d5a86f73d0)  ep(0x55d5ae0ef3d0, 0x55d5ae124ac0)  ep(0x55d5ae15a1b0, 0x55d5ae18f8a0)  ep(0x55d5ae1c4f90, 0x55d5ae1fa680)  ep(0x55d5ae22fd70, 0x55d5ae265460)  ep(0x55d5ae29ab50, 0x55d5ae2d0240)  ep(0x55d5ae305930, 0x55d5ae33b020)  ep(0x55d5ae370710, 0x55d5ae3a5e00)  ep(0x55d5ae3db4f0, 0x55d5ae410be0)  ep(0x55d5ae4462d0, 0x55d5ae47b9c0)  ep(0x55d5ae4b10b0, 0x55d5ae4e67a0)  ep(0x55d5ae51be90, 0x55d5ae551580)  ep(0x55d5ae586c70, 0x55d5ae5bc360)  ep(0x55d5ae5f1a50, 0x55d5ae627140)  ep(0x55d5ae65c830, 0x55d5ae691f20)  ep(0x55d5ae6c7610, 0x55d5ae6fcd00)  ep(0x55d5ae7323f0, 0x55d5ae767ae0)  ep(0x55d5ae79d1d0, 0x55d5ae7d28c0)  ep(0x55d5ae807fb0, 0x55d5ae83d6a0)  ep(0x55d5ae872d90, 0x55d5ae8a8480)  ep(0x55d5ae8ddb70, 0x55d5ae913260)  ep(0x55d5a4836f20, 0x55d5a4870850)  ep(0x55d5a48aa1a0, 0x55d5a48e3ad0)  ep(0x55d5a491d420, 0x55d5a4956d50)  ep(0x55d5a49906a0, 0x55d5a49c9fd0)  ep(0x55d5a4a03920, 0x55d5a4a3d250)  ep(0x55d5a4a76ba0, 0x55d5a4ab04d0)  ep(0x55d5a4ae9e20, 0x55d5a4b23750)  ep(0x55d5a4b5d0a0, 0x55d5a4b969d0)  ep(0x55d5a4bd0320, 0x55d5a4c09c50)  ep(0x55d5a4c435a0, 0x55d5a4c7ced0)  ep(0x55d5a4cb6820, 0x55d5a4cf0150)  ep(0x55d5a4d29aa0, 0x55d5a4d633d0)  ep(0x55d5a4d9cd20, 0x55d5a4dd6650)  ep(0x55d5a4e0ffa0, 0x55d5a4e498d0)  ep(0x55d5a4e83220, 0x55d5a4ebcb50)  ep(0x55d5a4ef64a0, 0x55d5a4f2fdd0)  ep(0x55d5a4f69720, 0x55d5a4fa3050)  ep(0x55d5a4fdc9a0, 0x55d5a50162d0)  ep(0x55d5a504fc20, 0x55d5a5089550)  ep(0x55d5a50c2ea0, 0x55d5a50fc7d0)  ep(0x55d5a5136120, 0x55d5a516fa50)  ep(0x55d5a51a93a0, 0x55d5a51e2cd0)  ep(0x55d5a521c620, 0x55d5a5255f50)  ep(0x55d5a528f8a0, 0x55d5a52c91d0)  ep(0x55d5a5302b20, 0x55d5a533c450)  ep(0x55d5a5375da0, 0x55d5a53af6d0)  ep(0x55d5a53e9020, 0x55d5a5422950)  ep(0x55d5a545c2a0, 0x55d5a5495bd0)  ep(0x55d5a54cf520, 0x55d5a5508e50)  ep(0x55d5a55427a0, 0x55d5a557c0d0)  ep(0x55d5a55b5a20, 0x55d5a55ef350)  ep(0x55d5a5628ca0, 0x55d5a56625d0)  ep(0x55d5a569bf20, 0x55d5a56d5850)  ep(0x55d5a570f1a0, 0x55d5a5748ad0)  ep(0x55d5a5782420, 0x55d5a57bbd50)  ep(0x55d5a57f56a0, 0x55d5a582efd0)  ep(0x55d5a5868920, 0x55d5a58a2250)  ep(0x55d5a58dbba0, 0x55d5a59154d0)  ep(0x55d5a594ee20, 0x55d5a5988750)  ep(0x55d5a59c20a0, 0x55d5a59fb9d0)  ep(0x55d5a5a35320, 0x55d5a5a6ec50)  ep(0x55d5a5aa85a0, 0x55d5a5ae1ed0)  ep(0x55d5a5b1b820, 0x55d5a5b55150)  ep(0x55d5a5b8eaa0, 0x55d5a5bc83d0)  ep(0x55d5a5c01d20, 0x55d5a5c3b650)  ep(0x55d5a5c74fa0, 0x55d5a5cae8d0)  ep(0x55d5a5ce8220, 0x55d5a5d21b50)  ep(0x55d5a5d5b4a0, 0x55d5a5d94dd0)  ep(0x55d5a5dce720, 0x55d5a5e08050)  ep(0x55d5a5e419a0, 0x55d5a5e7b2d0)  ep(0x55d5a5eb4c20, 0x55d5a5eee550)  ep(0x55d5a5f27ea0, 0x55d5a5f617d0)  ep(0x55d5a5f9b120, 0x55d5a5fd4a50)  ep(0x55d5a600e3a0, 0x55d5a6047cd0)  ep(0x55d5a6081620, 0x55d5a60baf50)  ep(0x55d5a60f48a0, 0x55d5a612e1d0)  ep(0x55d5a6167b20, 0x55d5a61a1450)  ep(0x55d5a61dada0, 0x55d5a62146d0)  ep(0x55d5a624e020, 0x55d5a6287950)  ep(0x55d5a62c12a0, 0x55d5a62fabd0)  ep(0x55d5a6334520, 0x55d5a636de50)  ep(0x55d5a63a77a0, 0x55d5a63e10d0)  ep(0x55d5a641aa20, 0x55d5a6454350)  ep(0x55d5a648dca0, 0x55d5a64c75d0)  ep(0x55d5a6500f20, 0x55d5a653a850)  ep(0x55d5a65741a0, 0x55d5a65adad0)  ep(0x55d5a65e7420, 0x55d5a6620d50)  ep(0x55d5a665a6a0, 0x55d5a6693fd0)  ep(0x55d5a66cd920, 0x55d5a6707250)  ep(0x55d5a6740ba0, 0x55d5a677a4d0)  ep(0x55d5a67b3e20, 0x55d5a67ed750)  ep(0x55d5a68270a0, 0x55d5a68609d0)  ep(0x55d5a689a320, 0x55d5a68d3c50)  ep(0x55d5a690d5a0, 0x55d5a6946ed0)  ep(0x55d5a6980820, 0x55d5a69ba150)  ep(0x55d5a69f3aa0, 0x55d5a6a2d3d0)  ep(0x55d5a6a66d20, 0x55d5a6aa0650)  ep(0x55d5a6ad9fa0, 0x55d5a6b138d0)  ep(0x55d5a6b4d220, 0x55d5a6b86b50)  ep(0x55d5a6bc04a0, 0x55d5a6bf9dd0)  ep(0x55d5a6c33720, 0x55d5a6c6d050)  ep(0x55d5a6ca69a0, 0x55d5a6ce02d0)  ep(0x55d5a6d19c20, 0x55d5a6d53550)  ep(0x55d5a6d8cea0, 0x55d5a6dc67d0)  ep(0x55d5a6e00120, 0x55d5a6e39a50)  ep(0x55d5a6e733a0, 0x55d5a6eaccd0)  ep(0x55d5a6ee6620, 0x55d5a6f1ff50)  ep(0x55d5a6f598a0, 0x55d5a6f931d0)  ep(0x55d5a6fccb20, 0x55d5a7006450)  ep(0x55d5a703fda0, 0x55d5a70796d0)  ep(0x55d5a70b3020, 0x55d5a70ec950)  ep(0x55d5a71262a0, 0x55d5a715fbd0)  ep(0x55d5a7199520, 0x55d5a71d2e50)  ep(0x55d5a720c7a0, 0x55d5a72460d0)  ep(0x55d5a727fa20, 0x55d5a72b9350)  ep(0x55d5a72f2ca0, 0x55d5a732c5d0)  ep(0x55d5a7365f20, 0x55d5a739f850)  ep(0x55d5a73d91a0, 0x55d5a7412ad0)  ep(0x55d5a744c420, 0x55d5a7485d50)  ep(0x55d5a74bf6a0, 0x55d5a74f8fd0)  ep(0x55d5a7532920, 0x55d5a756c250)  ep(0x55d5a75a5ba0, 0x55d5a75df4d0)  ep(0x55d5a7618e20, 0x55d5a7652750)  ep(0x55d5a768c0a0, 0x55d5a76c59d0)  ep(0x55d5a76ff320, 0x55d5a7738c50)  ep(0x55d5a77725a0, 0x55d5a77abed0)  ep(0x55d5a77e5820, 0x55d5a781f150)  ep(0x55d5a7858aa0, 0x55d5a78923d0)  ep(0x55d5a78cbd20, 0x55d5a7905650)  ep(0x55d5a793efa0, 0x55d5a79788d0)  ep(0x55d5a79b2220, 0x55d5a79ebb50)  ep(0x55d5a7a254a0, 0x55d5a7a5edd0)  ep(0x55d5a7a98720, 0x55d5a7ad2050)  ep(0x55d5a7b0b9a0, 0x55d5a7b452d0)  ep(0x55d5a7b7ec20, 0x55d5a7bb8550)  ep(0x55d5a7bf1ea0, 0x55d5a7c2b7d0)  ep(0x55d5a7c65120, 0x55d5a7c9ea50)  ep(0x55d5a7cd83a0, 0x55d5a7d11cd0)  ep(0x55d5a7d4b620, 0x55d5a7d84f50)  ep(0x55d5a7dbe8a0, 0x55d5a7df81d0)  ep(0x55d5a7e31b20, 0x55d5a7e6b450)  ep(0x55d5a7ea4da0, 0x55d5a7ede6d0)  ep(0x55d5a7f18020, 0x55d5a7f51950)  ep(0x55d5a7f8b2a0, 0x55d5a7fc4bd0)  ep(0x55d5a7ffe520, 0x55d5a8037e50)  ep(0x55d5a80717a0, 0x55d5a80ab0d0)  ep(0x55d5a80e4a20, 0x55d5a811e350)  ep(0x55d5a8157ca0, 0x55d5a81915d0)  ep(0x55d5a81caf20, 0x55d5a8204850)  ep(0x55d5a823e1a0, 0x55d5a8277ad0)  ep(0x55d5a82b1420, 0x55d5a82ead50)  ep(0x55d5a83246a0, 0x55d5a835dfd0)  ep(0x55d5a8397920, 0x55d5a83d1250)  ep(0x55d5a840aba0, 0x55d5a84444d0)  ep(0x55d5a847de20, 0x55d5a84b7750)  ep(0x55d5a84f10a0, 0x55d5a852a9d0)  ep(0x55d5a8564320, 0x55d5a859dc50)  ep(0x55d5a85d75a0, 0x55d5a8610ed0)  ep(0x55d5a864a820, 0x55d5a8684150)  ep(0x55d5a86bdaa0, 0x55d5a86f73d0)  ep(0x55d5ae0ef3d0, 0x55d5ae124ac0)  ep(0x55d5ae15a1b0, 0x55d5ae18f8a0)  ep(0x55d5ae1c4f90, 0x55d5ae1fa680)  ep(0x55d5ae22fd70, 0x55d5ae265460)  ep(0x55d5ae29ab50, 0x55d5ae2d0240)  ep(0x55d5ae305930, 0x55d5ae33b020)  ep(0x55d5ae370710, 0x55d5ae3a5e00)  ep(0x55d5ae3db4f0, 0x55d5ae410be0)  ep(0x55d5ae4462d0, 0x55d5ae47b9c0)  ep(0x55d5ae4b10b0, 0x55d5ae4e67a0)  ep(0x55d5ae51be90, 0x55d5ae551580)  ep(0x55d5ae586c70, 0x55d5ae5bc360)  ep(0x55d5ae5f1a50, 0x55d5ae627140)  ep(0x55d5ae65c830, 0x55d5ae691f20)  ep(0x55d5ae6c7610, 0x55d5ae6fcd00)  ep(0x55d5ae7323f0, 0x55d5ae767ae0)  ep(0x55d5ae79d1d0, 0x55d5ae7d28c0)  ep(0x55d5ae807fb0, 0x55d5ae83d6a0)  ep(0x55d5ae872d90, 0x55d5ae8a8480)  ep(0x55d5ae8ddb70, 0x55d5ae913260)  ep(0x55d5a4836f20, 0x55d5a4870850)  ep(0x55d5a48aa1a0, 0x55d5a48e3ad0)  ep(0x55d5a491d420, 0x55d5a4956d50)  ep(0x55d5a49906a0, 0x55d5a49c9fd0)  ep(0x55d5a4a03920, 0x55d5a4a3d250)  ep(0x55d5a4a76ba0, 0x55d5a4ab04d0)  ep(0x55d5a4ae9e20, 0x55d5a4b23750)  ep(0x55d5a4b5d0a0, 0x55d5a4b969d0)  ep(0x55d5a4bd0320, 0x55d5a4c09c50)  ep(0x55d5a4c435a0, 0x55d5a4c7ced0)  ep(0x55d5a4cb6820, 0x55d5a4cf0150)  ep(0x55d5a4d29aa0, 0x55d5a4d633d0)  ep(0x55d5a4d9cd20, 0x55d5a4dd6650)  ep(0x55d5a4e0ffa0, 0x55d5a4e498d0)  ep(0x55d5a4e83220, 0x55d5a4ebcb50)  ep(0x55d5a4ef64a0, 0x55d5a4f2fdd0)  ep(0x55d5a4f69720, 0x55d5a4fa3050)  ep(0x55d5a4fdc9a0, 0x55d5a50162d0)  ep(0x55d5a504fc20, 0x55d5a5089550)  ep(0x55d5a50c2ea0, 0x55d5a50fc7d0)  ep(0x55d5a5136120, 0x55d5a516fa50)  ep(0x55d5a51a93a0, 0x55d5a51e2cd0)  ep(0x55d5a521c620, 0x55d5a5255f50)  ep(0x55d5a528f8a0, 0x55d5a52c91d0)  ep(0x55d5a5302b20, 0x55d5a533c450)  ep(0x55d5a5375da0, 0x55d5a53af6d0)  ep(0x55d5a53e9020, 0x55d5a5422950)  ep(0x55d5a545c2a0, 0x55d5a5495bd0)  ep(0x55d5a54cf520, 0x55d5a5508e50)  ep(0x55d5a55427a0, 0x55d5a557c0d0)  ep(0x55d5a55b5a20, 0x55d5a55ef350)  ep(0x55d5a5628ca0, 0x55d5a56625d0)  ep(0x55d5a569bf20, 0x55d5a56d5850)  ep(0x55d5a570f1a0, 0x55d5a5748ad0)  ep(0x55d5a5782420, 0x55d5a57bbd50)  ep(0x55d5a57f56a0, 0x55d5a582efd0)  ep(0x55d5a5868920, 0x55d5a58a2250)  ep(0x55d5a58dbba0, 0x55d5a59154d0)  ep(0x55d5a594ee20, 0x55d5a5988750)  ep(0x55d5a59c20a0, 0x55d5a59fb9d0)  ep(0x55d5a5a35320, 0x55d5a5a6ec50)  ep(0x55d5a5aa85a0, 0x55d5a5ae1ed0)  ep(0x55d5a5b1b820, 0x55d5a5b55150)  ep(0x55d5a5b8eaa0, 0x55d5a5bc83d0)  ep(0x55d5a5c01d20, 0x55d5a5c3b650)  ep(0x55d5a5c74fa0, 0x55d5a5cae8d0)  ep(0x55d5a5ce8220, 0x55d5a5d21b50)  ep(0x55d5a5d5b4a0, 0x55d5a5d94dd0)  ep(0x55d5a5dce720, 0x55d5a5e08050)  ep(0x55d5a5e419a0, 0x55d5a5e7b2d0)  ep(0x55d5a5eb4c20, 0x55d5a5eee550)  ep(0x55d5a5f27ea0, 0x55d5a5f617d0)  ep(0x55d5a5f9b120, 0x55d5a5fd4a50)  ep(0x55d5a600e3a0, 0x55d5a6047cd0)  ep(0x55d5a6081620, 0x55d5a60baf50)  ep(0x55d5a60f48a0, 0x55d5a612e1d0)  ep(0x55d5a6167b20, 0x55d5a61a1450)  ep(0x55d5a61dada0, 0x55d5a62146d0)  ep(0x55d5a624e020, 0x55d5a6287950)  ep(0x55d5a62c12a0, 0x55d5a62fabd0)  ep(0x55d5a6334520, 0x55d5a636de50)  ep(0x55d5a63a77a0, 0x55d5a63e10d0)  ep(0x55d5a641aa20, 0x55d5a6454350)  ep(0x55d5a648dca0, 0x55d5a64c75d0)  ep(0x55d5a6500f20, 0x55d5a653a850)  ep(0x55d5a65741a0, 0x55d5a65adad0)  ep(0x55d5a65e7420, 0x55d5a6620d50)  ep(0x55d5a665a6a0, 0x55d5a6693fd0)  ep(0x55d5a66cd920, 0x55d5a6707250)  ep(0x55d5a6740ba0, 0x55d5a677a4d0)  ep(0x55d5a67b3e20, 0x55d5a67ed750)  ep(0x55d5a68270a0, 0x55d5a68609d0)  ep(0x55d5a689a320, 0x55d5a68d3c50)  ep(0x55d5a690d5a0, 0x55d5a6946ed0)  ep(0x55d5a6980820, 0x55d5a69ba150)  ep(0x55d5a69f3aa0, 0x55d5a6a2d3d0)  ep(0x55d5a6a66d20, 0x55d5a6aa0650)  ep(0x55d5a6ad9fa0, 0x55d5a6b138d0)  ep(0x55d5a6b4d220, 0x55d5a6b86b50)  ep(0x55d5a6bc04a0, 0x55d5a6bf9dd0)  ep(0x55d5a6c33720, 0x55d5a6c6d050)  ep(0x55d5a6ca69a0, 0x55d5a6ce02d0)  ep(0x55d5a6d19c20, 0x55d5a6d53550)  ep(0x55d5a6d8cea0, 0x55d5a6dc67d0)  ep(0x55d5a6e00120, 0x55d5a6e39a50)  ep(0x55d5a6e733a0, 0x55d5a6eaccd0)  ep(0x55d5a6ee6620, 0x55d5a6f1ff50)  ep(0x55d5a6f598a0, 0x55d5a6f931d0)  ep(0x55d5a6fccb20, 0x55d5a7006450)  ep(0x55d5a703fda0, 0x55d5a70796d0)  ep(0x55d5a70b3020, 0x55d5a70ec950)  ep(0x55d5a71262a0, 0x55d5a715fbd0)  ep(0x55d5a7199520, 0x55d5a71d2e50)  ep(0x55d5a720c7a0, 0x55d5a72460d0)  ep(0x55d5a727fa20, 0x55d5a72b9350)  ep(0x55d5a72f2ca0, 0x55d5a732c5d0)  ep(0x55d5a7365f20, 0x55d5a739f850)  ep(0x55d5a73d91a0, 0x55d5a7412ad0)  ep(0x55d5a744c420, 0x55d5a7485d50)  ep(0x55d5a74bf6a0, 0x55d5a74f8fd0)  ep(0x55d5a7532920, 0x55d5a756c250)  ep(0x55d5a75a5ba0, 0x55d5a75df4d0)  ep(0x55d5a7618e20, 0x55d5a7652750)  ep(0x55d5a768c0a0, 0x55d5a76c59d0)  ep(0x55d5a76ff320, 0x55d5a7738c50)  ep(0x55d5a77725a0, 0x55d5a77abed0)  ep(0x55d5a77e5820, 0x55d5a781f150)  ep(0x55d5a7858aa0, 0x55d5a78923d0)  ep(0x55d5a78cbd20, 0x55d5a7905650)  ep(0x55d5a793efa0, 0x55d5a79788d0)  ep(0x55d5a79b2220, 0x55d5a79ebb50)  ep(0x55d5a7a254a0, 0x55d5a7a5edd0)  ep(0x55d5a7a98720, 0x55d5a7ad2050)  ep(0x55d5a7b0b9a0, 0x55d5a7b452d0)  ep(0x55d5a7b7ec20, 0x55d5a7bb8550)  ep(0x55d5a7bf1ea0, 0x55d5a7c2b7d0)  ep(0x55d5a7c65120, 0x55d5a7c9ea50)  ep(0x55d5a7cd83a0, 0x55d5a7d11cd0)  ep(0x55d5a7d4b620, 0x55d5a7d84f50)  ep(0x55d5a7dbe8a0, 0x55d5a7df81d0)  ep(0x55d5a7e31b20, 0x55d5a7e6b450)  ep(0x55d5a7ea4da0, 0x55d5a7ede6d0)  ep(0x55d5a7f18020, 0x55d5a7f51950)  ep(0x55d5a7f8b2a0, 0x55d5a7fc4bd0)  ep(0x55d5a7ffe520, 0x55d5a8037e50)  ep(0x55d5a80717a0, 0x55d5a80ab0d0)  ep(0x55d5a80e4a20, 0x55d5a811e350)  ep(0x55d5a8157ca0, 0x55d5a81915d0)  ep(0x55d5a81caf20, 0x55d5a8204850)  ep(0x55d5a823e1a0, 0x55d5a8277ad0)  ep(0x55d5a82b1420, 0x55d5a82ead50)  ep(0x55d5a83246a0, 0x55d5a835dfd0)  ep(0x55d5a8397920, 0x55d5a83d1250)  ep(0x55d5a840aba0, 0x55d5a84444d0)  ep(0x55d5a847de20, 0x55d5a84b7750)  ep(0x55d5a84f10a0, 0x55d5a852a9d0)  ep(0x55d5a8564320, 0x55d5a859dc50)  ep(0x55d5a85d75a0, 0x55d5a8610ed0)  ep(0x55d5a864a820, 0x55d5a8684150)  ep(0x55d5a86bdaa0, 0x55d5a86f73d0)  ep(0x55d5ae0ef3d0, 0x55d5ae124ac0)  ep(0x55d5ae15a1b0, 0x55d5ae18f8a0)  ep(0x55d5ae1c4f90, 0x55d5ae1fa680)  ep(0x55d5ae22fd70, 0x55d5ae265460)  ep(0x55d5ae29ab50, 0x55d5ae2d0240)  ep(0x55d5ae305930, 0x55d5ae33b020)  ep(0x55d5ae370710, 0x55d5ae3a5e00)  ep(0x55d5ae3db4f0, 0x55d5ae410be0)  ep(0x55d5ae4462d0, 0x55d5ae47b9c0)  ep(0x55d5ae4b10b0, 0x55d5ae4e67a0)  ep(0x55d5ae51be90, 0x55d5ae551580)  ep(0x55d5ae586c70, 0x55d5ae5bc360)  ep(0x55d5ae5f1a50, 0x55d5ae627140)  ep(0x55d5ae65c830, 0x55d5ae691f20)  ep(0x55d5ae6c7610, 0x55d5ae6fcd00)  ep(0x55d5ae7323f0, 0x55d5ae767ae0)  ep(0x55d5ae79d1d0, 0x55d5ae7d28c0)  ep(0x55d5ae807fb0, 0x55d5ae83d6a0)  ep(0x55d5ae872d90, 0x55d5ae8a8480)  ep(0x55d5ae8ddb70, 0x55d5ae913260)  ep(0x55d5a4836f20, 0x55d5a4870850)  ep(0x55d5a48aa1a0, 0x55d5a48e3ad0)  ep(0x55d5a491d420, 0x55d5a4956d50)  ep(0x55d5a49906a0, 0x55d5a49c9fd0)  ep(0x55d5a4a03920, 0x55d5a4a3d250)  ep(0x55d5a4a76ba0, 0x55d5a4ab04d0)  ep(0x55d5a4ae9e20, 0x55d5a4b23750)  ep(0x55d5a4b5d0a0, 0x55d5a4b969d0)  ep(0x55d5a4bd0320, 0x55d5a4c09c50)  ep(0x55d5a4c435a0, 0x55d5a4c7ced0)  ep(0x55d5a4cb6820, 0x55d5a4cf0150)  ep(0x55d5a4d29aa0, 0x55d5a4d633d0)  ep(0x55d5a4d9cd20, 0x55d5a4dd6650)  ep(0x55d5a4e0ffa0, 0x55d5a4e498d0)  ep(0x55d5a4e83220, 0x55d5a4ebcb50)  ep(0x55d5a4ef64a0, 0x55d5a4f2fdd0)  ep(0x55d5a4f69720, 0x55d5a4fa3050)  ep(0x55d5a4fdc9a0, 0x55d5a50162d0)  ep(0x55d5a504fc20, 0x55d5a5089550)  ep(0x55d5a50c2ea0, 0x55d5a50fc7d0)  ep(0x55d5a5136120, 0x55d5a516fa50)  ep(0x55d5a51a93a0, 0x55d5a51e2cd0)  ep(0x55d5a521c620, 0x55d5a5255f50)  ep(0x55d5a528f8a0, 0x55d5a52c91d0)  ep(0x55d5a5302b20, 0x55d5a533c450)  ep(0x55d5a5375da0, 0x55d5a53af6d0)  ep(0x55d5a53e9020, 0x55d5a5422950)  ep(0x55d5a545c2a0, 0x55d5a5495bd0)  ep(0x55d5a54cf520, 0x55d5a5508e50)  ep(0x55d5a55427a0, 0x55d5a557c0d0)  ep(0x55d5a55b5a20, 0x55d5a55ef350)  ep(0x55d5a5628ca0, 0x55d5a56625d0)  ep(0x55d5a569bf20, 0x55d5a56d5850)  ep(0x55d5a570f1a0, 0x55d5a5748ad0)  ep(0x55d5a5782420, 0x55d5a57bbd50)  ep(0x55d5a57f56a0, 0x55d5a582efd0)  ep(0x55d5a5868920, 0x55d5a58a2250)  ep(0x55d5a58dbba0, 0x55d5a59154d0)  ep(0x55d5a594ee20, 0x55d5a5988750)  ep(0x55d5a59c20a0, 0x55d5a59fb9d0)  ep(0x55d5a5a35320, 0x55d5a5a6ec50)  ep(0x55d5a5aa85a0, 0x55d5a5ae1ed0)  ep(0x55d5a5b1b820, 0x55d5a5b55150)  ep(0x55d5a5b8eaa0, 0x55d5a5bc83d0)  ep(0x55d5a5c01d20, 0x55d5a5c3b650)  ep(0x55d5a5c74fa0, 0x55d5a5cae8d0)  ep(0x55d5a5ce8220, 0x55d5a5d21b50)  ep(0x55d5a5d5b4a0, 0x55d5a5d94dd0)  ep(0x55d5a5dce720, 0x55d5a5e08050)  ep(0x55d5a5e419a0, 0x55d5a5e7b2d0)  ep(0x55d5a5eb4c20, 0x55d5a5eee550)  ep(0x55d5a5f27ea0, 0x55d5a5f617d0)  ep(0x55d5a5f9b120, 0x55d5a5fd4a50)  ep(0x55d5a600e3a0, 0x55d5a6047cd0)  ep(0x55d5a6081620, 0x55d5a60baf50)  ep(0x55d5a60f48a0, 0x55d5a612e1d0)  ep(0x55d5a6167b20, 0x55d5a61a1450)  ep(0x55d5a61dada0, 0x55d5a62146d0)  ep(0x55d5a624e020, 0x55d5a6287950)  ep(0x55d5a62c12a0, 0x55d5a62fabd0)  ep(0x55d5a6334520, 0x55d5a636de50)  ep(0x55d5a63a77a0, 0x55d5a63e10d0)  ep(0x55d5a641aa20, 0x55d5a6454350)  ep(0x55d5a648dca0, 0x55d5a64c75d0)  ep(0x55d5a6500f20, 0x55d5a653a850)  ep(0x55d5a65741a0, 0x55d5a65adad0)  ep(0x55d5a65e7420, 0x55d5a6620d50)  ep(0x55d5a665a6a0, 0x55d5a6693fd0)  ep(0x55d5a66cd920, 0x55d5a6707250)  ep(0x55d5a6740ba0, 0x55d5a677a4d0)  ep(0x55d5a67b3e20, 0x55d5a67ed750)  ep(0x55d5a68270a0, 0x55d5a68609d0)  ep(0x55d5a689a320, 0x55d5a68d3c50)  ep(0x55d5a690d5a0, 0x55d5a6946ed0)  ep(0x55d5a6980820, 0x55d5a69ba150)  ep(0x55d5a69f3aa0, 0x55d5a6a2d3d0)  ep(0x55d5a6a66d20, 0x55d5a6aa0650)  ep(0x55d5a6ad9fa0, 0x55d5a6b138d0)  ep(0x55d5a6b4d220, 0x55d5a6b86b50)  ep(0x55d5a6bc04a0, 0x55d5a6bf9dd0)  ep(0x55d5a6c33720, 0x55d5a6c6d050)  ep(0x55d5a6ca69a0, 0x55d5a6ce02d0)  ep(0x55d5a6d19c20, 0x55d5a6d53550)  ep(0x55d5a6d8cea0, 0x55d5a6dc67d0)  ep(0x55d5a6e00120, 0x55d5a6e39a50)  ep(0x55d5a6e733a0, 0x55d5a6eaccd0)  ep(0x55d5a6ee6620, 0x55d5a6f1ff50)  ep(0x55d5a6f598a0, 0x55d5a6f931d0)  ep(0x55d5a6fccb20, 0x55d5a7006450)  ep(0x55d5a703fda0, 0x55d5a70796d0)  ep(0x55d5a70b3020, 0x55d5a70ec950)  ep(0x55d5a71262a0, 0x55d5a715fbd0)  ep(0x55d5a7199520, 0x55d5a71d2e50)  ep(0x55d5a720c7a0, 0x55d5a72460d0)  ep(0x55d5a727fa20, 0x55d5a72b9350)  ep(0x55d5a72f2ca0, 0x55d5a732c5d0)  ep(0x55d5a7365f20, 0x55d5a739f850)  ep(0x55d5a73d91a0, 0x55d5a7412ad0)  ep(0x55d5a744c420, 0x55d5a7485d50)  ep(0x55d5a74bf6a0, 0x55d5a74f8fd0)  ep(0x55d5a7532920, 0x55d5a756c250)  ep(0x55d5a75a5ba0, 0x55d5a75df4d0)  ep(0x55d5a7618e20, 0x55d5a7652750)  ep(0x55d5a768c0a0, 0x55d5a76c59d0)  ep(0x55d5a76ff320, 0x55d5a7738c50)  ep(0x55d5a77725a0, 0x55d5a77abed0)  ep(0x55d5a77e5820, 0x55d5a781f150)  ep(0x55d5a7858aa0, 0x55d5a78923d0)  ep(0x55d5a78cbd20, 0x55d5a7905650)  ep(0x55d5a793efa0, 0x55d5a79788d0)  ep(0x55d5a79b2220, 0x55d5a79ebb50)  ep(0x55d5a7a254a0, 0x55d5a7a5edd0)  ep(0x55d5a7a98720, 0x55d5a7ad2050)  ep(0x55d5a7b0b9a0, 0x55d5a7b452d0)  ep(0x55d5a7b7ec20, 0x55d5a7bb8550)  ep(0x55d5a7bf1ea0, 0x55d5a7c2b7d0)  ep(0x55d5a7c65120, 0x55d5a7c9ea50)  ep(0x55d5a7cd83a0, 0x55d5a7d11cd0)  ep(0x55d5a7d4b620, 0x55d5a7d84f50)  ep(0x55d5a7dbe8a0, 0x55d5a7df81d0)  ep(0x55d5a7e31b20, 0x55d5a7e6b450)  ep(0x55d5a7ea4da0, 0x55d5a7ede6d0)  ep(0x55d5a7f18020, 0x55d5a7f51950)  ep(0x55d5a7f8b2a0, 0x55d5a7fc4bd0)  ep(0x55d5a7ffe520, 0x55d5a8037e50)  ep(0x55d5a80717a0, 0x55d5a80ab0d0)  ep(0x55d5a80e4a20, 0x55d5a811e350)  ep(0x55d5a8157ca0, 0x55d5a81915d0)  ep(0x55d5a81caf20, 0x55d5a8204850)  ep(0x55d5a823e1a0, 0x55d5a8277ad0)  ep(0x55d5a82b1420, 0x55d5a82ead50)  ep(0x55d5a83246a0, 0x55d5a835dfd0)  ep(0x55d5a8397920, 0x55d5a83d1250)  ep(0x55d5a840aba0, 0x55d5a84444d0)  ep(0x55d5a847de20, 0x55d5a84b7750)  ep(0x55d5a84f10a0, 0x55d5a852a9d0)  ep(0x55d5a8564320, 0x55d5a859dc50)  ep(0x55d5a85d75a0, 0x55d5a8610ed0)  ep(0x55d5a864a820, 0x55d5a8684150)  ep(0x55d5a86bdaa0, 0x55d5a86f73d0)  ep(0x55d5ae0ef3d0, 0x55d5ae124ac0)  ep(0x55d5ae15a1b0, 0x55d5ae18f8a0)  ep(0x55d5ae1c4f90, 0x55d5ae1fa680)  ep(0x55d5ae22fd70, 0x55d5ae265460)  ep(0x55d5ae29ab50, 0x55d5ae2d0240)  ep(0x55d5ae305930, 0x55d5ae33b020)  ep(0x55d5ae370710, 0x55d5ae3a5e00)  ep(0x55d5ae3db4f0, 0x55d5ae410be0)  ep(0x55d5ae4462d0, 0x55d5ae47b9c0)  ep(0x55d5ae4b10b0, 0x55d5ae4e67a0)  ep(0x55d5ae51be90, 0x55d5ae551580)  ep(0x55d5ae586c70, 0x55d5ae5bc360)  ep(0x55d5ae5f1a50, 0x55d5ae627140)  ep(0x55d5ae65c830, 0x55d5ae691f20)  ep(0x55d5ae6c7610, 0x55d5ae6fcd00)  ep(0x55d5ae7323f0, 0x55d5ae767ae0)  ep(0x55d5ae79d1d0, 0x55d5ae7d28c0)  ep(0x55d5ae807fb0, 0x55d5ae83d6a0)  ep(0x55d5ae872d90, 0x55d5ae8a8480)  ep(0x55d5ae8ddb70, 0x55d5ae913260) 
+isPoint: [63 69]   isNotPoint: [0 0]
+isPoint: [67 70]   isNotPoint: [0 0]
+isPoint: [67 78]   isNotPoint: [0 0]
+isPoint: [0 0]   isNotPoint: [67 95]
+isPoint: [0 0]   isNotPoint: [69 7]
+isPoint: [69 65]   isNotPoint: [0 0]
+isPoint: [0 0]   isNotPoint: [74 87]
+isPoint: [0 0]   isNotPoint: [74 96]
+isPoint: [75 42]   isNotPoint: [0 0]
+isPoint: [76 17]   isNotPoint: [0 0]
+isPoint: [0 0]   isNotPoint: [76 71]
+isPoint: [79 21]   isNotPoint: [0 0]
+isPoint: [79 44]   isNotPoint: [0 0]
+isPoint: [79 45]   isNotPoint: [0 0]
+isPoint: [80 28]   isNotPoint: [0 0]
+isPoint: [81 22]   isNotPoint: [0 0]
+isPoint: [0 0]   isNotPoint: [85 94]
+isPoint: [87 55]   isNotPoint: [0 0]
+isPoint: [88 50]   isNotPoint: [0 0]
+isPoint: [0 0]   isNotPoint: [90 85]
+isPoint: [0 0]   isNotPoint: [91 62]
+isPoint: [99 10]   isNotPoint: [0 0]
+isPoint: [0 0]   isNotPoint: [100 18]
+isPoint: [0 0]   isNotPoint: [100 39]
+
+creating the dict took: 2 seconds.
+
+   isPoint: [3 51] 
+   isPoint: [9 49] 
+   isPoint: [0 0] 
+   isPoint: [0 0] 
+   isPoint: [0 0] 
+   isPoint: [0 0] 
+   isPoint: [0 0] 
+   isPoint: [9 49] 
+   isPoint: [14 14] 
+   isPoint: [0 0] 
+   isPoint: [0 0] 
+   isPoint: [0 0] 
+   isPoint: [0 0] 
+   isPoint: [0 0] 
+   isPoint: [14 14] 
+   isPoint: [0 0] 
+   isPoint: [18 4] 
+   isPoint: [0 0] 
+
+creating the dict took: 2 seconds.
+
+   isPoint: [24 52] 
+   isPoint: [0 0] 
+   isPoint: [0 0] 
+   isPoint: [0 0] 
+   isPoint: [41 33] 
+   isPoint: [0 0] 
+   isPoint: [24 52] 
+   isPoint: [28 87] 
+   isPoint: [0 0] 
+   isPoint: [37 85] 
+   isPoint: [0 0] 
+   isPoint: [46 81] 
+   isPoint: [0 0] 
+   isPoint: [28 87] 
+   isPoint: [33 92] 
+   isPoint: [0 0] 
+   isPoint: [0 0] 
+   isPoint: [0 0] 
+
+creating the dict took: 2 seconds.
+
+   isPoint: [49 79] 
+   isPoint: [0 0] 
+   isPoint: [56 44] 
+   isPoint: [0 0] 
+   isPoint: [0 0] 
+   isPoint: [0 0] 
+   isPoint: [0 0] 
+   isPoint: [51 13] 
+   isPoint: [0 0] 
+   isPoint: [0 0] 
+   isPoint: [69 7] 
+   isPoint: [0 0] 
+   isPoint: [0 0] 
+   isPoint: [51 13] 
+   isPoint: [56 44] 
+   isPoint: [0 0] 
+   isPoint: [0 0] 
+   isPoint: [0 0] 
+
+creating the dict took: 2 seconds.
+
+   isPoint: [74 96] 
+   isPoint: [0 0] 
+   isPoint: [85 94] 
+   isPoint: [0 0] 
+   isPoint: [0 0] 
+   isPoint: [0 0] 
+   isPoint: [0 0] 
+   isPoint: [76 71] 
+   isPoint: [0 0] 
+   isPoint: [0 0] 
+   isPoint: [91 62] 
+   isPoint: [100 18] 
+   isPoint: [0 0] 
+   isPoint: [76 71] 
+   isPoint: [85 94] 
+   isPoint: [90 85] 
+   isPoint: [0 0] 
+   isPoint: [0 0] 
+calculateCellMean points size 6
+avgPoint: [6 50]
+calculateCellMean points size 6
+avgPoint: [11 31]
+calculateCellMean points size 6
+avgPoint: [16 9]
+calculateCellMean points size 6
+avgPoint: [32 42]
+calculateCellMean points size 6
+avgPoint: [33 76]
+calculateCellMean points size 6
+avgPoint: [30 89]
+calculateCellMean points size 6
+avgPoint: [52 61]
+calculateCellMean points size 6
+avgPoint: [60 10]
+calculateCellMean points size 6
+avgPoint: [53 28]
+calculateCellMean points size 6
+avgPoint: [79 95]
+calculateCellMean points size 6
+avgPoint: [89 50]
+calculateCellMean points size 6
+avgPoint: [83 83]
+distSum: 371 size: 25
+The threshold is: 14
+isPoint: [3 51]   isNotPoint: [0 0]
+isPoint: [9 49]   isNotPoint: [0 0]
+isPoint: [14 14]   isNotPoint: [0 0]
+isPoint: [0 0]   isNotPoint: [16 100]
+isPoint: [18 4]   isNotPoint: [0 0]
+isPoint: [0 0]   isNotPoint: [18 86]
+isPoint: [0 0]   isNotPoint: [24 52]
+isPoint: [28 87]   isNotPoint: [0 0]
+isPoint: [33 92]   isNotPoint: [0 0]
+isPoint: [37 85]   isNotPoint: [0 0]
+isPoint: [0 0]   isNotPoint: [41 33]
+isPoint: [0 0]   isNotPoint: [46 81]
+isPoint: [0 0]   isNotPoint: [49 79]
+isPoint: [51 13]   isNotPoint: [0 0]
+isPoint: [0 0]   isNotPoint: [56 44]
+isPoint: [0 0]   isNotPoint: [67 95]
+isPoint: [69 7]   isNotPoint: [0 0]
+isPoint: [74 87]   isNotPoint: [0 0]
+isPoint: [74 96]   isNotPoint: [0 0]
+isPoint: [0 0]   isNotPoint: [76 71]
+isPoint: [85 94]   isNotPoint: [0 0]
+isPoint: [90 85]   isNotPoint: [0 0]
+isPoint: [0 0]   isNotPoint: [91 62]
+isPoint: [0 0]   isNotPoint: [100 18]
+isPoint: [0 0]   isNotPoint: [100 39]
+oint1: [28 12] point2: [13 29]  dist: 1028
+point1: [28 12] point2: [4 76]  dist: 9344
+point1: [28 12] point2: [14 64]  dist: 5800
+point1: [28 12] point2: [42 52]  dist: 3592
+point1: [28 12] point2: [35 8]  dist: 130
+point1: [28 12] point2: [33 5]  dist: 148
+point1: [28 12] point2: [60 58]  dist: 6280
+point1: [28 12] point2: [64 31]  dist: 3314
+point1: [28 12] point2: [60 70]  dist: 8776
+point1: [28 12] point2: [87 13]  dist: 6964
+point1: [28 12] point2: [84 43]  dist: 8194
+point1: [28 12] point2: [85 18]  dist: 6570
+dist from [28 12] to [35 8] is: 11
+point1: [33 5] point2: [13 29]  dist: 1952
+point1: [33 5] point2: [13 29]  dist: 1952
+point1: [33 5] point2: [4 76]  dist: 11764
+point1: [33 5] point2: [14 64]  dist: 7684
+point1: [33 5] point2: [42 52]  dist: 4580
+point1: [33 5] point2: [35 8]  dist: 26
+point1: [33 5] point2: [33 5]  dist: 0
+point1: [33 5] point2: [60 58]  dist: 7076
+point1: [33 5] point2: [64 31]  dist: 3274
+point1: [33 5] point2: [60 70]  dist: 9908
+point1: [33 5] point2: [87 13]  dist: 5960
+point1: [33 5] point2: [84 43]  dist: 8090
+point1: [33 5] point2: [85 18]  dist: 5746
+dist from [33 5] to [33 5] is: 0
+point1: [33 92] point2: [13 29]  dist: 8738
+point1: [33 92] point2: [13 29]  dist: 8738
+point1: [33 92] point2: [4 76]  dist: 2194
+point1: [33 92] point2: [14 64]  dist: 2290
+point1: [33 92] point2: [42 52]  dist: 3362
+point1: [33 92] point2: [35 8]  dist: 14120
+point1: [33 92] point2: [33 5]  dist: 15138
+point1: [33 92] point2: [60 58]  dist: 3770
+point1: [33 92] point2: [64 31]  dist: 9364
+point1: [33 92] point2: [60 70]  dist: 2426
+point1: [33 92] point2: [87 13]  dist: 18314
+point1: [33 92] point2: [84 43]  dist: 10004
+point1: [33 92] point2: [85 18]  dist: 16360
+dist from [33 92] to [4 76] is: 46
+point1: [36 57] point2: [13 29]  dist: 2626
+point1: [36 57] point2: [13 29]  dist: 2626
+point1: [36 57] point2: [4 76]  dist: 2770
+point1: [36 57] point2: [14 64]  dist: 1066
+point1: [36 57] point2: [42 52]  dist: 122
+point1: [36 57] point2: [35 8]  dist: 4804
+point1: [36 57] point2: [33 5]  dist: 5426
+point1: [36 57] point2: [60 58]  dist: 1154
+point1: [36 57] point2: [64 31]  dist: 2920
+point1: [36 57] point2: [60 70]  dist: 1490
+point1: [36 57] point2: [87 13]  dist: 9074
+point1: [36 57] point2: [84 43]  dist: 5000
+point1: [36 57] point2: [85 18]  dist: 7844
+dist from [36 57] to [42 52] is: 11
+point1: [37 85] point2: [13 29]  dist: 7424
+point1: [37 85] point2: [13 29]  dist: 7424
+point1: [37 85] point2: [4 76]  dist: 2340
+point1: [37 85] point2: [14 64]  dist: 1940
+point1: [37 85] point2: [42 52]  dist: 2228
+point1: [37 85] point2: [35 8]  dist: 11866
+point1: [37 85] point2: [33 5]  dist: 12832
+point1: [37 85] point2: [60 58]  dist: 2516
+point1: [37 85] point2: [64 31]  dist: 7290
+point1: [37 85] point2: [60 70]  dist: 1508
+point1: [37 85] point2: [87 13]  dist: 15368
+point1: [37 85] point2: [84 43]  dist: 7946
+point1: [37 85] point2: [85 18]  dist: 13586
+dist from [37 85] to [60 70] is: 38
+point1: [41 33] point2: [13 29]  dist: 1600
+point1: [41 33] point2: [13 29]  dist: 1600
+point1: [41 33] point2: [4 76]  dist: 6436
+point1: [41 33] point2: [14 64]  dist: 3380
+point1: [41 33] point2: [42 52]  dist: 724
+point1: [41 33] point2: [35 8]  dist: 1322
+point1: [41 33] point2: [33 5]  dist: 1696
+point1: [41 33] point2: [60 58]  dist: 1972
+point1: [41 33] point2: [64 31]  dist: 1066
+point1: [41 33] point2: [60 70]  dist: 3460
+point1: [41 33] point2: [87 13]  dist: 5032
+point1: [41 33] point2: [84 43]  dist: 3898
+point1: [41 33] point2: [85 18]  dist: 4322
+dist from [41 33] to [42 52] is: 26
+point1: [42 53] point2: [13 29]  dist: 2834
+point1: [42 53] point2: [13 29]  dist: 2834
+point1: [42 53] point2: [4 76]  dist: 3946
+point1: [42 53] point2: [14 64]  dist: 1810
+point1: [42 53] point2: [42 52]  dist: 2
+point1: [42 53] point2: [35 8]  dist: 4148
+point1: [42 53] point2: [33 5]  dist: 4770
+point1: [42 53] point2: [60 58]  dist: 698
+point1: [42 53] point2: [64 31]  dist: 1936
+point1: [42 53] point2: [60 70]  dist: 1226
+point1: [42 53] point2: [87 13]  dist: 7250
+point1: [42 53] point2: [84 43]  dist: 3728
+point1: [42 53] point2: [85 18]  dist: 6148
+dist from [42 53] to [42 52] is: 1
+point1: [45 13] point2: [13 29]  dist: 2560
+point1: [45 13] point2: [13 29]  dist: 2560
+point1: [45 13] point2: [4 76]  dist: 11300
+point1: [45 13] point2: [14 64]  dist: 7124
+point1: [45 13] point2: [42 52]  dist: 3060
+point1: [45 13] point2: [35 8]  dist: 250
+point1: [45 13] point2: [33 5]  dist: 416
+point1: [45 13] point2: [60 58]  dist: 4500
+point1: [45 13] point2: [64 31]  dist: 1370
+point1: [45 13] point2: [60 70]  dist: 6948
+point1: [45 13] point2: [87 13]  dist: 3528
+point1: [45 13] point2: [84 43]  dist: 4842
+point1: [45 13] point2: [85 18]  dist: 3250
+dist from [45 13] to [35 8] is: 15
+point1: [46 7] point2: [13 29]  dist: 3146
+point1: [46 7] point2: [13 29]  dist: 3146
+point1: [46 7] point2: [4 76]  dist: 13050
+point1: [46 7] point2: [14 64]  dist: 8546
+point1: [46 7] point2: [42 52]  dist: 4082
+point1: [46 7] point2: [35 8]  dist: 244
+point1: [46 7] point2: [33 5]  dist: 346
+point1: [46 7] point2: [60 58]  dist: 5594
+point1: [46 7] point2: [64 31]  dist: 1800
+point1: [46 7] point2: [60 70]  dist: 8330
+point1: [46 7] point2: [87 13]  dist: 3434
+point1: [46 7] point2: [84 43]  dist: 5480
+point1: [46 7] point2: [85 18]  dist: 3284
+dist from [46 7] to [35 8] is: 15
+point1: [46 81] point2: [13 29]  dist: 7586
+point1: [46 81] point2: [13 29]  dist: 7586
+point1: [46 81] point2: [4 76]  dist: 3578
+point1: [46 81] point2: [14 64]  dist: 2626
+point1: [46 81] point2: [42 52]  dist: 1714
+point1: [46 81] point2: [35 8]  dist: 10900
+point1: [46 81] point2: [33 5]  dist: 11890
+point1: [46 81] point2: [60 58]  dist: 1450
+point1: [46 81] point2: [64 31]  dist: 5648
+point1: [46 81] point2: [60 70]  dist: 634
+point1: [46 81] point2: [87 13]  dist: 12610
+point1: [46 81] point2: [84 43]  dist: 5776
+point1: [46 81] point2: [85 18]  dist: 10980
+dist from [46 81] to [60 70] is: 25
+point1: [48 65] point2: [13 29]  dist: 5042
+point1: [48 65] point2: [13 29]  dist: 5042
+point1: [48 65] point2: [4 76]  dist: 4114
+point1: [48 65] point2: [14 64]  dist: 2314
+point1: [48 65] point2: [42 52]  dist: 410
+point1: [48 65] point2: [35 8]  dist: 6836
+point1: [48 65] point2: [33 5]  dist: 7650
+point1: [48 65] point2: [60 58]  dist: 386
+point1: [48 65] point2: [64 31]  dist: 2824
+point1: [48 65] point2: [60 70]  dist: 338
+point1: [48 65] point2: [87 13]  dist: 8450
+point1: [48 65] point2: [84 43]  dist: 3560
+point1: [48 65] point2: [85 18]  dist: 7156
+dist from [48 65] to [60 70] is: 18
+point1: [49 79] point2: [13 29]  dist: 7592
+point1: [49 79] point2: [13 29]  dist: 7592
+point1: [49 79] point2: [4 76]  dist: 4068
+point1: [49 79] point2: [14 64]  dist: 2900
+point1: [49 79] point2: [42 52]  dist: 1556
+point1: [49 79] point2: [35 8]  dist: 10474
+point1: [49 79] point2: [33 5]  dist: 11464
+point1: [49 79] point2: [60 58]  dist: 1124
+point1: [49 79] point2: [64 31]  dist: 5058
+point1: [49 79] point2: [60 70]  dist: 404
+point1: [49 79] point2: [87 13]  dist: 11600
+point1: [49 79] point2: [84 43]  dist: 5042
+point1: [49 79] point2: [85 18]  dist: 10034
+dist from [49 79] to [60 70] is: 20
+point1: [51 13] point2: [13 29]  dist: 3400
+point1: [51 13] point2: [13 29]  dist: 3400
+point1: [51 13] point2: [4 76]  dist: 12356
+point1: [51 13] point2: [14 64]  dist: 7940
+point1: [51 13] point2: [42 52]  dist: 3204
+point1: [51 13] point2: [35 8]  dist: 562
+point1: [51 13] point2: [33 5]  dist: 776
+point1: [51 13] point2: [60 58]  dist: 4212
+point1: [51 13] point2: [64 31]  dist: 986
+point1: [51 13] point2: [60 70]  dist: 6660
+point1: [51 13] point2: [87 13]  dist: 2592
+point1: [51 13] point2: [84 43]  dist: 3978
+point1: [51 13] point2: [85 18]  dist: 2362
+dist from [51 13] to [35 8] is: 23
+point1: [53 48] point2: [13 29]  dist: 3922
+point1: [53 48] point2: [13 29]  dist: 3922
+point1: [53 48] point2: [4 76]  dist: 6370
+point1: [53 48] point2: [14 64]  dist: 3554
+point1: [53 48] point2: [42 52]  dist: 274
+point1: [53 48] point2: [35 8]  dist: 3848
+point1: [53 48] point2: [33 5]  dist: 4498
+point1: [53 48] point2: [60 58]  dist: 298
+point1: [53 48] point2: [64 31]  dist: 820
+point1: [53 48] point2: [60 70]  dist: 1066
+point1: [53 48] point2: [87 13]  dist: 4762
+point1: [53 48] point2: [84 43]  dist: 1972
+point1: [53 48] point2: [85 18]  dist: 3848
+dist from [53 48] to [42 52] is: 16
+point1: [54 67] point2: [13 29]  dist: 6250
+point1: [54 67] point2: [13 29]  dist: 6250
+point1: [54 67] point2: [4 76]  dist: 5162
+point1: [54 67] point2: [14 64]  dist: 3218
+point1: [54 67] point2: [42 52]  dist: 738
+point1: [54 67] point2: [35 8]  dist: 7684
+point1: [54 67] point2: [33 5]  dist: 8570
+point1: [54 67] point2: [60 58]  dist: 234
+point1: [54 67] point2: [64 31]  dist: 2792
+point1: [54 67] point2: [60 70]  dist: 90
+point1: [54 67] point2: [87 13]  dist: 8010
+point1: [54 67] point2: [84 43]  dist: 2952
+point1: [54 67] point2: [85 18]  dist: 6724
+dist from [54 67] to [60 70] is: 9
+point1: [57 44] point2: [13 29]  dist: 4322
+point1: [57 44] point2: [13 29]  dist: 4322
+point1: [57 44] point2: [4 76]  dist: 7666
+point1: [57 44] point2: [14 64]  dist: 4498
+point1: [57 44] point2: [42 52]  dist: 578
+point1: [57 44] point2: [35 8]  dist: 3560
+point1: [57 44] point2: [33 5]  dist: 4194
+point1: [57 44] point2: [60 58]  dist: 410
+point1: [57 44] point2: [64 31]  dist: 436
+point1: [57 44] point2: [60 70]  dist: 1370
+point1: [57 44] point2: [87 13]  dist: 3722
+point1: [57 44] point2: [84 43]  dist: 1460
+point1: [57 44] point2: [85 18]  dist: 2920
+dist from [57 44] to [60 58] is: 20
+point1: [57 77] point2: [13 29]  dist: 8480
+point1: [57 77] point2: [13 29]  dist: 8480
+point1: [57 77] point2: [4 76]  dist: 5620
+point1: [57 77] point2: [14 64]  dist: 4036
+point1: [57 77] point2: [42 52]  dist: 1700
+point1: [57 77] point2: [35 8]  dist: 10490
+point1: [57 77] point2: [33 5]  dist: 11520
+point1: [57 77] point2: [60 58]  dist: 740
+point1: [57 77] point2: [64 31]  dist: 4330
+point1: [57 77] point2: [60 70]  dist: 116
+point1: [57 77] point2: [87 13]  dist: 9992
+point1: [57 77] point2: [84 43]  dist: 3770
+point1: [57 77] point2: [85 18]  dist: 8530
+dist from [57 77] to [60 70] is: 10
+point1: [59 40] point2: [13 29]  dist: 4474
+point1: [59 40] point2: [13 29]  dist: 4474
+point1: [59 40] point2: [4 76]  dist: 8642
+point1: [59 40] point2: [14 64]  dist: 5202
+point1: [59 40] point2: [42 52]  dist: 866
+point1: [59 40] point2: [35 8]  dist: 3200
+point1: [59 40] point2: [33 5]  dist: 3802
+point1: [59 40] point2: [60 58]  dist: 650
+point1: [59 40] point2: [64 31]  dist: 212
+point1: [59 40] point2: [60 70]  dist: 1802
+point1: [59 40] point2: [87 13]  dist: 3026
+point1: [59 40] point2: [84 43]  dist: 1268
+point1: [59 40] point2: [85 18]  dist: 2320
+dist from [59 40] to [64 31] is: 14
+point1: [61 77] point2: [13 29]  dist: 9216
+point1: [61 77] point2: [13 29]  dist: 9216
+point1: [61 77] point2: [4 76]  dist: 6500
+point1: [61 77] point2: [14 64]  dist: 4756
+point1: [61 77] point2: [42 52]  dist: 1972
+point1: [61 77] point2: [35 8]  dist: 10874
+point1: [61 77] point2: [33 5]  dist: 11936
+point1: [61 77] point2: [60 58]  dist: 724
+point1: [61 77] point2: [64 31]  dist: 4250
+point1: [61 77] point2: [60 70]  dist: 100
+point1: [61 77] point2: [87 13]  dist: 9544
+point1: [61 77] point2: [84 43]  dist: 3370
+point1: [61 77] point2: [85 18]  dist: 8114
+dist from [61 77] to [60 70] is: 10
+point1: [63 26] point2: [13 29]  dist: 5018
+point1: [63 26] point2: [13 29]  dist: 5018
+point1: [63 26] point2: [4 76]  dist: 11962
+point1: [63 26] point2: [14 64]  dist: 7690
+point1: [63 26] point2: [42 52]  dist: 2234
+point1: [63 26] point2: [35 8]  dist: 2216
+point1: [63 26] point2: [33 5]  dist: 2682
+point1: [63 26] point2: [60 58]  dist: 2066
+point1: [63 26] point2: [64 31]  dist: 52
+point1: [63 26] point2: [60 70]  dist: 3890
+point1: [63 26] point2: [87 13]  dist: 1490
+point1: [63 26] point2: [84 43]  dist: 1460
+point1: [63 26] point2: [85 18]  dist: 1096
+dist from [63 26] to [64 31] is: 7
+point1: [63 69] point2: [13 29]  dist: 8200
+point1: [63 69] point2: [13 29]  dist: 8200
+point1: [63 69] point2: [4 76]  dist: 7060
+point1: [63 69] point2: [14 64]  dist: 4852
+point1: [63 69] point2: [42 52]  dist: 1460
+point1: [63 69] point2: [35 8]  dist: 9010
+point1: [63 69] point2: [33 5]  dist: 9992
+point1: [63 69] point2: [60 58]  dist: 260
+point1: [63 69] point2: [64 31]  dist: 2890
+point1: [63 69] point2: [60 70]  dist: 20
+point1: [63 69] point2: [87 13]  dist: 7424
+point1: [63 69] point2: [84 43]  dist: 2234
+point1: [63 69] point2: [85 18]  dist: 6170
+dist from [63 69] to [60 70] is: 4
+point1: [67 70] point2: [13 29]  dist: 9194
+point1: [67 70] point2: [13 29]  dist: 9194
+point1: [67 70] point2: [4 76]  dist: 8010
+point1: [67 70] point2: [14 64]  dist: 5690
+point1: [67 70] point2: [42 52]  dist: 1898
+point1: [67 70] point2: [35 8]  dist: 9736
+point1: [67 70] point2: [33 5]  dist: 10762
+point1: [67 70] point2: [60 58]  dist: 386
+point1: [67 70] point2: [64 31]  dist: 3060
+point1: [67 70] point2: [60 70]  dist: 98
+point1: [67 70] point2: [87 13]  dist: 7298
+point1: [67 70] point2: [84 43]  dist: 2036
+point1: [67 70] point2: [85 18]  dist: 6056
+dist from [67 70] to [60 70] is: 9
+point1: [67 78] point2: [13 29]  dist: 10634
+point1: [67 78] point2: [13 29]  dist: 10634
+point1: [67 78] point2: [4 76]  dist: 7946
+point1: [67 78] point2: [14 64]  dist: 6010
+point1: [67 78] point2: [42 52]  dist: 2602
+point1: [67 78] point2: [35 8]  dist: 11848
+point1: [67 78] point2: [33 5]  dist: 12970
+point1: [67 78] point2: [60 58]  dist: 898
+point1: [67 78] point2: [64 31]  dist: 4436
+point1: [67 78] point2: [60 70]  dist: 226
+point1: [67 78] point2: [87 13]  dist: 9250
+point1: [67 78] point2: [84 43]  dist: 3028
+point1: [67 78] point2: [85 18]  dist: 7848
+dist from [67 78] to [60 70] is: 15
+point1: [67 95] point2: [13 29]  dist: 14544
+point1: [67 95] point2: [13 29]  dist: 14544
+point1: [67 95] point2: [4 76]  dist: 8660
+point1: [67 95] point2: [14 64]  dist: 7540
+point1: [67 95] point2: [42 52]  dist: 4948
+point1: [67 95] point2: [35 8]  dist: 17186
+point1: [67 95] point2: [33 5]  dist: 18512
+point1: [67 95] point2: [60 58]  dist: 2836
+point1: [67 95] point2: [64 31]  dist: 8210
+point1: [67 95] point2: [60 70]  dist: 1348
+point1: [67 95] point2: [87 13]  dist: 14248
+point1: [67 95] point2: [84 43]  dist: 5986
+point1: [67 95] point2: [85 18]  dist: 12506
+dist from [67 95] to [60 70] is: 36
+point1: [69 7] point2: [13 29]  dist: 7240
+point1: [69 7] point2: [13 29]  dist: 7240
+point1: [69 7] point2: [4 76]  dist: 17972
+point1: [69 7] point2: [14 64]  dist: 12548
+point1: [69 7] point2: [42 52]  dist: 5508
+point1: [69 7] point2: [35 8]  dist: 2314
+point1: [69 7] point2: [33 5]  dist: 2600
+point1: [69 7] point2: [60 58]  dist: 5364
+point1: [69 7] point2: [64 31]  dist: 1202
+point1: [69 7] point2: [60 70]  dist: 8100
+point1: [69 7] point2: [87 13]  dist: 720
+point1: [69 7] point2: [84 43]  dist: 3042
+point1: [69 7] point2: [85 18]  dist: 754
+dist from [69 7] to [87 13] is: 26
+point1: [69 65] point2: [13 29]  dist: 8864
+point1: [69 65] point2: [13 29]  dist: 8864
+point1: [69 65] point2: [4 76]  dist: 8692
+point1: [69 65] point2: [14 64]  dist: 6052
+point1: [69 65] point2: [42 52]  dist: 1796
+point1: [69 65] point2: [35 8]  dist: 8810
+point1: [69 65] point2: [33 5]  dist: 9792
+point1: [69 65] point2: [60 58]  dist: 260
+point1: [69 65] point2: [64 31]  dist: 2362
+point1: [69 65] point2: [60 70]  dist: 212
+point1: [69 65] point2: [87 13]  dist: 6056
+point1: [69 65] point2: [84 43]  dist: 1418
+point1: [69 65] point2: [85 18]  dist: 4930
+dist from [69 65] to [60 70] is: 14
+point1: [74 87] point2: [13 29]  dist: 14170
+point1: [74 87] point2: [13 29]  dist: 14170
+point1: [74 87] point2: [4 76]  dist: 10042
+point1: [74 87] point2: [14 64]  dist: 8258
+point1: [74 87] point2: [42 52]  dist: 4498
+point1: [74 87] point2: [35 8]  dist: 15524
+point1: [74 87] point2: [33 5]  dist: 16810
+point1: [74 87] point2: [60 58]  dist: 2074
+point1: [74 87] point2: [64 31]  dist: 6472
+point1: [74 87] point2: [60 70]  dist: 970
+point1: [74 87] point2: [87 13]  dist: 11290
+point1: [74 87] point2: [84 43]  dist: 4072
+point1: [74 87] point2: [85 18]  dist: 9764
+dist from [74 87] to [60 70] is: 31
+point1: [74 96] point2: [13 29]  dist: 16420
+point1: [74 96] point2: [13 29]  dist: 16420
+point1: [74 96] point2: [4 76]  dist: 10600
+point1: [74 96] point2: [14 64]  dist: 9248
+point1: [74 96] point2: [42 52]  dist: 5920
+point1: [74 96] point2: [35 8]  dist: 18530
+point1: [74 96] point2: [33 5]  dist: 19924
+point1: [74 96] point2: [60 58]  dist: 3280
+point1: [74 96] point2: [64 31]  dist: 8650
+point1: [74 96] point2: [60 70]  dist: 1744
+point1: [74 96] point2: [87 13]  dist: 14116
+point1: [74 96] point2: [84 43]  dist: 5818
+point1: [74 96] point2: [85 18]  dist: 12410
+dist from [74 96] to [60 70] is: 41
+point1: [75 42] point2: [13 29]  dist: 8026
+point1: [75 42] point2: [13 29]  dist: 8026
+point1: [75 42] point2: [4 76]  dist: 12394
+point1: [75 42] point2: [14 64]  dist: 8410
+point1: [75 42] point2: [42 52]  dist: 2378
+point1: [75 42] point2: [35 8]  dist: 5512
+point1: [75 42] point2: [33 5]  dist: 6266
+point1: [75 42] point2: [60 58]  dist: 962
+point1: [75 42] point2: [64 31]  dist: 484
+point1: [75 42] point2: [60 70]  dist: 2018
+point1: [75 42] point2: [87 13]  dist: 1970
+point1: [75 42] point2: [84 43]  dist: 164
+point1: [75 42] point2: [85 18]  dist: 1352
+dist from [75 42] to [84 43] is: 12
+point1: [76 17] point2: [13 29]  dist: 8226
+point1: [76 17] point2: [13 29]  dist: 8226
+point1: [76 17] point2: [4 76]  dist: 17330
+point1: [76 17] point2: [14 64]  dist: 12106
+point1: [76 17] point2: [42 52]  dist: 4762
+point1: [76 17] point2: [35 8]  dist: 3524
+point1: [76 17] point2: [33 5]  dist: 3986
+point1: [76 17] point2: [60 58]  dist: 3874
+point1: [76 17] point2: [64 31]  dist: 680
+point1: [76 17] point2: [60 70]  dist: 6130
+point1: [76 17] point2: [87 13]  dist: 274
+point1: [76 17] point2: [84 43]  dist: 1480
+point1: [76 17] point2: [85 18]  dist: 164
+dist from [76 17] to [85 18] is: 12
+point1: [76 71] point2: [13 29]  dist: 11466
+point1: [76 71] point2: [13 29]  dist: 11466
+point1: [76 71] point2: [4 76]  dist: 10418
+point1: [76 71] point2: [14 64]  dist: 7786
+point1: [76 71] point2: [42 52]  dist: 3034
+point1: [76 71] point2: [35 8]  dist: 11300
+point1: [76 71] point2: [33 5]  dist: 12410
+point1: [76 71] point2: [60 58]  dist: 850
+point1: [76 71] point2: [64 31]  dist: 3488
+point1: [76 71] point2: [60 70]  dist: 514
+point1: [76 71] point2: [87 13]  dist: 6970
+point1: [76 71] point2: [84 43]  dist: 1696
+point1: [76 71] point2: [85 18]  dist: 5780
+dist from [76 71] to [60 70] is: 22
+point1: [79 21] point2: [13 29]  dist: 8840
+point1: [79 21] point2: [13 29]  dist: 8840
+point1: [79 21] point2: [4 76]  dist: 17300
+point1: [79 21] point2: [14 64]  dist: 12148
+point1: [79 21] point2: [42 52]  dist: 4660
+point1: [79 21] point2: [35 8]  dist: 4210
+point1: [79 21] point2: [33 5]  dist: 4744
+point1: [79 21] point2: [60 58]  dist: 3460
+point1: [79 21] point2: [64 31]  dist: 650
+point1: [79 21] point2: [60 70]  dist: 5524
+point1: [79 21] point2: [87 13]  dist: 256
+point1: [79 21] point2: [84 43]  dist: 1018
+point1: [79 21] point2: [85 18]  dist: 90
+dist from [79 21] to [85 18] is: 9
+point1: [79 44] point2: [13 29]  dist: 9162
+point1: [79 44] point2: [13 29]  dist: 9162
+point1: [79 44] point2: [4 76]  dist: 13298
+point1: [79 44] point2: [14 64]  dist: 9250
+point1: [79 44] point2: [42 52]  dist: 2866
+point1: [79 44] point2: [35 8]  dist: 6464
+point1: [79 44] point2: [33 5]  dist: 7274
+point1: [79 44] point2: [60 58]  dist: 1114
+point1: [79 44] point2: [64 31]  dist: 788
+point1: [79 44] point2: [60 70]  dist: 2074
+point1: [79 44] point2: [87 13]  dist: 2050
+point1: [79 44] point2: [84 43]  dist: 52
+point1: [79 44] point2: [85 18]  dist: 1424
+dist from [79 44] to [84 43] is: 7
+point1: [79 45] point2: [13 29]  dist: 9224
+point1: [79 45] point2: [13 29]  dist: 9224
+point1: [79 45] point2: [4 76]  dist: 13172
+point1: [79 45] point2: [14 64]  dist: 9172
+point1: [79 45] point2: [42 52]  dist: 2836
+point1: [79 45] point2: [35 8]  dist: 6610
+point1: [79 45] point2: [33 5]  dist: 7432
+point1: [79 45] point2: [60 58]  dist: 1060
+point1: [79 45] point2: [64 31]  dist: 842
+point1: [79 45] point2: [60 70]  dist: 1972
+point1: [79 45] point2: [87 13]  dist: 2176
+point1: [79 45] point2: [84 43]  dist: 58
+point1: [79 45] point2: [85 18]  dist: 1530
+dist from [79 45] to [84 43] is: 7
+point1: [80 28] point2: [13 29]  dist: 8980
+point1: [80 28] point2: [13 29]  dist: 8980
+point1: [80 28] point2: [4 76]  dist: 16160
+point1: [80 28] point2: [14 64]  dist: 11304
+point1: [80 28] point2: [42 52]  dist: 4040
+point1: [80 28] point2: [35 8]  dist: 4850
+point1: [80 28] point2: [33 5]  dist: 5476
+point1: [80 28] point2: [60 58]  dist: 2600
+point1: [80 28] point2: [64 31]  dist: 530
+point1: [80 28] point2: [60 70]  dist: 4328
+point1: [80 28] point2: [87 13]  dist: 548
+point1: [80 28] point2: [84 43]  dist: 482
+point1: [80 28] point2: [85 18]  dist: 250
+dist from [80 28] to [85 18] is: 15
+point1: [81 22] point2: [13 29]  dist: 9346
+point1: [81 22] point2: [13 29]  dist: 9346
+point1: [81 22] point2: [4 76]  dist: 17690
+point1: [81 22] point2: [14 64]  dist: 12506
+point1: [81 22] point2: [42 52]  dist: 4842
+point1: [81 22] point2: [35 8]  dist: 4624
+point1: [81 22] point2: [33 5]  dist: 5186
+point1: [81 22] point2: [60 58]  dist: 3474
+point1: [81 22] point2: [64 31]  dist: 740
+point1: [81 22] point2: [60 70]  dist: 5490
+point1: [81 22] point2: [87 13]  dist: 234
+point1: [81 22] point2: [84 43]  dist: 900
+point1: [81 22] point2: [85 18]  dist: 64
+dist from [81 22] to [85 18] is: 8
+point1: [85 94] point2: [13 29]  dist: 18818
+point1: [85 94] point2: [13 29]  dist: 18818
+point1: [85 94] point2: [4 76]  dist: 13770
+point1: [85 94] point2: [14 64]  dist: 11882
+point1: [85 94] point2: [42 52]  dist: 7226
+point1: [85 94] point2: [35 8]  dist: 19792
+point1: [85 94] point2: [33 5]  dist: 21250
+point1: [85 94] point2: [60 58]  dist: 3842
+point1: [85 94] point2: [64 31]  dist: 8820
+point1: [85 94] point2: [60 70]  dist: 2402
+point1: [85 94] point2: [87 13]  dist: 13130
+point1: [85 94] point2: [84 43]  dist: 5204
+point1: [85 94] point2: [85 18]  dist: 11552
+dist from [85 94] to [60 70] is: 49
+point1: [87 55] point2: [13 29]  dist: 12304
+point1: [87 55] point2: [13 29]  dist: 12304
+point1: [87 55] point2: [4 76]  dist: 14660
+point1: [87 55] point2: [14 64]  dist: 10820
+point1: [87 55] point2: [42 52]  dist: 4068
+point1: [87 55] point2: [35 8]  dist: 9826
+point1: [87 55] point2: [33 5]  dist: 10832
+point1: [87 55] point2: [60 58]  dist: 1476
+point1: [87 55] point2: [64 31]  dist: 2210
+point1: [87 55] point2: [60 70]  dist: 1908
+point1: [87 55] point2: [87 13]  dist: 3528
+point1: [87 55] point2: [84 43]  dist: 306
+point1: [87 55] point2: [85 18]  dist: 2746
+dist from [87 55] to [84 43] is: 17
+point1: [88 50] point2: [13 29]  dist: 12132
+point1: [88 50] point2: [13 29]  dist: 12132
+point1: [88 50] point2: [4 76]  dist: 15464
+point1: [88 50] point2: [14 64]  dist: 11344
+point1: [88 50] point2: [42 52]  dist: 4240
+point1: [88 50] point2: [35 8]  dist: 9146
+point1: [88 50] point2: [33 5]  dist: 10100
+point1: [88 50] point2: [60 58]  dist: 1696
+point1: [88 50] point2: [64 31]  dist: 1874
+point1: [88 50] point2: [60 70]  dist: 2368
+point1: [88 50] point2: [87 13]  dist: 2740
+point1: [88 50] point2: [84 43]  dist: 130
+point1: [88 50] point2: [85 18]  dist: 2066
+dist from [88 50] to [84 43] is: 11
+point1: [90 85] point2: [13 29]  dist: 18130
+point1: [90 85] point2: [13 29]  dist: 18130
+point1: [90 85] point2: [4 76]  dist: 14954
+point1: [90 85] point2: [14 64]  dist: 12434
+point1: [90 85] point2: [42 52]  dist: 6786
+point1: [90 85] point2: [35 8]  dist: 17908
+point1: [90 85] point2: [33 5]  dist: 19298
+point1: [90 85] point2: [60 58]  dist: 3258
+point1: [90 85] point2: [64 31]  dist: 7184
+point1: [90 85] point2: [60 70]  dist: 2250
+point1: [90 85] point2: [87 13]  dist: 10386
+point1: [90 85] point2: [84 43]  dist: 3600
+point1: [90 85] point2: [85 18]  dist: 9028
+dist from [90 85] to [60 70] is: 47
+point1: [91 62] point2: [13 29]  dist: 14346
+point1: [91 62] point2: [13 29]  dist: 14346
+point1: [91 62] point2: [4 76]  dist: 15530
+point1: [91 62] point2: [14 64]  dist: 11866
+point1: [91 62] point2: [42 52]  dist: 5002
+point1: [91 62] point2: [35 8]  dist: 12104
+point1: [91 62] point2: [33 5]  dist: 13226
+point1: [91 62] point2: [60 58]  dist: 1954
+point1: [91 62] point2: [64 31]  dist: 3380
+point1: [91 62] point2: [60 70]  dist: 2050
+point1: [91 62] point2: [87 13]  dist: 4834
+point1: [91 62] point2: [84 43]  dist: 820
+point1: [91 62] point2: [85 18]  dist: 3944
+dist from [91 62] to [84 43] is: 28
+point1: [99 10] point2: [13 29]  dist: 15514
+point1: [99 10] point2: [13 29]  dist: 15514
+point1: [99 10] point2: [4 76]  dist: 26762
+point1: [99 10] point2: [14 64]  dist: 20282
+point1: [99 10] point2: [42 52]  dist: 10026
+point1: [99 10] point2: [35 8]  dist: 8200
+point1: [99 10] point2: [33 5]  dist: 8762
+point1: [99 10] point2: [60 58]  dist: 7650
+point1: [99 10] point2: [64 31]  dist: 3332
+point1: [99 10] point2: [60 70]  dist: 10242
+point1: [99 10] point2: [87 13]  dist: 306
+point1: [99 10] point2: [84 43]  dist: 2628
+point1: [99 10] point2: [85 18]  dist: 520
+dist from [99 10] to [87 13] is: 17
+point1: [100 18] point2: [13 29]  dist: 15380
+point1: [100 18] point2: [13 29]  dist: 15380
+point1: [100 18] point2: [4 76]  dist: 25160
+point1: [100 18] point2: [14 64]  dist: 19024
+point1: [100 18] point2: [42 52]  dist: 9040
+point1: [100 18] point2: [35 8]  dist: 8650
+point1: [100 18] point2: [33 5]  dist: 9316
+point1: [100 18] point2: [60 58]  dist: 6400
+point1: [100 18] point2: [64 31]  dist: 2930
+point1: [100 18] point2: [60 70]  dist: 8608
+point1: [100 18] point2: [87 13]  dist: 388
+point1: [100 18] point2: [84 43]  dist: 1762
+point1: [100 18] point2: [85 18]  dist: 450
+dist from [100 18] to [87 13] is: 19
+point1: [100 39] point2: [13 29]  dist: 15338
+point1: [100 39] point2: [13 29]  dist: 15338
+point1: [100 39] point2: [4 76]  dist: 21170
+point1: [100 39] point2: [14 64]  dist: 16042
+point1: [100 39] point2: [42 52]  dist: 7066
+point1: [100 39] point2: [35 8]  dist: 10372
+point1: [100 39] point2: [33 5]  dist: 11290
+point1: [100 39] point2: [60 58]  dist: 3922
+point1: [100 39] point2: [64 31]  dist: 2720
+point1: [100 39] point2: [60 70]  dist: 5122
+point1: [100 39] point2: [87 13]  dist: 1690
+point1: [100 39] point2: [84 43]  dist: 544
+point1: [100 39] point2: [85 18]  dist: 1332
+dist from [100 39] to [84 43] is: 23
+point1: [3 51] point2: [6 50]  dist: 20
+point1: [3 51] point2: [6 50]  dist: 20
+point1: [3 51] point2: [11 31]  dist: 928
+point1: [3 51] point2: [16 9]  dist: 3866
+point1: [3 51] point2: [32 42]  dist: 1844
+point1: [3 51] point2: [33 76]  dist: 3050
+point1: [3 51] point2: [30 89]  dist: 4346
+point1: [3 51] point2: [52 61]  dist: 5002
+point1: [3 51] point2: [60 10]  dist: 9860
+point1: [3 51] point2: [53 28]  dist: 6058
+point1: [3 51] point2: [79 95]  dist: 15424
+point1: [3 51] point2: [89 50]  dist: 14794
+point1: [3 51] point2: [83 83]  dist: 14848
+dist from [3 51] to [6 50] is: 4
+point1: [9 49] point2: [6 50]  dist: 20
+point1: [9 49] point2: [6 50]  dist: 20
+point1: [9 49] point2: [11 31]  dist: 656
+point1: [9 49] point2: [16 9]  dist: 3298
+point1: [9 49] point2: [32 42]  dist: 1156
+point1: [9 49] point2: [33 76]  dist: 2610
+point1: [9 49] point2: [30 89]  dist: 4082
+point1: [9 49] point2: [52 61]  dist: 3986
+point1: [9 49] point2: [60 10]  dist: 8244
+point1: [9 49] point2: [53 28]  dist: 4754
+point1: [9 49] point2: [79 95]  dist: 14032
+point1: [9 49] point2: [89 50]  dist: 12802
+point1: [9 49] point2: [83 83]  dist: 13264
+dist from [9 49] to [6 50] is: 4
+point1: [14 14] point2: [6 50]  dist: 2720
+point1: [14 14] point2: [6 50]  dist: 2720
+point1: [14 14] point2: [11 31]  dist: 596
+point1: [14 14] point2: [16 9]  dist: 58
+point1: [14 14] point2: [32 42]  dist: 2216
+point1: [14 14] point2: [33 76]  dist: 8410
+point1: [14 14] point2: [30 89]  dist: 11762
+point1: [14 14] point2: [52 61]  dist: 7306
+point1: [14 14] point2: [60 10]  dist: 4264
+point1: [14 14] point2: [53 28]  dist: 3434
+point1: [14 14] point2: [79 95]  dist: 21572
+point1: [14 14] point2: [89 50]  dist: 13842
+point1: [14 14] point2: [83 83]  dist: 19044
+dist from [14 14] to [16 9] is: 7
+point1: [16 100] point2: [6 50]  dist: 5200
+point1: [16 100] point2: [6 50]  dist: 5200
+point1: [16 100] point2: [11 31]  dist: 9572
+point1: [16 100] point2: [16 9]  dist: 16562
+point1: [16 100] point2: [32 42]  dist: 7240
+point1: [16 100] point2: [33 76]  dist: 1730
+point1: [16 100] point2: [30 89]  dist: 634
+point1: [16 100] point2: [52 61]  dist: 5634
+point1: [16 100] point2: [60 10]  dist: 20072
+point1: [16 100] point2: [53 28]  dist: 13106
+point1: [16 100] point2: [79 95]  dist: 7988
+point1: [16 100] point2: [89 50]  dist: 15658
+point1: [16 100] point2: [83 83]  dist: 9556
+dist from [16 100] to [30 89] is: 25
+point1: [18 4] point2: [6 50]  dist: 4520
+point1: [18 4] point2: [6 50]  dist: 4520
+point1: [18 4] point2: [11 31]  dist: 1556
+point1: [18 4] point2: [16 9]  dist: 58
+point1: [18 4] point2: [32 42]  dist: 3280
+point1: [18 4] point2: [33 76]  dist: 10818
+point1: [18 4] point2: [30 89]  dist: 14738
+point1: [18 4] point2: [52 61]  dist: 8810
+point1: [18 4] point2: [60 10]  dist: 3600
+point1: [18 4] point2: [53 28]  dist: 3602
+point1: [18 4] point2: [79 95]  dist: 24004
+point1: [18 4] point2: [89 50]  dist: 14314
+point1: [18 4] point2: [83 83]  dist: 20932
+dist from [18 4] to [16 9] is: 7
+point1: [18 86] point2: [6 50]  dist: 2880
+point1: [18 86] point2: [6 50]  dist: 2880
+point1: [18 86] point2: [11 31]  dist: 6148
+point1: [18 86] point2: [16 9]  dist: 11866
+point1: [18 86] point2: [32 42]  dist: 4264
+point1: [18 86] point2: [33 76]  dist: 650
+point1: [18 86] point2: [30 89]  dist: 306
+point1: [18 86] point2: [52 61]  dist: 3562
+point1: [18 86] point2: [60 10]  dist: 15080
+point1: [18 86] point2: [53 28]  dist: 9178
+point1: [18 86] point2: [79 95]  dist: 7604
+point1: [18 86] point2: [89 50]  dist: 12674
+point1: [18 86] point2: [83 83]  dist: 8468
+dist from [18 86] to [30 89] is: 17
+point1: [24 52] point2: [6 50]  dist: 656
+point1: [24 52] point2: [6 50]  dist: 656
+point1: [24 52] point2: [11 31]  dist: 1220
+point1: [24 52] point2: [16 9]  dist: 3826
+point1: [24 52] point2: [32 42]  dist: 328
+point1: [24 52] point2: [33 76]  dist: 1314
+point1: [24 52] point2: [30 89]  dist: 2810
+point1: [24 52] point2: [52 61]  dist: 1730
+point1: [24 52] point2: [60 10]  dist: 6120
+point1: [24 52] point2: [53 28]  dist: 2834
+point1: [24 52] point2: [79 95]  dist: 9748
+point1: [24 52] point2: [89 50]  dist: 8458
+point1: [24 52] point2: [83 83]  dist: 8884
+dist from [24 52] to [32 42] is: 18
+point1: [28 87] point2: [6 50]  dist: 3706
+point1: [28 87] point2: [6 50]  dist: 3706
+point1: [28 87] point2: [11 31]  dist: 6850
+point1: [28 87] point2: [16 9]  dist: 12456
+point1: [28 87] point2: [32 42]  dist: 4082
+point1: [28 87] point2: [33 76]  dist: 292
+point1: [28 87] point2: [30 89]  dist: 16
+point1: [28 87] point2: [52 61]  dist: 2504
+point1: [28 87] point2: [60 10]  dist: 13906
+point1: [28 87] point2: [53 28]  dist: 8212
+point1: [28 87] point2: [79 95]  dist: 5330
+point1: [28 87] point2: [89 50]  dist: 10180
+point1: [28 87] point2: [83 83]  dist: 6082
+dist from [28 87] to [30 89] is: 4
+point1: [33 92] point2: [6 50]  dist: 4986
+point1: [33 92] point2: [6 50]  dist: 4986
+point1: [33 92] point2: [11 31]  dist: 8410
+point1: [33 92] point2: [16 9]  dist: 14356
+point1: [33 92] point2: [32 42]  dist: 5002
+point1: [33 92] point2: [33 76]  dist: 512
+point1: [33 92] point2: [30 89]  dist: 36
+point1: [33 92] point2: [52 61]  dist: 2644
+point1: [33 92] point2: [60 10]  dist: 14906
+point1: [33 92] point2: [53 28]  dist: 8992
+point1: [33 92] point2: [79 95]  dist: 4250
+point1: [33 92] point2: [89 50]  dist: 9800
+point1: [33 92] point2: [83 83]  dist: 5162
+dist from [33 92] to [30 89] is: 6
+point1: [37 85] point2: [6 50]  dist: 4372
+point1: [37 85] point2: [6 50]  dist: 4372
+point1: [37 85] point2: [11 31]  dist: 7184
+point1: [37 85] point2: [16 9]  dist: 12434
+point1: [37 85] point2: [32 42]  dist: 3748
+point1: [37 85] point2: [33 76]  dist: 194
+point1: [37 85] point2: [30 89]  dist: 130
+point1: [37 85] point2: [52 61]  dist: 1602
+point1: [37 85] point2: [60 10]  dist: 12308
+point1: [37 85] point2: [53 28]  dist: 7010
+point1: [37 85] point2: [79 95]  dist: 3728
+point1: [37 85] point2: [89 50]  dist: 7858
+point1: [37 85] point2: [83 83]  dist: 4240
+dist from [37 85] to [30 89] is: 11
+point1: [41 33] point2: [6 50]  dist: 3028
+point1: [41 33] point2: [6 50]  dist: 3028
+point1: [41 33] point2: [11 31]  dist: 1808
+point1: [41 33] point2: [16 9]  dist: 2402
+point1: [41 33] point2: [32 42]  dist: 324
+point1: [41 33] point2: [33 76]  dist: 3826
+point1: [41 33] point2: [30 89]  dist: 6514
+point1: [41 33] point2: [52 61]  dist: 1810
+point1: [41 33] point2: [60 10]  dist: 1780
+point1: [41 33] point2: [53 28]  dist: 338
+point1: [41 33] point2: [79 95]  dist: 10576
+point1: [41 33] point2: [89 50]  dist: 5186
+point1: [41 33] point2: [83 83]  dist: 8528
+dist from [41 33] to [32 42] is: 18
+point1: [46 81] point2: [6 50]  dist: 5122
+point1: [46 81] point2: [6 50]  dist: 5122
+point1: [46 81] point2: [11 31]  dist: 7450
+point1: [46 81] point2: [16 9]  dist: 12168
+point1: [46 81] point2: [32 42]  dist: 3434
+point1: [46 81] point2: [33 76]  dist: 388
+point1: [46 81] point2: [30 89]  dist: 640
+point1: [46 81] point2: [52 61]  dist: 872
+point1: [46 81] point2: [60 10]  dist: 10474
+point1: [46 81] point2: [53 28]  dist: 5716
+point1: [46 81] point2: [79 95]  dist: 2570
+point1: [46 81] point2: [89 50]  dist: 5620
+point1: [46 81] point2: [83 83]  dist: 2746
+dist from [46 81] to [33 76] is: 19
+point1: [49 79] point2: [6 50]  dist: 5380
+point1: [49 79] point2: [6 50]  dist: 5380
+point1: [49 79] point2: [11 31]  dist: 7496
+point1: [49 79] point2: [16 9]  dist: 11978
+point1: [49 79] point2: [32 42]  dist: 3316
+point1: [49 79] point2: [33 76]  dist: 530
+point1: [49 79] point2: [30 89]  dist: 922
+point1: [49 79] point2: [52 61]  dist: 666
+point1: [49 79] point2: [60 10]  dist: 9764
+point1: [49 79] point2: [53 28]  dist: 5234
+point1: [49 79] point2: [79 95]  dist: 2312
+point1: [49 79] point2: [89 50]  dist: 4882
+point1: [49 79] point2: [83 83]  dist: 2344
+dist from [49 79] to [33 76] is: 23
+point1: [51 13] point2: [6 50]  dist: 6788
+point1: [51 13] point2: [6 50]  dist: 6788
+point1: [51 13] point2: [11 31]  dist: 3848
+point1: [51 13] point2: [16 9]  dist: 2482
+point1: [51 13] point2: [32 42]  dist: 2404
+point1: [51 13] point2: [33 76]  dist: 8586
+point1: [51 13] point2: [30 89]  dist: 12434
+point1: [51 13] point2: [52 61]  dist: 4610
+point1: [51 13] point2: [60 10]  dist: 180
+point1: [51 13] point2: [53 28]  dist: 458
+point1: [51 13] point2: [79 95]  dist: 15016
+point1: [51 13] point2: [89 50]  dist: 5626
+point1: [51 13] point2: [83 83]  dist: 11848
+dist from [51 13] to [60 10] is: 13
+point1: [56 44] point2: [6 50]  dist: 5072
+point1: [56 44] point2: [6 50]  dist: 5072
+point1: [56 44] point2: [11 31]  dist: 4388
+point1: [56 44] point2: [16 9]  dist: 5650
+point1: [56 44] point2: [32 42]  dist: 1160
+point1: [56 44] point2: [33 76]  dist: 3106
+point1: [56 44] point2: [30 89]  dist: 5402
+point1: [56 44] point2: [52 61]  dist: 610
+point1: [56 44] point2: [60 10]  dist: 2344
+point1: [56 44] point2: [53 28]  dist: 530
+point1: [56 44] point2: [79 95]  dist: 6260
+point1: [56 44] point2: [89 50]  dist: 2250
+point1: [56 44] point2: [83 83]  dist: 4500
+dist from [56 44] to [53 28] is: 23
+point1: [67 95] point2: [6 50]  dist: 11492
+point1: [67 95] point2: [6 50]  dist: 11492
+point1: [67 95] point2: [11 31]  dist: 14464
+point1: [67 95] point2: [16 9]  dist: 19994
+point1: [67 95] point2: [32 42]  dist: 8068
+point1: [67 95] point2: [33 76]  dist: 3034
+point1: [67 95] point2: [30 89]  dist: 2810
+point1: [67 95] point2: [52 61]  dist: 2762
+point1: [67 95] point2: [60 10]  dist: 14548
+point1: [67 95] point2: [53 28]  dist: 9370
+point1: [67 95] point2: [79 95]  dist: 288
+point1: [67 95] point2: [89 50]  dist: 5018
+point1: [67 95] point2: [83 83]  dist: 800
+dist from [67 95] to [79 95] is: 16
+point1: [69 7] point2: [6 50]  dist: 11636
+point1: [69 7] point2: [6 50]  dist: 11636
+point1: [69 7] point2: [11 31]  dist: 7880
+point1: [69 7] point2: [16 9]  dist: 5626
+point1: [69 7] point2: [32 42]  dist: 5188
+point1: [69 7] point2: [33 76]  dist: 12114
+point1: [69 7] point2: [30 89]  dist: 16490
+point1: [69 7] point2: [52 61]  dist: 6410
+point1: [69 7] point2: [60 10]  dist: 180
+point1: [69 7] point2: [53 28]  dist: 1394
+point1: [69 7] point2: [79 95]  dist: 15688
+point1: [69 7] point2: [89 50]  dist: 4498
+point1: [69 7] point2: [83 83]  dist: 11944
+dist from [69 7] to [60 10] is: 13
+point1: [74 87] point2: [6 50]  dist: 11986
+point1: [74 87] point2: [6 50]  dist: 11986
+point1: [74 87] point2: [11 31]  dist: 14210
+point1: [74 87] point2: [16 9]  dist: 18896
+point1: [74 87] point2: [32 42]  dist: 7578
+point1: [74 87] point2: [33 76]  dist: 3604
+point1: [74 87] point2: [30 89]  dist: 3880
+point1: [74 87] point2: [52 61]  dist: 2320
+point1: [74 87] point2: [60 10]  dist: 12250
+point1: [74 87] point2: [53 28]  dist: 7844
+point1: [74 87] point2: [79 95]  dist: 178
+point1: [74 87] point2: [89 50]  dist: 3188
+point1: [74 87] point2: [83 83]  dist: 194
+dist from [74 87] to [79 95] is: 13
+point1: [74 96] point2: [6 50]  dist: 13480
+point1: [74 96] point2: [6 50]  dist: 13480
+point1: [74 96] point2: [11 31]  dist: 16388
+point1: [74 96] point2: [16 9]  dist: 21866
+point1: [74 96] point2: [32 42]  dist: 9360
+point1: [74 96] point2: [33 76]  dist: 4162
+point1: [74 96] point2: [30 89]  dist: 3970
+point1: [74 96] point2: [52 61]  dist: 3418
+point1: [74 96] point2: [60 10]  dist: 15184
+point1: [74 96] point2: [53 28]  dist: 10130
+point1: [74 96] point2: [79 95]  dist: 52
+point1: [74 96] point2: [89 50]  dist: 4682
+point1: [74 96] point2: [83 83]  dist: 500
+dist from [74 96] to [79 95] is: 7
+point1: [76 71] point2: [6 50]  dist: 10682
+point1: [76 71] point2: [6 50]  dist: 10682
+point1: [76 71] point2: [11 31]  dist: 11650
+point1: [76 71] point2: [16 9]  dist: 14888
+point1: [76 71] point2: [32 42]  dist: 5554
+point1: [76 71] point2: [33 76]  dist: 3748
+point1: [76 71] point2: [30 89]  dist: 4880
+point1: [76 71] point2: [52 61]  dist: 1352
+point1: [76 71] point2: [60 10]  dist: 7954
+point1: [76 71] point2: [53 28]  dist: 4756
+point1: [76 71] point2: [79 95]  dist: 1170
+point1: [76 71] point2: [89 50]  dist: 1220
+point1: [76 71] point2: [83 83]  dist: 386
+dist from [76 71] to [83 83] is: 19
+point1: [85 94] point2: [6 50]  dist: 16354
+point1: [85 94] point2: [6 50]  dist: 16354
+point1: [85 94] point2: [11 31]  dist: 18890
+point1: [85 94] point2: [16 9]  dist: 23972
+point1: [85 94] point2: [32 42]  dist: 11026
+point1: [85 94] point2: [33 76]  dist: 6056
+point1: [85 94] point2: [30 89]  dist: 6100
+point1: [85 94] point2: [52 61]  dist: 4356
+point1: [85 94] point2: [60 10]  dist: 15362
+point1: [85 94] point2: [53 28]  dist: 10760
+point1: [85 94] point2: [79 95]  dist: 74
+point1: [85 94] point2: [89 50]  dist: 3904
+point1: [85 94] point2: [83 83]  dist: 250
+dist from [85 94] to [79 95] is: 8
+point1: [90 85] point2: [6 50]  dist: 16562
+point1: [90 85] point2: [6 50]  dist: 16562
+point1: [90 85] point2: [11 31]  dist: 18314
+point1: [90 85] point2: [16 9]  dist: 22504
+point1: [90 85] point2: [32 42]  dist: 10426
+point1: [90 85] point2: [33 76]  dist: 6660
+point1: [90 85] point2: [30 89]  dist: 7232
+point1: [90 85] point2: [52 61]  dist: 4040
+point1: [90 85] point2: [60 10]  dist: 13050
+point1: [90 85] point2: [53 28]  dist: 9236
+point1: [90 85] point2: [79 95]  dist: 442
+point1: [90 85] point2: [89 50]  dist: 2452
+point1: [90 85] point2: [83 83]  dist: 106
+dist from [90 85] to [83 83] is: 10
+point1: [91 62] point2: [6 50]  dist: 14738
+point1: [91 62] point2: [6 50]  dist: 14738
+point1: [91 62] point2: [11 31]  dist: 14722
+point1: [91 62] point2: [16 9]  dist: 16868
+point1: [91 62] point2: [32 42]  dist: 7762
+point1: [91 62] point2: [33 76]  dist: 7120
+point1: [91 62] point2: [30 89]  dist: 8900
+point1: [91 62] point2: [52 61]  dist: 3044
+point1: [91 62] point2: [60 10]  dist: 7330
+point1: [91 62] point2: [53 28]  dist: 5200
+point1: [91 62] point2: [79 95]  dist: 2466
+point1: [91 62] point2: [89 50]  dist: 296
+point1: [91 62] point2: [83 83]  dist: 1010
+dist from [91 62] to [89 50] is: 17
+point1: [100 18] point2: [6 50]  dist: 19720
+point1: [100 18] point2: [6 50]  dist: 19720
+point1: [100 18] point2: [11 31]  dist: 16180
+point1: [100 18] point2: [16 9]  dist: 14274
+point1: [100 18] point2: [32 42]  dist: 10400
+point1: [100 18] point2: [33 76]  dist: 15706
+point1: [100 18] point2: [30 89]  dist: 19882
+point1: [100 18] point2: [52 61]  dist: 8306
+point1: [100 18] point2: [60 10]  dist: 3328
+point1: [100 18] point2: [53 28]  dist: 4618
+point1: [100 18] point2: [79 95]  dist: 12740
+point1: [100 18] point2: [89 50]  dist: 2290
+point1: [100 18] point2: [83 83]  dist: 9028
+dist from [100 18] to [89 50] is: 47
+point1: [100 39] point2: [6 50]  dist: 17914
+point1: [100 39] point2: [6 50]  dist: 17914
+point1: [100 39] point2: [11 31]  dist: 15970
+point1: [100 39] point2: [16 9]  dist: 15912
+point1: [100 39] point2: [32 42]  dist: 9266
+point1: [100 39] point2: [33 76]  dist: 11716
+point1: [100 39] point2: [30 89]  dist: 14800
+point1: [100 39] point2: [52 61]  dist: 5576
+point1: [100 39] point2: [60 10]  dist: 4882
+point1: [100 39] point2: [53 28]  dist: 4660
+point1: [100 39] point2: [79 95]  dist: 7154
+point1: [100 39] point2: [89 50]  dist: 484
+point1: [100 39] point2: [83 83]  dist: 4450
+dist from [100 39] to [89 50] is: 22
