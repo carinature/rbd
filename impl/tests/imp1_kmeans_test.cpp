@@ -1,5 +1,4 @@
 
-
 #include "imp1_kmeans_test.h"
 //#include "../KeysServer.h"
 //#include "../Point.h"
@@ -28,11 +27,8 @@ void imp1_kmeans_test::getEncryptedKMeansTestNew() {
     writeToFile(means, means_file);
 //    for(int i = 0; i < points.size(); ++i) assert(i==0);
     //todo check points manually and not visually
-    
-    cout << "           OK" << endl;
-    auto t2 = std::chrono::high_resolution_clock::now();
-    auto duration = std::chrono::duration_cast<std::chrono::seconds>(t2 - t1).count();
-    std::cout << "\n--- duration: " << duration << endl;
+
+    printDuration( t1, "getEncryptedKMeansTestNew" );
 }
 
 void imp1_kmeans_test::calculateThresholdTest() {
@@ -47,11 +43,8 @@ void imp1_kmeans_test::calculateThresholdTest() {
     long threshold = ks->decrypt(calculateThreshold(distances, *ks));
     cout << "The threshold is: " << threshold << endl;
     //todo test with the "real" distances check against distances.decrypted (assert)
-    
-    cout << "           OK" << endl;
-    auto t2 = std::chrono::high_resolution_clock::now();
-    auto duration = std::chrono::duration_cast<std::chrono::seconds>(t2 - t1).count();
-    std::cout << "\n--- duration: " << duration << endl;
+
+    printDuration( t1, "calculateThresholdTest" );
     
 }
 
@@ -79,11 +72,8 @@ void imp1_kmeans_test::getLeftoverPointsTest() {
     
     vector<vector<Point> > leftoverPointsDec = getLeftoverPoints(clients, means, *ks);
     vector<Point> chosen = leftoverPointsDec[0];
-    
-    cout << "           OK" << endl;
-    auto t2 = std::chrono::high_resolution_clock::now();
-    auto duration = std::chrono::duration_cast<std::chrono::seconds>(t2 - t1).count();
-    cout << "\n--- duration: " << duration; // << endl;
+
+    printDuration( t1, "getLeftoverPointsTest" );
     cout << "\n--- #points: " << NUM_POINTS <<" EPSILON = " << EPSILON << endl;
 }
 
@@ -99,13 +89,9 @@ void imp1_kmeans_test::run_all() {
     getEncryptedKMeansTest();
     getLeftoverPointsTest();
     calculateThresholdTest();
-    
-    cout << "           GREAT!!!" << endl;
-    auto t2 = std::chrono::high_resolution_clock::now();
-    auto duration = std::chrono::duration_cast<std::chrono::seconds>(t2 - t1).count();
-    std::cout << "\n--- duration: " << duration << endl;
-    
-    
+
+    printDuration( t1, "run_all" );
+
 }
 
 
@@ -143,21 +129,19 @@ void imp1_kmeans_test::run_all() {
 /*
  * Deprecated
  * */
-void imp1_kmeans_test::getEncryptedKMeansTest() {
-    cout << " --------- get_Encrypted_KMeans_test --------- " << endl;
-    auto t1 = std::chrono::high_resolution_clock::now();
-    
-    auto * ks = new KeysServer();
-    FHEPubKey * pubKey = ks->pubKey;
-    vector<PointExtended> pointsEx = getEncryptedPointsFromFile(*ks);
-    vector<Point> points(pointsEx.begin(), pointsEx.end());
-    vector<DecryptedPoint> means = getEncryptedKMeans(points, *ks);
-
-//    for(int i = 0; i < points.size(); ++i) assert(i==0);
-    //todo check points manually and not visually
-    
-    cout << "           OK" << endl;
-    auto t2 = std::chrono::high_resolution_clock::now();
-    auto duration = std::chrono::duration_cast<std::chrono::seconds>(t2 - t1).count();
-    std::cout << "\n--- duration: " << duration << endl;
-}
+//void imp1_kmeans_test::getEncryptedKMeansTest() {
+//    cout << " --------- get_Encrypted_KMeans_test --------- " << endl;
+//    auto t1 = std::chrono::high_resolution_clock::now();
+//
+//    auto * ks = new KeysServer();
+//    FHEPubKey * pubKey = ks->pubKey;
+//    vector<PointExtended> pointsEx = getEncryptedPointsFromFile(*ks);
+//    vector<Point> points(pointsEx.begin(), pointsEx.end());
+//    vector<DecryptedPoint> means = getEncryptedKMeans(points, *ks);
+//
+////    for(int i = 0; i < points.size(); ++i) assert(i==0);
+//    //todo check points manually and not visually
+//
+//    printDuration( t1, "getEncryptedKMeansTest" );
+//
+//}

@@ -25,21 +25,22 @@ using namespace std;
 /** Writing points to a specified.
  *      The points are first decrypted and returned into a double form (from long) **/
 //*  todo consider changing KeysServer to PubKey
-void decAndWriteToFile(const vector<Point> &points, const string &filename,  KeysServer &keysServer) {  // <----------
+void
+decAndWriteToFile( const vector<Point> & points, const string & filename, KeysServer & keysServer ) {  // <----------
     vector<DecryptedPoint> decPoints;
-    decPoints.reserve(points.size());
-    for (const Point &p : points) decPoints.push_back(p.decrypt(keysServer));
-    ofstream outputFileStream(filename);
+    decPoints.reserve( points.size() );
+    for ( const Point & p : points ) decPoints.push_back( p.decrypt( keysServer ) );
+    ofstream outputFileStream( filename );
     stringstream ss;
     long sum;
-    for (const DecryptedPoint &p : decPoints) {
+    for ( const DecryptedPoint & p : decPoints ) {
         sum = 0;
-        ss.str(std::string());
-        for (long coor : p) {
+        ss.str( std::string() );
+        for ( long coor : p ) {
             sum += coor;
             ss << coor / CONVERSION_FACTOR << " ";
         }
-        if (0 < sum) {
+        if ( 0 < sum ) {
             outputFileStream << ss.rdbuf() << endl;
         }
     }
@@ -47,20 +48,21 @@ void decAndWriteToFile(const vector<Point> &points, const string &filename,  Key
     outputFileStream.close();
 }
 
-void writeToFile(const vector<DecryptedPoint> &points, const string &filename) {  // fixme PubKey instead of KeysServ
-    ofstream outputFileStream(filename);
-    for (const DecryptedPoint &p : points) {
-        for (long coor : p) outputFileStream << (double) (coor / CONVERSION_FACTOR) << " ";
+void
+writeToFile( const vector<DecryptedPoint> & points, const string & filename ) {  // fixme PubKey instead of KeysServ
+    ofstream outputFileStream( filename );
+    for ( const DecryptedPoint & p : points ) {
+        for ( long coor : p ) outputFileStream << (double) ( coor / CONVERSION_FACTOR ) << " ";
         outputFileStream << '\n';
     }
     outputFileStream.close();
 }
 
-void writeToFile(const vector<Point> &points, const string &filename) {  // fixme PubKey instead of KeysServ
+void writeToFile( const vector<Point> & points, const string & filename ) {  // fixme PubKey instead of KeysServ
     cout << "write enc points to file" << endl;
-    ofstream outputFileStream(filename);
-    for (const Point &p : points) {
-        for (EncNumber coor : p.eCoordinates) outputFileStream << coor << "\n\n---\n\n";
+    ofstream outputFileStream( filename );
+    for ( const Point & p : points ) {
+        for ( EncNumber coor : p.eCoordinates ) outputFileStream << coor << "\n\n---\n\n";
         outputFileStream << '\n';
     }
     outputFileStream.close();
@@ -68,42 +70,42 @@ void writeToFile(const vector<Point> &points, const string &filename) {  // fixm
 
 /** Retrieve points from a specified file. Points are palintext.
  *      If the file is not specified uses default file 'points' **/
-vector<DecryptedPoint> getPointsFromFile(const string &filename) {
-    ifstream inputFileStream(filename);
+vector<DecryptedPoint> getPointsFromFile( const string & filename ) {
+    ifstream inputFileStream( filename );
     string line;
     string pa[DIM];
     vector<DecryptedPoint> points;
-    while (getline(inputFileStream, line)) {
-        istringstream lineStream(line);
+    while ( getline( inputFileStream, line ) ) {
+        istringstream lineStream( line );
         DecryptedPoint point;
-        for (auto &coor : pa) {
-            getline(lineStream, coor, ' ');
+        for ( auto & coor : pa ) {
+            getline( lineStream, coor, ' ' );
 //            cout <<" CONVERSION_FACTOR * stod(coor) " << CONVERSION_FACTOR * stod(coor) << endl;
 //            cout <<" stod(coor) " << stod(coor) << endl;
 //            cout <<" (coor) " << coor << endl;
-            point.push_back(CONVERSION_FACTOR * stod(coor)); // conversion from double to long
+            point.push_back( CONVERSION_FACTOR * stod( coor ) ); // conversion from double to long
         }
-        points.push_back(point);
+        points.push_back( point );
     }
     return points;
 }
 
-vector<PointExtended> getEncryptedPointsFromFile(KeysServer &keysServer) { // fixme PubKey instead of KeysServ
+vector<PointExtended> getEncryptedPointsFromFile( KeysServer & keysServer ) { // fixme PubKey instead of KeysServ
     vector<DecryptedPoint> points = getPointsFromFile();
     vector<PointExtended> encPoints;
-    for (DecryptedPoint p : points) {
+    for ( DecryptedPoint p : points ) {
         vector<long> coorVec; // = vector<Binary>();
-        for (int coor = 0; coor < DIM; ++coor) {
-            coorVec.emplace_back(p[coor]);
+        for ( int coor = 0; coor < DIM; ++coor ) {
+            coorVec.emplace_back( p[coor] );
         }
-        PointExtended point = PointExtended(coorVec, &keysServer);
+        PointExtended point = PointExtended( coorVec, & keysServer );
 //        PointExtended point = PointExtended(keysServer.pubKey, coorVec);
-        encPoints.emplace_back(point);
+        encPoints.emplace_back( point );
     }
     return encPoints;
 }
 
-Bit cmp(const Point &a, const Point &b) {
+Bit cmp( const Point & a, const Point & b ) {
     //todo consider <= over < (the later neve allows any points) and how to implement it with helib
 //    return a >= b;
     return a > b;
@@ -111,34 +113,90 @@ Bit cmp(const Point &a, const Point &b) {
 }
 
 map<Point, map<Point, vector<Bit>, cmpPoints>, cmpPoints>
-createCmpDict(const vector<Point> &randomPoints, const vector<Point> &stripPoints) {
+createCmpDict( const vector<Point> & randomPoints, const vector<Point> & stripPoints ) {
     map<Point, map<Point, vector<Bit>, cmpPoints>, cmpPoints> cmpDict;
-    for (const Point &p : randomPoints) {
+    for ( const Point & p : randomPoints ) {
         map<Point, vector<Bit>, cmpPoints> cmpDictMini; //, cmpDictMini2;
-        for (const Point &pp : stripPoints) {
-            cmpDict[p][pp].push_back(p > pp); // used to be cmpDictMini[pp].push_back(p > pp); and worked
-            cmpDict[pp][p].push_back(pp > p);
+        for ( const Point & pp : stripPoints ) {
+            cmpDict[p][pp].push_back( p > pp ); // used to be cmpDictMini[pp].push_back(p > pp); and worked
+            cmpDict[pp][p].push_back( pp > p );
         }
     }
     return cmpDict;
 }
 
-
-
-EncNumber sumEncNumVec(Vec<EncNumber> &vec, long factor) {
+EncNumber sumEncNumVec( Vec<EncNumber> & vec, long factor ) {
     EncNumber sum;
-    const CtPtrs &product = CtPtrs_VecCt(sum); //, & productY = CtPtrs_VecCt(sumY);
-    CtPtrMat_VecCt nums(vec); // Wrapper around numbers
+    const CtPtrs & product = CtPtrs_VecCt( sum ); //, & productY = CtPtrs_VecCt(sumY);
+    CtPtrMat_VecCt nums( vec ); // Wrapper around numbers
 //        int nBits = (outSize>0 && outSize<2*BIT_SIZE)? outSize : (2*BIT_SIZE);
     //fixme - potential for BUG, sum.bitsize can be bigger than BIT_SIZE
     // <--- notice "findQ(x,y) not found" is printed here in addManyNum
-    addManyNumbers((CtPtrs &) product, nums, BIT_SIZE * factor, &unpackSlotEncoding);
+    addManyNumbers( (CtPtrs &) product, nums, BIT_SIZE * factor, & unpackSlotEncoding );
 //    cout << "sumEncNumVec sum: " << keysum << endl;
     return sum;
 }
 
+chrono::time_point<chrono::system_clock> NowTime() {
+    return std::chrono::high_resolution_clock::now();
+}
 
+void printDuration( const chrono::time_point<chrono::system_clock> & t1, const string & funcName ) {
+    auto t2 = std::chrono::high_resolution_clock::now();
+    auto duration = chrono::duration_cast<chrono::seconds>( t2 - t1 ).count();
+    cout << "\'" << funcName << "\' Finished in " << duration << " seconds." << endl;
+    fcout << "\'" << funcName << "\' Finished in " << duration << " seconds." << endl;
+}
 
+/**
+ * Logger Class
+ * */
+Logger::Logger( LogLevel level ) {
+    cout << " --- Logger C'tor --- " << endl;
+    this->level = level;
+    auto timenow = chrono::system_clock::to_time_t( chrono::system_clock::now() );
+    for ( int l = 0; l <= level; ++l ) {
+        this->logs[l] << ctime( & timenow );
+    }
+}
+
+Logger::~Logger() {
+    cout << " --- Logger D'tor --- " << endl;
+    for ( int l = 0; l <= this->level; ++l ) {
+        cout << " \n---------- " << levelToString( LogLevel( l ) ) << " ---------- " << endl;
+        if ( log_error <= l ) {
+            cerr << this->logs[l].str();
+        } else {
+            cout << this->logs[l].str();
+        }
+    }
+}
+
+void Logger::log( LogLevel msgLevel, const string & msg ) {
+    for ( int l = 0; l <= msgLevel; ++l ) {
+        this->logs[l] << "- " << msg << endl;
+        if ( log_error <= msgLevel ) {
+            cerr << msg << endl;
+        }
+    }
+}
+
+string Logger::levelToString( LogLevel level ) {
+    switch ( level ) {
+        case log_trace:
+            return "log_trace";
+        case log_debug:
+            return "log_debug";
+        case log_info:
+            return "log_info";
+        case log_warning:
+            return "log_warning";
+        case log_error:
+            return "log_error";
+        case log_fatal:
+            return "log_fatal";
+    }
+}
 
 ///** aux **/
 

@@ -11,14 +11,14 @@
 
 NTL_CLIENT
 
-#define NUM_POINTS 60  // for python
+#define NUM_POINTS 40  // for python
 #define DIM 2
 #define RANGE_LIM 1  // for python, defines the range of the points (from Bottom_LIM to RANGE_LIM)
 #define Bottom_LIM 0
 #define EPSILON 0.25
 #define DECIMAL_DIGITS 2
 #define CONVERSION_FACTOR pow(10, DECIMAL_DIGITS) // for conversion from double to long (helib compatibility)
-#define BIT_SIZE 10
+#define BIT_SIZE 5
 #define N_THreads 1
 
 using DecryptedPoint = std::vector<long>;
@@ -37,7 +37,8 @@ static ofstream fcout("fcout");  //for DBG
 #define leftover_file "/home/fares/CLionProjects/rbd/io/leftover"
 #define means_file "/home/fares/CLionProjects/rbd/io/means"
 #define rands_file "/home/fares/CLionProjects/rbd/io/rand_means"
-#define bad_rands_file "/home/fares/CLionProjects/rbd/io/rand_means"
+#define rands_bad_file "/home/fares/CLionProjects/rbd/io/rands_bad_file"
+#define point_csv "/home/fares/CLionProjects/rbd/point_csv"
 
 
 
