@@ -152,33 +152,30 @@ void printDuration( const chrono::time_point<chrono::system_clock> & t1, const s
  * Logger Class
  * */
 Logger::Logger( LogLevel level ) {
-    cout << " --- Logger C'tor --- " << endl;
+//    cout << " --- Logger C'tor --- " << endl;
     this->level = level;
     auto timenow = chrono::system_clock::to_time_t( chrono::system_clock::now() );
-    for ( int l = 0; l <= level; ++l ) {
-        this->logs[l] << ctime( & timenow );
-    }
+    for ( int l = level; l <= log_fatal; ++l ) this->logs[l] << ctime( & timenow );
+//    cout << "fin Logger()" << endl;
 }
 
 Logger::~Logger() {
-    cout << " --- Logger D'tor --- " << endl;
-    for ( int l = 0; l <= this->level; ++l ) {
+//    cout << " --- Logger D'tor --- " << endl;
+    for ( int l = this->level; l <= log_fatal; ++l ) {
         cout << " \n---------- " << levelToString( LogLevel( l ) ) << " ---------- " << endl;
-        if ( log_error <= l ) {
-            cerr << this->logs[l].str();
-        } else {
-            cout << this->logs[l].str();
-        }
+        if ( log_error <= l ) { cerr << this->logs[l].str();cout << this->logs[l].str(); }
+        else cout << this->logs[l].str();
     }
+//    cout << "fin ~Logger()" << endl;
 }
 
 void Logger::log( LogLevel msgLevel, const string & msg ) {
-    for ( int l = 0; l <= msgLevel; ++l ) {
+    for ( int l = this->level; l <= msgLevel; ++l ) {
         this->logs[l] << "- " << msg << endl;
-        if ( log_error <= msgLevel ) {
-            cerr << msg << endl;
-        }
+        if ( log_error <= msgLevel ) cerr << msg << endl;
     }
+//    cout << "fin log()" << endl;
+
 }
 
 string Logger::levelToString( LogLevel level ) {

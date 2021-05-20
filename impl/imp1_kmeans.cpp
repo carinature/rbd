@@ -24,11 +24,17 @@ int main( int argc, char * argv[] ) {
 
 //    encryptedKmeans(); //recursive    //  <<-----------------------
 
-    printDuration( t1, "Main" );
-    Logger logger(log_trace);
+    Logger logger(log_error);
     logger.log( log_trace, "log_trace msg" );
     logger.log( log_debug, "log_debug msg" );
     logger.log( log_error, "log_error msg" );
+    logger.log( log_fatal, "log_fatal msg" );
+    logger.log( log_trace, "log_trace msg" );
+    logger.log( log_debug, "log_debug msg" );
+    logger.log( log_error, "log_error msg" );
+    logger.log( log_fatal, "log_fatal msg" );
+
+    printDuration( t1, "Main" );
     return 0;
 }
 

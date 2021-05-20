@@ -62,12 +62,12 @@ enum LogLevel {
 class Logger {
 private:
     LogLevel level = log_trace;
-    ostringstream logs[log_fatal];
+    ostringstream logs[log_fatal+1];
 
     static string levelToString( LogLevel level );
 
 public:
-    explicit Logger( LogLevel maxLevel = log_trace );
+    explicit Logger( LogLevel minLevel = log_trace );
 
     virtual ~Logger();
 
