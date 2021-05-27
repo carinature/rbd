@@ -51,7 +51,7 @@ void printDuration( const chrono::time_point<chrono::system_clock> & t1, const s
  * Logger Class
  * */
 enum LogLevel {
-    log_trace = 0,
+    log_trace,
     log_debug,
     log_info,
     log_warning,
