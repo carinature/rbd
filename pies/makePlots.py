@@ -9,7 +9,7 @@ def gen_encrypted_points_from_file(fileName):
     # points = [Point(*map(Binary, map(float, i.strip(' \n').split(' ')))) for i in f]  # todo encapsulate in Binary
     points = np.loadtxt(fileName, dtype=float)
     points = np.reshape(points, (-1, 2))
-    print(points)
+    # print(points)
     return points
 
 
@@ -47,6 +47,7 @@ def make_plot_with_bricks(point_list,
                           chosen_list=None, leftovers_list=None,
                           strips=None, bricks=None):
     fig, axs = plt.subplots(2, 2)
+    # fig, axs = plt.subplots(1, 2)
     plot_bricks(fig, axs, strips, bricks)
     make_plot(fig, axs, point_list, rands_list, means_list, chosen_list)  # , chosen=None, leftovers_list=None)
 
@@ -56,11 +57,10 @@ def make_plot(fig, axs, point_list, rands_list, means_list, chosen=None, leftove
     rands_set = decrypt_data(rands_list)
     means_set = decrypt_data(means_list)
     chosen_set = decrypt_data(chosen)
-    print('rep list of size  __', len(means_list), '__  : ', means_list)
+    # print('rep list of size  __', len(means_list), '__  : ', means_list)
     # print('leftovers list of size  __', len(leftovers_list), '__  : ', leftovers_list)
     # print('REAL leftovers list of size  __', len(leftovers_set), '__  : ', leftovers_set)
 
-    # fig, axs = plt.subplots(2, 2)
     axs[0, 0].scatter(*zip(*point_set), label='Input Points', c='green', s=4)
     axs[0, 0].set_title('Input Points')
     axs[0, 1].scatter(*zip(*point_set), label='Input Points', c='green', s=4)
@@ -69,11 +69,14 @@ def make_plot(fig, axs, point_list, rands_list, means_list, chosen=None, leftove
     axs[1, 0].scatter(*zip(*point_set), label='Input Points', c='green', s=4)
     axs[1, 0].scatter(*zip(*rands_set), label='Rand Points', c='blue', s=6)
     sc = axs[1, 0].scatter(*zip(*means_set), label='means', c='black', s=20)
+
+    # add approp numbers to (rand_pont, final_min)
     i = 0
-    # for i in range(len(means_set)):
-    #     axs[1, 0].text(rands_list[i][0] + 0.001, rands_list[i][1] + 0.001, str(i))
-    #     axs[1, 0].text(means_list[i][0] + 0.001, means_list[i][1] + 0.001, str(i))
-    #     i += 1
+    for i in range(len(means_set)):
+        axs[1, 0].text(rands_list[i][0] + 0.001, rands_list[i][1] + 0.001, str(i))
+        axs[1, 0].text(means_list[i][0] + 0.001, means_list[i][1] + 0.001, str(i))
+        i += 1
+
     axs[1, 0].set_title('means')
     axs[1, 1].scatter(*zip(*point_set), label='Input Points', c='green', s=4)
     axs[1, 1].scatter(*zip(*rands_set), label='Rand Points', c='blue', s=6)
@@ -81,12 +84,23 @@ def make_plot(fig, axs, point_list, rands_list, means_list, chosen=None, leftove
     axs[1, 1].scatter(*zip(*chosen_set), label='chosen', c='pink', s=8)
     axs[1, 1].set_title('chosen')
 
-    for ax in axs.flat:
-        ax.set(xlabel='x-label', ylabel='y-label')
+    # axs[0].scatter(*zip(*point_set), label='original data', c='red', s=4)
+    # axs[0].scatter(*zip(*rands_set), label='Rand Points', c='blue', s=6)
+    # axs[0].scatter(*zip(*means_set), label='means', c='black', s=20)
+    # axs[0].scatter(*zip(*chosen_set), label='chosen', c='pink', s=8)
+    #
+    # axs[0].set_title('original data')
+    #
+    # axs[1].scatter(*zip(*point_set), label='original data', c='red', s=3)
+    # # axs[1].scatter(*zip(*rands_set), label='Rand Points', c='blue', s=6)
+    # axs[1].scatter(*zip(*means_set), label='center', c='green', s=10)
+    # axs[1].scatter(*zip(*chosen_set), label='chosen subset', c='black', s=8)
+    # axs[1].set_title('chosen')
 
-    # Hide x labels and tick labels for top plots and y ticks for right plots.
-    for ax in axs.flat:
-        ax.label_outer()
+    # for ax in axs.flat: ax.set(xlabel='x-label', ylabel='y-label')
+    #
+    # # Hide x labels and tick labels for top plots and y ticks for right plots.
+    # for ax in axs.flat: ax.label_outer()
 
     fig.suptitle('Choosing representatives')
     fig.legend(loc='upper right')
@@ -99,54 +113,66 @@ def make_plot(fig, axs, point_list, rands_list, means_list, chosen=None, leftove
     if os.path.exists(fname):
         print(os.path.abspath(fname))
 
-dim = 2  # dimensions
-numPoints = 0
-rangeLim = 0
-epsilon = 0
-with open('../impl/properties.h') as f:
-    datafile = f.readlines()
-    for line in datafile:
-        if 'NUM_POINTS' in line:
-            numPoints = int(line.split(' ')[2])
-        if 'DIM' in line:
-            dim = int(line.split(' ')[2])
-        if 'RANGE_LIM' in line:
-            rangeLim = int(line.split(' ')[2])
-        if 'EPSILON' in line:
-            epsilon = float(line.split(' ')[2])
+# FIXME remove       - only for dbg and IDE
+NUM_POINTS, DIM, RANGE_LIM, Bottom_LIM, \
+EPSILON, DECIMAL_DIGITS, CONVERSION_FACTOR, BIT_SIZE, N_THreads, \
+points_file, points_copy_file, chosen_file, leftover_file, means_file, rands_file, rands_bad_file, point_csv_file = \
+    None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None
+# --------------------------------------------
 
 if '__main__' == __name__:
+    # pull macros and consts from `properties.h`
+    with open('../impl/properties.h') as f:
+        for line in f.readlines():
+            if 'TRY_PROPERTIES_H' in line or 'CONVERSION_FACTOR' in line: continue
+            if '#define' in line:
+                key = line.split(' ')[1].strip('\'')
+                value = line.split(' ')[2].strip(' \n\'') if 'file' in line else float(line.split(' ')[2])
+                exec(f'{key} = {value}')
 
-    # points_list = gen_encrypted_points_from_file("points")
-    points_list = gen_encrypted_points_from_file(points_copy)
-    rands = gen_encrypted_points_from_file(rand_means_file)
+    # render lists from points files
+    points_list = gen_encrypted_points_from_file(points_copy_file)
+    rands = gen_encrypted_points_from_file(rands_file)
     means = gen_encrypted_points_from_file(means_file)
     chosen = gen_encrypted_points_from_file(chosen_file)
-    # leftover   = gen_encrypted_points_from_file(leftover_file)
+    leftover = gen_encrypted_points_from_file(leftover_file)
 
-    if numPoints != points_list.size / dim:  # sanity check
-        print(numPoints != points_list.size / dim)
-        print(numPoints)
+    # sanity check
+    if NUM_POINTS != (points_list.size / DIM):
+        print(NUM_POINTS != points_list.size / DIM)
+        print(NUM_POINTS)
         print(points_list.size)
+        print(len(points_list))
+        print(points_list.size / DIM)
         raise Exception("NOT SYNCED!!!")
 
-    numStrips = int(1 / epsilon)
-    lacks = (numStrips - int(numPoints * dim % numStrips)) % numStrips
+    # FIXME remove       - only for dbg and IDE
+    DIM: float
+    EPSILON: float
+    NUM_POINTS: float
+    # ----------------------
+
+    numStrips = int(1 / EPSILON)
+    print(NUM_POINTS)
+    lacks = (numStrips - int(NUM_POINTS * DIM % numStrips)) % numStrips
+    # print('lacks: ', lacks)
     buffer = np.zeros(lacks, dtype=float)
 
+    points_file = points_copy_file
     fns = points_file
     points = np.loadtxt(fns, dtype=float)
     points = np.append(points, buffer)
+    # print(points)
+    # print(points.size)
     strips = np.resize(points, (numStrips, -1, 2))
     # strips = np.reshape(points, (int(1 / epsilon), -1, 2))
-    print("strips\n", strips)
-    fnr = rand_means_file
+    # print("strips\n", strips)
+    fnr = rands_file
     bricks = np.loadtxt(fnr, dtype=float)
     # np.append(bricks, buffer)
     # bricks = np.resize(bricks, (numStrips, -1, 2))
     # rands = np.reshape(rands, (int(1 / epsilon), -1, 2))
-    print("\nbricks\n", bricks)
-
+    # print("\nbricks\n", bricks)
 
     # make_plot(points_list, rands, means, chosen)
     make_plot_with_bricks(points_list, rands, means, chosen, strips=strips, bricks=bricks)
@@ -161,6 +187,3 @@ if '__main__' == __name__:
 #     if 0==p[0] and 0==p[1]:
 #         chosen.append(p)
 #         print(len(chosen))
-
-
-
