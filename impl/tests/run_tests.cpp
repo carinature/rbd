@@ -4,7 +4,7 @@
 
 int main(int argc, char * argv[]) {
     
-    time_t timer = time(NULL);
+    time_t timer = time(nullptr);
     cout << endl << std::ctime(&timer) << endl;
     
     cout << endl << "==========  KeysServer_test  ==========" << endl;

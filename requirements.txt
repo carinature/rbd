@@ -1,3 +1,4 @@
 phe
 numpy
 matplotlib
+pycairo

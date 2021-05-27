@@ -103,10 +103,10 @@ def main():
     core = sim.coreset(args.plot)
     core_table = np.array([np.append(p, w) for p, w in core])
     if args.plot:
-        # plt.show()
-        plt.savefig("yonis_res.png")
-        # plt.savefig("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/yonis_res.png")
-        print("Donna Noble has left the Library. Donna Noble has been saved. ")
+        plt.show()
+
+        plt.savefig("/home/rbd/workspace/rbd/rbd_helib_with_remote_debugger/yonis_res.png")
+
     if args.file is not None:
         np.savetxt(args.file, core_table, delimiter=',')
     else:
