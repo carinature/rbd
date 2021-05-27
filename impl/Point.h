@@ -23,7 +23,7 @@ NTL_CLIENT
 
 using namespace std;
 
-static long counter = 0;
+//static long counter = 0;
 
 /**
  * @class Point

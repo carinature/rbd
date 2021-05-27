@@ -4,6 +4,8 @@
 #include "properties.h"
 
 //#include <utility>
+static long counter = 0;
+
 
 /** Constructor, creates a Point from a vector of encrypted coordinates **/
 Point::Point(vector<Vec<Ctxt> > eCoordinates, KeysServer * keysServer) // decrypt and assign coor

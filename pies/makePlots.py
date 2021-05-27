@@ -71,11 +71,9 @@ def make_plot(fig, axs, point_list, rands_list, means_list, chosen=None, leftove
     sc = axs[1, 0].scatter(*zip(*means_set), label='means', c='black', s=20)
 
     # add approp numbers to (rand_pont, final_min)
-    i = 0
-    for i in range(len(means_set)):
-        axs[1, 0].text(rands_list[i][0] + 0.001, rands_list[i][1] + 0.001, str(i))
-        axs[1, 0].text(means_list[i][0] + 0.001, means_list[i][1] + 0.001, str(i))
-        # i += 1
+    # for i in range(len(means_set)):
+    #     axs[1, 0].text(rands_list[i][0] + 0.001, rands_list[i][1] + 0.001, str(i))
+    #     axs[1, 0].text(means_list[i][0] + 0.001, means_list[i][1] + 0.001, str(i))
 
     axs[1, 0].set_title('means')
     axs[1, 1].scatter(*zip(*point_set), label='Input Points', c='green', s=4)

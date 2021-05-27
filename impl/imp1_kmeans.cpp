@@ -16,10 +16,10 @@ getLeftoverPoints( const vector<PointExtended> & clients,
                    const vector<DecryptedPoint> & means,
                    KeysServer & keysServer );
 
-int main( int argc, char * argv[] ) {
+int main( int argc, char * argv[] ){
     cout << " --------- MAIN --------- " << endl;
     auto t1 = std::chrono::high_resolution_clock::now();
-    auto * ks = new KeysServer();  //   in the future should be FHEPubKey * pubKey = ks->pubKey;
+//    auto * ks = new KeysServer();  //   in the future should be FHEPubKey * pubKey = ks->pubKey;
 
     encryptedKmeans(); //recursive    //  <<-----------------------
 
@@ -29,7 +29,8 @@ int main( int argc, char * argv[] ) {
 //    logger.log( log_error, "log_error msg" );
 //    logger.log( log_fatal, "log_fatal msg" );
 //    logger.print_log(log_info, false);
-//    printDuration( t1, "Main" );
+    if ( VERBOSE ) cout << "VERBOSE" << endl;
+    printDuration( t1, "Main" );
 
     return 0;
 }
@@ -39,7 +40,7 @@ int main( int argc, char * argv[] ) {
  * each point has a value and weight representing a number of points.
  * corset alg is used after the points are divided into small "cells" (a group of close points)
  */
-void encryptedKmeans() {
+void encryptedKmeans(){
     cout << " --------- encryptedKmeans --------- " << endl;
     auto t1 = std::chrono::high_resolution_clock::now();
     auto * ks = new KeysServer();  //   in the future should be FHEPubKey * pubKey = ks->pubKey;
@@ -53,13 +54,11 @@ void encryptedKmeans() {
     vector<Point> points( clients.begin(), clients.end() ); // make a copy of the points
     const vector<tuple<vector<Point>, EncNumber>> & cellTuples = getCells( points, * ks );
     if ( cellTuples.empty() ) return;
-    for ( tuple<vector<Point>, EncNumber> tup :cellTuples ) {
+    for ( tuple<vector<Point>, EncNumber> tup : cellTuples ) {
         vector<Point> ps_vec = get<0>( tup );
         EncNumber enc_num = get<1>( tup );
         cout << "encNumber is number of points in this cell? " << ps_vec[0].decryptNumber( * ks, enc_num ) << endl;
-        for ( const Point & p:ps_vec ) {
-            cout << "pp " << p.decrypt( * ks ) << endl;
-        }
+        for ( const Point & p:ps_vec ) cout << "pp " << p.decrypt( * ks ) << endl;
     }
     /*// convert into eps-net and return a list of the cell means  // <--------
     vector<DecryptedPoint> means = calculateMeans( cellTuples, * ks );
@@ -95,32 +94,36 @@ void encryptedKmeans() {
  * @keysServer - a link to the keyServer which holds the public keys. in future - publicKey.
  * returns - cellTuples - a list of tuples containing cells (groups of close points) and their corresponding size
  */
-vector<tuple<vector<Point>, EncNumber> > getCells( vector<Point> points, KeysServer & keysServer ) {
+vector<tuple<vector<Point>, EncNumber> > getCells( vector<Point> points, KeysServer & keysServer ){
 //  if (DBG) cout << "getCells" << endl;
 //  if (DBG) fcout << "getCells" << endl;
     vector<Point> randPoints, leftover, chosen;
     vector<DecryptedPoint> means, badRands;
-    srand( time( nullptr ) );  // for extra randomness
-    if ( DBG ) cout << "TIME: " << time( nullptr ) << endl;
     vector<tuple<vector<Point>, EncNumber> > cellTuples;
     int numOfStrips = (int) ( 1 / EPSILON );
-    int rp = 0, j = 0; // for dbg
+//    int rp = 0, j = 0; // for dbg
     for ( int i = 0; i < numOfStrips; ++i ) {
         //    Fisher–Yates shuffle for choosing k random points
         int stripSize = (int) ( points.size() * EPSILON ), k = numOfStrips;
-        if ( k > stripSize ) return vector<tuple<vector<Point>, EncNumber> >();  // <----------
+        if ( k > stripSize ) return vector<tuple<vector<Point>, EncNumber> >();  // <---------- todo ?
         vector<Point> currStrip( points.begin() + i * stripSize, points.begin() + ( ( i + 1 ) * stripSize ) );
-        vector<Point> copy( currStrip ); //todo note the loss of points in tail (need to correct)
+        vector<Point> copy( currStrip ); //todo note the loss of points in tail (need to correct) and handle end cases
+
+        cout << "current strip" << endl;
+        for ( const Point & p:copy ) cout << "cc " << p.decrypt( keysServer ) << endl;
+
         auto begin = copy.begin();
         while ( k-- ) {
             auto r = begin;
-            advance( r, rand() % ( stripSize ) ); //crushes the program with small(<20) number of points in file
-//      advance(r, rand() % (stripSize-1)); //experimental
+            advance( r, random() % ( stripSize) ); //crushes the program with small(<20) number of points in file
             swap( begin, r );
             ++begin;
             --stripSize;
         }
         vector<Point> random( copy.begin(), copy.begin() + numOfStrips - 1 );
+        cout << "random" << endl;
+        for ( const Point & p:copy ) cout << "rr " << p.decrypt( keysServer ) << endl;
+
         randPoints.insert( randPoints.end(), random.begin(), random.end() );
 //    randPoints.insert(randPoints.end(), copy.begin(), copy.end());  // <--- this is an experimental line, to cover the cases of top strip points
 
@@ -134,7 +137,7 @@ vector<tuple<vector<Point>, EncNumber> > getCells( vector<Point> points, KeysSer
 //            if ( DBG ) {
 //        cout << "The random point is : " << R.decrypt(keysServer) << endl;
 //        fcout << "\nThe random point is : " << R.decrypt(keysServer) << endl;
-            j = 0;
+//            j = 0;
 //            }
             Cell currCell; // current cell is empty
 //            Point sum = R;
@@ -209,7 +212,7 @@ vector<tuple<vector<Point>, EncNumber> > getCells( vector<Point> points, KeysSer
                 badRands.push_back( R.decrypt( keysServer ) );
             }
             cellTuples.emplace_back( currCell, size );
-            ++rp;
+//            ++rp;
         }
     }
     if ( DBG ) {
@@ -227,7 +230,7 @@ vector<tuple<vector<Point>, EncNumber> > getCells( vector<Point> points, KeysSer
  * @keysServer - a link to the keyServer which holds the public keys. in future - publicKey.
  * returns - means - a list of cell means
  */
-vector<DecryptedPoint> calculateMeans( const vector<tuple<Cell, EncNumber> > & cellTuples, KeysServer & keysServer ) {
+vector<DecryptedPoint> calculateMeans( const vector<tuple<Cell, EncNumber> > & cellTuples, KeysServer & keysServer ){
     if ( cellTuples.empty() ) return vector<DecryptedPoint>();  // <-------------
     vector<DecryptedPoint> means;
 //  if (DBG) cout << "calculateMeans cell size" << cellTuples.size() << endl;
@@ -257,7 +260,7 @@ vector<DecryptedPoint> calculateMeans( const vector<tuple<Cell, EncNumber> > & c
  * @keysServer - a link to the keyServer which holds the public keys. in future - publicKey.
  * return - avg point - a point equals in value the avg of all the points in the group
  */
-DecryptedPoint calculateCellMean( tuple<Cell, EncNumber> cellTuple, KeysServer & keysServer ) {
+DecryptedPoint calculateCellMean( tuple<Cell, EncNumber> cellTuple, KeysServer & keysServer ){
     Cell points = get<0>( cellTuple );
     Vec<Ctxt> size = get<1>( cellTuple );
     if ( DBG ) cout << "calculateCellMean points size " << points.size() << endl;
@@ -283,7 +286,7 @@ DecryptedPoint calculateCellMean( tuple<Cell, EncNumber> cellTuple, KeysServer &
  * @means - the vector of cell means, decrypted since this data does not leak any information
  * returns - distances - a vector of shortest distances
  */
-Vec<EncNumber> getDistances( const vector<PointExtended> & clients, const vector<DecryptedPoint> & means ) {
+Vec<EncNumber> getDistances( const vector<PointExtended> & clients, const vector<DecryptedPoint> & means ){
 //    cout << "getDistances means: " << means << endl;
     Vec<EncNumber> distances;
     for ( PointExtended client : clients ) {
@@ -300,7 +303,7 @@ Vec<EncNumber> getDistances( const vector<PointExtended> & clients, const vector
  * @keysServer - a link to the keyServer which holds the public keys. in future - publicKey.
  * returns - eThreshold - an encrypted number. should equal to sum(dist)/(#points)
  */
-EncNumber calculateThreshold( Vec<EncNumber> distances, KeysServer & keysServer ) {//}, int amount) {
+EncNumber calculateThreshold( Vec<EncNumber> distances, KeysServer & keysServer ){//}, int amount) {
     EncNumber eThreshold;
     FHEPubKey & pubKey = * keysServer.pubKey;
 
@@ -337,7 +340,7 @@ EncNumber calculateThreshold( Vec<EncNumber> distances, KeysServer & keysServer 
  */
 vector<vector<Point> > getLeftoverPoints( const vector<PointExtended> & clients,
                                           const vector<DecryptedPoint> & means,
-                                          KeysServer & keysServer ) {
+                                          KeysServer & keysServer ){
 
     Vec<EncNumber> distances = getDistances( clients, means ); //todo recieve as param
 
@@ -346,7 +349,7 @@ vector<vector<Point> > getLeftoverPoints( const vector<PointExtended> & clients,
     fcout << "The threshold is: " << keysServer.decrypt( threshold ) << endl;
 
     vector<Point> chosen, leftover;
-    for ( long j = 0; j < clients.size(); ++j ) {
+    for ( long j = 0; j < long( clients.size() ); ++j ) {
         //mu, ni are encrypted bits indicating if a>b and b>a, with respect
         Ctxt mu( * keysServer.pubKey ), ni( * keysServer.pubKey );
         compareTwoNumbers( mu, ni, CtPtrs_VecCt( threshold ), CtPtrs_VecCt( distances[j] ), & unpackSlotEncoding );
