@@ -1,5 +1,3 @@
-
-
 #ifndef TRY_PROPERTIES_H
 #define TRY_PROPERTIES_H
 
@@ -32,13 +30,13 @@ static bool VERBOSE = false;
 static ofstream fcout("fcout");  //for DBG
 
 #define points_file "/home/fares/CLionProjects/rbd/io/points"
-#define points_copy "/home/fares/CLionProjects/rbd/io/points_copy"
+#define points_copy_file "/home/fares/CLionProjects/rbd/io/points_copy"
 #define chosen_file "/home/fares/CLionProjects/rbd/io/chosen"
 #define leftover_file "/home/fares/CLionProjects/rbd/io/leftover"
 #define means_file "/home/fares/CLionProjects/rbd/io/means"
 #define rands_file "/home/fares/CLionProjects/rbd/io/rand_means"
 #define rands_bad_file "/home/fares/CLionProjects/rbd/io/rands_bad_file"
-#define point_csv "/home/fares/CLionProjects/rbd/point_csv"
+#define point_csv_file "/home/fares/CLionProjects/rbd/point_csv"
 
 
 

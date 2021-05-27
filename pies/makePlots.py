@@ -124,8 +124,7 @@ if '__main__' == __name__:
     # pull macros and consts from `properties.h`
     with open('../impl/properties.h') as f:
         for line in f.readlines():
-            if 'TRY_PROPERTIES_H' in line or 'CONVERSION_FACTOR' in line: continue
-            if '#define' in line:
+            if '#define' in line and not ('TRY_PROPERTIES_H' in line or 'CONVERSION_FACTOR' in line):
                 key = line.split(' ')[1].strip('\'')
                 value = line.split(' ')[2].strip(' \n\'') if 'file' in line else float(line.split(' ')[2])
                 exec(f'{key} = {value}')
