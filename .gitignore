@@ -1,8 +1,12 @@
 io/
 plots/
 
-points.csv
-coreset.csv
-fcout
 .idea/
 cmake-build-debug/
+
+fcout
+
+points.csv
+coreset.csv
+pies/check_save.png
+
