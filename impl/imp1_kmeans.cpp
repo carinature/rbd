@@ -18,23 +18,19 @@ getLeftoverPoints( const vector<PointExtended> & clients,
 
 int main( int argc, char * argv[] ) {
     cout << " --------- MAIN --------- " << endl;
-//    cerr << 'using cerr' << endl;
     auto t1 = std::chrono::high_resolution_clock::now();
     auto * ks = new KeysServer();  //   in the future should be FHEPubKey * pubKey = ks->pubKey;
 
-//    encryptedKmeans(); //recursive    //  <<-----------------------
+    encryptedKmeans(); //recursive    //  <<-----------------------
 
-    Logger logger(log_error);
-    logger.log( log_trace, "log_trace msg" );
-    logger.log( log_debug, "log_debug msg" );
-    logger.log( log_error, "log_error msg" );
-    logger.log( log_fatal, "log_fatal msg" );
-    logger.log( log_trace, "log_trace msg" );
-    logger.log( log_debug, "log_debug msg" );
-    logger.log( log_error, "log_error msg" );
-    logger.log( log_fatal, "log_fatal msg" );
+//    Logger logger( log_debug  );
+//    logger.log( log_trace, "log_trace msg" );
+//    logger.log( log_debug, "log_debug msg" );
+//    logger.log( log_error, "log_error msg" );
+//    logger.log( log_fatal, "log_fatal msg" );
+//    logger.print_log(log_info, false);
+//    printDuration( t1, "Main" );
 
-    printDuration( t1, "Main" );
     return 0;
 }
 
@@ -49,31 +45,44 @@ void encryptedKmeans() {
     auto * ks = new KeysServer();  //   in the future should be FHEPubKey * pubKey = ks->pubKey;
     vector<PointExtended> clients = getEncryptedPointsFromFile( * ks ); // retrive the points
     if ( clients.empty() ) return; // end of recursion
+
+//    for ( const PointExtended& p : clients ) {
+//        p.print( cout );// << endl;
+//    }
+
     vector<Point> points( clients.begin(), clients.end() ); // make a copy of the points
     const vector<tuple<vector<Point>, EncNumber>> & cellTuples = getCells( points, * ks );
     if ( cellTuples.empty() ) return;
-    // convert into eps-net and return a list of the cell means  // <--------
+    for ( tuple<vector<Point>, EncNumber> tup :cellTuples ) {
+        vector<Point> ps_vec = get<0>( tup );
+        EncNumber enc_num = get<1>( tup );
+        cout << "encNumber is number of points in this cell? " << ps_vec[0].decryptNumber( * ks, enc_num ) << endl;
+        for ( const Point & p:ps_vec ) {
+            cout << "pp " << p.decrypt( * ks ) << endl;
+        }
+    }
+    /*// convert into eps-net and return a list of the cell means  // <--------
     vector<DecryptedPoint> means = calculateMeans( cellTuples, * ks );
     // split data into "close" and "leftovre" points
     vector<vector<Point> > pointsSplited = getLeftoverPoints( clients, means, * ks );
     //choose the closest points to the means for the next step of the alg
     // remove and save the furthest points of the set for the next itereation
     vector<Point> chosen = pointsSplited[0], & leftover = pointsSplited[1];
-
+*/
     printDuration( t1, "encryptedKmeans" );
 
-    /**********   integration to coreset alg    ***********/
-    decAndWriteToFile( chosen, chosen_file, * ks );
-    vector<DecryptedPoint> chosenForCorset = getPointsFromFile( chosen_file );
-    if ( chosenForCorset.empty() ) return;
-    vector<vector<double> > dps;
-    for ( const DecryptedPoint & point : chosenForCorset ) {
-        vector<double> dpd;
-        for ( long coor : point ) dpd.push_back( coor / CONVERSION_FACTOR );
-        dps.push_back( dpd ); //        if (0==dp[0] && 0==dp[1]) ++count;  // for DBG
-    }
-    cout << "dps count: " << dps.size() << endl;
-
+//    /**********   integration to coreset alg    ***********/
+//    decAndWriteToFile( chosen, chosen_file, * ks );
+//    vector<DecryptedPoint> chosenForCorset = getPointsFromFile( chosen_file );
+//    if ( chosenForCorset.empty() ) return;
+//    vector<vector<double> > dps;
+//    for ( const DecryptedPoint & point : chosenForCorset ) {
+//        vector<double> dpd;
+//        for ( long coor : point ) dpd.push_back( coor / CONVERSION_FACTOR );
+//        dps.push_back( dpd ); //        if (0==dp[0] && 0==dp[1]) ++count;  // for DBG
+//    }
+//    cout << "dps count: " << dps.size() << endl;
+//
 //    cout << "********   integration to coreset alg    **********" << endl;
 //    runCoreset(dps, dps.size(), DIM, EPSILON);  // <-------------
 //    decAndWriteToFile(leftover, points_file, *ks);  // <-------------
@@ -91,9 +100,8 @@ vector<tuple<vector<Point>, EncNumber> > getCells( vector<Point> points, KeysSer
 //  if (DBG) fcout << "getCells" << endl;
     vector<Point> randPoints, leftover, chosen;
     vector<DecryptedPoint> means, badRands;
-    srand( time( NULL ) );  // for extra randomness
-    if ( DBG ) cout << "TIME: " << time( NULL ) << endl;
-
+    srand( time( nullptr ) );  // for extra randomness
+    if ( DBG ) cout << "TIME: " << time( nullptr ) << endl;
     vector<tuple<vector<Point>, EncNumber> > cellTuples;
     int numOfStrips = (int) ( 1 / EPSILON );
     int rp = 0, j = 0; // for dbg
@@ -106,8 +114,7 @@ vector<tuple<vector<Point>, EncNumber> > getCells( vector<Point> points, KeysSer
         auto begin = copy.begin();
         while ( k-- ) {
             auto r = begin;
-            advance( r,
-                     rand() % ( stripSize ) ); //this line crushes the program with small(<20) number of points in file
+            advance( r, rand() % ( stripSize ) ); //crushes the program with small(<20) number of points in file
 //      advance(r, rand() % (stripSize-1)); //experimental
             swap( begin, r );
             ++begin;
@@ -135,7 +142,8 @@ vector<tuple<vector<Point>, EncNumber> > getCells( vector<Point> points, KeysSer
             //  for each point in the strip
             for ( const Point & p : currStrip ) { // for every point match it's corresponding
                 //        is above other randomly chosen points in the strip
-                vector<Bit> cmpIsAbove; // find out if the current point is above all the random points which are below the current one
+                vector<Bit>
+                        cmpIsAbove; // find out if the current point is above all the random points which are below the current one
                 if ( DBG ) {
 //          cout << "strip:" << i << ", rp: " << rp << ", p: " << j++ << " ----- "; // << endl;   //DBG
 //          fcout << "strip:" << i << ", rp: " << rp << ", p: " << j++ << " ----- "; // << endl;   //DBG
@@ -327,8 +335,10 @@ EncNumber calculateThreshold( Vec<EncNumber> distances, KeysServer & keysServer 
  *    a vector of points chosen for this iteration
  *    a vector of points to be used in the next iteration
  */
-vector<vector<Point> > getLeftoverPoints(
-        const vector<PointExtended> & clients, const vector<DecryptedPoint> & means, KeysServer & keysServer ) {
+vector<vector<Point> > getLeftoverPoints( const vector<PointExtended> & clients,
+                                          const vector<DecryptedPoint> & means,
+                                          KeysServer & keysServer ) {
+
     Vec<EncNumber> distances = getDistances( clients, means ); //todo recieve as param
 
     EncNumber threshold = calculateThreshold( distances, keysServer );

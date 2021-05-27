@@ -1,13 +1,9 @@
 #!/usr/bin/env python3
 from random import *
 
-DIM = 2  # dimensions
-NUM_POINTS = 0
-RANGE_LIM = 0
-Bottom_LIM = 0
-
-points_file = None
-points_copy_file = None
+# FIXME remove       - only for dbg and IDE hints
+DIM, NUM_POINTS, RANGE_LIM, BOTTOM_LIM, points_file, points_copy_file = None, None, None, None, None, None
+# --------------------------------------------
 
 with open('impl/properties.h') as f:
     for line in f.readlines():
@@ -16,8 +12,8 @@ with open('impl/properties.h') as f:
             value = line.split(' ')[2].strip(' \n\'') if 'file' in line else float(line.split(' ')[2])
             exec(f'{key} = {value}')
 
-
 pointsList = []
+
 
 # f = open(points_file, "w")
 
@@ -44,11 +40,11 @@ pointsList = []
 
 # print(pointsList)
 
-def rand(bottom_lim=Bottom_LIM, range_lim=RANGE_LIM, round_lim=2):
+def rand(bottom_lim=BOTTOM_LIM, range_lim=RANGE_LIM, round_lim=2):
     return round(range_lim * random() + bottom_lim, round_lim)
 
 
-def generate_points(n:int=NUM_POINTS, d:int=DIM):
+def generate_points(n: int = NUM_POINTS, d: int = DIM):
     points = [tuple(rand() for _ in range(int(d))) for _ in range(int(n))]
     points.sort()
     return points

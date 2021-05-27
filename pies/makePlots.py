@@ -75,7 +75,7 @@ def make_plot(fig, axs, point_list, rands_list, means_list, chosen=None, leftove
     for i in range(len(means_set)):
         axs[1, 0].text(rands_list[i][0] + 0.001, rands_list[i][1] + 0.001, str(i))
         axs[1, 0].text(means_list[i][0] + 0.001, means_list[i][1] + 0.001, str(i))
-        i += 1
+        # i += 1
 
     axs[1, 0].set_title('means')
     axs[1, 1].scatter(*zip(*point_set), label='Input Points', c='green', s=4)
@@ -113,8 +113,9 @@ def make_plot(fig, axs, point_list, rands_list, means_list, chosen=None, leftove
     if os.path.exists(fname):
         print(os.path.abspath(fname))
 
-# FIXME remove       - only for dbg and IDE
-NUM_POINTS, DIM, RANGE_LIM, Bottom_LIM, \
+
+# FIXME remove       - only for dbg and IDE hints
+NUM_POINTS, DIM, RANGE_LIM, BOTTOM_LIM, \
 EPSILON, DECIMAL_DIGITS, CONVERSION_FACTOR, BIT_SIZE, N_THreads, \
 points_file, points_copy_file, chosen_file, leftover_file, means_file, rands_file, rands_bad_file, point_csv_file = \
     None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None
@@ -145,7 +146,7 @@ if '__main__' == __name__:
         print(points_list.size / DIM)
         raise Exception("NOT SYNCED!!!")
 
-    # FIXME remove       - only for dbg and IDE
+    # FIXME remove       - only for dbg and IDE hints
     DIM: float
     EPSILON: float
     NUM_POINTS: float
