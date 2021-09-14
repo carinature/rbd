@@ -108,22 +108,23 @@ vector<tuple<vector<Point>, EncNumber> > getCells( vector<Point> points, KeysSer
         if ( k > stripSize ) return vector<tuple<vector<Point>, EncNumber> >();  // <---------- todo ?
         vector<Point> currStrip( points.begin() + i * stripSize, points.begin() + ( ( i + 1 ) * stripSize ) );
         vector<Point> copy( currStrip ); //todo note the loss of points in tail (need to correct) and handle end cases
-
+#if verbose_print
         cout << "current strip" << endl;
         for ( const Point & p:copy ) cout << "cc " << p.decrypt( keysServer ) << endl;
-
+#endif
         auto begin = copy.begin();
         while ( k-- ) {
             auto r = begin;
-            advance( r, random() % ( stripSize) ); //crushes the program with small(<20) number of points in file
+            advance( r, random() % stripSize ); //crushes the program with small(<20) number of points in file
             swap( begin, r );
             ++begin;
             --stripSize;
         }
         vector<Point> random( copy.begin(), copy.begin() + numOfStrips - 1 );
+#if verbose_print
         cout << "random" << endl;
         for ( const Point & p:copy ) cout << "rr " << p.decrypt( keysServer ) << endl;
-
+#endif
         randPoints.insert( randPoints.end(), random.begin(), random.end() );
 //    randPoints.insert(randPoints.end(), copy.begin(), copy.end());  // <--- this is an experimental line, to cover the cases of top strip points
 

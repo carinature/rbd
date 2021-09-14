@@ -38,8 +38,8 @@ def plot_bricks(fig, axs, strips, bricks):
             for Y in bricks:
                 x_val = Y[0]
                 if section_begin <= x_val and section_end > x_val:
-                    ax.hlines(Y[dim - 1], section_begin, section_end, colors='grey', linestyle='--', linewidth=0.3)
-            ax.axvline(x=section_end, color='grey', linestyle='--', linewidth=0.3)
+                    ax.hlines(Y[dim - 1], section_begin, section_end, colors='grey', linestyle='--', linewidth=0.5)
+            ax.axvline(x=section_end, color='grey', linestyle='--', linewidth=0.5)
 
 
 def make_plot_with_bricks(point_list,
@@ -61,26 +61,26 @@ def make_plot(fig, axs, point_list, rands_list, means_list, chosen=None, leftove
     # print('leftovers list of size  __', len(leftovers_list), '__  : ', leftovers_list)
     # print('REAL leftovers list of size  __', len(leftovers_set), '__  : ', leftovers_set)
 
-    axs[0, 0].scatter(*zip(*point_set), label='Input Points', c='green', s=4)
     axs[0, 0].set_title('Input Points')
-    axs[0, 1].scatter(*zip(*point_set), label='Input Points', c='green', s=4)
-    axs[0, 1].scatter(*zip(*rands_set), label='Rand Points', c='blue', s=6)
+    axs[0, 0].scatter(*zip(*point_set), c='green', s=4)
     axs[0, 1].set_title('Rand Points')
-    axs[1, 0].scatter(*zip(*point_set), label='Input Points', c='green', s=4)
-    axs[1, 0].scatter(*zip(*rands_set), label='Rand Points', c='blue', s=6)
-    sc = axs[1, 0].scatter(*zip(*means_set), label='means', c='black', s=20)
+    axs[0, 1].scatter(*zip(*point_set),  c='green', s=4)
+    axs[0, 1].scatter(*zip(*rands_set),  c='blue', s=8)
+    axs[1, 0].set_title('Means')
+    axs[1, 0].scatter(*zip(*point_set),  c='green', s=4)
+    axs[1, 0].scatter(*zip(*rands_set), c='blue', s=8)
+    sc = axs[1, 0].scatter(*zip(*means_set), c='black', s=15)
 
     # add approp numbers to (rand_pont, final_min)
     # for i in range(len(means_set)):
     #     axs[1, 0].text(rands_list[i][0] + 0.001, rands_list[i][1] + 0.001, str(i))
     #     axs[1, 0].text(means_list[i][0] + 0.001, means_list[i][1] + 0.001, str(i))
 
-    axs[1, 0].set_title('means')
+    axs[1, 1].set_title('Chosen & Leftover')
     axs[1, 1].scatter(*zip(*point_set), label='Input Points', c='green', s=4)
-    axs[1, 1].scatter(*zip(*rands_set), label='Rand Points', c='blue', s=6)
-    axs[1, 1].scatter(*zip(*means_set), label='means', c='black', s=20)
-    axs[1, 1].scatter(*zip(*chosen_set), label='chosen', c='pink', s=8)
-    axs[1, 1].set_title('chosen')
+    axs[1, 1].scatter(*zip(*rands_set), label='Rand Points', c='blue', s=8)
+    axs[1, 1].scatter(*zip(*means_set), label='means', c='black', s=15)
+    axs[1, 1].scatter(*zip(*chosen_set), label='chosen', c='red', s=6)
 
     # axs[0].scatter(*zip(*point_set), label='original data', c='red', s=4)
     # axs[0].scatter(*zip(*rands_set), label='Rand Points', c='blue', s=6)
@@ -162,8 +162,8 @@ if '__main__' == __name__:
     points = np.append(points, buffer)
     # print(points)
     # print(points.size)
-    strips = np.resize(points, (numStrips, -1, 2))
-    # strips = np.reshape(points, (int(1 / epsilon), -1, 2))
+    # strips = np.resize(points, (numStrips, -1, 2))
+    strips = np.reshape(points, (int(1 / EPSILON), -1, 2))
     # print("strips\n", strips)
     fnr = rands_file
     bricks = np.loadtxt(fnr, dtype=float)
