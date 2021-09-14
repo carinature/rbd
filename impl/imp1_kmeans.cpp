@@ -5,6 +5,7 @@
 #include "yonis/run1meancore.h"
 #include "imp1_kmeans.h"
 //#include "aux.h"
+#include "properties.h"
 
 using namespace std;
 
@@ -30,7 +31,6 @@ int main( int argc, char * argv[] ){
 //    logger.log( log_fatal, "log_fatal msg" );
 //    logger.print_log(log_info, false);
     if ( VERBOSE ) cout << "VERBOSE" << endl;
-    printDuration( t1, "Main" );
 
     return 0;
 }
@@ -60,28 +60,28 @@ void encryptedKmeans(){
         cout << "encNumber is number of points in this cell? " << ps_vec[0].decryptNumber( * ks, enc_num ) << endl;
         for ( const Point & p:ps_vec ) cout << "pp " << p.decrypt( * ks ) << endl;
     }
-    /*// convert into eps-net and return a list of the cell means  // <--------
+    // convert into eps-net and return a list of the cell means  // <--------
     vector<DecryptedPoint> means = calculateMeans( cellTuples, * ks );
     // split data into "close" and "leftovre" points
     vector<vector<Point> > pointsSplited = getLeftoverPoints( clients, means, * ks );
     //choose the closest points to the means for the next step of the alg
     // remove and save the furthest points of the set for the next itereation
     vector<Point> chosen = pointsSplited[0], & leftover = pointsSplited[1];
-*/
+/**/
     printDuration( t1, "encryptedKmeans" );
 
-//    /**********   integration to coreset alg    ***********/
-//    decAndWriteToFile( chosen, chosen_file, * ks );
-//    vector<DecryptedPoint> chosenForCorset = getPointsFromFile( chosen_file );
-//    if ( chosenForCorset.empty() ) return;
-//    vector<vector<double> > dps;
-//    for ( const DecryptedPoint & point : chosenForCorset ) {
-//        vector<double> dpd;
-//        for ( long coor : point ) dpd.push_back( coor / CONVERSION_FACTOR );
-//        dps.push_back( dpd ); //        if (0==dp[0] && 0==dp[1]) ++count;  // for DBG
-//    }
-//    cout << "dps count: " << dps.size() << endl;
-//
+    /**********   integration to coreset alg    ***********/
+    decAndWriteToFile( chosen, chosen_file, * ks );
+    vector<DecryptedPoint> chosenForCorset = getPointsFromFile( chosen_file );
+    if ( chosenForCorset.empty() ) return;
+    vector<vector<double> > dps;
+    for ( const DecryptedPoint & point : chosenForCorset ) {
+        vector<double> dpd;
+        for ( long coor : point ) dpd.push_back( coor / CONVERSION_FACTOR );
+        dps.push_back( dpd ); //        if (0==dp[0] && 0==dp[1]) ++count;  // for DBG
+    }
+    cout << "dps count: " << dps.size() << endl;
+
 //    cout << "********   integration to coreset alg    **********" << endl;
 //    runCoreset(dps, dps.size(), DIM, EPSILON);  // <-------------
 //    decAndWriteToFile(leftover, points_file, *ks);  // <-------------

@@ -5,7 +5,7 @@ from random import *
 DIM, NUM_POINTS, RANGE_LIM, BOTTOM_LIM, points_file, points_copy_file = None, None, None, None, None, None
 # --------------------------------------------
 
-with open('impl/properties.h') as f:
+with open('../impl/properties.h') as f:
     for line in f.readlines():
         if '#define' in line and not ('TRY_PROPERTIES_H' in line or 'CONVERSION_FACTOR' in line):
             key = line.split(' ')[1].strip('\'')

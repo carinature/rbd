@@ -7,25 +7,27 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 ## Require full C++ standard
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-project(EpsilonNet
-		LANGUAGES CXX)
+project(EpsilonNet LANGUAGES CXX)
 
-set(DCMAKE_BUILD_TYPE "Debug")
+set(DCMAKE_BUILD_TYPE Debug)
 
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall ")
 #set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall -DCMAKE_BUILD_TYPE=Debug")
 
+#set(CMAKE_INSTALL_PREFIX /home/karina/CLionProjects/rbd/HElib-1.0.0/build)
 
-find_package(helib 1.0.0 EXACT REQUIRED)
+#find_package(helib REQUIRED)
+find_package(helib 1.0.0 EXACT REQUIRED
+        PATHS /home/karina/CLionProjects/rbd/HElib-1.0.0/)
 
 #add_executable( epsNet
-add_executable( epsNetD
-		impl/imp1_kmeans.cpp
-		impl/KeysServer.cpp
-		impl/Point.cpp
-		impl/aux.cpp
-		impl/yonis/run1meancore.cpp
-		impl/properties.h )
+add_executable(epsNetD
+        impl/imp1_kmeans.cpp
+        impl/KeysServer.cpp
+        impl/Point.cpp
+        impl/aux.cpp
+        impl/yonis/run1meancore.cpp
+        impl/properties.h)
 
 #target_link_libraries(epsNet helib)
 target_link_libraries(epsNetD helib)
